@@ -96,4 +96,5 @@ export interface AppData {
   characterization: Record<string, CharacterizationEntry>;
   blindspot: BlindspotData;
   embeddings: EmbeddingsData;
+  adaptiveDesign: AdaptiveDesignData;
 }

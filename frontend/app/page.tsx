@@ -117,7 +117,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-canvas text-fg">
+    <div className="flex min-h-[100dvh] bg-canvas text-fg">
       <div className="w-[25%] min-w-[280px] max-w-sm shrink-0">
         <Sidebar
           panelSize={panelSize}
@@ -209,9 +209,9 @@ export default function Home() {
             <CompareView panelSize={panelSize} />
           </div>
         ) : (
-          <div className="min-h-0 flex-1">
-            <AdaptiveDesignTab umapPoints={data?.umap} />
-          </div>
+            <div className="min-h-0 flex-1">
+            <AdaptiveDesignTab umapPoints={data?.umap} adaptiveData={data?.adaptiveDesign} />
+            </div>
         )}
       </main>
     </div>

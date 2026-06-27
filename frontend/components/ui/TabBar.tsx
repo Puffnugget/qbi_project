@@ -67,10 +67,10 @@ export function Tab({
       role="tab"
       aria-selected={isActive}
       onClick={() => context.setActiveTab(id)}
-      className={`rounded-t-md px-4 py-2 text-sm font-medium capitalize transition-colors ${
+      className={`border-b-2 px-4 py-2 text-sm font-medium capitalize transition-colors ${
         isActive
-          ? "bg-surface text-fg shadow-[inset_0_1px_0_var(--border)]"
-          : "text-fg-muted hover:text-fg hover:bg-canvas-deep/60"
+          ? "border-accent bg-surface text-fg"
+          : "border-transparent text-fg-muted hover:border-border hover:text-fg"
       }`}
     >
       {text}

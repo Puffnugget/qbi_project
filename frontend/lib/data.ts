@@ -2,6 +2,7 @@ import type {
   AppData,
   BlindspotData,
   CharacterizationEntry,
+  AdaptiveDesignData,
   CoverageData,
   EmbeddingsData,
   PanelData,
@@ -10,6 +11,15 @@ import type {
 } from "./types";
 
 const BASE = "/precomputed";
+const LAYER_LABELS: Record<string, string> = {
+  rna: "RNA",
+  prot: "Proteomics",
+  methyl: "Methylation",
+  histone: "Histone",
+  drug: "Drug",
+};
+
+type RawPerLayerCoverage = Record<string, { panel_size: number; coverage: number }[]>;
 
 async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}/${path}`);
@@ -25,11 +35,11 @@ function panelFile(cancerType: string): string {
 }
 
 export async function loadAppData(cancerType: string): Promise<AppData> {
-  const [umapRaw, coverage, perLayer, panels, characterization, blindspot, embeddings] =
+  const [umapRaw, coverage, perLayer, panels, characterization, blindspot, embeddings, adaptiveDesign] =
     await Promise.all([
-      fetchJson<{ points: UmapPoint[] }>("umap_3d.json"),
+      fetchJson<{ points: UmapPoint[] } | UmapPoint[]>("umap_3d.json"),
       fetchJson<CoverageData>("coverage_curve.json"),
-      fetchJson<PerLayerCoverage>("per_layer_coverage.json"),
+      fetchJson<RawPerLayerCoverage>("per_layer_coverage.json"),
       fetchJson<PanelData>(panelFile(cancerType)),
       fetchJson<Record<string, CharacterizationEntry>>(
         "characterization.json",
@@ -41,16 +51,38 @@ export async function loadAppData(cancerType: string): Promise<AppData> {
         dimensions: 0,
         embeddings: {},
       })),
+      fetchJson<AdaptiveDesignData>("adaptive_design.json").catch(() => ({
+        target_size: 0,
+        metric: "",
+        n_cell_lines: 0,
+        source: "dummy",
+        policies: {},
+      } as AdaptiveDesignData)),
     ]);
 
+  const rawPoints = Array.isArray(umapRaw) ? umapRaw : umapRaw.points;
+  const umap = rawPoints.map((p) => ({
+    ...p,
+    cell_line: p.cell_line ?? (p as UmapPoint & { id?: string }).id ?? "",
+  }));
+  const perLayerBySize: PerLayerCoverage = {};
+  for (const [layer, rows] of Object.entries(perLayer)) {
+    const label = LAYER_LABELS[layer] ?? layer;
+    for (const row of rows) {
+      const key = String(row.panel_size);
+      perLayerBySize[key] = { ...perLayerBySize[key], [label]: row.coverage };
+    }
+  }
+
   return {
-    umap: umapRaw.points,
+    umap,
     coverage,
-    perLayer,
+    perLayer: perLayerBySize,
     panels,
     characterization,
     blindspot,
     embeddings,
+    adaptiveDesign,
   };
 }
 

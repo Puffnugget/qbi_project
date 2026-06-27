@@ -1,23 +1,26 @@
 /** Light-mode beige + forest green design tokens (charts, 3D, status). */
 
 export const theme = {
-  canvas: "#F4EDE4",
-  surface: "#FAF7F2",
+  canvas: "#F5EFE6",
+  canvasDeep: "#E8DFD3",
+  surface: "#FBF8F4",
   surfaceElevated: "#FFFFFF",
-  fg: "#1B3A2D",
-  fgMuted: "#5A6F62",
-  fgSubtle: "#8A9A8F",
-  accent: "#2D6A4F",
-  accentBright: "#40916C",
-  accentLight: "#74C69D",
-  accentGold: "#B8860B",
-  accentTeal: "#2A9D8F",
-  border: "#D4C9B8",
-  borderStrong: "#B8A898",
-  danger: "#C44D3F",
-  warning: "#D4A017",
-  success: "#2D6A4F",
-  sceneBg: "#1A2E26",
+  fg: "#1A3328",
+  fgMuted: "#4D6358",
+  fgSubtle: "#7A8F82",
+  accent: "#2F5E45",
+  accentBright: "#3D7A5C",
+  accentLight: "#6BA888",
+  accentGold: "#A67C2E",
+  accentTeal: "#2D7A6E",
+  border: "#D9CEBC",
+  borderStrong: "#C4B8A4",
+  danger: "#B84A3C",
+  warning: "#C4922A",
+  success: "#2F5E45",
+  sceneBg: "#162920",
+  sceneGridPrimary: "#2A4A3A",
+  sceneGridSecondary: "#1F3A2E",
 } as const;
 
 export const chartTheme = {
@@ -40,12 +43,14 @@ export const chartTheme = {
 
 export const sceneTheme = {
   background: theme.sceneBg,
-  greedy: "#D4A017",
-  manualAdded: "#52B788",
-  manualRemoved: "#4A5D52",
-  overlap: "#E8F5E9",
-  connectionLine: "#D4A017",
-  blindspot: "#C44D3F",
+  gridPrimary: theme.sceneGridPrimary,
+  gridSecondary: theme.sceneGridSecondary,
+  greedy: theme.accentGold,
+  manualAdded: theme.accentLight,
+  manualRemoved: "#5A6F62",
+  overlap: "#D4EDDA",
+  connectionLine: theme.accentGold,
+  blindspot: theme.danger,
 } as const;
 
 export function blindspotStatusColor(fraction: number, selected: number): string {

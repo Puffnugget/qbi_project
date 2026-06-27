@@ -37,8 +37,8 @@ export default function Sidebar({
     <aside
       className="reveal flex h-full w-full flex-col gap-6 overflow-y-auto border-r border-border bg-surface p-6 shadow-[2px_0_12px_var(--shadow)]"
     >
-      <header className="reveal reveal-delay-1">
-        <p className="label-caps">NCI-60 Panel Builder</p>
+      <header className="reveal reveal-delay-1 border-b border-border pb-4">
+        <p className="label-caps text-accent">NCI-60 Panel Builder</p>
         <h1
           className="mt-1 text-2xl font-semibold tracking-tight text-fg"
           style={{ fontFamily: "var(--font-display)" }}

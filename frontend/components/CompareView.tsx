@@ -81,7 +81,7 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
           className="reveal reveal-delay-1 relative min-h-[300px] overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
         >
           <p
-            className="absolute left-3 top-3 z-10 rounded-md bg-surface/90 px-2 py-0.5 text-xs font-medium text-fg-muted backdrop-blur-sm"
+            className="absolute left-3 top-3 z-10 rounded-md border border-border bg-surface-elevated px-2 py-0.5 text-xs font-medium text-fg-muted"
           >
             {typeA}
           </p>
@@ -98,7 +98,7 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
           className="reveal reveal-delay-2 relative min-h-[300px] overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
         >
           <p
-            className="absolute left-3 top-3 z-10 rounded-md bg-surface/90 px-2 py-0.5 text-xs font-medium text-fg-muted backdrop-blur-sm"
+            className="absolute left-3 top-3 z-10 rounded-md border border-border bg-surface-elevated px-2 py-0.5 text-xs font-medium text-fg-muted"
           >
             {typeB}
           </p>

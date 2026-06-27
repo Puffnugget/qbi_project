@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f4ede4;
+  --canvas: #f5efe6;
   --canvas-deep: #e8dfd3;
-  --surface: #faf7f2;
+  --surface: #fbf8f4;
   --surface-elevated: #ffffff;
-  --fg: #1b3a2d;
-  --fg-muted: #5a6f62;
-  --fg-subtle: #8a9a8f;
-  --accent: #2d6a4f;
-  --accent-bright: #40916c;
-  --accent-light: #74c69d;
-  --accent-gold: #b8860b;
-  --accent-teal: #2a9d8f;
-  --border: #d4c9b8;
-  --border-strong: #b8a898;
-  --danger: #c44d3f;
-  --warning: #d4a017;
-  --success: #2d6a4f;
-  --scene-bg: #1a2e26;
-  --shadow: rgba(27, 58, 45, 0.1);
-  --shadow-strong: rgba(27, 58, 45, 0.16);
+  --fg: #1a3328;
+  --fg-muted: #4d6358;
+  --fg-subtle: #7a8f82;
+  --accent: #2f5e45;
+  --accent-bright: #3d7a5c;
+  --accent-light: #6ba888;
+  --accent-gold: #a67c2e;
+  --accent-teal: #2d7a6e;
+  --border: #d9cebc;
+  --border-strong: #c4b8a4;
+  --danger: #b84a3c;
+  --warning: #c4922a;
+  --success: #2f5e45;
+  --scene-bg: #162920;
+  --shadow: rgba(26, 51, 40, 0.08);
+  --shadow-strong: rgba(26, 51, 40, 0.14);
 
   --background: var(--canvas);
   --foreground: var(--fg);
@@ -64,7 +64,13 @@ html {
 
 body {
   min-height: 100%;
-  background: var(--canvas);
+  background:
+    radial-gradient(
+      ellipse 90% 60% at 50% -10%,
+      color-mix(in srgb, var(--accent-light) 14%, transparent),
+      transparent 55%
+    ),
+    var(--canvas);
   color: var(--fg);
   font-family: var(--font-body), system-ui, sans-serif;
   position: relative;
@@ -77,7 +83,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  opacity: 0.035;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -93,7 +99,7 @@ body::before {
   background: var(--surface-elevated);
   box-shadow:
     0 1px 3px var(--shadow),
-    0 4px 12px var(--shadow);
+    0 4px 16px var(--shadow);
 }
 
 .label-caps {
@@ -117,7 +123,7 @@ body::before {
 .input-base:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent);
 }
 
 .btn-primary {
@@ -155,7 +161,7 @@ body::before {
   border-color: var(--border-strong);
 }
 
-/* Staggered reveal (frontend-slides motion pattern) */
+/* Staggered reveal */
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -194,7 +200,6 @@ body::before {
   }
 }
 
-/* Range slider accent */
 input[type="range"] {
   accent-color: var(--accent);
 }

@@ -21,22 +21,34 @@ const POLICIES = ["coverage_greedy", "uncertainty", "thompson", "random"];
 
 export default function AdaptiveDesignTab({
   umapPoints = [],
+  adaptiveData = null,
 }: {
   umapPoints?: UmapPoint[];
+  adaptiveData?: AdaptiveDesignData | null;
 }) {
-  const [data, setData] = useState<AdaptiveDesignData | null>(null);
+  const [data, setData] = useState<AdaptiveDesignData | null>(adaptiveData);
   const [policy, setPolicy] = useState("coverage_greedy");
   const [step, setStep] = useState(1);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
+    if (adaptiveData) setData(adaptiveData);
+  }, [adaptiveData]);
+
+  useEffect(() => {
+    if (data || adaptiveData) return;
     fetch("/precomputed/adaptive_design.json")
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("missing adaptive_design.json"))))
+      .then((r) =>
+        r.ok ? r.json() : Promise.reject(new Error("missing adaptive_design.json")),
+      )
       .then(setData)
       .catch(() => setData(null));
-  }, []);
+  }, [data, adaptiveData]);
 
-  const rollout = data?.policies[policy];
+  const rollout =
+    data?.policies[policy] ??
+    data?.policies.coverage_greedy ??
+    Object.values(data?.policies ?? {})[0];
   const maxStep = rollout?.selections.length ?? 1;
   const selectedLines = rollout?.selections.slice(0, step) ?? [];
 

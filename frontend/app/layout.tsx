@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const outfit = Outfit({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmSans.variable} ${ibmMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${ibmSans.variable} ${ibmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-canvas text-fg">
         {children}

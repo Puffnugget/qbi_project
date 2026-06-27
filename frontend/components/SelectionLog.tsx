@@ -2,6 +2,7 @@
 
 import { Card, CardHeader } from "@/components/ui/Card";
 import { CANCER_COLORS } from "@/lib/constants";
+import { theme } from "@/lib/theme";
 import type { CharacterizationEntry, PanelEntry } from "@/lib/types";
 
 interface SelectionLogProps {
@@ -66,7 +67,7 @@ export default function SelectionLog({
           <tbody>
             {entries.map((e) => {
               const c = characterization[e.cell_line];
-              const color = CANCER_COLORS[e.cancer_type] ?? "#888";
+              const color = CANCER_COLORS[e.cancer_type] ?? theme.fgSubtle;
               return (
                 <tr
                   key={`${e.cell_line}-${e.step}`}

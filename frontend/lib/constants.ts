@@ -1,13 +1,14 @@
+/** Earth-tone cancer type colors — harmonized with beige + forest green UI. */
 export const CANCER_COLORS: Record<string, string> = {
-  Breast: "#FF6B9D",
-  CNS: "#C77DFF",
-  Colon: "#4CC9F0",
-  Leukemia: "#F72585",
-  Lung: "#4361EE",
-  Melanoma: "#F77F00",
-  Ovarian: "#FCBF49",
-  Prostate: "#06D6A0",
-  Renal: "#EF233C",
+  Breast: "#C65D7A",
+  CNS: "#7B6B9E",
+  Colon: "#3D8B7A",
+  Leukemia: "#B54A6B",
+  Lung: "#4A7C59",
+  Melanoma: "#C4843A",
+  Ovarian: "#D4A843",
+  Prostate: "#2D7A6E",
+  Renal: "#A34444",
 };
 
 export const CANCER_TYPES = [
@@ -26,7 +27,8 @@ export const CANCER_TYPES = [
 export const OMICS_LAYERS = [
   "RNA",
   "Proteomics",
-  "Metabolomics",
+  "Methylation",
+  "Histone",
   "Drug",
 ] as const;
 

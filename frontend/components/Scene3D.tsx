@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Group, Mesh, MeshStandardMaterial } from "three";
 import { CANCER_COLORS } from "@/lib/constants";
-import { sceneTheme } from "@/lib/theme";
+import { sceneTheme, theme } from "@/lib/theme";
 import type { UmapPoint } from "@/lib/types";
 
 function easeOutBack(t: number): number {
@@ -131,7 +131,7 @@ function CellSphere({
   onHover: (p: UmapPoint | null) => void;
   onClick?: (cellLine: string) => void;
 }) {
-  const baseColor = CANCER_COLORS[point.cancer_type] ?? "#888888";
+  const baseColor = CANCER_COLORS[point.cancer_type] ?? theme.fgSubtle;
 
   let color = baseColor;
   let emissive = baseColor;
@@ -172,7 +172,7 @@ function CellSphere({
 
   if (isFilteredOut && state === "default") {
     opacity = 0.15;
-    color = "#555555";
+    color = theme.fgSubtle;
   }
 
   const pos: [number, number, number] = [point.x, point.y, point.z];
@@ -291,7 +291,7 @@ function SceneContent({
       <ambientLight intensity={0.45} />
       <pointLight position={[10, 10, 10]} intensity={1} />
       <gridHelper
-        args={[10, 10, "#2a4a3a", "#1f3a2e"]}
+        args={[10, 10, sceneTheme.gridPrimary, sceneTheme.gridSecondary]}
         position={[0, -2, 0]}
       />
 
@@ -335,7 +335,7 @@ function SceneContent({
           center
           style={{ pointerEvents: "none" }}
         >
-          <div className="whitespace-nowrap rounded-md border border-border bg-surface-elevated/95 px-2 py-1 text-xs text-fg shadow-md backdrop-blur-sm">
+          <div className="whitespace-nowrap rounded-md border border-border bg-surface-elevated px-2 py-1 text-xs text-fg shadow-md">
             <span className="font-mono">{hovered.cell_line}</span>
             <span className="ml-2 text-fg-muted">{hovered.cancer_type}</span>
           </div>
@@ -386,7 +386,7 @@ export default function Scene3D({
           <>
             <color attach="background" args={[sceneTheme.background]} />
             <gridHelper
-              args={[10, 10, "#2a4a3a", "#1f3a2e"]}
+              args={[10, 10, sceneTheme.gridPrimary, sceneTheme.gridSecondary]}
               position={[0, -2, 0]}
             />
             <OrbitControls enableDamping dampingFactor={0.05} />
@@ -396,7 +396,7 @@ export default function Scene3D({
 
       {!hasData && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <p className="rounded-lg border border-border bg-surface/90 px-4 py-2 text-sm text-fg-muted backdrop-blur-sm">
+          <p className="rounded-lg border border-border bg-surface-elevated px-4 py-2 text-sm text-fg-muted">
             Loading cell line embedding…
           </p>
         </div>
