@@ -8,6 +8,10 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from custom_analysis import router as analysis_router
 
 ROOT = Path(__file__).resolve().parents[1]
 PRECOMPUTED = ROOT / "frontend" / "public" / "precomputed"
@@ -21,6 +25,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include custom analysis routes
+app.include_router(analysis_router)
 
 
 def _load(name: str) -> dict | list:

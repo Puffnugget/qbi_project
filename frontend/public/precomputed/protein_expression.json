@@ -1,0 +1,8444 @@
+{
+  "EGFR": {
+    "high_expression": [
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 4.26721297760995
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.72020888732521
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.935847400430698
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.765082353468425
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.704301574041176
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.689829959891831
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.634837826124319
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.631943503294449
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.608788920655497
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.608788920655497
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.597211629336022
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.57695136952694
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.568268401037332
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.53932517273864
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.530642204249035
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.528679951483032
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.517102660163556
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.491053754694733
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -0.467899172055781
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.297134125093509
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.253719282645473
+      }
+    ]
+  },
+  "TP53": {
+    "high_expression": [
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 2.64839601058448
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 2.49878903403963
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 2.36742681073195
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 2.27985199519349
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.38950803721923
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.34572062945
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.30923112297564
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.944336058232091
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 0.80567593362954
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.758239575212879
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.725399019385961
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.58673889478341
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.539302536366749
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.513759881834698
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.48091932600778
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -3.29574459408799
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -1.74129161828046
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.05528889656258
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.04434204462027
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.00055463685105
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.993256735556173
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -0.825405005774141
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.726883338293381
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.675798029229283
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.646606424049799
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.610116917575444
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.58092531239596
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.57362741110109
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.548084756569039
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.533488953979298
+      }
+    ]
+  },
+  "BRCA1": {
+    "high_expression": [
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 1.77136073028307
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.50057043632873
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.08699980556212
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 1.02791828688118
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.0229948269911
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.944219468749841
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.909755249519287
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 0.840826811058189
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.835903351168108
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.806362591827635
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.796515672047478
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.757127992926849
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.668505714905433
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.64388841545504
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.629118035784803
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -0.818379171898341
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.80853225211818
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.759297653217394
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.646058075745585
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -0.562359257614245
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -0.527895038383696
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.444196220252356
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.414655460911887
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.409732001021807
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.360497402121021
+      }
+    ]
+  },
+  "BRCA2": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.77914445758194
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.20508739555605
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.00523049248037
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.96483388441188
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 0.911680452742815
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.903175903675766
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.856400883806989
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.841517922939652
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.79049062853735
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.77348153040325
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.73308492233476
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.624651921729869
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 0.622525784463108
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 0.594885999995193
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.586381450928143
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.48235010963183
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.19319544135212
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -0.329983711046522
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.234307534042207
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.185406376906669
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -0.17052341603933
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -0.16201886697228
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.132252945237604
+      }
+    ]
+  },
+  "MYC": {
+    "high_expression": [
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 2.42255979560644
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.47245184842965
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.27172481733595
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.25165211422659
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.16467040075265
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.15128859867974
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.13121589557037
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.09107048935163
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.830125348929839
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.830125348929839
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.723070932346537
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.65616192198197
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.622707416799689
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.542416604362216
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.522343901252846
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -4.37539565743318
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -2.35474354442337
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.41801739931949
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.34441748791847
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.13699955578832
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.07678144646021
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.00318153505919
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -0.842599910184242
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.768999998783222
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.715472790491571
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.668636483236379
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.655254681163468
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.568272967689536
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.561582066653078
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.554891165616619
+      }
+    ]
+  },
+  "KRAS": {
+    "high_expression": [
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.8028651622085
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.5723106014815
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.46439144539652
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.16516105807
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 1.13082314477023
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 1.11120148002751
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 1.04252565342798
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.998376907756852
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.988566075385492
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.968944410642766
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.939511913528685
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.934606497343002
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.924795664971642
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.851214422186428
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.777633179401218
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -3.10255102347228
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -2.02826487880819
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.00373779787978
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.85166989612367
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.53772326024011
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -1.51810159549738
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.50829076312602
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -1.22377662435654
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.06189789022907
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.860775826616159
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.84605957805912
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -0.797005416202309
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.738140421974142
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.527207525989868
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.527207525989868
+      }
+    ]
+  },
+  "PIK3CA": {
+    "high_expression": [
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.47168947501868
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.22014971491011
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.11053376440408
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.02514870822044
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.00784092656159
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.987071588570976
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.975533067465077
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.96399454635918
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.900532680276742
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.879763342286126
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.873994081733178
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.798993694544841
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.748224201678892
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.737839532683583
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.719377898914147
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.6010186954819
+      }
+    ]
+  },
+  "PTEN": {
+    "high_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 2.28601756012536
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 1.75965473600877
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.62045134450686
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.62045134450686
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": 1.5377993308026
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.40729615126956
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.29419339567426
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 1.25939254779878
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.985335870779397
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.86788300919966
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.685178557853406
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 0.567725696273669
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.489423788553842
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.476373470600542
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.363270715005238
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -3.28211809995101
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -3.28211809995101
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.48987443436392
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -1.48552432837949
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.0722642598582
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.876509490558637
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.867809278589768
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.863459172605336
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.850408854652032
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.706855357165686
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.702505251181254
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.6329035554303
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -0.628553449445863
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -0.450199104084041
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -0.384947514317522
+      }
+    ]
+  },
+  "RB1": {
+    "high_expression": [
+      {
+        "cell_line": "LE:SR",
+        "expression": 1.89408663979679
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.69693579827143
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.41958800426118
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.29929257553384
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.28592641678636
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.19570484524086
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.938406289351825
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.858209336866932
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.804744701877004
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 0.744596987513332
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.73457236845272
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.657716955654699
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.59088616191729
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 0.59088616191729
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.577520003169807
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -1.05649290370988
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.612068125356099
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.568628109426783
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.538554252244947
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.361452648840809
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -0.297963394790269
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": -0.227791061365988
+      }
+    ]
+  },
+  "ALK": {
+    "high_expression": [
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.61041306195511
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.42435770620782
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.41805074499605
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.30452544318415
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.21938146682522
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.19730710258402
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.19100014137224
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.086935281378
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.03647959168382
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.979716940777868
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.963949537748437
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.951335615324894
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.869345119571854
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.850424235936536
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.815735949271787
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.975441034871569
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.972287554265685
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.890297058512644
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.874529655483211
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.754697392459538
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.75154391185365
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.682167338524153
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.66955341610061
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.64432557125352
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -0.631711648829974
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.559181594894593
+      }
+    ]
+  },
+  "BRAF": {
+    "high_expression": [
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.89365815522325
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 1.73302215368309
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 1.71206963174307
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.70508545776306
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": 1.38381345468274
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.37333719371273
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.964763015882323
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.912381711032268
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.89142918909225
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.797142840362155
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.559680925041916
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.552696751061909
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.531744229121888
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.521267968151877
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.47237875029183
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CNS:U251",
+        "expression": -3.1558996323218
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -3.1558996323218
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -3.1558996323218
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.09906039520974
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -0.872074740859518
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.865090566879508
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -0.742867522229386
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.732391261259378
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.589215694669233
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -0.571755259719216
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.473976823999117
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.4565163890491
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -0.446040128079089
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.432071780119076
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -0.418103432159061
+      }
+    ]
+  },
+  "ERBB2": {
+    "high_expression": [
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 2.8088321942671
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 2.01601822610088
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.88962759349467
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.46449546563743
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.39555512057949
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.14277385536707
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.00489316525122
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.970422992722249
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 0.970422992722249
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 0.889992590154655
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.775092015058105
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.775092015058105
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.71764172750983
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.648701382451895
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 0.602741152413279
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.41914397262606
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.95954167223985
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.76421069457572
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.66080017698881
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -1.52291948687296
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.5114294293633
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.29311833667985
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.23566804913157
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.16672770407364
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.913946438861216
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -0.845006093803292
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.810535921274325
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.730105518706731
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.695635346177774
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.684145288668115
+      }
+    ]
+  },
+  "MET": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 3.02710038129371
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.94339987977533
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.74867244590875
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 1.45234809002482
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.3676839883437
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.31688552733502
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.24068783582201
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.03749399178731
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.0290275816192
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.944363479938081
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.927430659601851
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.775035276575831
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.724236815567155
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.707303995230932
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.698837585062817
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -2.39986853646629
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.90035033654766
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.84108546537088
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.74795495352164
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -1.36696649595659
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.20610470276245
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -1.18917188242623
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -1.01137726889587
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -0.969045218055311
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -0.892847526542297
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.884381116374182
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -0.825116245197398
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.621922401162702
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.537258299481581
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.47799342830479
+      }
+    ]
+  },
+  "NRAS": {
+    "high_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 1.71324799302626
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.67948095391199
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.28834608417177
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.04916289044573
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.964745292660074
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 0.953489612955318
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 0.930978253545808
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.86625809524347
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 0.764956977900677
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.73681777863879
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.663655860557886
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.61300530188649
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.6101913819603
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.587680022550791
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.570796502993659
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -4.22412305123183
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -2.58642165419003
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.12493878629508
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -2.03770726858324
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.32859944718369
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -0.990929056041052
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.979673376336296
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.909325378181581
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.838977380026863
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.59698026637464
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.515376588515166
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.428145070803318
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -0.414075471172375
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -0.394378031689055
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.388750191836676
+      }
+    ]
+  },
+  "FGFR1": {
+    "high_expression": [
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.72850735226026
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.66211646605616
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.52933469364795
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.46294380744384
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.38548777353906
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.30249916578392
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.26930372268187
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.17524996722606
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.05353334251853
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.826697814654508
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.81563266695382
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.776904650001428
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.743709206899374
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.699448616096637
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.699448616096637
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.74734489266647
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -1.89532851971379
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.77914446885661
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.61869982719669
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -1.52464607174087
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.51911349789053
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -1.19269164072035
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -1.13183332836658
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.04331214676111
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.987986408257692
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.971388686706665
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.932660669754272
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.871802357400509
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.866269783550165
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.849672061999143
+      }
+    ]
+  },
+  "AKT1": {
+    "high_expression": [
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.86160313773605
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.66399186026641
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.35079662805038
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 1.33774682670805
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.26690504799251
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": 1.2557195039848
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.17369218126155
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 1.16437089458846
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.03946565316897
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.977945161126532
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 0.95743833044572
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.93506724243029
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.843718633033946
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.825076059687754
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.825076059687754
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.22187849372417
+      }
+    ]
+  },
+  "MAPK1": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 2.070988967293
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.6827343036164
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.66299254105657
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.386607865219
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.22209317722045
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.2155125897005
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.14970671450108
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.11022318938143
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.945708501382869
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.90622497626322
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.893063801223331
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.866741451143565
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.860160863623621
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.853580276103682
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.814096750984027
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -3.23296457378046
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.29194055842872
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.67336533155414
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.60755945635472
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.51543123107553
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -1.33117478051715
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -1.22588538019807
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.05479010467957
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.903436591720901
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -0.732341316202404
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.706018966122632
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.686277203562804
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.659954853483038
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.640213090923211
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.633632503403266
+      }
+    ]
+  },
+  "HER2": {
+    "high_expression": [
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 1.9676868080374
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.87421878028188
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.76828834882562
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.58758349516495
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.54396508221237
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.23240498969397
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.20124898044213
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 1.17632417304066
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.17009297119029
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.0703937415844
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.864764080522254
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 0.75260244721563
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.702752832412686
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.621747208357902
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.590591199106062
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -2.32561126686619
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.933045550293
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.90812074289153
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.61525425592423
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -1.59032944852275
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.4657054115154
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": -1.39716219116135
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.34108137450804
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.24138214490215
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.22268853935104
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.13545171344589
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -1.04821488754074
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.886203639431168
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.755348400573439
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.518562730259451
+      }
+    ]
+  },
+  "HER3": {
+    "high_expression": [
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 3.05158705545646
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 1.30715928438685
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.30092918520446
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.27600878847489
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.23862819338054
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.13271650727989
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 1.03303492036162
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.02057472199684
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.933353333443359
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.858592143254665
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 0.846131944889883
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 0.790061052248358
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.777600853883576
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.733990159606832
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": 0.733990159606832
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -3.41525589586588
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -3.41525589586588
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.36555326485909
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.18488038856974
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -0.923216222909298
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.898295826179729
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -0.736313247437552
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.68647245397842
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.630401561336895
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.605481164607332
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.586790867060157
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": -0.549410271965807
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.543180172783419
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.493339379324287
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.42480828831798
+      }
+    ]
+  },
+  "PDGFRA": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 2.29141064244246
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.69206132411483
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.25253849067455
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.2425493353691
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.17262524823087
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.13266862700903
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.11269031639811
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.09271200578719
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 1.07273369517627
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.07273369517627
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.05275538456535
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.92289636559436
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.823004812539756
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 0.773059036012454
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.76306988070699
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -3.61218014308476
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.94399120707284
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.76418641157455
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.38459850996704
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -1.32466357813428
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.20479371446875
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.10490216141415
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.915108210610396
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.85517327877763
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.825205812861247
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.785249191639409
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.745292570417562
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.635411862057494
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.625422706752039
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.625422706752039
+      }
+    ]
+  },
+  "KIT": {
+    "high_expression": [
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 2.95491662019936
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 2.05070018556573
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.87190032560993
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.59603768453526
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.55006057768948
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.37636928516099
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.2690893691875
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.977901025830911
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.926815351557825
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.891055379566662
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.793992598447796
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.768449761311254
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.763341193883948
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.712255519610858
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.671386980192388
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.84202819404347
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.62746836209651
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.58659982267804
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -1.41801709757685
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.37203999073107
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.32095431645799
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.29541147932145
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -1.25965150733028
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.08085164737448
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.994006001110234
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.891834652564058
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.81520614115443
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.799880438872503
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -0.799880438872503
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.748794764599418
+      }
+    ]
+  },
+  "VEGFRA": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.99563017281992
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.71766202869788
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.40026577902661
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.34112362070277
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.20903946711287
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.16566855100872
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.05329845019343
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.976413644372436
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 0.93501413354575
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.923185701880981
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.867986354112065
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": 0.836443869672684
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.824615438007918
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.808844195788227
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.700416905527856
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -1.39124409385856
+      }
+    ]
+  },
+  "IGF1R": {
+    "high_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.89985340050119
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.5480985456644
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.50143718736973
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 1.45477582907505
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.30761308368416
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.14968233253295
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.14250366202608
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.05994895119704
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.0563596159436
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.934322217326756
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.840999500737403
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.636407391291522
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.625639385531212
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.582567362489975
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.571799356729665
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.917774773446504
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -0.874702750405267
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.644985294185327
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.494233213540993
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.361427809163841
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.28605176884167
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.282462433588236
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -0.253747751560743
+      }
+    ]
+  },
+  "ESR1": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 2.25232375076227
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.74417811898827
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.71891120912106
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 1.53362053676148
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.4690495448786
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.44659006944107
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.37359677426912
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.35113729883159
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 1.24726222493304
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.03389720827655
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.994593126260889
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.901947790081099
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.786842978463784
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.758768634166879
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.61839691268235
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -2.53435195186017
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -2.53435195186017
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -2.53435195186017
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.21766520433529
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.10256039271798
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.98184071224128
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.950958933514683
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.875158203913037
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -0.858313597334893
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.810587212030155
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.740401351287889
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.670215490545624
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.616874236381505
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -0.563532982217384
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.524228900201715
+      }
+    ]
+  },
+  "AR": {
+    "high_expression": [
+      {
+        "cell_line": "LE:SR",
+        "expression": 2.00316752295581
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.37844531080112
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.33665051491753
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 1.16947133138317
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.15627297478835
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 1.11887763110304
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 1.08588173961599
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.879107486297184
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.777920085736915
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 0.773520633538643
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.747123920349009
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.736125289853326
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.731725837655054
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.720727207159373
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.709728576663692
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.52959259225702
+      }
+    ]
+  },
+  "CDKN1A": {
+    "high_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.09903035788284
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.05831822784376
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.909040417700501
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.847002886212391
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 0.814045447609332
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.806290756173319
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.771394644711256
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.746191897544212
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.734559860390191
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.693847730351119
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.691909057492117
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.688031711774109
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.680277020338096
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.660890291748062
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.639564890299024
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.674855308105296
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.258040643419561
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.256101970560556
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -0.176616383341417
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.110701506135301
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.0990694689812801
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -0.0932534504042697
+      }
+    ]
+  },
+  "V2": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 2.08790129437977
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 2.05386961363707
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": 1.66250528509596
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.58593400342488
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.34771223822594
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 1.33920431804026
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.24561719599783
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.12650631339836
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.05844295191295
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 1.0414271115416
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.973363750056188
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 0.854252867456719
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 0.811713266528339
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.80320534634266
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.718126144485899
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -2.54891520681377
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.75767862954588
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.66409150750344
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.55348854508965
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.48542518360424
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.40034598174748
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.34079054044775
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.07704501469178
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -1.0345054137634
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.983457892649345
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.966442052277995
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.940918291720965
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -0.864347010049876
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -0.838823249492847
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -0.753744047636086
+      }
+    ]
+  },
+  "V3": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 3.48468776482541
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 1.73883130692736
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 1.60067000450378
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 1.57240973809895
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 1.20188624523569
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.11396541642069
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.975804113997098
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 0.875323166779944
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.869043107578873
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.721461716353679
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.705761568350999
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.677501301946173
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.467119318710257
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.451419170707577
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.429438963503826
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": -2.0637445393218
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -2.0637445393218
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": -2.0637445393218
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -2.0637445393218
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -2.0637445393218
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -2.0637445393218
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -0.669571396683795
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.650731219080578
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.644451159879507
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.622470952675753
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.575370508667713
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.575370508667713
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.537690153461279
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.506289857455919
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -0.487449679852702
+      }
+    ]
+  },
+  "V4": {
+    "high_expression": [
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.56477010869349
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 1.36423244637143
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.13753769765955
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.12445915446463
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.11574012566802
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 1.06342595288835
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 1.01547129450699
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.932640520939188
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.880326348159524
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.858528776167993
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": 0.666710142642552
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.640553056252718
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.583879369074747
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.566441311481527
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.549003253888302
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": -3.33532407500191
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -3.33532407500191
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -3.33532407500191
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -1.32994745178137
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.28199279340001
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -1.14684784705254
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.889636497552518
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -0.789367666391488
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.641144176849102
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.558313403281296
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.449325543323661
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": -0.423168456933827
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.41008991373891
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.397011370543993
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.301102053781274
+      }
+    ]
+  },
+  "V5": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.77914445758194
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.20508739555605
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.00523049248037
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.96483388441188
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 0.911680452742815
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.903175903675766
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.856400883806989
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.841517922939652
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.79049062853735
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.77348153040325
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.73308492233476
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.624651921729869
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 0.622525784463108
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 0.594885999995193
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.586381450928143
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -2.34343570267067
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.48235010963183
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.19319544135212
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -0.329983711046522
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.234307534042207
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.185406376906669
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -0.17052341603933
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -0.16201886697228
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.132252945237604
+      }
+    ]
+  },
+  "V6": {
+    "high_expression": [
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 2.11773528620579
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 1.78946304947426
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.60443687968013
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.58653112131295
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.31794474580534
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.30003898743817
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.2761646429486
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.2045416094799
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.10904423152164
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.977735336829033
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.894175131115552
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.858363614381203
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.852395028258814
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 0.792709167034897
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.786740580912508
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -2.0543064133458
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -1.87524882967406
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.67828548763514
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -1.51713366233057
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.44551062886188
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.40969911212753
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.38582476763796
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.218704356211
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.21273577008861
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -1.17692425335426
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.11126980600796
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.08739546151839
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.91430646396904
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -0.800903327643603
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.753154638664472
+      }
+    ]
+  },
+  "V7": {
+    "high_expression": [
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 2.43760619463451
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 1.85410656651392
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 1.70823165948377
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.68044596290661
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.58319602488651
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.57624960074221
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.33312475569197
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 1.17335700037323
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.971910700188747
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.867714338024358
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.860767913880063
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.819089369014305
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.819089369014305
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.812142944870016
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.812142944870016
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:K-562",
+        "expression": -2.34848004078317
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.82749822996121
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.50796271932375
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.48712344689087
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.45239132616941
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -1.05644514994472
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.01476660507897
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -1.00782018093468
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -1.00087375679038
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -0.986980908501798
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.973088060213214
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.924463091203161
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -0.917516667058872
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.875838122193114
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -0.848052425615941
+      }
+    ]
+  },
+  "V8": {
+    "high_expression": [
+      {
+        "cell_line": "LE:K-562",
+        "expression": 2.25531346596997
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.85445014903608
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.80048777944882
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.70027195021535
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.60776503092292
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.48442247186634
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.3919155525739
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.23773735375317
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 1.0527235151683
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.913963136229642
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.90625422628861
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 0.883127496465501
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.836874036819281
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.782911667232029
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.674986928057518
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.4471215980622
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -2.20814538989007
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.62997714431235
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.50663458525577
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.19827818761432
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -1.08264453849877
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.997846529147365
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.967010889383223
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -0.936175249619074
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.928466339678042
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -0.76657923091628
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.751161411034202
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.74345250109317
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.74345250109317
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.735743591152131
+      }
+    ]
+  },
+  "V9": {
+    "high_expression": [
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.92721069997161
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.78955279283079
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.6671902087056
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.13950156466575
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.09361559561881
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 1.01713898054057
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.9941959960171
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.841242765860618
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.718880181735436
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.711232520227616
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.695937197211963
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.619460582133726
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.596517597610253
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.542983967055488
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.512393321024189
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -4.96333231857772
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.66719020870562
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -1.4683510095022
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.34598842537701
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -1.26186414879095
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.20068285672836
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.971253011493647
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.810652119829339
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.749470827766748
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.642403566657218
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.581222274594627
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -0.443564367453799
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.435916705945972
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -0.420621382930326
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -0.367087752375554
+      }
+    ]
+  },
+  "V10": {
+    "high_expression": [
+      {
+        "cell_line": "LE:SR",
+        "expression": 1.89408663979679
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.69693579827143
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.41958800426118
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.29929257553384
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.28592641678636
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.19570484524086
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.938406289351825
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.858209336866932
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.804744701877004
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 0.744596987513332
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.73457236845272
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.657716955654699
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.59088616191729
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 0.59088616191729
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.577520003169807
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -2.09571174632661
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -1.05649290370988
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.612068125356099
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.568628109426783
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.538554252244947
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.361452648840809
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -0.297963394790269
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": -0.227791061365988
+      }
+    ]
+  },
+  "V11": {
+    "high_expression": [
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.2925404785385
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.17599929595739
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 1.12005952831846
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 1.11539788101522
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.11073623371197
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.06878140798278
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.03614987686007
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.961563520008159
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.94757857809843
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.928931988885451
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.877653868549765
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.751789391362171
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.709834565632975
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.70517291832973
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.681864681813509
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -5.59737423565642
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.64895896980859
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -1.10820788263226
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -0.847155633650588
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.842493986347342
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.763245982192193
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.758584334888947
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -0.758584334888947
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.66068974152082
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.604749973881887
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.600088326578646
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -0.5954266792754
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.567456795455934
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.567456795455934
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.562795148152692
+      }
+    ]
+  },
+  "V12": {
+    "high_expression": [
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 2.89153276819423
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 2.25166916710106
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 2.0170525133669
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 1.9360031238951
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.65872889675473
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.58621102196417
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.5520849632392
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.20655861864889
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.14257225853957
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.984739236936592
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.843969244696098
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.720262281818086
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 0.694667737774358
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.694667737774358
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.51124017212765
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.6813591009516
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.48940002062365
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.31450396965818
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -1.19079700678017
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.18226549209893
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.17799973475831
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.16520246273644
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -1.10121610262713
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.08415307326464
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.986040654430358
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.95191459570539
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.900725507617938
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.853802176871105
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.781284302080545
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.755689758036818
+      }
+    ]
+  },
+  "V13": {
+    "high_expression": [
+      {
+        "cell_line": "LE:SR",
+        "expression": 1.90268873683807
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 1.31682039505801
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.26315306603998
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.0350669177134
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.887481762913837
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.874064930659331
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 0.815925324223141
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.806980769386805
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": 0.775674827459624
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.722007498441604
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": 0.717535221023435
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 0.686229279096257
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 0.668340169423581
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 0.637034227496404
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.628089672660068
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -3.91574418419907
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -3.91574418419907
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.61252131384232
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.32629555907954
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.00876386238958
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.981930197880573
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.910373759189878
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": -0.718065830208635
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -0.682287610863287
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.628620281845267
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.579425230245414
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -0.552591565736402
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -0.543647010900067
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -0.463146017373031
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -0.39158957868234
+      }
+    ]
+  },
+  "V14": {
+    "high_expression": [
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 2.42329872391746
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.14543901431071
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 1.07260763189789
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.03950245807388
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.880597623718642
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.847492449894634
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.715071754598601
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.695208650304195
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.595893128832165
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 0.589272094067366
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.529682781184148
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 0.529682781184148
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 0.529682781184148
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.516440711654546
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.509819676889742
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -5.87947887114397
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.01963935377947
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -1.01963935377947
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.960050040896248
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.920323832307436
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.920323832307436
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.85411348465942
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -0.734934858892989
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -0.655482441715365
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -0.576030024537747
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.569408989772943
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.562787955008145
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.50981967688973
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -0.417125190182504
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.3906410511233
+      }
+    ]
+  },
+  "V15": {
+    "high_expression": [
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 2.25573796516962
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.58113231468006
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.39521737163175
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.17743129548945
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 1.15087201791112
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.885279242127833
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 0.874655531096503
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.858719964549504
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.837472542486839
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.81091326490851
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.794977698361512
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 0.784353987330182
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.779042131814514
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.725923576657857
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.651557599438534
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -4.1928546308487
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.92469232565939
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.68565882745443
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -1.49974388440612
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.46787275131213
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.31382894135782
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -1.19696812001317
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.16509698691918
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.06417173212153
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.89419235562022
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.830450089432232
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.803890811853904
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.517050614007947
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.506426902976617
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -0.506426902976617
+      }
+    ]
+  },
+  "V16": {
+    "high_expression": [
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.72850735226026
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.66211646605616
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.52933469364795
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.46294380744384
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.38548777353906
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.30249916578392
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.26930372268187
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.17524996722606
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.05353334251853
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.826697814654508
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.81563266695382
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.776904650001428
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.743709206899374
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.699448616096637
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.699448616096637
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.74734489266647
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -1.89532851971379
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.77914446885661
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.61869982719669
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -1.52464607174087
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.51911349789053
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -1.19269164072035
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -1.13183332836658
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.04331214676111
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.987986408257692
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.971388686706665
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.932660669754272
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.871802357400509
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.866269783550165
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.849672061999143
+      }
+    ]
+  },
+  "V17": {
+    "high_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 1.35353507469235
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.34672852120831
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 1.21195876222432
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.17656468410731
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.16703550922965
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.14797715947434
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.14389322738392
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.12075094553818
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 1.11802832414457
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 1.11122177066053
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.03634968233608
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.03634968233608
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.0050395363095
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 0.951948419133987
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 0.923360894501019
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.67265860431187
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.14583136464717
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.802781069051547
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.605391018014385
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.604029707317576
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.523712376205903
+      }
+    ]
+  },
+  "V18": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 2.98544707309761
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 2.06690648715518
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.85746726560479
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.65700401069227
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.39969296707321
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.33386921172881
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 1.22017363431574
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.19324573440211
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 1.12742197905771
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.929950713024478
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.914990768628021
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.900030824231565
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.876094913197235
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.828223091128574
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.723503480353377
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -2.64846798660793
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -1.45765641264999
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -1.02381802515275
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.889178525584639
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.883194547826057
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.880202558946765
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.874218581188183
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -0.865242614550308
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.859258636791726
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.856266647912434
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.790442892568025
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.787450903688735
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -0.775482948171568
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.751547037137238
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.715643170585743
+      }
+    ]
+  },
+  "V19": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.45401719562435
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": 1.22692795835927
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.20259696865229
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 1.10121784487324
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 0.951176741680234
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 0.914680257119777
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.878183772559316
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.805190803438397
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 0.748418494122125
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.72003233946399
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.578101566173312
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.574046401222149
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.545660246564015
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.541605081612851
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.529439586759364
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -4.58412341665619
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -4.58412341665619
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -0.654668578980002
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.601951434614893
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.524903300542811
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -0.512737805689324
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.476241321128862
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.472186156177702
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.468130991226539
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.460020661324215
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -0.403248352007943
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -0.334310547838188
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.30186922822889
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -0.249152083863778
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.236986589010295
+      }
+    ]
+  },
+  "V20": {
+    "high_expression": [
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 3.05158705545646
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 1.30715928438685
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.30092918520446
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.27600878847489
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.23862819338054
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.13271650727989
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 1.03303492036162
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.02057472199684
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.933353333443359
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.858592143254665
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 0.846131944889883
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 0.790061052248358
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.777600853883576
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.733990159606832
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": 0.733990159606832
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -3.41525589586588
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -3.41525589586588
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.36555326485909
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.18488038856974
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -0.923216222909298
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.898295826179729
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -0.736313247437552
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.68647245397842
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.630401561336895
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.605481164607332
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.586790867060157
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": -0.549410271965807
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.543180172783419
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.493339379324287
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.42480828831798
+      }
+    ]
+  },
+  "V21": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 2.29141064244246
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.69206132411483
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.25253849067455
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.2425493353691
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.17262524823087
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.13266862700903
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.11269031639811
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 1.09271200578719
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 1.07273369517627
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.07273369517627
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.05275538456535
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.92289636559436
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.823004812539756
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 0.773059036012454
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.76306988070699
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -3.61218014308476
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.94399120707284
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.76418641157455
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.38459850996704
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -1.32466357813428
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.20479371446875
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.10490216141415
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.915108210610396
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.85517327877763
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.825205812861247
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.785249191639409
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.745292570417562
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.635411862057494
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.625422706752039
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.625422706752039
+      }
+    ]
+  },
+  "V22": {
+    "high_expression": [
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 2.95491662019936
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 2.05070018556573
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 1.87190032560993
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.59603768453526
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.55006057768948
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.37636928516099
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.2690893691875
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.977901025830911
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.926815351557825
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.891055379566662
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.793992598447796
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.768449761311254
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.763341193883948
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.712255519610858
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.671386980192388
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.84202819404347
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.62746836209651
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.58659982267804
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -1.41801709757685
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.37203999073107
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.32095431645799
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.29541147932145
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -1.25965150733028
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.08085164737448
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.994006001110234
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.891834652564058
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.81520614115443
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.799880438872503
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -0.799880438872503
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.748794764599418
+      }
+    ]
+  },
+  "V23": {
+    "high_expression": [
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.99563017281992
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.71766202869788
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.40026577902661
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.34112362070277
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.20903946711287
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.16566855100872
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.05329845019343
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.976413644372436
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 0.93501413354575
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.923185701880981
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.867986354112065
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": 0.836443869672684
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.824615438007918
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.808844195788227
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.700416905527856
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -1.39124409385856
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -1.39124409385856
+      }
+    ]
+  },
+  "V24": {
+    "high_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.89985340050119
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.5480985456644
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.50143718736973
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 1.45477582907505
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.30761308368416
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.14968233253295
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.14250366202608
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 1.05994895119704
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.0563596159436
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 0.934322217326756
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.840999500737403
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.636407391291522
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.625639385531212
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.582567362489975
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.571799356729665
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.19916745892335
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.917774773446504
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -0.874702750405267
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.644985294185327
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.494233213540993
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.361427809163841
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.28605176884167
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.282462433588236
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -0.253747751560743
+      }
+    ]
+  },
+  "V25": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 2.25232375076227
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.74417811898827
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.71891120912106
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 1.53362053676148
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.4690495448786
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.44659006944107
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.37359677426912
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.35113729883159
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 1.24726222493304
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.03389720827655
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.994593126260889
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.901947790081099
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.786842978463784
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.758768634166879
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.61839691268235
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -2.53435195186017
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -2.53435195186017
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -2.53435195186017
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.21766520433529
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.10256039271798
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.98184071224128
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.950958933514683
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.875158203913037
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -0.858313597334893
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.810587212030155
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.740401351287889
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.670215490545624
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.616874236381505
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -0.563532982217384
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.524228900201715
+      }
+    ]
+  },
+  "V26": {
+    "high_expression": [
+      {
+        "cell_line": "LE:SR",
+        "expression": 2.00316752295581
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.37844531080112
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.33665051491753
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 1.16947133138317
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.15627297478835
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 1.11887763110304
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 1.08588173961599
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.879107486297184
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.777920085736915
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": 0.773520633538643
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.747123920349009
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.736125289853326
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.731725837655054
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.720727207159373
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.709728576663692
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.52959259225702
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.52959259225702
+      }
+    ]
+  },
+  "V27": {
+    "high_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 2.28601756012536
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 1.75965473600877
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.62045134450686
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.62045134450686
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": 1.5377993308026
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.40729615126956
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.29419339567426
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 1.25939254779878
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.985335870779397
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.86788300919966
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.685178557853406
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 0.567725696273669
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.489423788553842
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.476373470600542
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.363270715005238
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -3.28211809995101
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -3.28211809995101
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.48987443436392
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -1.48552432837949
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.0722642598582
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.876509490558637
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.867809278589768
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.863459172605336
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.850408854652032
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.706855357165686
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.702505251181254
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.6329035554303
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -0.628553449445863
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -0.450199104084041
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -0.384947514317522
+      }
+    ]
+  },
+  "V28": {
+    "high_expression": [
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 1.77136073028307
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.50057043632873
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.08699980556212
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 1.02791828688118
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.0229948269911
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.944219468749841
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.909755249519287
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 0.840826811058189
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.835903351168108
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.806362591827635
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.796515672047478
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.757127992926849
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.668505714905433
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.64388841545504
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 0.629118035784803
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -2.68437047023817
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -0.818379171898341
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.80853225211818
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.759297653217394
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.646058075745585
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": -0.562359257614245
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -0.527895038383696
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.444196220252356
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.414655460911887
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.409732001021807
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.360497402121021
+      }
+    ]
+  },
+  "V29": {
+    "high_expression": [
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 2.64839601058448
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 2.49878903403963
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 2.36742681073195
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 2.27985199519349
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.38950803721923
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.34572062945
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.30923112297564
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.944336058232091
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 0.80567593362954
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.758239575212879
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.725399019385961
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.58673889478341
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.539302536366749
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.513759881834698
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.48091932600778
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -3.29574459408799
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -1.74129161828046
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.05528889656258
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.04434204462027
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.00055463685105
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.993256735556173
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -0.825405005774141
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.726883338293381
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.675798029229283
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.646606424049799
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.610116917575444
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.58092531239596
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.57362741110109
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.548084756569039
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -0.533488953979298
+      }
+    ]
+  },
+  "V30": {
+    "high_expression": [
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 2.42255979560644
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.47245184842965
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.27172481733595
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.25165211422659
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.16467040075265
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 1.15128859867974
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.13121589557037
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.09107048935163
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.830125348929839
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.830125348929839
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.723070932346537
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.65616192198197
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.622707416799689
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.542416604362216
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.522343901252846
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -4.37539565743318
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -2.35474354442337
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.41801739931949
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.34441748791847
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.13699955578832
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.07678144646021
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.00318153505919
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -0.842599910184242
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -0.768999998783222
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.715472790491571
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.668636483236379
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -0.655254681163468
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.568272967689536
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.561582066653078
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.554891165616619
+      }
+    ]
+  },
+  "V31": {
+    "high_expression": [
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.8028651622085
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.5723106014815
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.46439144539652
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.16516105807
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 1.13082314477023
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 1.11120148002751
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 1.04252565342798
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.998376907756852
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.988566075385492
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.968944410642766
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 0.939511913528685
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.934606497343002
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 0.924795664971642
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.851214422186428
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.777633179401218
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -3.10255102347228
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -2.02826487880819
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.00373779787978
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -1.85166989612367
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -1.53772326024011
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -1.51810159549738
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.50829076312602
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -1.22377662435654
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.06189789022907
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.860775826616159
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.84605957805912
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -0.797005416202309
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -0.738140421974142
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.527207525989868
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.527207525989868
+      }
+    ]
+  },
+  "V32": {
+    "high_expression": [
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 4.26721297760995
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 1.72020888732521
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.935847400430698
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.765082353468425
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.704301574041176
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.689829959891831
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.634837826124319
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.631943503294449
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.608788920655497
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.608788920655497
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.597211629336022
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 0.57695136952694
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": 0.568268401037332
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.53932517273864
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.530642204249035
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -1.77323876832671
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.528679951483032
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.517102660163556
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.491053754694733
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -0.467899172055781
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.297134125093509
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.253719282645473
+      }
+    ]
+  },
+  "V33": {
+    "high_expression": [
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.47168947501868
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.22014971491011
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 1.11053376440408
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.02514870822044
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.00784092656159
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.987071588570976
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.975533067465077
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.96399454635918
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.900532680276742
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.879763342286126
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.873994081733178
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.798993694544841
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.748224201678892
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": 0.737839532683583
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.719377898914147
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.6010186954819
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.6010186954819
+      }
+    ]
+  },
+  "V34": {
+    "high_expression": [
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.89365815522325
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 1.73302215368309
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 1.71206963174307
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.70508545776306
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": 1.38381345468274
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.37333719371273
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 0.964763015882323
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.912381711032268
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": 0.89142918909225
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.797142840362155
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.559680925041916
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.552696751061909
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.531744229121888
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 0.521267968151877
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": 0.47237875029183
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "CNS:U251",
+        "expression": -3.1558996323218
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -3.1558996323218
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -3.1558996323218
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": -1.09906039520974
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -0.872074740859518
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -0.865090566879508
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -0.742867522229386
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.732391261259378
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.589215694669233
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -0.571755259719216
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -0.473976823999117
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.4565163890491
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -0.446040128079089
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -0.432071780119076
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -0.418103432159061
+      }
+    ]
+  },
+  "V35": {
+    "high_expression": [
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 1.71324799302626
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.67948095391199
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 1.28834608417177
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.04916289044573
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": 0.964745292660074
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 0.953489612955318
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 0.930978253545808
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.86625809524347
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 0.764956977900677
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.73681777863879
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.663655860557886
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 0.61300530188649
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.6101913819603
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.587680022550791
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.570796502993659
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -4.22412305123183
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -2.58642165419003
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.12493878629508
+      },
+      {
+        "cell_line": "OV:OVCAR-3",
+        "expression": -2.03770726858324
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.32859944718369
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -0.990929056041052
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -0.979673376336296
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.909325378181581
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.838977380026863
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": -0.59698026637464
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -0.515376588515166
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.428145070803318
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -0.414075471172375
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -0.394378031689055
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.388750191836676
+      }
+    ]
+  },
+  "V36": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 3.02710038129371
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.94339987977533
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.74867244590875
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 1.45234809002482
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.3676839883437
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.31688552733502
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.24068783582201
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.03749399178731
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.0290275816192
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.944363479938081
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.927430659601851
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.775035276575831
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 0.724236815567155
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 0.707303995230932
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": 0.698837585062817
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -2.39986853646629
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -1.90035033654766
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -1.84108546537088
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.74795495352164
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": -1.36696649595659
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -1.20610470276245
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": -1.18917188242623
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": -1.01137726889587
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -0.969045218055311
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -0.892847526542297
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.884381116374182
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -0.825116245197398
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -0.621922401162702
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.537258299481581
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.47799342830479
+      }
+    ]
+  },
+  "V37": {
+    "high_expression": [
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.61041306195511
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.42435770620782
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.41805074499605
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.30452544318415
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 1.21938146682522
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.19730710258402
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.19100014137224
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.086935281378
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 1.03647959168382
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.979716940777868
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.963949537748437
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 0.951335615324894
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.869345119571854
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.850424235936536
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.815735949271787
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "RE:UO-31",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -2.64363227538537
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -0.975441034871569
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -0.972287554265685
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -0.890297058512644
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -0.874529655483211
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.754697392459538
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "expression": -0.75154391185365
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -0.682167338524153
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": -0.66955341610061
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.64432557125352
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -0.631711648829974
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": -0.559181594894593
+      }
+    ]
+  },
+  "V38": {
+    "high_expression": [
+      {
+        "cell_line": "BR:T-47D",
+        "expression": 1.9676868080374
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.87421878028188
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": 1.76828834882562
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": 1.58758349516495
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": 1.54396508221237
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.23240498969397
+      },
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.20124898044213
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": 1.17632417304066
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.17009297119029
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": 1.0703937415844
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.864764080522254
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": 0.75260244721563
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.702752832412686
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.621747208357902
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.590591199106062
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -2.32561126686619
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.933045550293
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -1.90812074289153
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.61525425592423
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -1.59032944852275
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.4657054115154
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": -1.39716219116135
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.34108137450804
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.24138214490215
+      },
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": -1.22268853935104
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.13545171344589
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -1.04821488754074
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": -0.886203639431168
+      },
+      {
+        "cell_line": "CNS:SNB-19",
+        "expression": -0.755348400573439
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.518562730259451
+      }
+    ]
+  },
+  "V39": {
+    "high_expression": [
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 2.8088321942671
+      },
+      {
+        "cell_line": "RE:786-0",
+        "expression": 2.01601822610088
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 1.88962759349467
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": 1.46449546563743
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.39555512057949
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.14277385536707
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 1.00489316525122
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": 0.970422992722249
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 0.970422992722249
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": 0.889992590154655
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 0.775092015058105
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.775092015058105
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": 0.71764172750983
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": 0.648701382451895
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": 0.602741152413279
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -2.41914397262606
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": -1.95954167223985
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.76421069457572
+      },
+      {
+        "cell_line": "ME:LOX IMVI",
+        "expression": -1.66080017698881
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -1.52291948687296
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -1.5114294293633
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.29311833667985
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": -1.23566804913157
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -1.16672770407364
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.913946438861216
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -0.845006093803292
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.810535921274325
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.730105518706731
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -0.695635346177774
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": -0.684145288668115
+      }
+    ]
+  },
+  "V40": {
+    "high_expression": [
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 1.86160313773605
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 1.66399186026641
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": 1.35079662805038
+      },
+      {
+        "cell_line": "PR:DU-145",
+        "expression": 1.33774682670805
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 1.26690504799251
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": 1.2557195039848
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": 1.17369218126155
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "expression": 1.16437089458846
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": 1.03946565316897
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.977945161126532
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": 0.95743833044572
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.93506724243029
+      },
+      {
+        "cell_line": "LC:NCI-H23",
+        "expression": 0.843718633033946
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 0.825076059687754
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": 0.825076059687754
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LE:RPMI-8226",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LE:SR",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": -1.22187849372417
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -1.22187849372417
+      }
+    ]
+  },
+  "V41": {
+    "high_expression": [
+      {
+        "cell_line": "CNS:SF-539",
+        "expression": 2.070988967293
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 1.6827343036164
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": 1.66299254105657
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "expression": 1.386607865219
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "expression": 1.22209317722045
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "expression": 1.2155125897005
+      },
+      {
+        "cell_line": "CNS:SF-295",
+        "expression": 1.14970671450108
+      },
+      {
+        "cell_line": "ME:UACC-62",
+        "expression": 1.11022318938143
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.945708501382869
+      },
+      {
+        "cell_line": "OV:OVCAR-5",
+        "expression": 0.90622497626322
+      },
+      {
+        "cell_line": "BR:HS 578T",
+        "expression": 0.893063801223331
+      },
+      {
+        "cell_line": "CNS:SF-268",
+        "expression": 0.866741451143565
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "expression": 0.860160863623621
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.853580276103682
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.814096750984027
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "LE:MOLT-4",
+        "expression": -3.23296457378046
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": -2.29194055842872
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": -1.67336533155414
+      },
+      {
+        "cell_line": "OV:OVCAR-8",
+        "expression": -1.60755945635472
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -1.51543123107553
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "expression": -1.33117478051715
+      },
+      {
+        "cell_line": "LE:K-562",
+        "expression": -1.22588538019807
+      },
+      {
+        "cell_line": "CO:SW-620",
+        "expression": -1.05479010467957
+      },
+      {
+        "cell_line": "LC:A549/ATCC",
+        "expression": -0.903436591720901
+      },
+      {
+        "cell_line": "PR:PC-3",
+        "expression": -0.732341316202404
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": -0.706018966122632
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": -0.686277203562804
+      },
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -0.659954853483038
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.640213090923211
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": -0.633632503403266
+      }
+    ]
+  },
+  "V42": {
+    "high_expression": [
+      {
+        "cell_line": "ME:UACC-257",
+        "expression": 1.09903035788284
+      },
+      {
+        "cell_line": "CO:HCT-116",
+        "expression": 1.05831822784376
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "expression": 0.909040417700501
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "expression": 0.847002886212391
+      },
+      {
+        "cell_line": "OV:NCI/ADR-RES",
+        "expression": 0.814045447609332
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "expression": 0.806290756173319
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "expression": 0.771394644711256
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "expression": 0.746191897544212
+      },
+      {
+        "cell_line": "BR:MDA-MB-231",
+        "expression": 0.734559860390191
+      },
+      {
+        "cell_line": "RE:SN12C",
+        "expression": 0.693847730351119
+      },
+      {
+        "cell_line": "LC:NCI-H522",
+        "expression": 0.691909057492117
+      },
+      {
+        "cell_line": "OV:OVCAR-4",
+        "expression": 0.688031711774109
+      },
+      {
+        "cell_line": "CO:HT29",
+        "expression": 0.680277020338096
+      },
+      {
+        "cell_line": "LE:CCRF-CEM",
+        "expression": 0.660890291748062
+      },
+      {
+        "cell_line": "RE:RXF 393",
+        "expression": 0.639564890299024
+      }
+    ],
+    "low_expression": [
+      {
+        "cell_line": "ME:MDA-MB-435",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "RE:CAKI-1",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "RE:ACHN",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "RE:A498",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "CO:KM12",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "LE:HL-60(TB)",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "ME:MALME-3M",
+        "expression": -2.34599131256625
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "expression": -0.674855308105296
+      },
+      {
+        "cell_line": "CO:HCC-2998",
+        "expression": -0.258040643419561
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "expression": -0.256101970560556
+      },
+      {
+        "cell_line": "LC:HOP-92",
+        "expression": -0.176616383341417
+      },
+      {
+        "cell_line": "ME:M14",
+        "expression": -0.110701506135301
+      },
+      {
+        "cell_line": "RE:TK-10",
+        "expression": -0.0990694689812801
+      },
+      {
+        "cell_line": "CNS:U251",
+        "expression": -0.0932534504042697
+      }
+    ]
+  }
+}
