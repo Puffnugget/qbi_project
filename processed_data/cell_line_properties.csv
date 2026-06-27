@@ -1,0 +1,58 @@
+cell_line,cancer_type,adherence,doubling_time_hours,bsl_level,gender,notes
+BR:MCF7,Breast,adherent,24,1,Female,Luminal A breast cancer
+BR:MDA-MB-231,Breast,adherent,30,1,Female,Triple negative breast cancer
+BR:HS 578T,Breast,adherent,48,1,Female,Invasive ductal carcinoma
+BR:BT-549,Breast,adherent,36,1,Female,Invasive ductal carcinoma
+BR:T-47D,Breast,adherent,48,1,Female,Ductal carcinoma
+CNS:SF-268,CNS,adherent,72,1,Female,Astrocytoma
+CNS:SF-295,CNS,adherent,60,1,Female,Glioblastoma
+CNS:SF-539,CNS,adherent,48,1,Female,Astrocytoma
+CNS:SNB-19,CNS,adherent,36,1,Male,Medulloblastoma
+CNS:SNB-75,CNS,adherent,42,1,Female,Glioblastoma
+CNS:U251,CNS,adherent,24,1,Female,Glioblastoma
+CO:COLO 205,Colon,adherent,24,1,Female,Colorectal adenocarcinoma
+CO:HCC-2998,Colon,adherent,48,1,Male,Colorectal adenocarcinoma
+CO:HCT-116,Colon,adherent,24,1,Male,Colorectal carcinoma
+CO:HCT-15,Colon,adherent,36,1,Male,Colorectal carcinoma
+CO:HT29,Colon,adherent,18,1,Female,Colorectal adenocarcinoma
+CO:KM12,Colon,adherent,30,1,Male,Colorectal adenocarcinoma
+CO:SW-620,Colon,adherent,24,1,Female,Colorectal adenocarcinoma
+LE:CCRF-CEM,Leukemia,suspension,18,1,Male,Acute lymphoblastic leukemia
+LE:HL-60(TB),Leukemia,suspension,24,1,Female,Acute promyelocytic leukemia
+LE:K-562,Leukemia,suspension,12,1,Female,Chronic myelogenous leukemia
+LE:MOLT-4,Leukemia,suspension,20,1,Male,Acute lymphoblastic leukemia
+LE:RPMI-8226,Leukemia,suspension,36,1,Female,Multiple myeloma
+LE:SR,Leukemia,suspension,24,1,Male,Lymphoid leukemia
+LC:EKVX,Lung,adherent,48,1,Female,Non-small cell lung cancer
+LC:HOP-92,Lung,adherent,60,2,Male,Non-small cell lung cancer
+LC:HOP-62,Lung,adherent,72,2,Male,Non-small cell lung cancer
+LC:LXF-289,Lung,adherent,96,2,Female,Non-small cell lung cancer
+LC:NCI-H226,Lung,adherent,48,1,Male,Squamous cell lung cancer
+LC:NCI-H23,Lung,adherent,36,1,Male,Non-small cell lung cancer
+LC:NCI-H322M,Lung,adherent,42,1,Male,Bronchoalveolar carcinoma
+LC:NCI-H460,Lung,adherent,24,1,Male,Non-small cell lung cancer
+LC:NCI-H522,Lung,adherent,60,1,Female,Adenocarcinoma
+ME:MALME-3M,Melanoma,adherent,72,1,Male,Melanoma
+ME:M14,Melanoma,adherent,48,1,Female,Melanoma
+ME:MDA-MB-435,Melanoma,adherent,42,1,Female,Melanoma
+ME:SK-MEL-2,Melanoma,adherent,36,1,Male,Melanoma
+ME:SK-MEL-28,Melanoma,adherent,48,1,Female,Melanoma
+ME:SK-MEL-5,Melanoma,adherent,60,1,Female,Melanoma
+ME:UACC-257,Melanoma,adherent,48,1,Male,Melanoma
+ME:UACC-62,Melanoma,adherent,36,1,Male,Melanoma
+OV:IGROV1,Ovarian,adherent,36,1,Female,Ovarian cancer
+OV:OVCAR-3,Ovarian,adherent,48,1,Female,Ovarian adenocarcinoma
+OV:OVCAR-4,Ovarian,adherent,60,1,Female,Ovarian adenocarcinoma
+OV:OVCAR-5,Ovarian,adherent,72,1,Female,Ovarian adenocarcinoma
+OV:OVCAR-8,Ovarian,adherent,42,1,Female,Ovarian adenocarcinoma
+OV:SK-OV-3,Ovarian,adherent,24,1,Female,Ovarian adenocarcinoma
+PR:DU-145,Prostate,adherent,60,1,Male,Prostate carcinoma
+PR:PC-3,Prostate,adherent,48,1,Male,Prostate adenocarcinoma
+RE:786-0,Renal,adherent,24,1,Male,Renal cell carcinoma
+RE:A498,Renal,adherent,36,1,Female,Renal carcinoma
+RE:ACHN,Renal,adherent,48,1,Female,Renal cell carcinoma
+RE:CAKI-1,Renal,adherent,42,1,Female,Renal adenocarcinoma
+RE:RXF 393,Renal,adherent,72,1,Female,Renal cell carcinoma
+RE:SN12C,Renal,adherent,30,1,Male,Renal cell carcinoma
+RE:TK-10,Renal,adherent,60,1,Male,Renal cell carcinoma
+RE:UO-31,Renal,adherent,48,1,Female,Renal carcinoma

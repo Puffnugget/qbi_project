@@ -1,0 +1,643 @@
+{
+  "panels": {
+    "2": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      }
+    ],
+    "3": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      }
+    ],
+    "4": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      }
+    ],
+    "5": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      }
+    ],
+    "6": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      }
+    ],
+    "7": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      }
+    ],
+    "8": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      }
+    ],
+    "9": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      }
+    ],
+    "10": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 10
+      }
+    ],
+    "11": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 10
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "cancer_type": "Lung",
+        "step": 11
+      }
+    ],
+    "12": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 10
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "cancer_type": "Lung",
+        "step": 11
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "cancer_type": "Lung",
+        "step": 12
+      }
+    ],
+    "13": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 10
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "cancer_type": "Lung",
+        "step": 11
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "cancer_type": "Lung",
+        "step": 12
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "cancer_type": "Ovarian",
+        "step": 13
+      }
+    ],
+    "14": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 10
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "cancer_type": "Lung",
+        "step": 11
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "cancer_type": "Lung",
+        "step": 12
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "cancer_type": "Ovarian",
+        "step": 13
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "cancer_type": "Renal",
+        "step": 14
+      }
+    ],
+    "15": [
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 1
+      },
+      {
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
+        "step": 2
+      },
+      {
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
+        "step": 3
+      },
+      {
+        "cell_line": "BR:T-47D",
+        "cancer_type": "Breast",
+        "step": 4
+      },
+      {
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
+        "step": 5
+      },
+      {
+        "cell_line": "ME:SK-MEL-2",
+        "cancer_type": "Melanoma",
+        "step": 6
+      },
+      {
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
+        "step": 7
+      },
+      {
+        "cell_line": "CO:HCT-15",
+        "cancer_type": "Colon",
+        "step": 8
+      },
+      {
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
+        "step": 9
+      },
+      {
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 10
+      },
+      {
+        "cell_line": "LC:NCI-H460",
+        "cancer_type": "Lung",
+        "step": 11
+      },
+      {
+        "cell_line": "LC:EKVX",
+        "cancer_type": "Lung",
+        "step": 12
+      },
+      {
+        "cell_line": "OV:SK-OV-3",
+        "cancer_type": "Ovarian",
+        "step": 13
+      },
+      {
+        "cell_line": "RE:UO-31",
+        "cancer_type": "Renal",
+        "step": 14
+      },
+      {
+        "cell_line": "LC:NCI-H226",
+        "cancer_type": "Lung",
+        "step": 15
+      }
+    ]
+  },
+  "total_lines": 60,
+  "filtered_lines": 38,
+  "filters_applied": {
+    "adherence": "adherent",
+    "doubling_time_max": 48,
+    "bsl_level": null,
+    "cancer_type": null,
+    "gender": null
+  },
+  "layer_weights": {
+    "rna": 1.0,
+    "prot": 1.0,
+    "methyl": 1.0,
+    "histone": 1.0,
+    "drug": 1.0
+  }
+}

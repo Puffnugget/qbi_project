@@ -4,8 +4,9 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -92,3 +93,81 @@ def embeddings() -> dict:
 @app.get("/adaptive-design")
 def adaptive_design() -> dict:
     return _load("adaptive_design.json")
+
+
+# --- Customization Endpoints ---
+
+@app.get("/filter-options")
+def filter_options() -> dict:
+    """Return available filter options."""
+    return {
+        "adherence": ["adherent", "suspension"],
+        "doubling_time": {"min": 12, "max": 96, "step": 6},
+        "bsl_level": [1, 2],
+        "cancer_types": [
+            "Breast", "CNS", "Colon", "Leukemia", "Lung",
+            "Melanoma", "Ovarian", "Prostate", "Renal"
+        ],
+        "gender": ["Male", "Female"],
+    }
+
+
+@app.get("/custom-panel")
+def custom_panel(
+    size: int = 8,
+    adherence: Optional[str] = Query(None),
+    doubling_time_max: Optional[int] = Query(None),
+    bsl_level: Optional[int] = Query(None),
+    cancer_type: Optional[str] = Query(None),
+    gender: Optional[str] = Query(None),
+    rna_weight: float = Query(1.0),
+    prot_weight: float = Query(1.0),
+    methyl_weight: float = Query(1.0),
+    histone_weight: float = Query(1.0),
+    drug_weight: float = Query(1.0),
+) -> dict:
+    """
+    Get customized panel selection with filters and layer weights.
+
+    Query params:
+    - size: panel size (2-20)
+    - adherence: "adherent" or "suspension"
+    - doubling_time_max: max doubling time in hours
+    - bsl_level: biosafety level (1 or 2)
+    - cancer_type: specific cancer type
+    - gender: "Male" or "Female"
+    - *_weight: layer weights (0.1-10.0)
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "src"))
+    from customization import run_customized_selection
+
+    layer_weights = {
+        "rna": rna_weight,
+        "prot": prot_weight,
+        "methyl": methyl_weight,
+        "histone": histone_weight,
+        "drug": drug_weight,
+    }
+
+    result = run_customized_selection(
+        adherence=adherence,
+        doubling_time_max=doubling_time_max,
+        bsl_level=bsl_level,
+        cancer_type=cancer_type,
+        gender=gender,
+        layer_weights=layer_weights,
+        max_k=20,
+    )
+
+    if "error" in result:
+        raise HTTPException(status_code=400, detail=result["error"])
+
+    # Return just the requested panel size
+    return {
+        "size": size,
+        "panel": result["panels"].get(str(size), []),
+        "filtered_lines": result["filtered_lines"],
+        "filters": result["filters_applied"],
+        "layer_weights": result["layer_weights"],
+    }
