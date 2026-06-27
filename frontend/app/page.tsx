@@ -25,7 +25,12 @@ const CompareView = dynamic(() => import("@/components/CompareView"), {
   ssr: false,
 });
 
-type TabId = "explore" | "compare" | "adaptive";
+const CustomDataAnalysis = dynamic(
+  () => import("@/components/CustomDataAnalysis").then(mod => ({ default: mod.CustomDataAnalysis })),
+  { ssr: false },
+);
+
+type TabId = "explore" | "compare" | "adaptive" | "analyze";
 
 const AdaptiveDesignTab = dynamic(
   () => import("@/components/AdaptiveDesignTab"),
@@ -36,6 +41,7 @@ const TAB_LABELS: Record<TabId, string> = {
   explore: "Explore",
   compare: "Compare",
   adaptive: "Adaptive design",
+  analyze: "Analyze Your Data",
 };
 
 export default function Home() {
@@ -208,10 +214,14 @@ export default function Home() {
           <div className="min-h-0 flex-1">
             <CompareView panelSize={panelSize} />
           </div>
+        ) : tab === "analyze" ? (
+          <div className="min-h-0 flex-1 overflow-auto p-6">
+            <CustomDataAnalysis />
+          </div>
         ) : (
-            <div className="min-h-0 flex-1">
+          <div className="min-h-0 flex-1">
             <AdaptiveDesignTab umapPoints={data?.umap} adaptiveData={data?.adaptiveDesign} />
-            </div>
+          </div>
         )}
       </main>
     </div>
