@@ -67,6 +67,27 @@ export interface EmbeddingsData {
   embeddings: Record<string, number[]>;
 }
 
+export interface AdaptiveStep {
+  step: number;
+  cell_line: string;
+  median_r: number;
+}
+
+export interface AdaptivePolicyRollout {
+  policy: string;
+  selections: string[];
+  curve: AdaptiveStep[];
+  final_median_r: number;
+}
+
+export interface AdaptiveDesignData {
+  target_size: number;
+  metric: string;
+  n_cell_lines: number;
+  source?: "real" | "dummy";
+  policies: Record<string, AdaptivePolicyRollout>;
+}
+
 export interface AppData {
   umap: UmapPoint[];
   coverage: CoverageData;

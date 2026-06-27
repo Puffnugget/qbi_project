@@ -87,3 +87,8 @@ def blindspot() -> dict:
 @app.get("/embeddings")
 def embeddings() -> dict:
     return _load("embeddings.json")
+
+
+@app.get("/adaptive-design")
+def adaptive_design() -> dict:
+    return _load("adaptive_design.json")

@@ -12,40 +12,57 @@ The tool selects the minimum set of NCI-60 cancer cell lines that maximizes cove
 
 ---
 
-## Project Status (updated Jun 27, 2026)
+## Project Status (updated Jun 27, 2026 — post push/pull)
 
-### Nikhi — done (works on dummy data; swap JSON when pipeline runs)
+**Recent commits:** `filtering`, `zscores and log trans`, `add blind spot detector and manual panel override`, merge with `main`.
 
-| Area | Status |
-|------|--------|
-| Repo structure | `frontend/`, `src/`, `api/`, `data/`, `raw_data/`, `r/` |
-| Raw data | RNA, proteomics, drug, metadata, GMT in `raw_data/`; metabolomics not downloaded; methylation + histone extras |
-| Python deps | `requirements.txt`; fastapi + full stack installed |
-| Python pipeline | **Scripts written** (`fusion`, `selection`, `coverage`, `validation`, `umap_3d`, `blindspot`, `generate_dummy_data`) — **not run on real CSVs yet** |
-| FastAPI | `api/main.py` — all core endpoints + `/blindspot`, `/embeddings` |
-| Frontend | Next.js 16 app fully wired to `frontend/public/precomputed/` (backend optional) |
-| Components | `Scene3D`, `Sidebar`, `CoverageCurve`, `RadarChart`, `SelectionLog`, `CompareView`, `BlindSpotPanel` |
-| Stretch (done) | Blind Spot Detector (Level 1 + 2 stub), Manual Override + live coverage |
-| Stretch (not started) | Fly-in animation, Adaptive Design tab |
-
-### Sister — in progress
+### Nikhi — done (UI + pipeline code; still on dummy JSON)
 
 | Area | Status |
 |------|--------|
-| R project | `qbi_hackathon.Rproj` |
-| `r/loading.R` | Loads raw Excel — paths still on Desktop, no CSV export yet |
-| fgsea / characterization | Not done — dummy JSON in frontend for dev |
+| Repo structure | `frontend/`, `src/`, `api/`, `data/`, `raw_data/`, `r/`, `processed_data/` |
+| Frontend | Full app on dummy data — Explore/Compare tabs, blind spot, manual override |
+| FastAPI | `api/main.py` — all endpoints including `/blindspot`, `/embeddings` |
+| Python pipeline | Scripts written in `src/` — **not run on sister's real CSVs yet** |
+| Stretch (done) | Blind Spot Detector, Manual Override + live coverage |
+| Stretch (open) | Fly-in animation, Adaptive Design tab |
 
-### Critical blocker
+### Sister — R cleaning largely done; annotation not started
 
-Cleaned CSVs in `data/processed/` (`rna_clean.csv`, `prot_clean.csv`, `metab_clean.csv`, `drug_clean.csv`, `sample_info.csv`). Until those exist, run `python src/generate_dummy_data.py` for dev; then `fusion.py` → rest of pipeline on real data.
+| Area | Status |
+|------|--------|
+| `r/loading.R` | Transpose + intersect **60 common cell lines** across 5 datasets |
+| `r/check_log_zscore.R` | Log2 + z-score → `processed_data/log_zscored/` |
+| `r/zscore_methylation_proteomics.R` | Column z-score for methylation/proteomics → `processed_data/zscored/` |
+| Outputs | `processed_data/transposed/`, `filtered/`, `log_zscored/`, `zscored/` |
+| Layers in data | **Fusion:** rna_seq, proteomics, metabolomics (⬜), drug_activity — methylation/histone cleaned but not fused |
+| fgsea / characterization | Not done — frontend still uses dummy JSON |
+
+### Integration gap — **4 layers agreed**
+
+**Fusion inputs (team decision):** `rna_seq`, `proteomics`, `metabolomics`, `drug_activity`
+
+| Layer | Source file (`processed_data/log_zscored/`) | Status |
+|-------|---------------------------------------------|--------|
+| RNA | `rna_seq_log_zscored.csv` | ✅ ready (60 lines) |
+| Proteomics | `proteomics_log_zscored.csv` | ✅ ready |
+| Metabolomics | `metabolomics_log_zscored.csv` | ⬜ **not in repo** — download from CellMiner + run R pipeline |
+| Drug | `drug_activity_log_zscored.csv` | ✅ ready |
+
+**Not used for fusion:** methylation, histone (sister cleaned them but team chose metabolomics over methylation).
+
+**Still needed before `fusion.py` runs:**
+- `sample_info.csv` — cell line → cancer type (from metadata)
+- Metabolomics raw download → `r/loading.R` → log-zscore (same as other layers)
+
+`fusion.py` reads from `processed_data/log_zscored/` when those files exist.
 
 ### Dev commands
 
 ```bash
-python src/generate_dummy_data.py          # refresh all dummy JSON
-uvicorn api.main:app --reload --port 8000  # optional API
-cd frontend && npm run dev                 # UI at :3000
+python src/generate_dummy_data.py          # dummy JSON (current demo)
+uvicorn api.main:app --reload --port 8000
+cd frontend && npm run dev
 ```
 
 ---
@@ -144,13 +161,19 @@ RunPod GPU Instance
   └── Outputs: JSON files downloaded to laptop
 
 Laptop
+  ├── raw_data/              ← CellMiner XLS downloads
+  ├── processed_data/        ← sister's R outputs ✅
+  │   ├── transposed/        ← 60 lines × features, aligned
+  │   ├── filtered/          ← common cell line intersection
+  │   ├── log_zscored/       ← log2 + z-score (all 5 layers)
+  │   └── zscored/           ← z-score methylation/proteomics only
   ├── data/
-  │   ├── raw/          ← CellMiner XLS downloads
-  │   └── processed/    ← cleaned CSVs from R pipeline
-  ├── R/
-  │   ├── 01_clean.R    ← sister's cleaning script
-  │   └── 02_annotate.R ← sister's annotation script
-  ├── src/
+  │   └── processed/         ← Nikhi pipeline input (handoff target) ⬜
+  ├── r/
+  │   ├── loading.R          ← transpose + intersect ✅
+  │   ├── check_log_zscore.R ← log + z-score ✅
+  │   └── zscore_methylation_proteomics.R ✅
+  ├── src/                   ← Python pipeline (written, not run on real data)
   │   ├── fusion.py         ← PCA fusion + embeddings.json export
   │   ├── selection.py      ← greedy panel selection
   │   ├── coverage.py       ← coverage scoring
@@ -167,7 +190,50 @@ Laptop
       └── precomputed/      ← static JSON files for demo ✅ (dummy data live)
 ```
 
-### Key Architectural Decision
+---
+
+## Remaining Work by Person
+
+### Nikhi (you)
+
+**Critical path (unblocks real demo):**
+1. ~~Align on 4 fusion layers~~ — **rna_seq + proteomics + metabolomics + drug_activity**
+2. **Sister:** download metabolomics from CellMiner → run through `loading.R` + `check_log_zscore.R`
+3. **Build `sample_info.csv`** from metadata (cell line → cancer type)
+4. **Run pipeline:** `fusion.py` → `umap_3d.py` → `selection.py` → `coverage.py` → `validation.py` → `blindspot.py`
+5. **Replace dummy JSON** in `frontend/public/precomputed/`
+6. **Smoke test** full UI on real data
+
+**Polish (if time):**
+7. Fly-in animation on slider increment.
+8. Demo rehearsal 3×; projector screenshot.
+9. Adaptive Design tab (stretch only).
+
+### Sister (Natasha)
+
+**Critical path:**
+1. **Download metabolomics** from CellMiner → add to `r/loading.R` file_specs → produce `metabolomics_log_zscored.csv`
+2. **Fix `r/loading.R`** — `common_lines` → `common_cell_lines`; unify output paths under `processed_data/`
+3. **Export `sample_info.csv`** — `cell_line`, `cancer_type` from metadata
+4. Confirm **rna_seq, proteomics, drug_activity** stay aligned on same 60 lines after metabolomics join
+
+**After Nikhi runs `fusion.py` (needs `rna_pca_loadings.csv`):**
+5. **fgsea** on RNA PCA loadings → real `factor_annotations.json` + per-cell-line `pathway_scores.json`.
+6. **Characterization** for selected lines → real `characterization.json` (why selected, top genes).
+7. Re-run `blindspot.py` with real pathway scores (Level 2 blind spots).
+
+**Not blocking demo:**
+- Metabolomics download (using methylation/histone instead unless team switches).
+- Drug matrix filter to 150 landmark drugs (if not already done in cleaning).
+
+### Both (sync)
+
+- [x] Pick 4 layers for fusion: **rna_seq, proteomics, metabolomics, drug_activity**
+- [ ] Download + clean metabolomics (sister)
+- [ ] Export `sample_info.csv` (sister)
+- [ ] Confirm cell line names match across all 4 (`BR:MCF7` format)
+
+---
 
 All computation is precomputed and saved as static JSON files before the demo. The frontend reads from `public/precomputed/` — no live computation during the demo. This makes the demo bulletproof against conference WiFi failures and backend crashes.
 
@@ -797,9 +863,13 @@ Two Three.js scenes side by side. Left: cancer type A. Right: cancer type B. Cel
 - Cyan dot on coverage curve at `(manualPanel.length, manualCoverage)`
 - "Reset to Optimal" in sidebar when manual mode active; slider resets to greedy
 
-### Adaptive Design Tab (Stretch Goal — NOT STARTED)
+### Adaptive Design Tab (Stretch Goal — DONE on dummy/fallback data)
 
-Single Three.js scene. Play button. When clicked, one policy selects lines one by one with 500ms delay between each. Each selection pulses and a live sample-efficiency curve draws itself. Toggle at top: "Coverage Greedy / Uncertainty / Thompson / Random" — all policies use the same replayable dataset for comparison.
+Single Three.js scene + multi-policy chart. Play replays sequential picks (500ms/step). Policies: Coverage Greedy, Uncertainty, Thompson, Random. Scored by median held-out drug prediction r. Run `python src/adaptive_design.py`.
+
+Current status: `frontend/public/precomputed/adaptive_design.json` was generated from dummy/fallback embeddings because `data/processed/fused_matrix.csv` is not available yet. It will switch to real data once the real fusion pipeline writes `fused_matrix.csv` and drug data is available.
+
+Next AI upgrade (after real data): add `ridge_uncertainty` active learning. At each step, train bootstrapped Ridge regressors on the selected cell lines (`fused embedding → drug response PCs/vector`), score unselected lines by prediction variance plus a small diversity bonus, then pick the most informative next assay. This is more impressive than hard-coded replay because the model learns from revealed samples and chooses what data it wants next. Still skip full RL training unless this baseline clearly plateaus.
 
 ---
 
@@ -809,14 +879,16 @@ Single Three.js scene. Play button. When clicked, one policy selects lines one b
 
 | Task | Hours | Output | Status |
 |------|-------|--------|--------|
-| Load and inspect all four XLS files, note skip rows | 0-1 | — | ~ `r/loading.R` started |
-| Clean RNA matrix (skip rows, drop annotations, transpose) | 1-2 | rna_clean.csv | ⬜ |
-| Clean proteomics matrix | 1-2 | prot_clean.csv | ⬜ |
-| Clean metabolomics matrix | 2-3 | metab_clean.csv | ⬜ |
-| Clean drug sensitivity matrix, filter to 150 landmark drugs | 2-3 | drug_clean.csv | ⬜ |
-| Find cell line intersection, align all four matrices | 3-4 | verified CSVs | ⬜ |
-| Run fgsea on RNA PCA loadings from Python | 8-12 | factor_annotations.csv | ⬜ |
-| Selected line characterization | 14-18 | characterization.json | ⬜ |
+| Load and inspect all XLS files | 0-1 | — | ✅ `r/loading.R` |
+| Transpose + drop annotation rows | 1-2 | `processed_data/transposed/` | ✅ |
+| Intersect 60 common cell lines | 3-4 | `processed_data/filtered/` (60 lines) | ✅ |
+| Log2 + z-score all layers | 2-3 | `processed_data/log_zscored/` | ✅ `check_log_zscore.R` |
+| Z-score methylation/proteomics | 2-3 | `processed_data/zscored/` | ✅ |
+| Export `sample_info.csv` (cancer types) | 3-4 | `data/processed/sample_info.csv` | ⬜ |
+| Handoff CSVs to `data/processed/` | 3-4 | `rna_clean.csv`, etc. | ⬜ |
+| Run fgsea on RNA PCA loadings | 8-12 | `factor_annotations.json` | ⬜ blocked on fusion |
+| Characterization JSON | 14-18 | `characterization.json` | ⬜ |
+| Pathway scores per cell line | 14-18 | `pathway_scores.json` | ⬜ blocked on fgsea |
 
 ### Python Tasks (Her)
 
@@ -837,7 +909,8 @@ Single Three.js scene. Play button. When clicked, one policy selects lines one b
 |------|-------|--------|--------|
 | FastAPI app setup with CORS | 0-2 | api/main.py | ✅ |
 | All API endpoints reading from precomputed JSON | 2-4 | running server on :8000 | ✅ |
-| Pipeline scripts (fusion, selection, coverage, validation, umap) | 4-11 | src/*.py | ✅ written, ⬜ not run on real data |
+| Pipeline scripts (fusion, selection, coverage, validation, umap) | 4-11 | src/*.py | ✅ written, ⬜ run on real data |
+| Run full pipeline on sister's CSVs | 11-14 | real precomputed JSON | ⬜ **next** |
 | `generate_dummy_data.py` for dev without CSVs | — | dummy JSON | ✅ |
 | `blindspot.py` + pathway gaps | stretch | blindspot.json | ✅ |
 | Per-cancer-type JSON generation | 11-14 | panel_*.json | ✅ (dummy) |
@@ -862,7 +935,7 @@ Single Three.js scene. Play button. When clicked, one policy selects lines one b
 | Blind spot panel + red rim glow | stretch | BlindSpotPanel.tsx | ✅ |
 | Manual override + live coverage dot | stretch | page.tsx, coverage.ts | ✅ |
 | Dark theme polish, animations, responsive sidebar | 24-28 | global styles | ~ partial |
-| Adaptive design tab (stretch, hour 32+) | 32-38 | AdaptiveDesignTab.tsx | ⬜ |
+| Adaptive design tab (stretch, hour 32+) | 32-38 | AdaptiveDesignTab.tsx | ✅ |
 
 ---
 
@@ -899,7 +972,7 @@ frontend/public/precomputed/
   blindspot.json            ← cancer type + pathway blind spots          ✅
   embeddings.json           ← fused PCA coords for manual coverage       ✅
   pathway_scores.json       ← per-cell-line pathway scores (dummy)       ~ real fgsea later
-  adaptive_design.json      ← stepwise policy rollouts (stretch)         ⬜
+  adaptive_design.json      ← stepwise policy rollouts (dummy/fallback)  ~ real after fused_matrix.csv
 ```
 
 ---
@@ -996,11 +1069,14 @@ The biological annotation and characterization work she does at the hackathon is
 - [ ] Set up RunPod account, have A100 instance ready to spin up
 
 ### Sister
-- [x] Install R packages: `install.packages(c("readxl", "dplyr", "tidyr", "readr"))` and `BiocManager::install("fgsea")` (if needed)
-- [x] Download MSigDB Hallmark GMT file (`raw_data/Human Gene Sets v2026.1.gmt`)
-- [~] Open each XLS in RStudio — `r/loading.R` loads files; paths need fixing to repo `raw_data/`
-- [ ] Write down the 9 NCI-60 cancer types and one biological fact about each (for the demo)
-- [ ] Read the NCI-60 Wikipedia page
+- [x] Install R packages (`readxl`, `data.table`, etc.)
+- [x] Download GMT (`raw_data/Human Gene Sets v2026.1.gmt`)
+- [x] Clean + transpose + intersect cell lines (`r/loading.R`)
+- [x] Log-zscore pipeline (`r/check_log_zscore.R`, `zscore_methylation_proteomics.R`)
+- [ ] Export `sample_info.csv` with cancer type labels
+- [ ] Hand off final CSVs to `data/processed/` for Python
+- [ ] fgsea + characterization (after Nikhi runs fusion)
+- [ ] Write down 9 cancer types + one fact each for demo
 
 ### Both
 - [ ] Agree on exact cell line name format — write it down. No discrepancies between her R output and your Python input

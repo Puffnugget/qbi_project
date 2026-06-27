@@ -2,10 +2,16 @@
 
 import { Html, Line, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo, useRef, useState } from "react";
-import type { Mesh, MeshStandardMaterial } from "three";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { Group, Mesh, MeshStandardMaterial } from "three";
 import { CANCER_COLORS } from "@/lib/constants";
 import type { UmapPoint } from "@/lib/types";
+
+function easeOutBack(t: number): number {
+  const c1 = 1.70158;
+  const c3 = c1 + 1;
+  return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+}
 
 export type SphereState =
   | "greedy"
@@ -111,6 +117,7 @@ function CellSphere({
   isFilteredOut,
   isOverlap,
   isMissingType,
+  isNewest,
   onHover,
   onClick,
 }: {
@@ -119,6 +126,7 @@ function CellSphere({
   isFilteredOut: boolean;
   isOverlap: boolean;
   isMissingType: boolean;
+  isNewest: boolean;
   onHover: (p: UmapPoint | null) => void;
   onClick?: (cellLine: string) => void;
 }) {
@@ -167,13 +175,53 @@ function CellSphere({
   }
 
   const pos: [number, number, number] = [point.x, point.y, point.z];
+  // Fly-in start: drop from directly above the destination
+  const startPos: [number, number, number] = [point.x * 2, point.y * 2 + 14, point.z * 2];
+
+  const groupRef = useRef<Group>(null);
+  const animRef = useRef({ progress: 1, playing: false, prevIsNewest: false });
+
+  useFrame((_, delta) => {
+    const group = groupRef.current;
+    if (!group) return;
+    const anim = animRef.current;
+
+    // Rising edge: isNewest just became true → start animation
+    if (isNewest && !anim.prevIsNewest) {
+      anim.progress = 0;
+      anim.playing = true;
+    }
+    anim.prevIsNewest = isNewest;
+
+    if (anim.playing) {
+      anim.progress = Math.min(1, anim.progress + delta * 1.6);
+      const t = easeOutBack(anim.progress);
+      group.position.set(
+        startPos[0] + (pos[0] - startPos[0]) * t,
+        startPos[1] + (pos[1] - startPos[1]) * t,
+        startPos[2] + (pos[2] - startPos[2]) * t,
+      );
+      // Brief scale pulse as it lands
+      const pulse =
+        anim.progress > 0.75
+          ? 1 + Math.sin((anim.progress - 0.75) * 4 * Math.PI) * 0.45
+          : 1;
+      group.scale.setScalar(scale * pulse);
+      if (anim.progress >= 1) {
+        anim.playing = false;
+        group.position.set(pos[0], pos[1], pos[2]);
+        group.scale.setScalar(scale);
+      }
+    } else {
+      group.position.set(pos[0], pos[1], pos[2]);
+      group.scale.setScalar(scale);
+    }
+  });
 
   return (
-    <group>
-      {isMissingType && state !== "greedy" && <RedRimPulse position={pos} />}
+    <group ref={groupRef}>
+      {isMissingType && state !== "greedy" && <RedRimPulse position={[0, 0, 0]} />}
       <mesh
-        position={pos}
-        scale={scale}
         onPointerOver={(e) => {
           e.stopPropagation();
           onHover(point);
@@ -225,6 +273,17 @@ function SceneContent({
   const overlapSet = useMemo(() => new Set(highlightOverlap), [highlightOverlap]);
   const missingSet = useMemo(() => new Set(missingTypes), [missingTypes]);
 
+  // Detect which line was just added so CellSphere can play the fly-in animation
+  const prevSelectedRef = useRef<Set<string>>(new Set());
+  const newestLine = useMemo(() => {
+    const prev = prevSelectedRef.current;
+    const added = selectedLines.filter((l) => !prev.has(l));
+    return added.length === 1 ? added[0] : null;
+  }, [selectedLines]);
+  useEffect(() => {
+    prevSelectedRef.current = new Set(selectedLines);
+  }, [selectedLines]);
+
   return (
     <>
       <color attach="background" args={["#050510"]} />
@@ -259,6 +318,7 @@ function SceneContent({
             isFilteredOut={isFilteredOut}
             isOverlap={overlapSet.has(point.cell_line)}
             isMissingType={isMissingType}
+            isNewest={newestLine === point.cell_line}
             onHover={setHovered}
             onClick={onSphereClick}
           />
