@@ -966,3 +966,14 @@ The two previous QBI first-place winners (Cys-TEAM 2025, StructHunt 2023) both c
 This project has all three. The addition that makes it stronger than either winner: empirical drug sensitivity validation. You're not just building a tool — you're proving it works with a concrete quantitative result (r=0.87 drug prediction correlation). That's the difference between a good hackathon project and a publishable one.
 
 The Three.js 3D visualization is the demo moment. The drug validation correlation is the scientific result. The plain-English selection log is what makes it usable by non-computational scientists. All three together win.
+
+
+### Judging Criteria and Prizes
+
+- Judged on four dimensions:
+  - Impact: is the project useful and meaningful?
+  - Execution: is it a working project, not just an idea?
+  - Diversity of professional backgrounds and education stages
+  - Novelty: is this something new?
+- Cash prizes processed after the event (not distributed on the day)
+- Winning teams can apply for up to $10,000 in continued project support
