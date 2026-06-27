@@ -4,6 +4,7 @@ import {
   CartesianGrid,
   Line,
   LineChart,
+  ReferenceDot,
   ReferenceLine,
   ResponsiveContainer,
   Tooltip,
@@ -16,12 +17,14 @@ interface CoverageCurveProps {
   data?: CoveragePoint[];
   currentPanelSize?: number;
   elbowSize?: number;
+  manualDot?: { panelSize: number; coverage: number };
 }
 
 export default function CoverageCurve({
   data = [],
   currentPanelSize = 8,
   elbowSize,
+  manualDot,
 }: CoverageCurveProps) {
   if (data.length === 0) {
     return (
@@ -76,6 +79,17 @@ export default function CoverageCurve({
             stroke="#FFD700"
             strokeWidth={2}
           />
+          {manualDot && (
+            <ReferenceDot
+              x={manualDot.panelSize}
+              y={manualDot.coverage}
+              r={6}
+              fill="#00F5FF"
+              stroke="#ffffff"
+              strokeWidth={1}
+              ifOverflow="extendDomain"
+            />
+          )}
         </LineChart>
       </ResponsiveContainer>
     </div>

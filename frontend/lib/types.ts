@@ -39,10 +39,40 @@ export interface PerLayerCoverage {
   [panelSize: string]: Record<string, number>;
 }
 
+export interface CancerTypeBlindspot {
+  selected: number;
+  total: number;
+  fraction: number;
+}
+
+export interface PanelBlindspot {
+  types: Record<string, CancerTypeBlindspot>;
+  missing_types: string[];
+}
+
+export interface PathwayGap {
+  pathway: string;
+  global_mean: number;
+  panel_mean: number;
+  gap: number;
+}
+
+export interface BlindspotData {
+  by_panel_size: Record<string, PanelBlindspot>;
+  pathway_gaps_by_size?: Record<string, PathwayGap[]>;
+}
+
+export interface EmbeddingsData {
+  dimensions: number;
+  embeddings: Record<string, number[]>;
+}
+
 export interface AppData {
   umap: UmapPoint[];
   coverage: CoverageData;
   perLayer: PerLayerCoverage;
   panels: PanelData;
   characterization: Record<string, CharacterizationEntry>;
+  blindspot: BlindspotData;
+  embeddings: EmbeddingsData;
 }

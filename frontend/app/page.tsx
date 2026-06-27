@@ -1,13 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import CoverageCurve from "@/components/CoverageCurve";
 import RadarChart from "@/components/RadarChart";
 import SelectionLog from "@/components/SelectionLog";
 import Sidebar from "@/components/Sidebar";
 import { getSelectedPanel, usePanelData } from "@/hooks/usePanelData";
+import { computeCoverage, indicesFromLines } from "@/lib/coverage";
 import { OMICS_LAYERS } from "@/lib/constants";
+import type { PanelEntry } from "@/lib/types";
 
 const Scene3D = dynamic(() => import("@/components/Scene3D"), {
   ssr: false,
@@ -29,17 +31,72 @@ export default function Home() {
   const [panelSize, setPanelSize] = useState(8);
   const [cancerType, setCancerType] = useState("all");
   const [activeLayers, setActiveLayers] = useState<string[]>([...OMICS_LAYERS]);
+  const [isManualMode, setIsManualMode] = useState(false);
+  const [manualPanel, setManualPanel] = useState<string[]>([]);
 
   const { data, loading, error } = usePanelData(cancerType);
 
-  const selectedEntries = useMemo(
+  const greedyEntries = useMemo(
     () => getSelectedPanel(data?.panels, panelSize),
     [data, panelSize],
   );
-  const selectedLines = useMemo(
-    () => selectedEntries.map((e) => e.cell_line),
-    [selectedEntries],
+  const greedyLines = useMemo(
+    () => greedyEntries.map((e) => e.cell_line),
+    [greedyEntries],
   );
+
+  const activeLines = isManualMode ? manualPanel : greedyLines;
+
+  const manualCoverage = useMemo(() => {
+    if (!isManualMode || !data?.embeddings.embeddings || manualPanel.length < 2) {
+      return manualPanel.length > 0 ? 0.5 : 0;
+    }
+    const lineOrder = data.umap.map((p) => p.cell_line);
+    const vectors = lineOrder.map((l) => data.embeddings.embeddings[l]);
+    const indices = indicesFromLines(manualPanel, lineOrder);
+    return computeCoverage(indices, vectors);
+  }, [isManualMode, data, manualPanel]);
+
+  const missingTypes = useMemo(
+    () =>
+      data?.blindspot?.by_panel_size[String(panelSize)]?.missing_types ?? [],
+    [data, panelSize],
+  );
+
+  const displayEntries = useMemo((): PanelEntry[] => {
+    if (!isManualMode) return greedyEntries;
+    const lookup = new Map(data?.umap.map((p) => [p.cell_line, p]) ?? []);
+    return manualPanel.map((cellLine, i) => ({
+      cell_line: cellLine,
+      cancer_type: lookup.get(cellLine)?.cancer_type ?? "Unknown",
+      step: i + 1,
+    }));
+  }, [isManualMode, greedyEntries, manualPanel, data]);
+
+  const handlePanelSizeChange = (size: number) => {
+    setPanelSize(size);
+    setIsManualMode(false);
+    setManualPanel([]);
+  };
+
+  const handleSphereClick = useCallback(
+    (cellLine: string) => {
+      setIsManualMode(true);
+      setManualPanel((prev) => {
+        const base = prev.length > 0 ? prev : greedyLines;
+        const next = new Set(base);
+        if (next.has(cellLine)) next.delete(cellLine);
+        else next.add(cellLine);
+        return [...next];
+      });
+    },
+    [greedyLines],
+  );
+
+  const resetToOptimal = () => {
+    setIsManualMode(false);
+    setManualPanel([]);
+  };
 
   const toggleLayer = (layer: string) => {
     setActiveLayers((prev) =>
@@ -56,9 +113,13 @@ export default function Home() {
           activeLayers={activeLayers}
           elbowSize={data?.coverage.elbow}
           loading={loading}
-          onPanelSizeChange={setPanelSize}
+          isManualMode={isManualMode}
+          manualCoverage={manualCoverage}
+          blindspot={data?.blindspot}
+          onPanelSizeChange={handlePanelSizeChange}
           onCancerTypeChange={setCancerType}
           onLayerToggle={toggleLayer}
+          onResetToOptimal={resetToOptimal}
         />
       </div>
 
@@ -96,8 +157,12 @@ export default function Home() {
               {!loading && data && (
                 <Scene3D
                   points={data.umap}
-                  selectedLines={selectedLines}
+                  selectedLines={activeLines}
+                  greedyLines={greedyLines}
+                  isManualMode={isManualMode}
                   filterCancerType={cancerType === "all" ? undefined : cancerType}
+                  missingTypes={missingTypes}
+                  onSphereClick={handleSphereClick}
                 />
               )}
               {loading && (
@@ -115,13 +180,21 @@ export default function Home() {
                   data={data?.coverage.curve}
                   currentPanelSize={panelSize}
                   elbowSize={data?.coverage.elbow}
+                  manualDot={
+                    isManualMode
+                      ? {
+                          panelSize: manualPanel.length,
+                          coverage: manualCoverage,
+                        }
+                      : undefined
+                  }
                 />
               </div>
               <RadarChart perLayer={data?.perLayer} panelSize={panelSize} />
             </div>
             <div className="shrink-0 px-4 pb-4">
               <SelectionLog
-                entries={selectedEntries}
+                entries={displayEntries}
                 characterization={data?.characterization}
               />
             </div>

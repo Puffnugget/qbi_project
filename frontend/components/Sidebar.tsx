@@ -1,6 +1,8 @@
 "use client";
 
+import BlindSpotPanel from "@/components/BlindSpotPanel";
 import { CANCER_TYPES, OMICS_LAYERS } from "@/lib/constants";
+import type { BlindspotData } from "@/lib/types";
 
 interface SidebarProps {
   panelSize: number;
@@ -8,9 +10,13 @@ interface SidebarProps {
   activeLayers: string[];
   elbowSize?: number;
   loading?: boolean;
+  isManualMode?: boolean;
+  manualCoverage?: number;
+  blindspot?: BlindspotData;
   onPanelSizeChange: (size: number) => void;
   onCancerTypeChange: (type: string) => void;
   onLayerToggle: (layer: string) => void;
+  onResetToOptimal?: () => void;
 }
 
 export default function Sidebar({
@@ -19,9 +25,13 @@ export default function Sidebar({
   activeLayers,
   elbowSize,
   loading,
+  isManualMode,
+  manualCoverage,
+  blindspot,
   onPanelSizeChange,
   onCancerTypeChange,
   onLayerToggle,
+  onResetToOptimal,
 }: SidebarProps) {
   return (
     <aside className="flex h-full w-full flex-col gap-6 overflow-y-auto border-r border-white/10 bg-[#0a0a18] p-6">
@@ -54,7 +64,26 @@ export default function Sidebar({
               ? `Suggested optimal: ${elbowSize} lines`
               : "Suggested optimal: 8 lines (elbow TBD)"}
         </p>
+        {isManualMode && (
+          <div className="space-y-2">
+            <p className="text-xs text-cyan-400">
+              Manual mode — coverage:{" "}
+              <span className="font-mono">
+                {manualCoverage != null ? manualCoverage.toFixed(3) : "—"}
+              </span>
+            </p>
+            <button
+              type="button"
+              onClick={onResetToOptimal}
+              className="w-full rounded border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs text-cyan-300 hover:bg-cyan-500/20"
+            >
+              Reset to Optimal
+            </button>
+          </div>
+        )}
       </section>
+
+      <BlindSpotPanel blindspot={blindspot} panelSize={panelSize} />
 
       <section className="space-y-2">
         <label htmlFor="cancer-type" className="block text-sm text-zinc-400">

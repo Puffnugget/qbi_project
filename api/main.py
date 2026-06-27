@@ -77,3 +77,13 @@ def characterization(cell_line: str) -> dict:
     if cell_line not in data:
         raise HTTPException(status_code=404, detail=f"Unknown cell line: {cell_line}")
     return {"cell_line": cell_line, **data[cell_line]}
+
+
+@app.get("/blindspot")
+def blindspot() -> dict:
+    return _load("blindspot.json")
+
+
+@app.get("/embeddings")
+def embeddings() -> dict:
+    return _load("embeddings.json")

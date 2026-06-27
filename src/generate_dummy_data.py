@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 OUT = ROOT / "frontend" / "public" / "precomputed"
 
 CANCER_TYPES = [
@@ -175,6 +177,35 @@ def _per_layer_coverage() -> dict:
     return out
 
 
+def _embeddings_payload(rng: np.random.Generator, lookup: dict[str, dict]) -> dict:
+    centers = {
+        ct: rng.normal(scale=2.0, size=12) for ct in CANCER_TYPES
+    }
+    embeddings: dict[str, list[float]] = {}
+    for name, meta in lookup.items():
+        ct = meta["cancer_type"]
+        vec = centers[ct] + rng.normal(scale=0.2, size=12)
+        embeddings[name] = [round(float(v), 6) for v in vec]
+    return {"dimensions": 12, "embeddings": embeddings}
+
+
+def _pathway_scores_dummy(lookup: dict[str, dict], rng: np.random.Generator) -> dict:
+    pathways = ["Cell cycle", "Immune response", "DNA repair", "Apoptosis", "Metabolism"]
+    out: dict[str, dict[str, float]] = {}
+    for name in lookup:
+        out[name] = {
+            pw: round(float(rng.uniform(0.2, 1.0)), 4) for pw in pathways
+        }
+    return out
+
+
+def _blindspot_payload(panel_data: dict, points: list[dict]) -> dict:
+    from src.blindspot import compute_cancer_blindspots, compute_pathway_gaps
+
+    by_size = compute_cancer_blindspots(panel_data, points)
+    return {"by_panel_size": by_size}
+
+
 def _characterization(lookup: dict[str, dict]) -> dict:
     genes = ["TP53", "BRCA1", "EGFR", "MYC", "KRAS", "PIK3CA", "PTEN"]
     out = {}
@@ -198,9 +229,8 @@ def main() -> None:
     (OUT / "umap_3d.json").write_text(
         json.dumps({"points": points}, indent=2)
     )
-    (OUT / "panel_all.json").write_text(
-        json.dumps(_panel_payload(order, lookup), indent=2)
-    )
+    panel_all = _panel_payload(order, lookup)
+    (OUT / "panel_all.json").write_text(json.dumps(panel_all, indent=2))
 
     for ct in CANCER_TYPES:
         subset = [p for p in points if p["cancer_type"] == ct]
@@ -231,6 +261,23 @@ def main() -> None:
             },
             indent=2,
         )
+    )
+
+    pathway_scores = _pathway_scores_dummy(lookup, rng)
+    (OUT / "pathway_scores.json").write_text(json.dumps(pathway_scores, indent=2))
+
+    blindspot = _blindspot_payload(panel_all, points)
+    from src.blindspot import compute_pathway_gaps
+
+    panel_lines = [e["cell_line"] for e in panel_all["panels"]["8"]]
+    all_lines = [p["cell_line"] for p in points]
+    blindspot["pathway_gaps_by_size"] = {
+        "8": compute_pathway_gaps(pathway_scores, panel_lines, all_lines),
+    }
+    (OUT / "blindspot.json").write_text(json.dumps(blindspot, indent=2))
+
+    (OUT / "embeddings.json").write_text(
+        json.dumps(_embeddings_payload(rng, lookup), indent=2)
     )
 
     print(f"Wrote dummy precomputed JSON to {OUT}")

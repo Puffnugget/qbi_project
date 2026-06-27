@@ -51,6 +51,20 @@ def run_fusion(n_components: int = 30) -> pd.DataFrame:
 
     fused = pd.concat(embeddings, axis=1)
     fused.to_csv(PROCESSED / "fused_matrix.csv")
+
+    emb_export = {
+        "dimensions": fused.shape[1],
+        "embeddings": {
+            idx: row.tolist()
+            for idx, row in fused.iterrows()
+        },
+    }
+    precomputed = Path(__file__).resolve().parents[1] / "frontend" / "public" / "precomputed"
+    precomputed.mkdir(parents=True, exist_ok=True)
+    import json
+
+    (precomputed / "embeddings.json").write_text(json.dumps(emb_export, indent=2))
+
     return fused
 
 

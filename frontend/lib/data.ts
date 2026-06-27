@@ -1,7 +1,9 @@
 import type {
   AppData,
+  BlindspotData,
   CharacterizationEntry,
   CoverageData,
+  EmbeddingsData,
   PanelData,
   PerLayerCoverage,
   UmapPoint,
@@ -23,7 +25,7 @@ function panelFile(cancerType: string): string {
 }
 
 export async function loadAppData(cancerType: string): Promise<AppData> {
-  const [umapRaw, coverage, perLayer, panels, characterization] =
+  const [umapRaw, coverage, perLayer, panels, characterization, blindspot, embeddings] =
     await Promise.all([
       fetchJson<{ points: UmapPoint[] }>("umap_3d.json"),
       fetchJson<CoverageData>("coverage_curve.json"),
@@ -32,6 +34,13 @@ export async function loadAppData(cancerType: string): Promise<AppData> {
       fetchJson<Record<string, CharacterizationEntry>>(
         "characterization.json",
       ),
+      fetchJson<BlindspotData>("blindspot.json").catch(() => ({
+        by_panel_size: {},
+      })),
+      fetchJson<EmbeddingsData>("embeddings.json").catch(() => ({
+        dimensions: 0,
+        embeddings: {},
+      })),
     ]);
 
   return {
@@ -40,6 +49,8 @@ export async function loadAppData(cancerType: string): Promise<AppData> {
     perLayer,
     panels,
     characterization,
+    blindspot,
+    embeddings,
   };
 }
 

@@ -1,0 +1,415 @@
+{
+  "MCF7": {
+    "Cell cycle": 0.8433,
+    "Immune response": 0.7723,
+    "DNA repair": 0.7912,
+    "Apoptosis": 0.3048,
+    "Metabolism": 0.299
+  },
+  "MDA-MB-231": {
+    "Cell cycle": 0.9421,
+    "Immune response": 0.5181,
+    "DNA repair": 0.4408,
+    "Apoptosis": 0.5909,
+    "Metabolism": 0.7303
+  },
+  "T47D": {
+    "Cell cycle": 0.9645,
+    "Immune response": 0.4292,
+    "DNA repair": 0.9398,
+    "Apoptosis": 0.2199,
+    "Metabolism": 0.6442
+  },
+  "BT549": {
+    "Cell cycle": 0.7072,
+    "Immune response": 0.2847,
+    "DNA repair": 0.3123,
+    "Apoptosis": 0.5353,
+    "Metabolism": 0.973
+  },
+  "HS578T": {
+    "Cell cycle": 0.6768,
+    "Immune response": 0.9464,
+    "DNA repair": 0.8435,
+    "Apoptosis": 0.5739,
+    "Metabolism": 0.8278
+  },
+  "MDA-MB-468": {
+    "Cell cycle": 0.2143,
+    "Immune response": 0.2873,
+    "DNA repair": 0.8635,
+    "Apoptosis": 0.8375,
+    "Metabolism": 0.3861
+  },
+  "MDA-MB-435": {
+    "Cell cycle": 0.6246,
+    "Immune response": 0.6848,
+    "DNA repair": 0.8942,
+    "Apoptosis": 0.6825,
+    "Metabolism": 0.5301
+  },
+  "SF268": {
+    "Cell cycle": 0.4993,
+    "Immune response": 0.5407,
+    "DNA repair": 0.7215,
+    "Apoptosis": 0.894,
+    "Metabolism": 0.5631
+  },
+  "SF295": {
+    "Cell cycle": 0.3983,
+    "Immune response": 0.3893,
+    "DNA repair": 0.7968,
+    "Apoptosis": 0.8533,
+    "Metabolism": 0.2842
+  },
+  "SF539": {
+    "Cell cycle": 0.2532,
+    "Immune response": 0.6755,
+    "DNA repair": 0.3169,
+    "Apoptosis": 0.8597,
+    "Metabolism": 0.4483
+  },
+  "SNB19": {
+    "Cell cycle": 0.3151,
+    "Immune response": 0.9368,
+    "DNA repair": 0.3324,
+    "Apoptosis": 0.4278,
+    "Metabolism": 0.3229
+  },
+  "SNB75": {
+    "Cell cycle": 0.2924,
+    "Immune response": 0.2169,
+    "DNA repair": 0.2443,
+    "Apoptosis": 0.3397,
+    "Metabolism": 0.2427
+  },
+  "U251": {
+    "Cell cycle": 0.6729,
+    "Immune response": 0.7446,
+    "DNA repair": 0.5149,
+    "Apoptosis": 0.4544,
+    "Metabolism": 0.6036
+  },
+  "HCT116": {
+    "Cell cycle": 0.9,
+    "Immune response": 0.8809,
+    "DNA repair": 0.2348,
+    "Apoptosis": 0.3452,
+    "Metabolism": 0.3894
+  },
+  "HT29": {
+    "Cell cycle": 0.3995,
+    "Immune response": 0.657,
+    "DNA repair": 0.533,
+    "Apoptosis": 0.2394,
+    "Metabolism": 0.4989
+  },
+  "KM12": {
+    "Cell cycle": 0.619,
+    "Immune response": 0.2813,
+    "DNA repair": 0.8668,
+    "Apoptosis": 0.2416,
+    "Metabolism": 0.9399
+  },
+  "SW620": {
+    "Cell cycle": 0.2793,
+    "Immune response": 0.8749,
+    "DNA repair": 0.9221,
+    "Apoptosis": 0.9837,
+    "Metabolism": 0.8416
+  },
+  "COLO205": {
+    "Cell cycle": 0.8236,
+    "Immune response": 0.714,
+    "DNA repair": 0.8232,
+    "Apoptosis": 0.3076,
+    "Metabolism": 0.6289
+  },
+  "HCC2998": {
+    "Cell cycle": 0.6114,
+    "Immune response": 0.8861,
+    "DNA repair": 0.5702,
+    "Apoptosis": 0.5081,
+    "Metabolism": 0.7117
+  },
+  "LOVO": {
+    "Cell cycle": 0.4132,
+    "Immune response": 0.3118,
+    "DNA repair": 0.5823,
+    "Apoptosis": 0.5335,
+    "Metabolism": 0.3861
+  },
+  "HL60": {
+    "Cell cycle": 0.494,
+    "Immune response": 0.4931,
+    "DNA repair": 0.462,
+    "Apoptosis": 0.5036,
+    "Metabolism": 0.7486
+  },
+  "K562": {
+    "Cell cycle": 0.4375,
+    "Immune response": 0.9591,
+    "DNA repair": 0.9331,
+    "Apoptosis": 0.5847,
+    "Metabolism": 0.4627
+  },
+  "MOLT4": {
+    "Cell cycle": 0.6283,
+    "Immune response": 0.8788,
+    "DNA repair": 0.7221,
+    "Apoptosis": 0.8435,
+    "Metabolism": 0.6262
+  },
+  "RPMI8226": {
+    "Cell cycle": 0.7063,
+    "Immune response": 0.4305,
+    "DNA repair": 0.7879,
+    "Apoptosis": 0.3619,
+    "Metabolism": 0.7558
+  },
+  "SR": {
+    "Cell cycle": 0.8886,
+    "Immune response": 0.3057,
+    "DNA repair": 0.6915,
+    "Apoptosis": 0.2761,
+    "Metabolism": 0.7806
+  },
+  "CCRFCEM": {
+    "Cell cycle": 0.2676,
+    "Immune response": 0.9488,
+    "DNA repair": 0.3099,
+    "Apoptosis": 0.9671,
+    "Metabolism": 0.8407
+  },
+  "A549": {
+    "Cell cycle": 0.6749,
+    "Immune response": 0.8261,
+    "DNA repair": 0.8361,
+    "Apoptosis": 0.9568,
+    "Metabolism": 0.4027
+  },
+  "NCIH460": {
+    "Cell cycle": 0.6721,
+    "Immune response": 0.276,
+    "DNA repair": 0.6929,
+    "Apoptosis": 0.337,
+    "Metabolism": 0.652
+  },
+  "NCIH522": {
+    "Cell cycle": 0.6579,
+    "Immune response": 0.5728,
+    "DNA repair": 0.6181,
+    "Apoptosis": 0.8111,
+    "Metabolism": 0.8394
+  },
+  "NCIH23": {
+    "Cell cycle": 0.5937,
+    "Immune response": 0.6797,
+    "DNA repair": 0.945,
+    "Apoptosis": 0.2958,
+    "Metabolism": 0.2937
+  },
+  "NCIH226": {
+    "Cell cycle": 0.2702,
+    "Immune response": 0.7263,
+    "DNA repair": 0.5349,
+    "Apoptosis": 0.8195,
+    "Metabolism": 0.737
+  },
+  "NCIH322M": {
+    "Cell cycle": 0.4669,
+    "Immune response": 0.9187,
+    "DNA repair": 0.81,
+    "Apoptosis": 0.4164,
+    "Metabolism": 0.4914
+  },
+  "NCIH647": {
+    "Cell cycle": 0.4516,
+    "Immune response": 0.3261,
+    "DNA repair": 0.3182,
+    "Apoptosis": 0.9489,
+    "Metabolism": 0.5503
+  },
+  "LOXIMVI": {
+    "Cell cycle": 0.5067,
+    "Immune response": 0.7837,
+    "DNA repair": 0.6424,
+    "Apoptosis": 0.9489,
+    "Metabolism": 0.8242
+  },
+  "MALME3M": {
+    "Cell cycle": 0.5835,
+    "Immune response": 0.5011,
+    "DNA repair": 0.9893,
+    "Apoptosis": 0.7742,
+    "Metabolism": 0.961
+  },
+  "M14": {
+    "Cell cycle": 0.2948,
+    "Immune response": 0.8804,
+    "DNA repair": 0.7097,
+    "Apoptosis": 0.2975,
+    "Metabolism": 0.6706
+  },
+  "SKMEL2": {
+    "Cell cycle": 0.7489,
+    "Immune response": 0.2098,
+    "DNA repair": 0.5635,
+    "Apoptosis": 0.8603,
+    "Metabolism": 0.4363
+  },
+  "SKMEL28": {
+    "Cell cycle": 0.5668,
+    "Immune response": 0.5539,
+    "DNA repair": 0.4415,
+    "Apoptosis": 0.9348,
+    "Metabolism": 0.825
+  },
+  "SKMEL5": {
+    "Cell cycle": 0.2885,
+    "Immune response": 0.9976,
+    "DNA repair": 0.9034,
+    "Apoptosis": 0.4271,
+    "Metabolism": 0.8695
+  },
+  "UACC257": {
+    "Cell cycle": 0.2851,
+    "Immune response": 0.9993,
+    "DNA repair": 0.7325,
+    "Apoptosis": 0.7201,
+    "Metabolism": 0.2724
+  },
+  "IGROV1": {
+    "Cell cycle": 0.9176,
+    "Immune response": 0.2232,
+    "DNA repair": 0.3927,
+    "Apoptosis": 0.3144,
+    "Metabolism": 0.8214
+  },
+  "OVCAR3": {
+    "Cell cycle": 0.3586,
+    "Immune response": 0.9285,
+    "DNA repair": 0.725,
+    "Apoptosis": 0.2289,
+    "Metabolism": 0.2043
+  },
+  "OVCAR4": {
+    "Cell cycle": 0.2413,
+    "Immune response": 0.6847,
+    "DNA repair": 0.8412,
+    "Apoptosis": 0.3908,
+    "Metabolism": 0.8795
+  },
+  "OVCAR5": {
+    "Cell cycle": 0.2458,
+    "Immune response": 0.8408,
+    "DNA repair": 0.9422,
+    "Apoptosis": 0.8177,
+    "Metabolism": 0.7585
+  },
+  "OVCAR8": {
+    "Cell cycle": 0.8704,
+    "Immune response": 0.2321,
+    "DNA repair": 0.3614,
+    "Apoptosis": 0.2999,
+    "Metabolism": 0.6036
+  },
+  "SKOV3": {
+    "Cell cycle": 0.7962,
+    "Immune response": 0.704,
+    "DNA repair": 0.8809,
+    "Apoptosis": 0.3242,
+    "Metabolism": 0.7877
+  },
+  "OVCAR10": {
+    "Cell cycle": 0.3544,
+    "Immune response": 0.4166,
+    "DNA repair": 0.7679,
+    "Apoptosis": 0.9842,
+    "Metabolism": 0.6892
+  },
+  "DU145": {
+    "Cell cycle": 0.2436,
+    "Immune response": 0.693,
+    "DNA repair": 0.2339,
+    "Apoptosis": 0.9073,
+    "Metabolism": 0.7677
+  },
+  "PC3": {
+    "Cell cycle": 0.3385,
+    "Immune response": 0.2734,
+    "DNA repair": 0.3468,
+    "Apoptosis": 0.984,
+    "Metabolism": 0.5668
+  },
+  "LNCAP": {
+    "Cell cycle": 0.8273,
+    "Immune response": 0.7091,
+    "DNA repair": 0.6579,
+    "Apoptosis": 0.3161,
+    "Metabolism": 0.9568
+  },
+  "786O": {
+    "Cell cycle": 0.4411,
+    "Immune response": 0.6624,
+    "DNA repair": 0.7598,
+    "Apoptosis": 0.7194,
+    "Metabolism": 0.9525
+  },
+  "A498": {
+    "Cell cycle": 0.3188,
+    "Immune response": 0.6067,
+    "DNA repair": 0.5232,
+    "Apoptosis": 0.5793,
+    "Metabolism": 0.2954
+  },
+  "ACHN": {
+    "Cell cycle": 0.3073,
+    "Immune response": 0.4225,
+    "DNA repair": 0.4438,
+    "Apoptosis": 0.5423,
+    "Metabolism": 0.6888
+  },
+  "CAKI1": {
+    "Cell cycle": 0.7077,
+    "Immune response": 0.5294,
+    "DNA repair": 0.527,
+    "Apoptosis": 0.3741,
+    "Metabolism": 0.6706
+  },
+  "RXF393": {
+    "Cell cycle": 0.4536,
+    "Immune response": 0.2288,
+    "DNA repair": 0.5347,
+    "Apoptosis": 0.5793,
+    "Metabolism": 0.3805
+  },
+  "SN12C": {
+    "Cell cycle": 0.658,
+    "Immune response": 0.6526,
+    "DNA repair": 0.7616,
+    "Apoptosis": 0.7184,
+    "Metabolism": 0.7219
+  },
+  "TK10": {
+    "Cell cycle": 0.453,
+    "Immune response": 0.8299,
+    "DNA repair": 0.6393,
+    "Apoptosis": 0.5451,
+    "Metabolism": 0.7008
+  },
+  "UO31": {
+    "Cell cycle": 0.4885,
+    "Immune response": 0.6102,
+    "DNA repair": 0.7894,
+    "Apoptosis": 0.9091,
+    "Metabolism": 0.9368
+  },
+  "CAKI2": {
+    "Cell cycle": 0.6029,
+    "Immune response": 0.6162,
+    "DNA repair": 0.8399,
+    "Apoptosis": 0.4516,
+    "Metabolism": 0.8699
+  }
+}

@@ -8,7 +8,45 @@ A web application that answers one question: given 60 cancer cell lines, which s
 
 The tool selects the minimum set of NCI-60 cancer cell lines that maximizes coverage across transcriptomics, proteomics, metabolomics, and drug sensitivity data. It presents results as a 3D interactive visualization built in Next.js + Three.js with a FastAPI backend and a Python scientific pipeline.
 
-**Bonus stretch goal (time permitting):** A reinforcement learning environment where an agent learns to sequentially select cell lines to maximize information gain — framed as a model of adaptive experimental design.
+**Bonus stretch goal (time permitting):** Keep the main project exactly as-is. If time remains, add a separate adaptive experimental design sandbox where policies pick cell lines one at a time and are scored by how quickly each new choice improves held-out drug response prediction.
+
+---
+
+## Project Status (updated Jun 27, 2026)
+
+### Nikhi — done (works on dummy data; swap JSON when pipeline runs)
+
+| Area | Status |
+|------|--------|
+| Repo structure | `frontend/`, `src/`, `api/`, `data/`, `raw_data/`, `r/` |
+| Raw data | RNA, proteomics, drug, metadata, GMT in `raw_data/`; metabolomics not downloaded; methylation + histone extras |
+| Python deps | `requirements.txt`; fastapi + full stack installed |
+| Python pipeline | **Scripts written** (`fusion`, `selection`, `coverage`, `validation`, `umap_3d`, `blindspot`, `generate_dummy_data`) — **not run on real CSVs yet** |
+| FastAPI | `api/main.py` — all core endpoints + `/blindspot`, `/embeddings` |
+| Frontend | Next.js 16 app fully wired to `frontend/public/precomputed/` (backend optional) |
+| Components | `Scene3D`, `Sidebar`, `CoverageCurve`, `RadarChart`, `SelectionLog`, `CompareView`, `BlindSpotPanel` |
+| Stretch (done) | Blind Spot Detector (Level 1 + 2 stub), Manual Override + live coverage |
+| Stretch (not started) | Fly-in animation, Adaptive Design tab |
+
+### Sister — in progress
+
+| Area | Status |
+|------|--------|
+| R project | `qbi_hackathon.Rproj` |
+| `r/loading.R` | Loads raw Excel — paths still on Desktop, no CSV export yet |
+| fgsea / characterization | Not done — dummy JSON in frontend for dev |
+
+### Critical blocker
+
+Cleaned CSVs in `data/processed/` (`rna_clean.csv`, `prot_clean.csv`, `metab_clean.csv`, `drug_clean.csv`, `sample_info.csv`). Until those exist, run `python src/generate_dummy_data.py` for dev; then `fusion.py` → rest of pipeline on real data.
+
+### Dev commands
+
+```bash
+python src/generate_dummy_data.py          # refresh all dummy JSON
+uvicorn api.main:app --reload --port 8000  # optional API
+cd frontend && npm run dev                 # UI at :3000
+```
 
 ---
 
@@ -94,7 +132,7 @@ Owns: R data cleaning, R biological annotation, Python characterization script
 - **Codex via ChatGPT Plus ($20/mo):** backend heavy lifting — preprocessing, algorithm, validation. Well-scoped contained tasks. 10-60 cloud tasks per 5-hour rolling window
 - **Cursor Hobby (free):** frontend and glue code. 2000 completions/month, 50 premium requests — use completions for autocomplete, save premium requests for complex multi-file context
 - **Antigravity (free, sister's account):** parallel UI tasks — UMAP viz, comparison view. Runs multiple agents in parallel. Stick to Gemini Flash or Claude Sonnet to preserve quota; escalate to Opus only when stuck
-- **RunPod (GPU credits):** MOFA+ training, foundation model embeddings (scGPT, ESM-2), full CCLE upgrade, RL agent training at scale. Spin up A100 40GB instance (~$1.50-2.50/hr). Budget 10-15 hours of compute
+- **RunPod (GPU credits):** MOFA+ training, foundation model embeddings (scGPT, ESM-2), full CCLE upgrade, optional batched policy rollouts at CCLE scale. Spin up A100 40GB instance (~$1.50-2.50/hr). Budget 10-15 hours of compute
 
 ---
 
@@ -102,7 +140,7 @@ Owns: R data cleaning, R biological annotation, Python characterization script
 
 ```
 RunPod GPU Instance
-  └── Heavy compute: MOFA+, scGPT embeddings, RL training
+  └── Heavy compute: MOFA+, scGPT embeddings, optional policy rollouts
   └── Outputs: JSON files downloaded to laptop
 
 Laptop
@@ -113,18 +151,20 @@ Laptop
   │   ├── 01_clean.R    ← sister's cleaning script
   │   └── 02_annotate.R ← sister's annotation script
   ├── src/
-  │   ├── fusion.py     ← PCA/MOFA+ fusion
-  │   ├── selection.py  ← greedy panel selection
-  │   ├── coverage.py   ← coverage scoring
-  │   ├── validation.py ← drug sensitivity validation
-  │   ├── umap_3d.py    ← UMAP 3D coordinates
-  │   └── rl_env.py     ← RL environment (stretch goal)
+  │   ├── fusion.py         ← PCA fusion + embeddings.json export
+  │   ├── selection.py      ← greedy panel selection
+  │   ├── coverage.py       ← coverage scoring
+  │   ├── validation.py     ← drug sensitivity validation
+  │   ├── umap_3d.py        ← UMAP 3D coordinates
+  │   ├── blindspot.py      ← cancer type + pathway blind spot analysis
+  │   ├── generate_dummy_data.py ← dev JSON generator (no CSVs needed)
+  │   └── adaptive_design.py ← sequential design sandbox (stretch goal)
   ├── api/
-  │   └── main.py       ← FastAPI backend
+  │   └── main.py           ← FastAPI backend ✅
   ├── frontend/
-  │   └── (Next.js app) ← Three.js + React frontend
-  └── public/
-      └── precomputed/  ← static JSON files for demo
+  │   └── (Next.js app)     ← Three.js + React frontend ✅
+  └── frontend/public/
+      └── precomputed/      ← static JSON files for demo ✅ (dummy data live)
 ```
 
 ### Key Architectural Decision
@@ -503,70 +543,75 @@ with open("public/precomputed/umap_3d.json", "w") as f:
     json.dump(umap_data, f)
 ```
 
-### Python — RL Environment (Stretch Goal, Hours 28+)
+### Python — Adaptive Experimental Design Sandbox (Stretch Goal, Hours 28+)
+
+This is a separate add-on after the main panel selector is working. Do not replace the current greedy panel selection pipeline. The main project still answers: "Which small fixed panel best covers multi-omics diversity?" The stretch goal asks a different question: "If you could run experiments one by one, which strategy learns the fastest from each additional cell line?"
 
 ```python
-import gym
-from gym import spaces
-
-class PanelSelectionEnv(gym.Env):
+class SequentialDesignSim:
     """
-    State: binary vector (which lines selected) + current coverage score
-    Action: integer 0-59 (which line to add next)
-    Reward: delta coverage score from adding that line
-    Episode ends when panel reaches target size
+    Replayable simulator over NCI-60.
+    State: selected lines + revealed drug-response PCs + current surrogate error
+    Action: choose next unobserved cell line
+    Observation: reveal the selected line's withheld drug-response profile
+    Score: reduction in held-out prediction error / predictive variance
     """
-    def __init__(self, embedding, target_size=8):
+    def __init__(self, embedding, drug_targets, target_size=8):
         self.embedding = embedding
-        self.n = len(embedding)
+        self.drug_targets = drug_targets
+        self.n = len(drug_targets)
         self.target_size = target_size
-        self.dist_matrix = cdist(embedding, embedding)
-
-        self.action_space = spaces.Discrete(self.n)
-        self.observation_space = spaces.Box(
-            low=0, high=1,
-            shape=(self.n + 1,),  # binary selected vector + coverage score
-            dtype=np.float32
-        )
 
     def reset(self):
         self.selected = []
-        self.current_coverage = 0.0
+        self.observed_y = {}
         return self._get_obs()
 
     def step(self, action):
         if action in self.selected:
-            return self._get_obs(), -0.1, False, {}  # penalty for invalid action
+            return self._get_obs(), -0.1, False, {}
 
         self.selected.append(action)
-        new_coverage = coverage_score(self.embedding, self.selected)
-        reward = new_coverage - self.current_coverage
-        self.current_coverage = new_coverage
+        self.observed_y[action] = self.drug_targets[action]
+        new_rmse = evaluate_surrogate(
+            self.embedding, self.observed_y, self.drug_targets
+        )
+        reward = self.prev_rmse - new_rmse
+        self.prev_rmse = new_rmse
         done = len(self.selected) >= self.target_size
-
         return self._get_obs(), reward, done, {}
 
     def _get_obs(self):
-        obs = np.zeros(self.n + 1, dtype=np.float32)
+        obs = np.zeros(self.n + 2, dtype=np.float32)
         obs[self.selected] = 1.0
-        obs[-1] = self.current_coverage
+        obs[-2] = len(self.selected)
+        obs[-1] = self.prev_rmse
         return obs
 ```
 
-Train with stable-baselines3 DQN on RunPod:
+Start with policy rollouts, not deep RL:
 ```python
-from stable_baselines3 import DQN
+for policy in ["coverage_greedy", "uncertainty", "thompson"]:
+    result = rollout_policy(
+        policy=policy,
+        embedding=fused_matrix,
+        drug_targets=drug_pca,
+        target_size=8,
+        n_restarts=64,
+    )
 
-env = PanelSelectionEnv(embedding, target_size=8)
-model = DQN("MlpPolicy", env, verbose=1, device="cuda")
-model.learn(total_timesteps=100000)
-
-# Compare RL agent vs greedy on coverage score
-# Save agent's selections as JSON for the RL tab in frontend
+# Save stepwise selections + held-out RMSE curves for frontend playback
 ```
 
-Scientific framing (never call it RL in the opening sentence):
-"We formulated panel selection as an adaptive experimental design problem — the agent sequentially decides which cell line to measure next to maximize information gain. This is a direct computational model of how scientists should design experiments under budget constraints."
+Implementation notes:
+- Use a replayable offline simulator built from the existing NCI-60 data
+- Reveal drug-response PCs only after a line is "selected"
+- Compare three simple policies first: coverage-greedy, uncertainty sampling, Thompson sampling
+- Keep a random baseline to catch adaptive sampling bias
+- Skip `gym` / `stable-baselines3` unless the simple policies clearly plateau
+
+Scientific framing:
+"We formulated panel selection as a sequential experimental design problem. Each step chooses the next cell line to assay, reveals its pharmacology, and asks how quickly that observation improves prediction on the rest of the panel. That turns our static dataset into a sample-efficiency benchmark."
 
 ### FastAPI Backend (Hours 0-6, parallel with fusion)
 
@@ -620,25 +665,27 @@ Run with: `uvicorn api.main:app --reload --port 8000`
 ```
 frontend/
   app/
-    page.tsx              ← main layout
-    components/
-      Scene3D.tsx         ← Three.js UMAP canvas
-      Sidebar.tsx         ← controls panel
-      CoverageCurve.tsx   ← Recharts line chart
-      RadarChart.tsx      ← SVG radar chart
-      SelectionLog.tsx    ← selected lines table
-      CompareView.tsx     ← side by side comparison
-      RLTab.tsx           ← RL agent visualization (stretch)
-      Tooltip3D.tsx       ← hover tooltip over spheres
+    page.tsx              ← main layout (Explore + Compare tabs) ✅
+  components/
+    Scene3D.tsx           ← Three.js UMAP canvas ✅
+    Sidebar.tsx           ← controls + blind spot + manual reset ✅
+    CoverageCurve.tsx     ← Recharts line chart ✅
+    RadarChart.tsx        ← SVG radar chart ✅
+    SelectionLog.tsx      ← selected lines table + CSV download ✅
+    CompareView.tsx       ← side by side comparison ✅
+    BlindSpotPanel.tsx    ← cancer type grid + pathway gaps ✅
+    AdaptiveDesignTab.tsx ← sequential design visualization (stretch)
+  lib/
+    data.ts, coverage.ts, constants.ts, types.ts
   public/
-    precomputed/          ← all JSON files
+    precomputed/          ← all JSON files ✅
 ```
 
 Install dependencies:
 ```bash
-npx create-next-app@latest frontend --typescript --tailwind
+npx create-next-app@latest frontend --typescript --tailwind  # ✅ done
 cd frontend
-npm install three @react-three/fiber @react-three/drei recharts axios
+npm install three @react-three/fiber @react-three/drei recharts axios  # ✅ done
 ```
 
 ### Three.js UMAP Scene (Hours 4-12)
@@ -727,11 +774,32 @@ Table below the 3D scene. One row per selected cell line. Columns:
 
 ### Compare View
 
-Two Three.js scenes side by side. Left: cancer type A. Right: cancer type B. Cell lines shared between both panels pulse white. Overlap count shown between the two scenes: "2 lines selected by both panels."
+Two Three.js scenes side by side. Left: cancer type A. Right: cancer type B. Cell lines shared between both panels pulse white. Overlap count shown between the two scenes: "2 lines selected by both panels." **✅ Implemented in `CompareView.tsx` + Compare tab.**
 
-### RL Tab (Stretch Goal)
+### Blind Spot Detector (Stretch — ✅ DONE on dummy data)
 
-Single Three.js scene. Play button. When clicked, agent selects lines one by one with 500ms delay between each. Each selection pulses and a live reward curve draws itself. Toggle at top: "Greedy vs Learned Policy" — both sets of selections visible simultaneously for comparison.
+**Level 1 — Cancer type coverage** (no sister dependency once `panel_all.json` exists):
+- `src/blindspot.py` — per-k cancer type selected/total/fraction + `missing_types`
+- `frontend/public/precomputed/blindspot.json`
+- `BlindSpotPanel.tsx` — grid in sidebar (red=missing, yellow=partial, green=covered)
+- Red "Blind to: …" banner when any type at 0
+- `Scene3D.tsx` — missing-type cell lines pulse with red rim glow
+
+**Level 2 — Pathway coverage** (stub with dummy `pathway_scores.json`; real fgsea later):
+- Pathway gap = |panel_mean − global_mean| / |global_mean|, flag if > 0.3
+- `pathway_gaps_by_size` in `blindspot.json`, rendered in `BlindSpotPanel.tsx`
+
+### Manual Override + Live Coverage Drop (Stretch — ✅ DONE)
+
+- `fusion.py` exports `embeddings.json` (fused PCA coords per cell line)
+- `lib/coverage.ts` — browser-side `computeCoverage()` (~O(n×k))
+- Click spheres to toggle manual panel; gold / cyan / gray / default states
+- Cyan dot on coverage curve at `(manualPanel.length, manualCoverage)`
+- "Reset to Optimal" in sidebar when manual mode active; slider resets to greedy
+
+### Adaptive Design Tab (Stretch Goal — NOT STARTED)
+
+Single Three.js scene. Play button. When clicked, one policy selects lines one by one with 500ms delay between each. Each selection pulses and a live sample-efficiency curve draws itself. Toggle at top: "Coverage Greedy / Uncertainty / Thompson / Random" — all policies use the same replayable dataset for comparison.
 
 ---
 
@@ -739,16 +807,16 @@ Single Three.js scene. Play button. When clicked, agent selects lines one by one
 
 ### R Tasks (Sister)
 
-| Task | Hours | Output |
-|------|-------|--------|
-| Load and inspect all four XLS files, note skip rows | 0-1 | — |
-| Clean RNA matrix (skip rows, drop annotations, transpose) | 1-2 | rna_clean.csv |
-| Clean proteomics matrix | 1-2 | prot_clean.csv |
-| Clean metabolomics matrix | 2-3 | metab_clean.csv |
-| Clean drug sensitivity matrix, filter to 150 landmark drugs | 2-3 | drug_clean.csv |
-| Find cell line intersection, align all four matrices | 3-4 | verified CSVs |
-| Run fgsea on RNA PCA loadings from Python | 8-12 | factor_annotations.csv |
-| Selected line characterization (top genes/proteins/metabolites) | 14-18 | characterization.json |
+| Task | Hours | Output | Status |
+|------|-------|--------|--------|
+| Load and inspect all four XLS files, note skip rows | 0-1 | — | ~ `r/loading.R` started |
+| Clean RNA matrix (skip rows, drop annotations, transpose) | 1-2 | rna_clean.csv | ⬜ |
+| Clean proteomics matrix | 1-2 | prot_clean.csv | ⬜ |
+| Clean metabolomics matrix | 2-3 | metab_clean.csv | ⬜ |
+| Clean drug sensitivity matrix, filter to 150 landmark drugs | 2-3 | drug_clean.csv | ⬜ |
+| Find cell line intersection, align all four matrices | 3-4 | verified CSVs | ⬜ |
+| Run fgsea on RNA PCA loadings from Python | 8-12 | factor_annotations.csv | ⬜ |
+| Selected line characterization | 14-18 | characterization.json | ⬜ |
 
 ### Python Tasks (Her)
 
@@ -761,35 +829,40 @@ Single Three.js scene. Play button. When clicked, agent selects lines one by one
 | Coverage scoring (mean NN distance, per-layer) | 7-8 | coverage_curve.json, per_layer_coverage.json |
 | Drug sensitivity validation correlation | 8-11 | validation.json |
 | UMAP 3D coordinates | 9-11 | umap_3d.json |
-| RL environment implementation (stretch, hour 28+) | 28-34 | rl_agent.json |
+| Adaptive design rollouts (stretch, hour 28+) | 28-34 | adaptive_design.json |
 
 ### Python/FastAPI Tasks (You)
 
-| Task | Hours | Output |
-|------|-------|--------|
-| FastAPI app setup with CORS | 0-2 | api/main.py |
-| All API endpoints reading from precomputed JSON | 2-4 | running server on :8000 |
-| Per-cancer-type JSON generation (run panel selection for each type) | 11-14 | panel_breast.json, etc. |
+| Task | Hours | Output | Status |
+|------|-------|--------|--------|
+| FastAPI app setup with CORS | 0-2 | api/main.py | ✅ |
+| All API endpoints reading from precomputed JSON | 2-4 | running server on :8000 | ✅ |
+| Pipeline scripts (fusion, selection, coverage, validation, umap) | 4-11 | src/*.py | ✅ written, ⬜ not run on real data |
+| `generate_dummy_data.py` for dev without CSVs | — | dummy JSON | ✅ |
+| `blindspot.py` + pathway gaps | stretch | blindspot.json | ✅ |
+| Per-cancer-type JSON generation | 11-14 | panel_*.json | ✅ (dummy) |
 
 ### JavaScript/TypeScript Tasks (You)
 
-| Task | Hours | Output |
-|------|-------|--------|
-| Next.js project scaffold + dependency install | 0-1 | frontend/ |
-| Basic page layout (sidebar + main canvas) | 2-4 | page.tsx |
-| Three.js scene setup (canvas, lighting, orbit controls) | 4-6 | Scene3D.tsx |
-| Render 60 spheres at UMAP coordinates, colored by cancer type | 6-8 | Scene3D.tsx |
-| Selected sphere highlighting (gold glow, size increase) | 8-10 | Scene3D.tsx |
-| Fly-in animation for new sphere selections | 10-12 | Scene3D.tsx |
-| Hover tooltips on spheres | 12-14 | Tooltip3D.tsx |
-| Sidebar controls (dropdown, slider, checkboxes) | 10-13 | Sidebar.tsx |
-| Cancer filter fade animation | 13-15 | Scene3D.tsx |
-| Coverage curve (Recharts, dual lines, elbow marker) | 14-16 | CoverageCurve.tsx |
-| Per-layer radar chart (SVG) | 16-18 | RadarChart.tsx |
-| Selection log table | 18-20 | SelectionLog.tsx |
-| Compare view (split screen, overlap highlighting) | 20-24 | CompareView.tsx |
-| Dark theme polish, animations, responsive sidebar | 24-28 | global styles |
-| RL agent tab (stretch, hour 32+) | 32-38 | RLTab.tsx |
+| Task | Hours | Output | Status |
+|------|-------|--------|--------|
+| Next.js project scaffold + dependency install | 0-1 | frontend/ | ✅ |
+| Basic page layout (sidebar + main canvas) | 2-4 | page.tsx | ✅ |
+| Three.js scene setup (canvas, lighting, orbit controls) | 4-6 | Scene3D.tsx | ✅ |
+| Render 60 spheres at UMAP coordinates, colored by cancer type | 6-8 | Scene3D.tsx | ✅ |
+| Selected sphere highlighting (gold glow, size increase) | 8-10 | Scene3D.tsx | ✅ |
+| Fly-in animation for new sphere selections | 10-12 | Scene3D.tsx | ⬜ |
+| Hover tooltips on spheres | 12-14 | Scene3D.tsx | ✅ (inline Html tooltip) |
+| Sidebar controls (dropdown, slider, checkboxes) | 10-13 | Sidebar.tsx | ✅ |
+| Cancer filter fade animation | 13-15 | Scene3D.tsx | ✅ (opacity fade) |
+| Coverage curve (Recharts, dual lines, elbow marker) | 14-16 | CoverageCurve.tsx | ✅ |
+| Per-layer radar chart (SVG) | 16-18 | RadarChart.tsx | ✅ |
+| Selection log table | 18-20 | SelectionLog.tsx | ✅ |
+| Compare view (split screen, overlap highlighting) | 20-24 | CompareView.tsx | ✅ |
+| Blind spot panel + red rim glow | stretch | BlindSpotPanel.tsx | ✅ |
+| Manual override + live coverage dot | stretch | page.tsx, coverage.ts | ✅ |
+| Dark theme polish, animations, responsive sidebar | 24-28 | global styles | ~ partial |
+| Adaptive design tab (stretch, hour 32+) | 32-38 | AdaptiveDesignTab.tsx | ⬜ |
 
 ---
 
@@ -805,7 +878,7 @@ Single Three.js scene. Play button. When clicked, agent selects lines one by one
 | 14-18 | R/Python: characterization JSON | Coverage curve + radar chart |
 | 18-22 | Testing, edge cases, bug fixing | Selection log + compare view |
 | 22-28 | Buffer / help where needed | Dark theme polish + animations |
-| 28-34 | Python: RL environment (stretch) | RL tab (stretch) |
+| 28-34 | Python: adaptive design rollouts (stretch) | Adaptive design tab (stretch) |
 | 34-40 | Slides + demo script | Final bug fixes + demo prep |
 | 40-48 | Rehearsal + presentation | Rehearsal + presentation |
 
@@ -814,24 +887,19 @@ Single Three.js scene. Play button. When clicked, agent selects lines one by one
 ## Precomputed JSON Files (All must exist before demo)
 
 ```
-public/precomputed/
-  umap_3d.json              ← 3D coordinates for all 60 lines
-  panel_all.json            ← panel selections for all cancer types, sizes 1-20
-  panel_breast.json         ← panel for breast cancer filter
-  panel_lung.json
-  panel_cns.json
-  panel_colon.json
-  panel_leukemia.json
-  panel_melanoma.json
-  panel_ovarian.json
-  panel_prostate.json
-  panel_renal.json
-  coverage_curve.json       ← coverage scores for sizes 1-20
-  per_layer_coverage.json   ← per-layer coverage for each size
-  validation.json           ← drug prediction correlation for sizes 3-15
-  characterization.json     ← biological characterization for all 60 lines
-  factor_annotations.json   ← MOFA+/PCA factor biological labels
-  rl_agent.json             ← RL agent selections (stretch goal)
+frontend/public/precomputed/
+  umap_3d.json              ← 3D coordinates for all 60 lines          ✅
+  panel_all.json            ← panel selections sizes 1-20              ✅
+  panel_breast.json … panel_renal.json  ← per-type panels              ✅
+  coverage_curve.json       ← coverage scores for sizes 2-15           ✅
+  per_layer_coverage.json   ← per-layer coverage for each size           ✅
+  validation.json           ← drug prediction correlation                ✅
+  characterization.json     ← biological characterization (dummy)        ~ sister's real output later
+  factor_annotations.json   ← PCA factor labels (dummy)                  ~ sister's fgsea later
+  blindspot.json            ← cancer type + pathway blind spots          ✅
+  embeddings.json           ← fused PCA coords for manual coverage       ✅
+  pathway_scores.json       ← per-cell-line pathway scores (dummy)       ~ real fgsea later
+  adaptive_design.json      ← stepwise policy rollouts (stretch)         ⬜
 ```
 
 ---
@@ -847,7 +915,7 @@ public/precomputed/
 1. **MOFA+ training** (replaces concatenated PCA) — 2 minutes on GPU vs 30 min on CPU. Do this first.
 2. **Foundation model embeddings** — scGPT for RNA, ESM-2 for proteomics, ChemBERTa for drugs. Only feasible on GPU. Strongest scientific upgrade.
 3. **Full CCLE dataset** — upgrade from 60 NCI-60 lines to 1000+ CCLE lines if time allows. Requires GPU for UMAP.
-4. **RL agent training** — DQN on 60 lines trains on CPU in minutes, but at CCLE scale needs GPU.
+4. **Policy rollouts at CCLE scale** — optional only if you scale past NCI-60. For the base hackathon version, CPU is enough.
 
 **Workflow:** all heavy computation runs on RunPod. Download resulting JSON files to laptop. Frontend serves them statically. No RunPod dependency during the demo.
 
@@ -871,7 +939,7 @@ public/precomputed/
 
 **Interaction 5 — Compare view (seconds 110-140):** Click Compare tab. "Here's breast cancer vs lung cancer side by side. Two lines appear in both panels — those are the biologically universal representatives, relevant regardless of cancer type."
 
-**Interaction 6 — RL tab if built (seconds 140-170):** Click RL tab. Hit Play. "We also formulated this as an adaptive experimental design problem. The agent learns to sequentially select the most informative line at each step — a computational model of how scientists should design experiments under budget constraints."
+**Interaction 6 — Adaptive design tab if built (seconds 140-170):** Click Adaptive Design tab. Hit Play. "We also turned this into a sample-efficiency benchmark. Different sequential policies pick which line to assay next, and we measure how quickly each one improves drug-response prediction on the rest of the panel."
 
 **Closing (seconds 170-200):** "Cancer researchers spend millions on redundant experiments because they pick cell lines by convention, not data. This tool changes that. Open source, runs in the browser, no coding required. And the framework generalizes to any multi-omics dataset."
 
@@ -919,18 +987,18 @@ The biological annotation and characterization work she does at the hackathon is
 ## Tonight (Pre-Hackathon Checklist)
 
 ### You
-- [ ] Download all four NCI-60 datasets from CellMiner
+- [x] Download NCI-60 datasets from CellMiner (in `raw_data/` — metabolomics still missing)
 - [ ] Open each in Excel, count metadata rows, write down skip number for each
 - [ ] Verify cell line names look consistent across all four files
-- [ ] Run `npx create-next-app@latest frontend --typescript --tailwind`
-- [ ] Install Python deps: `pip install fastapi uvicorn umap-learn scikit-learn mofapy2 kneed pandas numpy scipy stable-baselines3 gym`
-- [ ] Install Node deps: `npm install three @react-three/fiber @react-three/drei recharts axios`
+- [x] Run `npx create-next-app@latest frontend --typescript --tailwind`
+- [x] Install Python deps (`requirements.txt` + fastapi)
+- [x] Install Node deps: `three @react-three/fiber @react-three/drei recharts axios`
 - [ ] Set up RunPod account, have A100 instance ready to spin up
 
 ### Sister
-- [ ] Install R packages: `install.packages(c("readxl", "dplyr", "tidyr", "readr"))` and `BiocManager::install("fgsea")`
-- [ ] Download MSigDB Hallmark GMT file from gsea-msigdb.org
-- [ ] Open each XLS file in RStudio, confirm they load and note the skip row count
+- [x] Install R packages: `install.packages(c("readxl", "dplyr", "tidyr", "readr"))` and `BiocManager::install("fgsea")` (if needed)
+- [x] Download MSigDB Hallmark GMT file (`raw_data/Human Gene Sets v2026.1.gmt`)
+- [~] Open each XLS in RStudio — `r/loading.R` loads files; paths need fixing to repo `raw_data/`
 - [ ] Write down the 9 NCI-60 cancer types and one biological fact about each (for the demo)
 - [ ] Read the NCI-60 Wikipedia page
 
@@ -951,7 +1019,7 @@ The biological annotation and characterization work she does at the hackathon is
 | Sister's R script takes too long | Pre-run everything tonight if data is already downloaded |
 | MOFA+ doesn't train in time | Concatenated PCA is the fallback. Equal algorithmic result, slightly weaker scientific story |
 | Three.js fly-in animation not smooth | Simplify to instant swap if behind schedule. Scientific result doesn't change |
-| RL tab not finished | Skip entirely. It's labeled stretch goal for a reason |
+| Adaptive design tab not finished | Skip entirely. It's labeled stretch goal for a reason |
 | RunPod instance unavailable | Fall back to local CPU. NCI-60 is small enough to run everything locally |
 
 ---

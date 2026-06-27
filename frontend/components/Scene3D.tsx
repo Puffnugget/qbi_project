@@ -1,16 +1,27 @@
 "use client";
 
 import { Html, Line, OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { useMemo, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useMemo, useRef, useState } from "react";
+import type { Mesh, MeshStandardMaterial } from "three";
 import { CANCER_COLORS } from "@/lib/constants";
 import type { UmapPoint } from "@/lib/types";
+
+export type SphereState =
+  | "greedy"
+  | "manual-added"
+  | "manual-removed"
+  | "default";
 
 interface Scene3DProps {
   points?: UmapPoint[];
   selectedLines?: string[];
+  greedyLines?: string[];
+  isManualMode?: boolean;
   filterCancerType?: string;
   highlightOverlap?: string[];
+  missingTypes?: string[];
+  onSphereClick?: (cellLine: string) => void;
 }
 
 function ConnectionLines({
@@ -55,63 +66,164 @@ function ConnectionLines({
   );
 }
 
-function CellSphere({
-  point,
-  isSelected,
-  isFilteredOut,
-  isOverlap,
-  onHover,
-}: {
-  point: UmapPoint;
-  isSelected: boolean;
-  isFilteredOut: boolean;
-  isOverlap: boolean;
-  onHover: (p: UmapPoint | null) => void;
-}) {
-  const baseColor = CANCER_COLORS[point.cancer_type] ?? "#888888";
-  const color = isSelected ? "#FFD700" : isOverlap ? "#ffffff" : baseColor;
-  const radius = isSelected ? 0.12 : 0.08;
-  const opacity = isFilteredOut ? 0.15 : 1;
+function RedRimPulse({ position }: { position: [number, number, number] }) {
+  const ref = useRef<Mesh>(null);
+  useFrame(({ clock }) => {
+    if (ref.current?.material) {
+      const mat = ref.current.material as MeshStandardMaterial;
+      mat.emissiveIntensity = 0.25 + 0.55 * Math.sin(clock.elapsedTime * 3);
+    }
+  });
 
   return (
-    <mesh
-      position={[point.x, point.y, point.z]}
-      scale={isSelected ? 1.5 : 1}
-      onPointerOver={(e) => {
-        e.stopPropagation();
-        onHover(point);
-      }}
-      onPointerOut={() => onHover(null)}
-    >
-      <sphereGeometry args={[radius, 24, 24]} />
+    <mesh ref={ref} position={position}>
+      <sphereGeometry args={[0.15, 24, 24]} />
       <meshStandardMaterial
-        color={isFilteredOut ? "#555555" : color}
-        emissive={isSelected ? "#FFD700" : isOverlap ? "#ffffff" : color}
-        emissiveIntensity={isSelected ? 0.7 : isOverlap ? 0.5 : 0.2}
-        transparent={opacity < 1}
-        opacity={opacity}
+        color="#EF233C"
+        emissive="#EF233C"
+        transparent
+        opacity={0.35}
       />
     </mesh>
+  );
+}
+
+function getSphereState(
+  cellLine: string,
+  isManualMode: boolean,
+  greedySet: Set<string>,
+  selectedSet: Set<string>,
+): SphereState {
+  if (!isManualMode) {
+    return greedySet.has(cellLine) ? "greedy" : "default";
+  }
+  const inGreedy = greedySet.has(cellLine);
+  const inManual = selectedSet.has(cellLine);
+  if (inManual && inGreedy) return "greedy";
+  if (inManual && !inGreedy) return "manual-added";
+  if (!inManual && inGreedy) return "manual-removed";
+  return "default";
+}
+
+function CellSphere({
+  point,
+  state,
+  isFilteredOut,
+  isOverlap,
+  isMissingType,
+  onHover,
+  onClick,
+}: {
+  point: UmapPoint;
+  state: SphereState;
+  isFilteredOut: boolean;
+  isOverlap: boolean;
+  isMissingType: boolean;
+  onHover: (p: UmapPoint | null) => void;
+  onClick?: (cellLine: string) => void;
+}) {
+  const baseColor = CANCER_COLORS[point.cancer_type] ?? "#888888";
+
+  let color = baseColor;
+  let emissive = baseColor;
+  let emissiveIntensity = 0.2;
+  let radius = 0.08;
+  let opacity = 1;
+  let scale = 1;
+
+  switch (state) {
+    case "greedy":
+      color = "#FFD700";
+      emissive = "#FFD700";
+      emissiveIntensity = 0.7;
+      radius = 0.12;
+      scale = 1.5;
+      break;
+    case "manual-added":
+      color = "#00F5FF";
+      emissive = "#00F5FF";
+      emissiveIntensity = 0.65;
+      radius = 0.11;
+      scale = 1.35;
+      break;
+    case "manual-removed":
+      color = "#555555";
+      emissive = "#333333";
+      emissiveIntensity = 0.1;
+      opacity = 0.3;
+      break;
+    default:
+      if (isOverlap) {
+        color = "#ffffff";
+        emissive = "#ffffff";
+        emissiveIntensity = 0.5;
+      }
+      break;
+  }
+
+  if (isFilteredOut && state === "default") {
+    opacity = 0.15;
+    color = "#555555";
+  }
+
+  const pos: [number, number, number] = [point.x, point.y, point.z];
+
+  return (
+    <group>
+      {isMissingType && state !== "greedy" && <RedRimPulse position={pos} />}
+      <mesh
+        position={pos}
+        scale={scale}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          onHover(point);
+        }}
+        onPointerOut={() => onHover(null)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick?.(point.cell_line);
+        }}
+      >
+        <sphereGeometry args={[radius, 24, 24]} />
+        <meshStandardMaterial
+          color={color}
+          emissive={emissive}
+          emissiveIntensity={emissiveIntensity}
+          transparent={opacity < 1}
+          opacity={opacity}
+        />
+      </mesh>
+    </group>
   );
 }
 
 function SceneContent({
   points,
   selectedLines,
+  greedyLines,
+  isManualMode,
   filterCancerType,
   highlightOverlap,
+  missingTypes,
+  onSphereClick,
   hovered,
   setHovered,
 }: {
   points: UmapPoint[];
   selectedLines: string[];
+  greedyLines: string[];
+  isManualMode: boolean;
   filterCancerType?: string;
   highlightOverlap: string[];
+  missingTypes: string[];
+  onSphereClick?: (cellLine: string) => void;
   hovered: UmapPoint | null;
   setHovered: (p: UmapPoint | null) => void;
 }) {
   const selectedSet = useMemo(() => new Set(selectedLines), [selectedLines]);
+  const greedySet = useMemo(() => new Set(greedyLines), [greedyLines]);
   const overlapSet = useMemo(() => new Set(highlightOverlap), [highlightOverlap]);
+  const missingSet = useMemo(() => new Set(missingTypes), [missingTypes]);
 
   return (
     <>
@@ -125,21 +237,30 @@ function SceneContent({
       )}
 
       {points.map((point) => {
+        const state = getSphereState(
+          point.cell_line,
+          isManualMode,
+          greedySet,
+          selectedSet,
+        );
         const isSelected = selectedSet.has(point.cell_line);
         const isFilteredOut =
           filterCancerType != null &&
           filterCancerType !== "all" &&
           point.cancer_type !== filterCancerType &&
           !isSelected;
+        const isMissingType = missingSet.has(point.cancer_type);
 
         return (
           <CellSphere
             key={point.cell_line}
             point={point}
-            isSelected={isSelected}
+            state={state}
             isFilteredOut={isFilteredOut}
             isOverlap={overlapSet.has(point.cell_line)}
+            isMissingType={isMissingType}
             onHover={setHovered}
+            onClick={onSphereClick}
           />
         );
       })}
@@ -170,11 +291,16 @@ function SceneContent({
 export default function Scene3D({
   points = [],
   selectedLines = [],
+  greedyLines = [],
+  isManualMode = false,
   filterCancerType,
   highlightOverlap = [],
+  missingTypes = [],
+  onSphereClick,
 }: Scene3DProps) {
   const [hovered, setHovered] = useState<UmapPoint | null>(null);
   const hasData = points.length > 0;
+  const effectiveGreedy = greedyLines.length > 0 ? greedyLines : selectedLines;
 
   return (
     <div className="relative h-full w-full">
@@ -183,8 +309,12 @@ export default function Scene3D({
           <SceneContent
             points={points}
             selectedLines={selectedLines}
+            greedyLines={effectiveGreedy}
+            isManualMode={isManualMode}
             filterCancerType={filterCancerType}
             highlightOverlap={highlightOverlap}
+            missingTypes={missingTypes}
+            onSphereClick={onSphereClick}
             hovered={hovered}
             setHovered={setHovered}
           />
@@ -203,6 +333,12 @@ export default function Scene3D({
             Loading cell line embedding…
           </p>
         </div>
+      )}
+
+      {hasData && (
+        <p className="pointer-events-none absolute bottom-3 right-3 text-[10px] text-zinc-600">
+          Click spheres to manually edit panel
+        </p>
       )}
     </div>
   );
