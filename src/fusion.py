@@ -10,6 +10,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
 LOG_ZSCORED = ROOT / "processed_data" / "log_zscored"
+PCA_DIR = ROOT / "processed_data" / "pca"
 PRECOMPUTED = ROOT / "frontend" / "public" / "precomputed"
 
 # Team-agreed fusion layers: rna_seq, proteomics, metabolomics, drug_activity
@@ -66,6 +67,14 @@ def run_fusion(n_components: int = 30) -> pd.DataFrame:
     from sklearn.decomposition import PCA
 
     PROCESSED.mkdir(parents=True, exist_ok=True)
+    existing = PCA_DIR / "fused_matrix.csv"
+    if existing.exists():
+        fused = pd.read_csv(existing, index_col=0)
+        (PROCESSED / "fused_matrix.csv").parent.mkdir(parents=True, exist_ok=True)
+        fused.to_csv(PROCESSED / "fused_matrix.csv")
+        _write_embeddings(fused)
+        return fused
+
     layers = load_clean_layers()
     embeddings = []
 
@@ -89,15 +98,18 @@ def run_fusion(n_components: int = 30) -> pd.DataFrame:
 
     fused = pd.concat(embeddings, axis=1)
     fused.to_csv(PROCESSED / "fused_matrix.csv")
+    _write_embeddings(fused)
 
+    return fused
+
+
+def _write_embeddings(fused: pd.DataFrame) -> None:
     emb_export = {
         "dimensions": fused.shape[1],
         "embeddings": {idx: row.tolist() for idx, row in fused.iterrows()},
     }
     PRECOMPUTED.mkdir(parents=True, exist_ok=True)
     (PRECOMPUTED / "embeddings.json").write_text(json.dumps(emb_export, indent=2))
-
-    return fused
 
 
 if __name__ == "__main__":

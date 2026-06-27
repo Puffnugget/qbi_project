@@ -110,7 +110,7 @@ def run_blindspot(
 
     panel_data = json.loads(panel_path.read_text())
     umap_data = json.loads(umap_path.read_text())
-    points = umap_data["points"]
+    points = umap_data["points"] if isinstance(umap_data, dict) else umap_data
 
     result: dict = {
         "by_panel_size": compute_cancer_blindspots(panel_data, points),
@@ -121,7 +121,7 @@ def run_blindspot(
         pathway_scores = json.loads(pathway_path.read_text())
         panel_entries = panel_data["panels"].get(str(panel_size_for_pathways), [])
         panel_lines = [e["cell_line"] for e in panel_entries]
-        all_lines = [p["cell_line"] for p in points]
+        all_lines = [p.get("cell_line", p.get("id")) for p in points]
         result["pathway_gaps_by_size"] = {
             str(panel_size_for_pathways): compute_pathway_gaps(
                 pathway_scores, panel_lines, all_lines

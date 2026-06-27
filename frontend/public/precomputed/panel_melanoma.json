@@ -2,80 +2,80 @@
   "panels": {
     "1": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       }
     ],
     "2": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       }
     ],
     "3": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       }
     ],
     "4": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       }
     ],
     "5": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -87,22 +87,22 @@
     ],
     "6": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -112,29 +112,29 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       }
     ],
     "7": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -144,34 +144,34 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
       }
     ],
     "8": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -181,34 +181,39 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
       }
     ],
     "9": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -218,34 +223,44 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
       }
     ],
     "10": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -255,34 +270,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "11": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -292,34 +322,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "12": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -329,34 +374,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "13": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -366,34 +426,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "14": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -403,34 +478,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "15": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -440,34 +530,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "16": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -477,34 +582,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "17": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -514,34 +634,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "18": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -551,34 +686,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "19": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -588,34 +738,49 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ],
     "20": [
       {
-        "cell_line": "ME:MALME-3M",
+        "cell_line": "ME:LOX IMVI",
         "cancer_type": "Melanoma",
         "step": 1
       },
       {
-        "cell_line": "ME:SK-MEL-2",
+        "cell_line": "ME:MALME-3M",
         "cancer_type": "Melanoma",
         "step": 2
       },
       {
-        "cell_line": "ME:M14",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 3
       },
       {
-        "cell_line": "ME:UACC-62",
+        "cell_line": "ME:MDA-MB-435",
         "cancer_type": "Melanoma",
         "step": 4
       },
@@ -625,14 +790,29 @@
         "step": 5
       },
       {
-        "cell_line": "ME:SK-MEL-5",
+        "cell_line": "ME:UACC-62",
         "cancer_type": "Melanoma",
         "step": 6
       },
       {
-        "cell_line": "ME:SK-MEL-28",
+        "cell_line": "ME:MDA-N",
         "cancer_type": "Melanoma",
         "step": 7
+      },
+      {
+        "cell_line": "ME:SK-MEL-5",
+        "cancer_type": "Melanoma",
+        "step": 8
+      },
+      {
+        "cell_line": "ME:SK-MEL-28",
+        "cancer_type": "Melanoma",
+        "step": 9
+      },
+      {
+        "cell_line": "ME:M14",
+        "cancer_type": "Melanoma",
+        "step": 10
       }
     ]
   }

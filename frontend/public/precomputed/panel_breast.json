@@ -31,7 +31,7 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       }
@@ -48,12 +48,12 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
       }
@@ -70,14 +70,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "6": [
@@ -92,14 +97,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "7": [
@@ -114,14 +124,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "8": [
@@ -136,14 +151,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "9": [
@@ -158,14 +178,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "10": [
@@ -180,14 +205,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "11": [
@@ -202,14 +232,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "12": [
@@ -224,14 +259,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "13": [
@@ -246,14 +286,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "14": [
@@ -268,14 +313,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "15": [
@@ -290,14 +340,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "16": [
@@ -312,14 +367,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "17": [
@@ -334,14 +394,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "18": [
@@ -356,14 +421,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "19": [
@@ -378,14 +448,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ],
     "20": [
@@ -400,14 +475,19 @@
         "step": 2
       },
       {
-        "cell_line": "BR:MDA-MB-231",
+        "cell_line": "BR:T-47D",
         "cancer_type": "Breast",
         "step": 3
       },
       {
-        "cell_line": "BR:BT-549",
+        "cell_line": "BR:MDA-MB-231",
         "cancer_type": "Breast",
         "step": 4
+      },
+      {
+        "cell_line": "BR:BT-549",
+        "cancer_type": "Breast",
+        "step": 5
       }
     ]
   }

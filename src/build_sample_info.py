@@ -8,6 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 METADATA = ROOT / "processed_data" / "transposed" / "cell_line_metadata_transposed.csv"
 OUT = ROOT / "data" / "processed" / "sample_info.csv"
+LEGACY_OUT = ROOT / "processed_data" / "sample_info.csv"
+FUSED = ROOT / "processed_data" / "pca" / "fused_matrix.csv"
 
 # Map full tissue names from CellMiner to the short cancer type labels used in the frontend
 TISSUE_MAP = {
@@ -22,8 +24,34 @@ TISSUE_MAP = {
     "Renal": "Renal",
 }
 
+PREFIX_MAP = {
+    "BR": "Breast",
+    "CNS": "CNS",
+    "CO": "Colon",
+    "LE": "Leukemia",
+    "ME": "Melanoma",
+    "LC": "Lung",
+    "OV": "Ovarian",
+    "PR": "Prostate",
+    "RE": "Renal",
+}
+
 
 def build_sample_info() -> None:
+    if FUSED.exists():
+        import pandas as pd
+
+        cell_lines = pd.read_csv(FUSED, index_col=0).index.tolist()
+        OUT.parent.mkdir(parents=True, exist_ok=True)
+        for path in (OUT, LEGACY_OUT):
+            with open(path, "w", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow(["cell_line", "cancer_type"])
+                for cl in cell_lines:
+                    writer.writerow([cl, PREFIX_MAP[cl.split(":", 1)[0]]])
+        print(f"Wrote {len(cell_lines)} cell lines → {OUT} and {LEGACY_OUT}")
+        return
+
     with open(METADATA, newline="") as f:
         rows = list(csv.reader(f))
 
@@ -45,6 +73,8 @@ def build_sample_info() -> None:
         writer.writerow(["cell_line", "cancer_type"])
         for cl, tissue in zip(cell_lines, tissues):
             cancer_type = TISSUE_MAP.get(tissue, tissue)
+            if not cancer_type or cancer_type == "NA":
+                cancer_type = PREFIX_MAP.get(cl.split(":", 1)[0], cancer_type)
             writer.writerow([cl, cancer_type])
 
     print(f"Wrote {len(cell_lines)} cell lines → {OUT}")

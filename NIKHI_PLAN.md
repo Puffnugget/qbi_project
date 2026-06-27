@@ -9,32 +9,26 @@
 
 | Area | Status |
 |------|--------|
-| Fusion layers (agreed) | **rna_seq + proteomics + metabolomics + drug_activity** |
-| Sister R outputs | rna, proteomics, drug ready in `processed_data/log_zscored/` — **metabolomics missing** |
-| Python pipeline | Scripts written; blocked on metabolomics + `sample_info.csv` |
-| Frontend / API / stretch | Done on dummy JSON |
+| Fusion matrix | ✅ real 5-layer R output in `processed_data/pca/fused_matrix.csv`; Python reuses it |
+| Sample info | ✅ 60/60 cell lines aligned in both `processed_data/sample_info.csv` and `data/processed/sample_info.csv` |
+| Python pipeline | ✅ `PYTHONPATH=. python src/run_pipeline.py` completes on real fused matrix |
+| Frontend / API / stretch | ✅ static JSON regenerated from real fused matrix; fgsea/characterization still dummy |
 
-**Next up:** Sister downloads metabolomics → `sample_info.csv` → run full pipeline → swap JSON.
+**Next up:** polish fly-in animation, rehearse demo 3x, projector check.
 
 **Dev commands:**
 ```bash
-python src/generate_dummy_data.py
+PYTHONPATH=. python src/run_pipeline.py
+python src/adaptive_design.py
 uvicorn api.main:app --reload --port 8000
 cd frontend && npm run dev
 ```
 
 ---
 
-## Agreed Fusion Layers
+## Fusion Input
 
-| Layer | File (`processed_data/log_zscored/`) | Status |
-|-------|--------------------------------------|--------|
-| RNA | `rna_seq_log_zscored.csv` | ✅ |
-| Proteomics | `proteomics_log_zscored.csv` | ✅ |
-| Metabolomics | `metabolomics_log_zscored.csv` | ⬜ download + R pipeline |
-| Drug | `drug_activity_log_zscored.csv` | ✅ |
-
-Not fused: methylation, histone.
+Python now treats `processed_data/pca/fused_matrix.csv` as the source of truth when it exists. That matrix has 60 cell lines × 150 features from the R PCA/fusion output. `src/fusion.py` copies it to `data/processed/fused_matrix.csv` for downstream handoff paths and exports `embeddings.json`.
 
 ---
 
@@ -67,26 +61,22 @@ Not fused: methylation, histone.
 
 ## Phase 1 — Python Pipeline
 
-**Scripts written. Blocked on `data/processed/*.csv` from sister for real data run.**
+**Scripts written and run on the real fused matrix.**
 
 | Script | Status | Output |
 |--------|--------|--------|
-| `src/fusion.py` | ✅ written (+ `embeddings.json` export) | `fused_matrix.csv`, `rna_pca_loadings.csv` |
+| `src/fusion.py` | ✅ reuses `processed_data/pca/fused_matrix.csv` when present | `fused_matrix.csv`, `embeddings.json` |
 | `src/selection.py` | ✅ written | `panel_all.json`, `panel_*.json` |
 | `src/coverage.py` | ✅ written | `coverage_curve.json` |
 | `src/validation.py` | ✅ written | `validation.json` |
 | `src/umap_3d.py` | ✅ written | `umap_3d.json` |
 | `src/blindspot.py` | ✅ written | `blindspot.json` |
-| `src/generate_dummy_data.py` | ✅ done | all dummy JSON for dev |
+| `src/generate_dummy_data.py` | ✅ fallback only | dummy JSON for dev |
 
-**Run order (once CSVs exist):**
+**Run order:**
 ```bash
-python src/fusion.py
-python src/umap_3d.py
-python src/selection.py
-python src/coverage.py
-python src/validation.py
-python src/blindspot.py
+PYTHONPATH=. python src/run_pipeline.py
+python src/adaptive_design.py
 ```
 
 ---
@@ -158,7 +148,7 @@ Frontend reads static JSON directly — API optional for demo.
 
 - [~] Dark theme consistency (base done)
 - [x] Loading states while JSON fetches
-- [x] Elbow indicator from real `coverage_curve.json` (dummy elbow = 8)
+- [x] Elbow indicator from real `coverage_curve.json`
 - [ ] Test full demo sequence 3x
 - [x] Works with backend OFF (static JSON)
 - [ ] Screenshot / projector check
@@ -166,7 +156,7 @@ Frontend reads static JSON directly — API optional for demo.
 
 ---
 
-## Stretch Goal — Blind Spot Detector — DONE (dummy data)
+## Stretch Goal — Blind Spot Detector — DONE
 
 ### Level 1 — Cancer Type Coverage
 - [x] `src/blindspot.py`
@@ -196,7 +186,7 @@ Frontend reads static JSON directly — API optional for demo.
 
 ---
 
-## Stretch Goal — Adaptive Design Tab — DONE (dummy/fallback data)
+## Stretch Goal — Adaptive Design Tab — DONE
 
 `components/AdaptiveDesignTab.tsx` + `src/adaptive_design.py`
 - [x] Keep main fixed-panel selector unchanged
@@ -204,7 +194,7 @@ Frontend reads static JSON directly — API optional for demo.
 - [x] Score: median held-out drug prediction r after each sequential pick
 - [x] Output: `frontend/public/precomputed/adaptive_design.json`
 - [x] UI: policy toggle, Play/Reset, 3D replay, multi-policy efficiency chart
-- [~] Current JSON is dummy/fallback; rerun after real `data/processed/fused_matrix.csv` exists
+- [x] Current JSON generated from real `data/processed/fused_matrix.csv`
 - [ ] Next AI upgrade: `ridge_uncertainty` active learning with bootstrapped Ridge surrogate models
   - Train on selected cell lines each step: fused embedding → drug response
   - Pick next line by model uncertainty + diversity bonus
@@ -227,7 +217,7 @@ All in `frontend/public/precomputed/`:
 - [x] `pathway_scores.json` (dummy)
 - [~] `characterization.json` (dummy → sister)
 - [~] `factor_annotations.json` (dummy → sister fgsea)
-- [~] `adaptive_design.json` (stretch; dummy/fallback → real after fusion)
+- [x] `adaptive_design.json` (real fused matrix)
 
 ---
 
@@ -235,7 +225,8 @@ All in `frontend/public/precomputed/`:
 
 - [x] `qbi_hackathon.Rproj`
 - [~] `r/loading.R` — loads Excel; paths still `~/Desktop/qbi_hackathon/`
-- [ ] Export `data/processed/rna_clean.csv`, `prot_clean.csv`, `metab_clean.csv`, `drug_clean.csv`, `sample_info.csv`
+- [x] Export aligned `sample_info.csv` to `processed_data/` and `data/processed/`
+- [ ] Export optional clean layer CSVs if Python needs to rebuild fusion instead of reusing R fused matrix
 - [ ] fgsea → real `factor_annotations.json` + `pathway_scores.json`
 - [ ] Characterization → real `characterization.json`
 

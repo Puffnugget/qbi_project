@@ -26,7 +26,7 @@ def coverage_score(coords: np.ndarray, selected_idx: list[int]) -> float:
 
 
 def run_coverage(fused: pd.DataFrame, max_k: int = 15) -> None:
-    from selection import greedy_select
+    from src.selection import greedy_select
 
     coords = fused.values.astype(float)
     order = greedy_select(coords, len(coords))
@@ -49,7 +49,7 @@ def run_coverage(fused: pd.DataFrame, max_k: int = 15) -> None:
 
 def run_per_layer_coverage(max_k: int = 15) -> None:
     """Calculate coverage for each omics layer separately."""
-    from selection import greedy_select
+    from src.selection import greedy_select
 
     OUT.mkdir(parents=True, exist_ok=True)
 

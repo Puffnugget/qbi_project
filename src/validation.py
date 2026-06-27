@@ -19,7 +19,7 @@ def run_validation(
     min_k: int = 3,
     max_k: int = 15,
 ) -> None:
-    from selection import greedy_select
+    from src.selection import greedy_select
 
     coords = fused.values.astype(float)
     order = greedy_select(coords, len(coords))

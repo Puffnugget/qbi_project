@@ -1,328 +1,328 @@
 {
   "target_size": 12,
   "metric": "median held-out drug-profile Pearson r",
-  "n_cell_lines": 59,
-  "source": "dummy",
+  "n_cell_lines": 60,
+  "source": "real",
   "policies": {
     "coverage_greedy": {
       "policy": "coverage_greedy",
       "selections": [
-        "SF295",
-        "A498",
-        "COLO205",
-        "CCRFCEM",
-        "PC3",
-        "NCIH226",
-        "MDA-MB-468",
-        "UACC257",
-        "IGROV1",
-        "UO31",
-        "NCIH23",
-        "U251"
+        "LE:SR",
+        "OV:SK-OV-3",
+        "LE:RPMI-8226",
+        "ME:MALME-3M",
+        "LE:HL-60(TB)",
+        "BR:MCF7",
+        "LE:K-562",
+        "LC:NCI-H522",
+        "LE:MOLT-4",
+        "LC:HOP-92",
+        "CO:COLO 205",
+        "BR:T-47D"
       ],
       "curve": [
         {
           "step": 1,
-          "cell_line": "SF295",
+          "cell_line": "LE:SR",
           "median_r": 0.0
         },
         {
           "step": 2,
-          "cell_line": "A498",
-          "median_r": 0.5116
+          "cell_line": "OV:SK-OV-3",
+          "median_r": NaN
         },
         {
           "step": 3,
-          "cell_line": "COLO205",
-          "median_r": 0.5573
+          "cell_line": "LE:RPMI-8226",
+          "median_r": NaN
         },
         {
           "step": 4,
-          "cell_line": "CCRFCEM",
-          "median_r": 0.7303
+          "cell_line": "ME:MALME-3M",
+          "median_r": NaN
         },
         {
           "step": 5,
-          "cell_line": "PC3",
-          "median_r": 0.8155
+          "cell_line": "LE:HL-60(TB)",
+          "median_r": NaN
         },
         {
           "step": 6,
-          "cell_line": "NCIH226",
-          "median_r": 0.9206
+          "cell_line": "BR:MCF7",
+          "median_r": NaN
         },
         {
           "step": 7,
-          "cell_line": "MDA-MB-468",
-          "median_r": 0.9269
+          "cell_line": "LE:K-562",
+          "median_r": NaN
         },
         {
           "step": 8,
-          "cell_line": "UACC257",
-          "median_r": 0.9359
+          "cell_line": "LC:NCI-H522",
+          "median_r": NaN
         },
         {
           "step": 9,
-          "cell_line": "IGROV1",
-          "median_r": 0.9371
+          "cell_line": "LE:MOLT-4",
+          "median_r": NaN
         },
         {
           "step": 10,
-          "cell_line": "UO31",
-          "median_r": 0.943
+          "cell_line": "LC:HOP-92",
+          "median_r": NaN
         },
         {
           "step": 11,
-          "cell_line": "NCIH23",
-          "median_r": 0.9428
+          "cell_line": "CO:COLO 205",
+          "median_r": NaN
         },
         {
           "step": 12,
-          "cell_line": "U251",
-          "median_r": 0.9385
+          "cell_line": "BR:T-47D",
+          "median_r": NaN
         }
       ],
-      "final_median_r": 0.9385
+      "final_median_r": NaN
     },
     "uncertainty": {
       "policy": "uncertainty",
       "selections": [
-        "LOVO",
-        "SF295",
-        "UO31",
-        "PC3",
-        "K562",
-        "MDA-MB-468",
-        "A549",
-        "SKMEL2",
-        "SKOV3",
-        "COLO205",
-        "NCIH23",
-        "LNCAP"
+        "BR:BT-549",
+        "BR:HS 578T",
+        "BR:MCF7",
+        "BR:MDA-MB-231",
+        "BR:T-47D",
+        "CNS:SF-268",
+        "CNS:SF-295",
+        "CNS:SF-539",
+        "CNS:SNB-19",
+        "CNS:SNB-75",
+        "CNS:U251",
+        "CO:COLO 205"
       ],
       "curve": [
         {
           "step": 1,
-          "cell_line": "LOVO",
+          "cell_line": "BR:BT-549",
           "median_r": 0.0
         },
         {
           "step": 2,
-          "cell_line": "SF295",
-          "median_r": 0.1044
+          "cell_line": "BR:HS 578T",
+          "median_r": NaN
         },
         {
           "step": 3,
-          "cell_line": "UO31",
-          "median_r": 0.5361
+          "cell_line": "BR:MCF7",
+          "median_r": NaN
         },
         {
           "step": 4,
-          "cell_line": "PC3",
-          "median_r": 0.6445
+          "cell_line": "BR:MDA-MB-231",
+          "median_r": NaN
         },
         {
           "step": 5,
-          "cell_line": "K562",
-          "median_r": 0.8007
+          "cell_line": "BR:T-47D",
+          "median_r": NaN
         },
         {
           "step": 6,
-          "cell_line": "MDA-MB-468",
-          "median_r": 0.9108
+          "cell_line": "CNS:SF-268",
+          "median_r": NaN
         },
         {
           "step": 7,
-          "cell_line": "A549",
-          "median_r": 0.9473
+          "cell_line": "CNS:SF-295",
+          "median_r": NaN
         },
         {
           "step": 8,
-          "cell_line": "SKMEL2",
-          "median_r": 0.961
+          "cell_line": "CNS:SF-539",
+          "median_r": NaN
         },
         {
           "step": 9,
-          "cell_line": "SKOV3",
-          "median_r": 0.9604
+          "cell_line": "CNS:SNB-19",
+          "median_r": NaN
         },
         {
           "step": 10,
-          "cell_line": "COLO205",
-          "median_r": 0.9627
+          "cell_line": "CNS:SNB-75",
+          "median_r": NaN
         },
         {
           "step": 11,
-          "cell_line": "NCIH23",
-          "median_r": 0.962
+          "cell_line": "CNS:U251",
+          "median_r": NaN
         },
         {
           "step": 12,
-          "cell_line": "LNCAP",
-          "median_r": 0.9541
+          "cell_line": "CO:COLO 205",
+          "median_r": NaN
         }
       ],
-      "final_median_r": 0.9541
+      "final_median_r": NaN
     },
     "thompson": {
       "policy": "thompson",
       "selections": [
-        "SF295",
-        "A498",
-        "COLO205",
-        "CCRFCEM",
-        "PC3",
-        "NCIH226",
-        "MDA-MB-468",
-        "UACC257",
-        "SKOV3",
-        "UO31",
-        "NCIH23",
-        "U251"
+        "LE:SR",
+        "OV:SK-OV-3",
+        "LE:RPMI-8226",
+        "ME:MALME-3M",
+        "LE:HL-60(TB)",
+        "BR:MCF7",
+        "LE:K-562",
+        "LC:NCI-H522",
+        "LE:MOLT-4",
+        "LC:HOP-92",
+        "CO:COLO 205",
+        "BR:T-47D"
       ],
       "curve": [
         {
           "step": 1,
-          "cell_line": "SF295",
+          "cell_line": "LE:SR",
           "median_r": 0.0
         },
         {
           "step": 2,
-          "cell_line": "A498",
-          "median_r": 0.5116
+          "cell_line": "OV:SK-OV-3",
+          "median_r": NaN
         },
         {
           "step": 3,
-          "cell_line": "COLO205",
-          "median_r": 0.5573
+          "cell_line": "LE:RPMI-8226",
+          "median_r": NaN
         },
         {
           "step": 4,
-          "cell_line": "CCRFCEM",
-          "median_r": 0.7303
+          "cell_line": "ME:MALME-3M",
+          "median_r": NaN
         },
         {
           "step": 5,
-          "cell_line": "PC3",
-          "median_r": 0.8155
+          "cell_line": "LE:HL-60(TB)",
+          "median_r": NaN
         },
         {
           "step": 6,
-          "cell_line": "NCIH226",
-          "median_r": 0.9206
+          "cell_line": "BR:MCF7",
+          "median_r": NaN
         },
         {
           "step": 7,
-          "cell_line": "MDA-MB-468",
-          "median_r": 0.9269
+          "cell_line": "LE:K-562",
+          "median_r": NaN
         },
         {
           "step": 8,
-          "cell_line": "UACC257",
-          "median_r": 0.9359
+          "cell_line": "LC:NCI-H522",
+          "median_r": NaN
         },
         {
           "step": 9,
-          "cell_line": "SKOV3",
-          "median_r": 0.9381
+          "cell_line": "LE:MOLT-4",
+          "median_r": NaN
         },
         {
           "step": 10,
-          "cell_line": "UO31",
-          "median_r": 0.9423
+          "cell_line": "LC:HOP-92",
+          "median_r": NaN
         },
         {
           "step": 11,
-          "cell_line": "NCIH23",
-          "median_r": 0.9435
+          "cell_line": "CO:COLO 205",
+          "median_r": NaN
         },
         {
           "step": 12,
-          "cell_line": "U251",
-          "median_r": 0.9392
+          "cell_line": "BR:T-47D",
+          "median_r": NaN
         }
       ],
-      "final_median_r": 0.9392
+      "final_median_r": NaN
     },
     "random": {
       "policy": "random",
       "selections": [
-        "OVCAR10",
-        "MDA-MB-231",
-        "LOXIMVI",
-        "T47D",
-        "M14",
-        "HT29",
-        "SNB75",
-        "ACHN",
-        "MOLT4",
-        "KM12",
-        "A498",
-        "SF295"
+        "ME:MALME-3M",
+        "LC:NCI-H322M",
+        "LC:HOP-62",
+        "RE:CAKI-1",
+        "LC:NCI-H226",
+        "CO:HT29",
+        "RE:786-0",
+        "BR:MDA-MB-231",
+        "LE:CCRF-CEM",
+        "CO:SW-620",
+        "BR:HS 578T",
+        "OV:NCI/ADR-RES"
       ],
       "curve": [
         {
           "step": 1,
-          "cell_line": "OVCAR10",
+          "cell_line": "ME:MALME-3M",
           "median_r": 0.0
         },
         {
           "step": 2,
-          "cell_line": "MDA-MB-231",
-          "median_r": 0.5495
+          "cell_line": "LC:NCI-H322M",
+          "median_r": NaN
         },
         {
           "step": 3,
-          "cell_line": "LOXIMVI",
-          "median_r": 0.5827
+          "cell_line": "LC:HOP-62",
+          "median_r": NaN
         },
         {
           "step": 4,
-          "cell_line": "T47D",
-          "median_r": 0.5045
+          "cell_line": "RE:CAKI-1",
+          "median_r": NaN
         },
         {
           "step": 5,
-          "cell_line": "M14",
-          "median_r": 0.5049
+          "cell_line": "LC:NCI-H226",
+          "median_r": NaN
         },
         {
           "step": 6,
-          "cell_line": "HT29",
-          "median_r": 0.5204
+          "cell_line": "CO:HT29",
+          "median_r": NaN
         },
         {
           "step": 7,
-          "cell_line": "SNB75",
-          "median_r": 0.7333
+          "cell_line": "RE:786-0",
+          "median_r": NaN
         },
         {
           "step": 8,
-          "cell_line": "ACHN",
-          "median_r": 0.8762
+          "cell_line": "BR:MDA-MB-231",
+          "median_r": NaN
         },
         {
           "step": 9,
-          "cell_line": "MOLT4",
-          "median_r": 0.9002
+          "cell_line": "LE:CCRF-CEM",
+          "median_r": NaN
         },
         {
           "step": 10,
-          "cell_line": "KM12",
-          "median_r": 0.9163
+          "cell_line": "CO:SW-620",
+          "median_r": NaN
         },
         {
           "step": 11,
-          "cell_line": "A498",
-          "median_r": 0.9136
+          "cell_line": "BR:HS 578T",
+          "median_r": NaN
         },
         {
           "step": 12,
-          "cell_line": "SF295",
-          "median_r": 0.894
+          "cell_line": "OV:NCI/ADR-RES",
+          "median_r": NaN
         }
       ],
-      "final_median_r": 0.894
+      "final_median_r": NaN
     }
   }
 }

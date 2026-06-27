@@ -33,7 +33,7 @@
   },
   {
     "id": "BR:T-47D",
-    "cancer_type": NaN,
+    "cancer_type": "Breast",
     "x": 1.0,
     "y": -0.1677,
     "z": 0.382,
@@ -153,7 +153,7 @@
   },
   {
     "id": "LE:HL-60(TB)",
-    "cancer_type": NaN,
+    "cancer_type": "Leukemia",
     "x": 0.057,
     "y": 0.5258,
     "z": 1.0,
@@ -193,7 +193,7 @@
   },
   {
     "id": "ME:LOX IMVI",
-    "cancer_type": NaN,
+    "cancer_type": "Melanoma",
     "x": -0.3776,
     "y": 0.1231,
     "z": 0.6905,
@@ -257,7 +257,7 @@
   },
   {
     "id": "ME:MDA-MB-435",
-    "cancer_type": NaN,
+    "cancer_type": "Melanoma",
     "x": -0.1648,
     "y": 0.3495,
     "z": 0.2021,
@@ -265,7 +265,7 @@
   },
   {
     "id": "ME:MDA-N",
-    "cancer_type": NaN,
+    "cancer_type": "Melanoma",
     "x": -1.0,
     "y": 0.7387,
     "z": -1.0,
@@ -273,7 +273,7 @@
   },
   {
     "id": "LC:A549/ATCC",
-    "cancer_type": NaN,
+    "cancer_type": "Lung",
     "x": 0.4269,
     "y": 0.1396,
     "z": 0.6016,
@@ -393,7 +393,7 @@
   },
   {
     "id": "OV:NCI/ADR-RES",
-    "cancer_type": NaN,
+    "cancer_type": "Ovarian",
     "x": 0.779,
     "y": 0.2601,
     "z": 0.2905,
@@ -449,7 +449,7 @@
   },
   {
     "id": "RE:RXF 393",
-    "cancer_type": NaN,
+    "cancer_type": "Renal",
     "x": -0.3345,
     "y": 0.5846,
     "z": 0.6324,

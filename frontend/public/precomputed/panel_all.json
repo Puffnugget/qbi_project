@@ -15,7 +15,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       }
     ],
@@ -27,7 +27,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -44,7 +44,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -66,7 +66,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -93,7 +93,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -125,7 +125,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -162,7 +162,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -192,7 +192,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       }
     ],
@@ -204,7 +204,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -234,7 +234,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -251,7 +251,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -281,7 +281,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -303,7 +303,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -333,7 +333,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -360,7 +360,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -390,7 +390,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -422,7 +422,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -452,7 +452,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -489,7 +489,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -519,7 +519,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -561,7 +561,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -591,7 +591,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -638,7 +638,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -668,7 +668,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -720,7 +720,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -750,7 +750,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -807,7 +807,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -837,7 +837,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -899,7 +899,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -929,7 +929,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -984,7 +984,7 @@
       },
       {
         "cell_line": "OV:NCI/ADR-RES",
-        "cancer_type": NaN,
+        "cancer_type": "Ovarian",
         "step": 19
       }
     ],
@@ -996,7 +996,7 @@
       },
       {
         "cell_line": "LE:HL-60(TB)",
-        "cancer_type": NaN,
+        "cancer_type": "Leukemia",
         "step": 2
       },
       {
@@ -1026,7 +1026,7 @@
       },
       {
         "cell_line": "BR:T-47D",
-        "cancer_type": NaN,
+        "cancer_type": "Breast",
         "step": 8
       },
       {
@@ -1081,7 +1081,7 @@
       },
       {
         "cell_line": "OV:NCI/ADR-RES",
-        "cancer_type": NaN,
+        "cancer_type": "Ovarian",
         "step": 19
       },
       {

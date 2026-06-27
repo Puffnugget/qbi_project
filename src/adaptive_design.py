@@ -27,10 +27,11 @@ def _read_csv(path: Path) -> pd.DataFrame:
 
 
 def _load_real_data() -> tuple[pd.DataFrame, pd.DataFrame] | None:
-    fused_path = PROCESSED / "fused_matrix.csv"
+    fused_paths = [PROCESSED / "fused_matrix.csv", ROOT / "processed_data" / "pca" / "fused_matrix.csv"]
+    fused_path = next((p for p in fused_paths if p.exists()), None)
     drug_paths = [PROCESSED / "drug_clean.csv", LOG_ZSCORED / "drug_activity_log_zscored.csv"]
     drug_path = next((p for p in drug_paths if p.exists()), None)
-    if not fused_path.exists() or drug_path is None:
+    if fused_path is None or drug_path is None:
         return None
 
     fused = pd.read_csv(fused_path, index_col=0)

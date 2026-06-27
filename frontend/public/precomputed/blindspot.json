@@ -4,7 +4,7 @@
       "types": {
         "Breast": {
           "selected": 0,
-          "total": 7,
+          "total": 5,
           "fraction": 0.0
         },
         "CNS": {
@@ -18,18 +18,18 @@
           "fraction": 0.0
         },
         "Leukemia": {
-          "selected": 0,
+          "selected": 1,
           "total": 6,
-          "fraction": 0.0
+          "fraction": 0.1667
         },
         "Lung": {
           "selected": 0,
-          "total": 7,
+          "total": 9,
           "fraction": 0.0
         },
         "Melanoma": {
           "selected": 0,
-          "total": 7,
+          "total": 10,
           "fraction": 0.0
         },
         "Ovarian": {
@@ -39,30 +39,30 @@
         },
         "Prostate": {
           "selected": 0,
-          "total": 3,
+          "total": 2,
           "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
         "Breast",
         "Colon",
-        "Leukemia",
         "Lung",
         "Melanoma",
         "Ovarian",
-        "Prostate"
+        "Prostate",
+        "Renal"
       ]
     },
     "3": {
       "types": {
         "Breast": {
           "selected": 0,
-          "total": 7,
+          "total": 5,
           "fraction": 0.0
         },
         "CNS": {
@@ -76,19 +76,19 @@
           "fraction": 0.0
         },
         "Leukemia": {
-          "selected": 0,
+          "selected": 2,
           "total": 6,
-          "fraction": 0.0
+          "fraction": 0.3333
         },
         "Lung": {
           "selected": 0,
-          "total": 7,
+          "total": 9,
           "fraction": 0.0
         },
         "Melanoma": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 10,
+          "fraction": 0.0
         },
         "Ovarian": {
           "selected": 0,
@@ -97,29 +97,30 @@
         },
         "Prostate": {
           "selected": 0,
-          "total": 3,
+          "total": 2,
           "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
         "Breast",
         "Colon",
-        "Leukemia",
         "Lung",
+        "Melanoma",
         "Ovarian",
-        "Prostate"
+        "Prostate",
+        "Renal"
       ]
     },
     "4": {
       "types": {
         "Breast": {
           "selected": 0,
-          "total": 7,
+          "total": 5,
           "fraction": 0.0
         },
         "CNS": {
@@ -133,19 +134,19 @@
           "fraction": 0.0
         },
         "Leukemia": {
-          "selected": 0,
+          "selected": 3,
           "total": 6,
-          "fraction": 0.0
+          "fraction": 0.5
         },
         "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
         },
         "Melanoma": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 10,
+          "fraction": 0.0
         },
         "Ovarian": {
           "selected": 0,
@@ -154,28 +155,30 @@
         },
         "Prostate": {
           "selected": 0,
-          "total": 3,
+          "total": 2,
           "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
         "Breast",
         "Colon",
-        "Leukemia",
+        "Lung",
+        "Melanoma",
         "Ovarian",
-        "Prostate"
+        "Prostate",
+        "Renal"
       ]
     },
     "5": {
       "types": {
         "Breast": {
           "selected": 0,
-          "total": 7,
+          "total": 5,
           "fraction": 0.0
         },
         "CNS": {
@@ -189,48 +192,51 @@
           "fraction": 0.0
         },
         "Leukemia": {
-          "selected": 0,
+          "selected": 4,
           "total": 6,
-          "fraction": 0.0
+          "fraction": 0.6667
         },
         "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
         },
         "Melanoma": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 10,
+          "fraction": 0.0
         },
         "Ovarian": {
-          "selected": 1,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.1429
+          "fraction": 0.0
         },
         "Prostate": {
           "selected": 0,
-          "total": 3,
+          "total": 2,
           "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
         "Breast",
         "Colon",
-        "Leukemia",
-        "Prostate"
+        "Lung",
+        "Melanoma",
+        "Ovarian",
+        "Prostate",
+        "Renal"
       ]
     },
     "6": {
       "types": {
         "Breast": {
           "selected": 0,
-          "total": 7,
+          "total": 5,
           "fraction": 0.0
         },
         "CNS": {
@@ -244,48 +250,52 @@
           "fraction": 0.0
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
         },
         "Melanoma": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 10,
+          "fraction": 0.0
         },
         "Ovarian": {
-          "selected": 1,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.1429
+          "fraction": 0.0
         },
         "Prostate": {
           "selected": 0,
-          "total": 3,
+          "total": 2,
           "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
         "Breast",
         "Colon",
-        "Prostate"
+        "Lung",
+        "Melanoma",
+        "Ovarian",
+        "Prostate",
+        "Renal"
       ]
     },
     "7": {
       "types": {
         "Breast": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 5,
+          "fraction": 0.0
         },
         "CNS": {
           "selected": 1,
@@ -293,52 +303,56 @@
           "fraction": 0.1667
         },
         "Colon": {
+          "selected": 1,
+          "total": 7,
+          "fraction": 0.1429
+        },
+        "Leukemia": {
+          "selected": 5,
+          "total": 6,
+          "fraction": 0.8333
+        },
+        "Lung": {
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
+        },
+        "Melanoma": {
+          "selected": 0,
+          "total": 10,
+          "fraction": 0.0
+        },
+        "Ovarian": {
           "selected": 0,
           "total": 7,
           "fraction": 0.0
-        },
-        "Leukemia": {
-          "selected": 1,
-          "total": 6,
-          "fraction": 0.1667
-        },
-        "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
-        },
-        "Melanoma": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
-        },
-        "Ovarian": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
         },
         "Prostate": {
           "selected": 0,
-          "total": 3,
+          "total": 2,
           "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
-        "Colon",
-        "Prostate"
+        "Breast",
+        "Lung",
+        "Melanoma",
+        "Ovarian",
+        "Prostate",
+        "Renal"
       ]
     },
     "8": {
       "types": {
         "Breast": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 5,
+          "fraction": 0.2
         },
         "CNS": {
           "selected": 1,
@@ -346,51 +360,55 @@
           "fraction": 0.1667
         },
         "Colon": {
+          "selected": 1,
+          "total": 7,
+          "fraction": 0.1429
+        },
+        "Leukemia": {
+          "selected": 5,
+          "total": 6,
+          "fraction": 0.8333
+        },
+        "Lung": {
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
+        },
+        "Melanoma": {
+          "selected": 0,
+          "total": 10,
+          "fraction": 0.0
+        },
+        "Ovarian": {
           "selected": 0,
           "total": 7,
           "fraction": 0.0
         },
-        "Leukemia": {
-          "selected": 1,
-          "total": 6,
-          "fraction": 0.1667
-        },
-        "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
-        },
-        "Melanoma": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
-        },
-        "Ovarian": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
-        },
         "Prostate": {
-          "selected": 1,
-          "total": 3,
-          "fraction": 0.3333
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
       "missing_types": [
-        "Colon"
+        "Lung",
+        "Melanoma",
+        "Ovarian",
+        "Prostate",
+        "Renal"
       ]
     },
     "9": {
       "types": {
         "Breast": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 5,
+          "fraction": 0.2
         },
         "CNS": {
           "selected": 1,
@@ -403,44 +421,49 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
         },
         "Melanoma": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 1,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.1429
+          "fraction": 0.0
         },
         "Prostate": {
-          "selected": 1,
-          "total": 3,
-          "fraction": 0.3333
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Lung",
+        "Ovarian",
+        "Prostate",
+        "Renal"
+      ]
     },
     "10": {
       "types": {
         "Breast": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 2,
+          "total": 5,
+          "fraction": 0.4
         },
         "CNS": {
           "selected": 1,
@@ -453,44 +476,49 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
-          "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "selected": 0,
+          "total": 9,
+          "fraction": 0.0
         },
         "Melanoma": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 2,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.2857
+          "fraction": 0.0
         },
         "Prostate": {
-          "selected": 1,
-          "total": 3,
-          "fraction": 0.3333
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Lung",
+        "Ovarian",
+        "Prostate",
+        "Renal"
+      ]
     },
     "11": {
       "types": {
         "Breast": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 5,
+          "fraction": 0.4
         },
         "CNS": {
           "selected": 1,
@@ -503,44 +531,48 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 9,
+          "fraction": 0.1111
         },
         "Melanoma": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 2,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.2857
+          "fraction": 0.0
         },
         "Prostate": {
-          "selected": 1,
-          "total": 3,
-          "fraction": 0.3333
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Ovarian",
+        "Prostate",
+        "Renal"
+      ]
     },
     "12": {
       "types": {
         "Breast": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 5,
+          "fraction": 0.4
         },
         "CNS": {
           "selected": 1,
@@ -553,44 +585,48 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 9,
+          "fraction": 0.2222
         },
         "Melanoma": {
           "selected": 1,
-          "total": 7,
-          "fraction": 0.1429
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 2,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.2857
+          "fraction": 0.0
         },
         "Prostate": {
-          "selected": 1,
-          "total": 3,
-          "fraction": 0.3333
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
-          "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "selected": 0,
+          "total": 8,
+          "fraction": 0.0
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Ovarian",
+        "Prostate",
+        "Renal"
+      ]
     },
     "13": {
       "types": {
         "Breast": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 5,
+          "fraction": 0.4
         },
         "CNS": {
           "selected": 1,
@@ -603,44 +639,47 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 9,
+          "fraction": 0.2222
         },
         "Melanoma": {
-          "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "selected": 1,
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 2,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.2857
+          "fraction": 0.0
         },
         "Prostate": {
-          "selected": 1,
-          "total": 3,
-          "fraction": 0.3333
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
           "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "total": 8,
+          "fraction": 0.125
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Ovarian",
+        "Prostate"
+      ]
     },
     "14": {
       "types": {
         "Breast": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 5,
+          "fraction": 0.4
         },
         "CNS": {
           "selected": 1,
@@ -653,44 +692,47 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 1,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.1667
+          "fraction": 0.8333
         },
         "Lung": {
-          "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "selected": 3,
+          "total": 9,
+          "fraction": 0.3333
         },
         "Melanoma": {
-          "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "selected": 1,
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 2,
+          "selected": 0,
           "total": 7,
-          "fraction": 0.2857
+          "fraction": 0.0
         },
         "Prostate": {
-          "selected": 2,
-          "total": 3,
-          "fraction": 0.6667
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
           "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "total": 8,
+          "fraction": 0.125
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Ovarian",
+        "Prostate"
+      ]
     },
     "15": {
       "types": {
         "Breast": {
           "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "total": 5,
+          "fraction": 0.4
         },
         "CNS": {
           "selected": 1,
@@ -703,37 +745,39 @@
           "fraction": 0.1429
         },
         "Leukemia": {
-          "selected": 2,
+          "selected": 5,
           "total": 6,
-          "fraction": 0.3333
+          "fraction": 0.8333
         },
         "Lung": {
-          "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "selected": 3,
+          "total": 9,
+          "fraction": 0.3333
         },
         "Melanoma": {
-          "selected": 2,
-          "total": 7,
-          "fraction": 0.2857
+          "selected": 1,
+          "total": 10,
+          "fraction": 0.1
         },
         "Ovarian": {
-          "selected": 2,
+          "selected": 1,
           "total": 7,
-          "fraction": 0.2857
+          "fraction": 0.1429
         },
         "Prostate": {
-          "selected": 2,
-          "total": 3,
-          "fraction": 0.6667
+          "selected": 0,
+          "total": 2,
+          "fraction": 0.0
         },
         "Renal": {
           "selected": 1,
-          "total": 9,
-          "fraction": 0.1111
+          "total": 8,
+          "fraction": 0.125
         }
       },
-      "missing_types": []
+      "missing_types": [
+        "Prostate"
+      ]
     }
   },
   "pathway_gaps_by_size": {

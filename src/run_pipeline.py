@@ -1,6 +1,7 @@
 """Full pipeline runner: fusion → umap → selection → coverage → validation → blindspot.
 
-Run once after all four log-zscored CSVs exist (including metabolomics).
+Run once after log-zscored CSVs exist, or after processed_data/pca/fused_matrix.csv
+has been produced by the R pipeline.
 Outputs all JSON files needed by the frontend to frontend/public/precomputed/.
 
 Usage:
@@ -15,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
 LOG_ZSCORED = ROOT / "processed_data" / "log_zscored"
+PCA = ROOT / "processed_data" / "pca"
 
 
 def _step(label: str) -> None:
@@ -22,12 +24,18 @@ def _step(label: str) -> None:
 
 
 def check_inputs() -> bool:
+    has_fused = (PCA / "fused_matrix.csv").exists() or (PROCESSED / "fused_matrix.csv").exists()
     required = {
-        "rna_seq_log_zscored.csv": LOG_ZSCORED / "rna_seq_log_zscored.csv",
-        "proteomics_log_zscored.csv": LOG_ZSCORED / "proteomics_log_zscored.csv",
-        "drug_activity_log_zscored.csv": LOG_ZSCORED / "drug_activity_log_zscored.csv",
         "sample_info.csv": PROCESSED / "sample_info.csv",
     }
+    if not has_fused:
+        required.update(
+            {
+                "rna_seq_log_zscored.csv": LOG_ZSCORED / "rna_seq_log_zscored.csv",
+                "proteomics_log_zscored.csv": LOG_ZSCORED / "proteomics_log_zscored.csv",
+                "drug_activity_log_zscored.csv": LOG_ZSCORED / "drug_activity_log_zscored.csv",
+            }
+        )
     optional = {
         "metabolomics_log_zscored.csv": LOG_ZSCORED / "metabolomics_log_zscored.csv",
     }
@@ -44,7 +52,7 @@ def check_inputs() -> bool:
         if path.exists():
             print(f"  [OK]      {name}")
         else:
-            print(f"  [WARN]    {name}  ← optional; download from CellMiner + run r/loading.R")
+            print(f"  [WARN]    {name}  ← optional when fused_matrix.csv already exists")
 
     return ok
 
@@ -73,7 +81,7 @@ def main() -> None:
     # ------------------------------------------------------------------
     _step("3 / 6  Selection — greedy farthest-point panel selection (all + per-type)")
     from src.selection import run_selection
-    run_selection(fused)
+    run_selection(fused, sample_info)
     print("  Wrote panel_all.json + per-cancer-type panel JSON files")
 
     # ------------------------------------------------------------------
@@ -84,7 +92,8 @@ def main() -> None:
 
     # ------------------------------------------------------------------
     _step("5 / 6  Validation — drug sensitivity prediction correlation")
-    drug_path = LOG_ZSCORED / "drug_activity_log_zscored.csv"
+    landmark_path = ROOT / "processed_data" / "clean" / "drug_landmarks" / "drug_activity_landmark_matrix.csv"
+    drug_path = landmark_path if landmark_path.exists() else LOG_ZSCORED / "drug_activity_log_zscored.csv"
     drug_df = pd.read_csv(drug_path)
     if "cell_line" in drug_df.columns:
         drug_df = drug_df.set_index("cell_line")

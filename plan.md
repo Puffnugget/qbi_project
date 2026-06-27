@@ -16,16 +16,16 @@ The tool selects the minimum set of NCI-60 cancer cell lines that maximizes cove
 
 **Recent commits:** `filtering`, `zscores and log trans`, `add blind spot detector and manual panel override`, merge with `main`.
 
-### Nikhi — done (UI + pipeline code; still on dummy JSON)
+### Nikhi — done (UI + real fused-matrix pipeline)
 
 | Area | Status |
 |------|--------|
 | Repo structure | `frontend/`, `src/`, `api/`, `data/`, `raw_data/`, `r/`, `processed_data/` |
-| Frontend | Full app on dummy data — Explore/Compare tabs, blind spot, manual override |
+| Frontend | Full app on regenerated real fused-matrix JSON — Explore/Compare tabs, blind spot, manual override |
 | FastAPI | `api/main.py` — all endpoints including `/blindspot`, `/embeddings` |
-| Python pipeline | Scripts written in `src/` — **not run on sister's real CSVs yet** |
+| Python pipeline | `PYTHONPATH=. python src/run_pipeline.py` completes using `processed_data/pca/fused_matrix.csv` |
 | Stretch (done) | Blind Spot Detector, Manual Override + live coverage |
-| Stretch (open) | Fly-in animation, Adaptive Design tab |
+| Stretch (open) | Fly-in animation |
 
 ### Sister — R cleaning largely done; annotation not started
 
@@ -35,32 +35,29 @@ The tool selects the minimum set of NCI-60 cancer cell lines that maximizes cove
 | `r/check_log_zscore.R` | Log2 + z-score → `processed_data/log_zscored/` |
 | `r/zscore_methylation_proteomics.R` | Column z-score for methylation/proteomics → `processed_data/zscored/` |
 | Outputs | `processed_data/transposed/`, `filtered/`, `log_zscored/`, `zscored/` |
-| Layers in data | **Fusion:** rna_seq, proteomics, metabolomics (⬜), drug_activity — methylation/histone cleaned but not fused |
-| fgsea / characterization | Not done — frontend still uses dummy JSON |
+| Layers in data | R fused matrix available: `processed_data/pca/fused_matrix.csv` (60 × 150) |
+| fgsea / characterization | Not done — pathway/characterization JSON still dummy |
 
-### Integration gap — **4 layers agreed**
+### Integration status
 
-**Fusion inputs (team decision):** `rna_seq`, `proteomics`, `metabolomics`, `drug_activity`
+Python now reuses the R fused matrix when present instead of rebuilding from missing metabolomics log-zscore inputs.
 
 | Layer | Source file (`processed_data/log_zscored/`) | Status |
 |-------|---------------------------------------------|--------|
 | RNA | `rna_seq_log_zscored.csv` | ✅ ready (60 lines) |
 | Proteomics | `proteomics_log_zscored.csv` | ✅ ready |
-| Metabolomics | `metabolomics_log_zscored.csv` | ⬜ **not in repo** — download from CellMiner + run R pipeline |
+| Metabolomics | `metabolomics_log_zscored.csv` | ⬜ not in repo; not blocking while using `processed_data/pca/fused_matrix.csv` |
 | Drug | `drug_activity_log_zscored.csv` | ✅ ready |
 
 **Not used for fusion:** methylation, histone (sister cleaned them but team chose metabolomics over methylation).
 
-**Still needed before `fusion.py` runs:**
-- `sample_info.csv` — cell line → cancer type (from metadata)
-- Metabolomics raw download → `r/loading.R` → log-zscore (same as other layers)
-
-`fusion.py` reads from `processed_data/log_zscored/` when those files exist.
+`sample_info.csv` is aligned 60/60 in both `processed_data/sample_info.csv` and `data/processed/sample_info.csv`.
 
 ### Dev commands
 
 ```bash
-python src/generate_dummy_data.py          # dummy JSON (current demo)
+PYTHONPATH=. python src/run_pipeline.py
+python src/adaptive_design.py
 uvicorn api.main:app --reload --port 8000
 cd frontend && npm run dev
 ```
@@ -168,26 +165,26 @@ Laptop
   │   ├── log_zscored/       ← log2 + z-score (all 5 layers)
   │   └── zscored/           ← z-score methylation/proteomics only
   ├── data/
-  │   └── processed/         ← Nikhi pipeline input (handoff target) ⬜
+  │   └── processed/         ← Nikhi pipeline input (handoff target) ✅
   ├── r/
   │   ├── loading.R          ← transpose + intersect ✅
   │   ├── check_log_zscore.R ← log + z-score ✅
   │   └── zscore_methylation_proteomics.R ✅
-  ├── src/                   ← Python pipeline (written, not run on real data)
+  ├── src/                   ← Python pipeline (run on real fused matrix)
   │   ├── fusion.py         ← PCA fusion + embeddings.json export
   │   ├── selection.py      ← greedy panel selection
   │   ├── coverage.py       ← coverage scoring
   │   ├── validation.py     ← drug sensitivity validation
   │   ├── umap_3d.py        ← UMAP 3D coordinates
   │   ├── blindspot.py      ← cancer type + pathway blind spot analysis
-  │   ├── generate_dummy_data.py ← dev JSON generator (no CSVs needed)
+  │   ├── generate_dummy_data.py ← fallback JSON generator (no CSVs needed)
   │   └── adaptive_design.py ← sequential design sandbox (stretch goal)
   ├── api/
   │   └── main.py           ← FastAPI backend ✅
   ├── frontend/
   │   └── (Next.js app)     ← Three.js + React frontend ✅
   └── frontend/public/
-      └── precomputed/      ← static JSON files for demo ✅ (dummy data live)
+      └── precomputed/      ← static JSON files for demo ✅ real fused-matrix data live
 ```
 
 ---
@@ -198,23 +195,22 @@ Laptop
 
 **Critical path (unblocks real demo):**
 1. ~~Align on 4 fusion layers~~ — **rna_seq + proteomics + metabolomics + drug_activity**
-2. **Sister:** download metabolomics from CellMiner → run through `loading.R` + `check_log_zscore.R`
-3. **Build `sample_info.csv`** from metadata (cell line → cancer type)
-4. **Run pipeline:** `fusion.py` → `umap_3d.py` → `selection.py` → `coverage.py` → `validation.py` → `blindspot.py`
-5. **Replace dummy JSON** in `frontend/public/precomputed/`
-6. **Smoke test** full UI on real data
+2. ~~Build aligned `sample_info.csv`~~ — 60/60 cell lines, no missing cancer types
+3. ~~Run pipeline~~ — `PYTHONPATH=. python src/run_pipeline.py`
+4. ~~Replace dummy panel/UMAP/coverage/validation/blindspot/adaptive JSON~~
+5. **Smoke test** full UI on real data
 
 **Polish (if time):**
 7. Fly-in animation on slider increment.
 8. Demo rehearsal 3×; projector screenshot.
-9. Adaptive Design tab (stretch only).
+9. Adaptive Design tab is generated from real fused matrix.
 
 ### Sister (Natasha)
 
 **Critical path:**
 1. **Download metabolomics** from CellMiner → add to `r/loading.R` file_specs → produce `metabolomics_log_zscored.csv`
 2. **Fix `r/loading.R`** — `common_lines` → `common_cell_lines`; unify output paths under `processed_data/`
-3. **Export `sample_info.csv`** — `cell_line`, `cancer_type` from metadata
+3. ~~Export `sample_info.csv`~~ — Python-aligned version exists in both handoff paths
 4. Confirm **rna_seq, proteomics, drug_activity** stay aligned on same 60 lines after metabolomics join
 
 **After Nikhi runs `fusion.py` (needs `rna_pca_loadings.csv`):**
@@ -230,8 +226,8 @@ Laptop
 
 - [x] Pick 4 layers for fusion: **rna_seq, proteomics, metabolomics, drug_activity**
 - [ ] Download + clean metabolomics (sister)
-- [ ] Export `sample_info.csv` (sister)
-- [ ] Confirm cell line names match across all 4 (`BR:MCF7` format)
+- [x] Export aligned `sample_info.csv`
+- [x] Confirm cell line names match fused matrix (`BR:MCF7` format)
 
 ---
 
@@ -863,11 +859,11 @@ Two Three.js scenes side by side. Left: cancer type A. Right: cancer type B. Cel
 - Cyan dot on coverage curve at `(manualPanel.length, manualCoverage)`
 - "Reset to Optimal" in sidebar when manual mode active; slider resets to greedy
 
-### Adaptive Design Tab (Stretch Goal — DONE on dummy/fallback data)
+### Adaptive Design Tab (Stretch Goal — DONE on real fused matrix)
 
 Single Three.js scene + multi-policy chart. Play replays sequential picks (500ms/step). Policies: Coverage Greedy, Uncertainty, Thompson, Random. Scored by median held-out drug prediction r. Run `python src/adaptive_design.py`.
 
-Current status: `frontend/public/precomputed/adaptive_design.json` was generated from dummy/fallback embeddings because `data/processed/fused_matrix.csv` is not available yet. It will switch to real data once the real fusion pipeline writes `fused_matrix.csv` and drug data is available.
+Current status: `frontend/public/precomputed/adaptive_design.json` was regenerated from `data/processed/fused_matrix.csv` and landmark drug data.
 
 Next AI upgrade (after real data): add `ridge_uncertainty` active learning. At each step, train bootstrapped Ridge regressors on the selected cell lines (`fused embedding → drug response PCs/vector`), score unselected lines by prediction variance plus a small diversity bonus, then pick the most informative next assay. This is more impressive than hard-coded replay because the model learns from revealed samples and chooses what data it wants next. Still skip full RL training unless this baseline clearly plateaus.
 
@@ -884,7 +880,7 @@ Next AI upgrade (after real data): add `ridge_uncertainty` active learning. At e
 | Intersect 60 common cell lines | 3-4 | `processed_data/filtered/` (60 lines) | ✅ |
 | Log2 + z-score all layers | 2-3 | `processed_data/log_zscored/` | ✅ `check_log_zscore.R` |
 | Z-score methylation/proteomics | 2-3 | `processed_data/zscored/` | ✅ |
-| Export `sample_info.csv` (cancer types) | 3-4 | `data/processed/sample_info.csv` | ⬜ |
+| Export `sample_info.csv` (cancer types) | 3-4 | `data/processed/sample_info.csv` | ✅ |
 | Handoff CSVs to `data/processed/` | 3-4 | `rna_clean.csv`, etc. | ⬜ |
 | Run fgsea on RNA PCA loadings | 8-12 | `factor_annotations.json` | ⬜ blocked on fusion |
 | Characterization JSON | 14-18 | `characterization.json` | ⬜ |
@@ -909,9 +905,9 @@ Next AI upgrade (after real data): add `ridge_uncertainty` active learning. At e
 |------|-------|--------|--------|
 | FastAPI app setup with CORS | 0-2 | api/main.py | ✅ |
 | All API endpoints reading from precomputed JSON | 2-4 | running server on :8000 | ✅ |
-| Pipeline scripts (fusion, selection, coverage, validation, umap) | 4-11 | src/*.py | ✅ written, ⬜ run on real data |
-| Run full pipeline on sister's CSVs | 11-14 | real precomputed JSON | ⬜ **next** |
-| `generate_dummy_data.py` for dev without CSVs | — | dummy JSON | ✅ |
+| Pipeline scripts (fusion, selection, coverage, validation, umap) | 4-11 | src/*.py | ✅ run on real fused matrix |
+| Run full pipeline on sister's CSVs | 11-14 | real precomputed JSON | ✅ using R fused matrix |
+| `generate_dummy_data.py` for dev without CSVs | — | dummy JSON | ✅ fallback |
 | `blindspot.py` + pathway gaps | stretch | blindspot.json | ✅ |
 | Per-cancer-type JSON generation | 11-14 | panel_*.json | ✅ (dummy) |
 
@@ -972,7 +968,7 @@ frontend/public/precomputed/
   blindspot.json            ← cancer type + pathway blind spots          ✅
   embeddings.json           ← fused PCA coords for manual coverage       ✅
   pathway_scores.json       ← per-cell-line pathway scores (dummy)       ~ real fgsea later
-  adaptive_design.json      ← stepwise policy rollouts (dummy/fallback)  ~ real after fused_matrix.csv
+  adaptive_design.json      ← stepwise policy rollouts (real fused matrix) ✅
 ```
 
 ---
@@ -1073,13 +1069,13 @@ The biological annotation and characterization work she does at the hackathon is
 - [x] Download GMT (`raw_data/Human Gene Sets v2026.1.gmt`)
 - [x] Clean + transpose + intersect cell lines (`r/loading.R`)
 - [x] Log-zscore pipeline (`r/check_log_zscore.R`, `zscore_methylation_proteomics.R`)
-- [ ] Export `sample_info.csv` with cancer type labels
-- [ ] Hand off final CSVs to `data/processed/` for Python
+- [x] Export `sample_info.csv` with cancer type labels
+- [x] Hand off `sample_info.csv` and `fused_matrix.csv` to `data/processed/` for Python
 - [ ] fgsea + characterization (after Nikhi runs fusion)
 - [ ] Write down 9 cancer types + one fact each for demo
 
 ### Both
-- [ ] Agree on exact cell line name format — write it down. No discrepancies between her R output and your Python input
+- [x] Agree on exact cell line name format — `sample_info.csv` matches fused matrix names 60/60
 - [ ] Write the demo script in notes app — both read it out loud once tonight
 - [ ] Set alarm for early tomorrow — first 3 hours are critical
 

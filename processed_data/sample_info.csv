@@ -3,7 +3,7 @@ BR:MCF7,Breast
 BR:MDA-MB-231,Breast
 BR:HS 578T,Breast
 BR:BT-549,Breast
-BR:T-47D,
+BR:T-47D,Breast
 CNS:SF-268,CNS
 CNS:SF-295,CNS
 CNS:SF-539,CNS
@@ -18,12 +18,12 @@ CO:HT29,Colon
 CO:KM12,Colon
 CO:SW-620,Colon
 LE:CCRF-CEM,Leukemia
-LE:HL-60(TB),
+LE:HL-60(TB),Leukemia
 LE:K-562,Leukemia
 LE:MOLT-4,Leukemia
 LE:RPMI-8226,Leukemia
 LE:SR,Leukemia
-ME:LOX IMVI,
+ME:LOX IMVI,Melanoma
 ME:MALME-3M,Melanoma
 ME:M14,Melanoma
 ME:SK-MEL-2,Melanoma
@@ -31,9 +31,9 @@ ME:SK-MEL-28,Melanoma
 ME:SK-MEL-5,Melanoma
 ME:UACC-257,Melanoma
 ME:UACC-62,Melanoma
-ME:MDA-MB-435,
-ME:MDA-N,
-LC:A549/ATCC,
+ME:MDA-MB-435,Melanoma
+ME:MDA-N,Melanoma
+LC:A549/ATCC,Lung
 LC:EKVX,Lung
 LC:HOP-62,Lung
 LC:HOP-92,Lung
@@ -48,14 +48,14 @@ OV:OVCAR-4,Ovarian
 OV:OVCAR-5,Ovarian
 OV:OVCAR-8,Ovarian
 OV:SK-OV-3,Ovarian
-OV:NCI/ADR-RES,
+OV:NCI/ADR-RES,Ovarian
 PR:PC-3,Prostate
 PR:DU-145,Prostate
 RE:786-0,Renal
 RE:A498,Renal
 RE:ACHN,Renal
 RE:CAKI-1,Renal
-RE:RXF 393,
+RE:RXF 393,Renal
 RE:SN12C,Renal
 RE:TK-10,Renal
 RE:UO-31,Renal

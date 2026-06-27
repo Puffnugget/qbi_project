@@ -80,7 +80,7 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
       }
@@ -107,9 +107,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "7": [
@@ -134,9 +139,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "8": [
@@ -161,9 +171,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "9": [
@@ -188,9 +203,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "10": [
@@ -215,9 +235,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "11": [
@@ -242,9 +267,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "12": [
@@ -269,9 +299,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "13": [
@@ -296,9 +331,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "14": [
@@ -323,9 +363,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "15": [
@@ -350,9 +395,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "16": [
@@ -377,9 +427,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "17": [
@@ -404,9 +459,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "18": [
@@ -431,9 +491,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "19": [
@@ -458,9 +523,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ],
     "20": [
@@ -485,9 +555,14 @@
         "step": 4
       },
       {
-        "cell_line": "LE:MOLT-4",
+        "cell_line": "LE:HL-60(TB)",
         "cancer_type": "Leukemia",
         "step": 5
+      },
+      {
+        "cell_line": "LE:MOLT-4",
+        "cancer_type": "Leukemia",
+        "step": 6
       }
     ]
   }
