@@ -1,6 +1,6 @@
 "use client";
 
-import { Html, Line, OrbitControls } from "@react-three/drei";
+import { Environment, Html, Line, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Group, Mesh, MeshStandardMaterial } from "three";
@@ -119,6 +119,7 @@ function CellSphere({
   isOverlap,
   isMissingType,
   isNewest,
+  isHovered,
   onHover,
   onClick,
 }: {
@@ -128,44 +129,60 @@ function CellSphere({
   isOverlap: boolean;
   isMissingType: boolean;
   isNewest: boolean;
+  isHovered: boolean;
   onHover: (p: UmapPoint | null) => void;
   onClick?: (cellLine: string) => void;
 }) {
   const baseColor = CANCER_COLORS[point.cancer_type] ?? theme.fgSubtle;
 
   let color = baseColor;
-  let emissive = baseColor;
-  let emissiveIntensity = 0.2;
+  let emissive = "#000000";
+  let emissiveIntensity = 0;
   let radius = 0.08;
   let opacity = 1;
   let scale = 1;
+  let roughness = 0.42;
+  let metalness = 0.12;
+  let clearcoat = 0.55;
+  let envMapIntensity = 0.85;
 
   switch (state) {
     case "greedy":
       color = sceneTheme.greedy;
       emissive = sceneTheme.greedy;
-      emissiveIntensity = 0.7;
+      emissiveIntensity = 0.18;
       radius = 0.12;
       scale = 1.5;
+      roughness = 0.28;
+      clearcoat = 0.75;
+      envMapIntensity = 1.1;
       break;
     case "manual-added":
       color = sceneTheme.manualAdded;
       emissive = sceneTheme.manualAdded;
-      emissiveIntensity = 0.65;
+      emissiveIntensity = 0.16;
       radius = 0.11;
       scale = 1.35;
+      roughness = 0.32;
+      clearcoat = 0.7;
+      envMapIntensity = 1;
       break;
     case "manual-removed":
       color = sceneTheme.manualRemoved;
       emissive = sceneTheme.manualRemoved;
-      emissiveIntensity = 0.1;
+      emissiveIntensity = 0.04;
       opacity = 0.3;
+      roughness = 0.65;
+      clearcoat = 0.2;
+      envMapIntensity = 0.35;
       break;
     default:
       if (isOverlap) {
         color = sceneTheme.overlap;
         emissive = sceneTheme.overlap;
-        emissiveIntensity = 0.5;
+        emissiveIntensity = 0.12;
+        roughness = 0.35;
+        clearcoat = 0.65;
       }
       break;
   }
@@ -173,6 +190,15 @@ function CellSphere({
   if (isFilteredOut && state === "default") {
     opacity = 0.15;
     color = theme.fgSubtle;
+    roughness = 0.75;
+    clearcoat = 0.1;
+    envMapIntensity = 0.25;
+  }
+
+  if (isHovered) {
+    scale *= 1.18;
+    roughness = Math.max(0.2, roughness - 0.08);
+    envMapIntensity += 0.2;
   }
 
   const pos: [number, number, number] = [point.x, point.y, point.z];
@@ -233,15 +259,31 @@ function CellSphere({
           onClick?.(point.cell_line);
         }}
       >
-        <sphereGeometry args={[radius, 24, 24]} />
-        <meshStandardMaterial
+        <sphereGeometry args={[radius, 32, 32]} />
+        <meshPhysicalMaterial
           color={color}
           emissive={emissive}
           emissiveIntensity={emissiveIntensity}
+          roughness={roughness}
+          metalness={metalness}
+          clearcoat={clearcoat}
+          clearcoatRoughness={0.18}
+          envMapIntensity={envMapIntensity}
           transparent={opacity < 1}
           opacity={opacity}
         />
       </mesh>
+      {(state === "greedy" || state === "manual-added") && (
+        <mesh renderOrder={-1}>
+          <sphereGeometry args={[radius * 1.06, 24, 24]} />
+          <meshBasicMaterial
+            color={color}
+            transparent
+            opacity={0.14}
+            depthWrite={false}
+          />
+        </mesh>
+      )}
     </group>
   );
 }
@@ -288,8 +330,23 @@ function SceneContent({
   return (
     <>
       <color attach="background" args={[sceneTheme.background]} />
-      <ambientLight intensity={0.45} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
+      <Environment preset="city" environmentIntensity={0.35} />
+      <ambientLight intensity={0.18} />
+      <hemisphereLight
+        args={["#8fbfb0", sceneTheme.background, 0.55]}
+        position={[0, 1, 0]}
+      />
+      <directionalLight
+        position={[8, 10, 6]}
+        intensity={1.35}
+        color="#f0f5f2"
+      />
+      <directionalLight
+        position={[-7, 3, -6]}
+        intensity={0.45}
+        color="#6ba888"
+      />
+      <pointLight position={[0, -3, 5]} intensity={0.3} color="#a8c4b8" />
       <gridHelper
         args={[10, 10, sceneTheme.gridPrimary, sceneTheme.gridSecondary]}
         position={[0, -2, 0]}
@@ -323,6 +380,7 @@ function SceneContent({
             isOverlap={overlapSet.has(point.cell_line)}
             isMissingType={isMissingType}
             isNewest={newestLine === point.cell_line}
+            isHovered={hovered?.cell_line === point.cell_line}
             onHover={setHovered}
             onClick={onSphereClick}
           />
@@ -368,7 +426,11 @@ export default function Scene3D({
 
   return (
     <div className="relative h-full w-full">
-      <Canvas camera={{ position: [0, 0, 6], fov: 50 }} className="h-full w-full">
+      <Canvas
+        camera={{ position: [0, 0, 6], fov: 50 }}
+        className="h-full w-full"
+        gl={{ antialias: true, alpha: false }}
+      >
         {hasData ? (
           <SceneContent
             points={points}
