@@ -1,12 +1,12 @@
 {
-  "MCF7": {
+  "BR:MCF7": {
     "Cell cycle": 0.8433,
     "Immune response": 0.7723,
     "DNA repair": 0.7912,
     "Apoptosis": 0.3048,
     "Metabolism": 0.299
   },
-  "MDA-MB-231": {
+  "BR:MDA-MB-231": {
     "Cell cycle": 0.9421,
     "Immune response": 0.5181,
     "DNA repair": 0.4408,
@@ -41,7 +41,7 @@
     "Apoptosis": 0.8375,
     "Metabolism": 0.3861
   },
-  "MDA-MB-435": {
+  "ME:MDA-MB-435": {
     "Cell cycle": 0.6246,
     "Immune response": 0.6848,
     "DNA repair": 0.8942,
@@ -83,7 +83,7 @@
     "Apoptosis": 0.3397,
     "Metabolism": 0.2427
   },
-  "U251": {
+  "CNS:U251": {
     "Cell cycle": 0.6729,
     "Immune response": 0.7446,
     "DNA repair": 0.5149,
@@ -97,14 +97,14 @@
     "Apoptosis": 0.3452,
     "Metabolism": 0.3894
   },
-  "HT29": {
+  "CO:HT29": {
     "Cell cycle": 0.3995,
     "Immune response": 0.657,
     "DNA repair": 0.533,
     "Apoptosis": 0.2394,
     "Metabolism": 0.4989
   },
-  "KM12": {
+  "CO:KM12": {
     "Cell cycle": 0.619,
     "Immune response": 0.2813,
     "DNA repair": 0.8668,
@@ -167,7 +167,7 @@
     "Apoptosis": 0.3619,
     "Metabolism": 0.7558
   },
-  "SR": {
+  "LE:SR": {
     "Cell cycle": 0.8886,
     "Immune response": 0.3057,
     "DNA repair": 0.6915,
@@ -244,7 +244,7 @@
     "Apoptosis": 0.7742,
     "Metabolism": 0.961
   },
-  "M14": {
+  "ME:M14": {
     "Cell cycle": 0.2948,
     "Immune response": 0.8804,
     "DNA repair": 0.7097,
@@ -279,7 +279,7 @@
     "Apoptosis": 0.7201,
     "Metabolism": 0.2724
   },
-  "IGROV1": {
+  "OV:IGROV1": {
     "Cell cycle": 0.9176,
     "Immune response": 0.2232,
     "DNA repair": 0.3927,
@@ -356,14 +356,14 @@
     "Apoptosis": 0.7194,
     "Metabolism": 0.9525
   },
-  "A498": {
+  "RE:A498": {
     "Cell cycle": 0.3188,
     "Immune response": 0.6067,
     "DNA repair": 0.5232,
     "Apoptosis": 0.5793,
     "Metabolism": 0.2954
   },
-  "ACHN": {
+  "RE:ACHN": {
     "Cell cycle": 0.3073,
     "Immune response": 0.4225,
     "DNA repair": 0.4438,
@@ -384,7 +384,7 @@
     "Apoptosis": 0.5793,
     "Metabolism": 0.3805
   },
-  "SN12C": {
+  "RE:SN12C": {
     "Cell cycle": 0.658,
     "Immune response": 0.6526,
     "DNA repair": 0.7616,

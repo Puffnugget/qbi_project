@@ -12,6 +12,7 @@ import {
   YAxis,
 } from "recharts";
 import { Card } from "@/components/ui/Card";
+import { fetchAdaptiveDesign, isAdaptiveDesignReady } from "@/lib/data";
 import { chartTheme } from "@/lib/theme";
 import type { AdaptiveDesignData, UmapPoint } from "@/lib/types";
 
@@ -26,24 +27,39 @@ export default function AdaptiveDesignTab({
   umapPoints?: UmapPoint[];
   adaptiveData?: AdaptiveDesignData | null;
 }) {
-  const [data, setData] = useState<AdaptiveDesignData | null>(adaptiveData);
+  const [data, setData] = useState<AdaptiveDesignData | null>(
+    isAdaptiveDesignReady(adaptiveData) ? adaptiveData : null,
+  );
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [policy, setPolicy] = useState("coverage_greedy");
   const [step, setStep] = useState(1);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    if (adaptiveData) setData(adaptiveData);
-  }, [adaptiveData]);
+    if (isAdaptiveDesignReady(adaptiveData)) {
+      setData(adaptiveData);
+      setLoadError(null);
+      return;
+    }
 
-  useEffect(() => {
-    if (data || adaptiveData) return;
-    fetch("/precomputed/adaptive_design.json")
-      .then((r) =>
-        r.ok ? r.json() : Promise.reject(new Error("missing adaptive_design.json")),
-      )
-      .then(setData)
-      .catch(() => setData(null));
-  }, [data, adaptiveData]);
+    let cancelled = false;
+    setLoadError(null);
+
+    fetchAdaptiveDesign()
+      .then((payload) => {
+        if (!cancelled) setData(payload);
+      })
+      .catch((err: Error) => {
+        if (!cancelled) {
+          setData(null);
+          setLoadError(err.message);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [adaptiveData]);
 
   const rollout =
     data?.policies[policy] ??
@@ -67,39 +83,49 @@ export default function AdaptiveDesignTab({
     return Array.from({ length: data.target_size }, (_, i) => {
       const row: Record<string, number> = { step: i + 1 };
       for (const key of POLICIES) {
-        row[key] = data.policies[key]?.curve[i]?.median_r ?? 0;
+        const raw = data.policies[key]?.curve[i]?.median_r ?? 0;
+        row[key] = Number.isFinite(raw) ? raw : 0;
       }
       return row;
     });
   }, [data]);
 
-  if (!data || !rollout) {
+  if (!isAdaptiveDesignReady(data) || !rollout) {
     return (
-      <div className="flex h-full items-center justify-center text-sm text-fg-muted">
-        Run{" "}
-        <span className="mx-1 font-mono text-accent">python src/adaptive_design.py</span>
-        to generate adaptive-design rollouts.
+      <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center text-sm text-fg-muted">
+        <p>
+          Adaptive design loads from the FastAPI backend via uvicorn.
+        </p>
+        <ol className="max-w-md space-y-2 text-left font-mono text-xs text-accent">
+          <li>1. python src/adaptive_design.py</li>
+          <li>2. uvicorn api.main:app --reload --port 8000</li>
+          <li>3. cd frontend && npm run dev</li>
+        </ol>
+        {loadError && (
+          <p className="max-w-md text-xs text-danger">{loadError}</p>
+        )}
       </div>
     );
   }
 
   return (
-    <div className="grid h-full grid-rows-[1fr_260px]">
-      <div className="min-h-0 p-3">
-        <div className="h-full overflow-hidden rounded-xl border border-border shadow-[0_4px_24px_var(--shadow-strong)]">
+    <div className="grid h-full min-h-0 grid-rows-[3fr_7fr] overflow-hidden">
+      <div className="min-h-0 px-3 pt-2">
+        <div className="h-full overflow-hidden rounded-lg border border-border shadow-[0_2px_12px_var(--shadow)]">
           <Scene3D
             points={umapPoints}
             selectedLines={selectedLines}
             greedyLines={selectedLines}
+            compact
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-[280px_1fr] gap-4 border-t border-border bg-surface/60 p-4">
-        <Card>
-          <p className="label-caps">Adaptive design replay</p>
-          <p className="mt-2 text-sm text-fg-muted">{data.metric}</p>
-          <div className="mt-4 grid gap-2">
+      <div className="grid min-h-0 grid-cols-[3fr_7fr] items-stretch gap-2 overflow-hidden border-t border-border bg-surface/60 px-3 py-2">
+        <Card className="flex h-fit max-h-full w-full flex-col self-start overflow-auto p-2.5">
+          <p className="label-caps shrink-0">Adaptive design replay</p>
+          <p className="mt-1 shrink-0 text-xs text-fg-muted">{data.metric}</p>
+          <div className="mt-2 grid shrink-0 grid-cols-2 gap-1.5">
             {POLICIES.map((p) => (
               <button
                 key={p}
@@ -109,7 +135,7 @@ export default function AdaptiveDesignTab({
                   setStep(1);
                   setPlaying(false);
                 }}
-                className={`rounded-md border px-3 py-2 text-left text-sm transition-colors ${
+                className={`rounded-md border px-2.5 py-1.5 text-left text-xs transition-colors ${
                   policy === p
                     ? "border-accent bg-accent/10 text-accent font-medium"
                     : "border-border text-fg-muted hover:border-border-strong hover:text-fg"
@@ -119,11 +145,11 @@ export default function AdaptiveDesignTab({
               </button>
             ))}
           </div>
-          <div className="mt-4 flex gap-2">
+          <div className="mt-2 flex shrink-0 flex-wrap gap-2">
             <button
               type="button"
               onClick={() => setPlaying((v) => !v)}
-              className="btn-primary px-3 py-2 text-sm"
+              className="btn-primary px-2.5 py-1.5 text-xs"
             >
               {playing ? "Pause" : "Play"}
             </button>
@@ -133,17 +159,18 @@ export default function AdaptiveDesignTab({
                 setStep(1);
                 setPlaying(false);
               }}
-              className="btn-ghost px-3 py-2 text-sm"
+              className="btn-ghost px-2.5 py-1.5 text-xs"
             >
               Reset
             </button>
-            <span className="self-center text-sm text-fg-subtle">
+            <span className="self-center text-xs text-fg-subtle">
               Step {step}/{maxStep}
             </span>
           </div>
         </Card>
 
-        <Card className="min-h-0">
+        <Card className="flex min-h-0 flex-col overflow-hidden p-2">
+          <div className="min-h-0 flex-1">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>
               <CartesianGrid stroke={chartTheme.grid} strokeDasharray="3 3" />
@@ -155,6 +182,8 @@ export default function AdaptiveDesignTab({
               <YAxis
                 stroke={chartTheme.axis}
                 tick={{ fill: chartTheme.axis, fontSize: 11 }}
+                domain={["auto", "auto"]}
+                tickFormatter={(v) => v.toFixed(2)}
               />
               <Tooltip
                 contentStyle={{
@@ -175,6 +204,7 @@ export default function AdaptiveDesignTab({
               ))}
             </LineChart>
           </ResponsiveContainer>
+          </div>
         </Card>
       </div>
     </div>

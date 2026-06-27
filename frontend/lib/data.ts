@@ -9,6 +9,7 @@ import type {
   PerLayerCoverage,
   UmapPoint,
 } from "./types";
+import { API_BASE } from "./constants";
 
 const BASE = "/precomputed";
 const LAYER_LABELS: Record<string, string> = {
@@ -27,6 +28,30 @@ async function fetchJson<T>(path: string): Promise<T> {
     throw new Error(`Failed to load ${path}: ${res.status}`);
   }
   return res.json() as Promise<T>;
+}
+
+export function isAdaptiveDesignReady(
+  data: AdaptiveDesignData | null | undefined,
+): data is AdaptiveDesignData {
+  return !!data && Object.keys(data.policies ?? {}).length > 0;
+}
+
+/** Adaptive design rollouts — proxied to FastAPI via Next.js /api rewrite. */
+export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}/adaptive-design`);
+  } catch {
+    throw new Error(
+      "Cannot reach the API. Run: uvicorn api.main:app --reload --port 8000",
+    );
+  }
+  if (!res.ok) {
+    throw new Error(
+      `Adaptive design API unavailable (${res.status}). Run: uvicorn api.main:app --reload --port 8000`,
+    );
+  }
+  return res.json() as Promise<AdaptiveDesignData>;
 }
 
 function panelFile(cancerType: string): string {
@@ -51,7 +76,7 @@ export async function loadAppData(cancerType: string): Promise<AppData> {
         dimensions: 0,
         embeddings: {},
       })),
-      fetchJson<AdaptiveDesignData>("adaptive_design.json").catch(() => ({
+      fetchAdaptiveDesign().catch(() => ({
         target_size: 0,
         metric: "",
         n_cell_lines: 0,

@@ -1,592 +1,1342 @@
 {
-  "MCF7": {
+  "BR:MCF7": {
     "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Selected at step 10 to improve per-layer coverage balance; captures Breast metabolic and proteomic diversity",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "UGT2B15",
+      "C18orf63",
+      "IL20",
+      "NUP210L"
+    ],
+    "top_proteins": [
+      "ESR1",
+      "ERBB2",
+      "PGR",
+      "FOXA1"
+    ],
+    "top_drugs": [
+      "tamoxifen",
+      "fulvestrant",
+      "palbociclib",
+      "trastuzumab"
+    ],
+    "selection_step": 10
+  },
+  "BR:MDA-MB-231": {
+    "cancer_type": "Breast",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "ADGRF5",
+      "GPR116P1",
+      "MUSK",
+      "OR7E22P"
+    ],
+    "top_proteins": [
+      "ESR1",
+      "ERBB2",
+      "PGR",
+      "FOXA1"
+    ],
+    "top_drugs": [
+      "tamoxifen",
+      "fulvestrant",
+      "palbociclib",
+      "trastuzumab"
     ]
   },
-  "MDA-MB-231": {
+  "BR:HS 578T": {
     "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "KRT14",
+      "ADH1B",
+      "TMEM119",
+      "DCN"
+    ],
+    "top_proteins": [
+      "ESR1",
+      "ERBB2",
+      "PGR",
+      "FOXA1"
+    ],
+    "top_drugs": [
+      "tamoxifen",
+      "fulvestrant",
+      "palbociclib",
+      "trastuzumab"
     ]
   },
-  "T47D": {
+  "BR:BT-549": {
     "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "RSPO2",
+      "COL15A1",
+      "HTR1B",
+      "CFAP58"
+    ],
+    "top_proteins": [
+      "ESR1",
+      "ERBB2",
+      "PGR",
+      "FOXA1"
+    ],
+    "top_drugs": [
+      "tamoxifen",
+      "fulvestrant",
+      "palbociclib",
+      "trastuzumab"
     ]
   },
-  "BT549": {
+  "BR:T-47D": {
     "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Fills the largest remaining gap in the fused omics landscape at step 8; adds distinct Breast biology not captured by earlier picks",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "PIP",
+      "ABCC11",
+      "OTOR",
+      "SERPINA6"
+    ],
+    "top_proteins": [
+      "ESR1",
+      "ERBB2",
+      "PGR",
+      "FOXA1"
+    ],
+    "top_drugs": [
+      "tamoxifen",
+      "fulvestrant",
+      "palbociclib",
+      "trastuzumab"
+    ],
+    "selection_step": 8
   },
-  "HS578T": {
-    "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "MDA-MB-468": {
-    "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "MDA-MB-435": {
-    "cancer_type": "Breast",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "SF268": {
+  "CNS:SF-268": {
     "cancer_type": "CNS",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Anchors the panel as the line closest to the multi-omics centroid \u2014 a biological reference point across all four data layers",
     "top_genes": [
-      "TP53",
-      "BRCA1",
+      "ZNF723",
+      "SERPINA9",
+      "ZNF735",
+      "TBX5"
+    ],
+    "top_proteins": [
       "EGFR",
-      "MYC"
-    ]
+      "PDGFRA",
+      "IDH1",
+      "MGMT"
+    ],
+    "top_drugs": [
+      "temozolomide",
+      "carmustine",
+      "bevacizumab",
+      "lomustine"
+    ],
+    "selection_step": 1
   },
-  "SF295": {
+  "CNS:SF-295": {
     "cancer_type": "CNS",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
+      "MMP3",
+      "GABRA4",
+      "MMP12",
+      "CHRM2"
+    ],
+    "top_proteins": [
       "EGFR",
-      "MYC"
+      "PDGFRA",
+      "IDH1",
+      "MGMT"
+    ],
+    "top_drugs": [
+      "temozolomide",
+      "carmustine",
+      "bevacizumab",
+      "lomustine"
     ]
   },
-  "SF539": {
+  "CNS:SF-539": {
     "cancer_type": "CNS",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
+      "SOX18",
+      "DNM3OS",
+      "SOST",
+      "HSPB7"
+    ],
+    "top_proteins": [
       "EGFR",
-      "MYC"
+      "PDGFRA",
+      "IDH1",
+      "MGMT"
+    ],
+    "top_drugs": [
+      "temozolomide",
+      "carmustine",
+      "bevacizumab",
+      "lomustine"
     ]
   },
-  "SNB19": {
+  "CNS:SNB-19": {
     "cancer_type": "CNS",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
+      "AMPD1",
+      "ENPP6",
+      "CNR1",
+      "GFAP"
+    ],
+    "top_proteins": [
       "EGFR",
-      "MYC"
+      "PDGFRA",
+      "IDH1",
+      "MGMT"
+    ],
+    "top_drugs": [
+      "temozolomide",
+      "carmustine",
+      "bevacizumab",
+      "lomustine"
     ]
   },
-  "SNB75": {
+  "CNS:SNB-75": {
     "cancer_type": "CNS",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Late-stage pick at step 16; closes a residual blind spot in CNS drug-sensitivity space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
+      "LBP",
+      "MOG",
+      "CH25H",
+      "CLCA2"
+    ],
+    "top_proteins": [
       "EGFR",
-      "MYC"
-    ]
+      "PDGFRA",
+      "IDH1",
+      "MGMT"
+    ],
+    "top_drugs": [
+      "temozolomide",
+      "carmustine",
+      "bevacizumab",
+      "lomustine"
+    ],
+    "selection_step": 16
   },
-  "U251": {
+  "CNS:U251": {
     "cancer_type": "CNS",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
+      "SALL3",
+      "KCNMB2",
+      "FOXS1",
+      "SOX3"
+    ],
+    "top_proteins": [
       "EGFR",
-      "MYC"
+      "PDGFRA",
+      "IDH1",
+      "MGMT"
+    ],
+    "top_drugs": [
+      "temozolomide",
+      "carmustine",
+      "bevacizumab",
+      "lomustine"
     ]
   },
-  "HCT116": {
+  "CO:COLO 205": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Fills the largest remaining gap in the fused omics landscape at step 7; adds distinct Colon biology not captured by earlier picks",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "PLA2G2A",
+      "CALML3",
+      "PRR9",
+      "SPRR1A"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
+    ],
+    "selection_step": 7
   },
-  "HT29": {
+  "CO:HCC-2998": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "MUC17",
+      "REG1A",
+      "TDRD12",
+      "GUCY2C"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
     ]
   },
-  "KM12": {
+  "CO:HCT-116": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "WNT16",
+      "DUOX1",
+      "OR51B2",
+      "SLC27A6"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
     ]
   },
-  "SW620": {
+  "CO:HCT-15": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "IGFL2",
+      "SP3P",
+      "C16orf96",
+      "TTC41P"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
     ]
   },
-  "COLO205": {
+  "CO:HT29": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "UGT1A13P",
+      "VSIG2",
+      "IL1RN",
+      "CXCL11"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
     ]
   },
-  "HCC2998": {
+  "CO:KM12": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "KCNJ3",
+      "SYNPR",
+      "GP2",
+      "SPINK4"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
     ]
   },
-  "LOVO": {
+  "CO:SW-620": {
     "cancer_type": "Colon",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "SLC25A53",
+      "CNPY1",
+      "TMEM176A",
+      "FGF3"
+    ],
+    "top_proteins": [
+      "KRAS",
+      "APC",
+      "BRAF",
+      "MLH1"
+    ],
+    "top_drugs": [
+      "5-fluorouracil",
+      "oxaliplatin",
+      "irinotecan",
+      "cetuximab"
     ]
   },
-  "HL60": {
+  "LE:CCRF-CEM": {
     "cancer_type": "Leukemia",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "TRBV1",
+      "HMHB1",
+      "C2orf40",
+      "KRT1"
+    ],
+    "top_proteins": [
+      "BCR-ABL",
+      "FLT3",
+      "NPM1",
+      "DNMT3A"
+    ],
+    "top_drugs": [
+      "cytarabine",
+      "daunorubicin",
+      "vincristine",
+      "methotrexate"
     ]
   },
-  "K562": {
+  "LE:HL-60(TB)": {
     "cancer_type": "Leukemia",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Maximally distant from the centroid anchor in fused multi-omics space; captures the most divergent Leukemia pharmacological profile",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "ELANE",
+      "MPO",
+      "RNASE2",
+      "NCF1"
+    ],
+    "top_proteins": [
+      "BCR-ABL",
+      "FLT3",
+      "NPM1",
+      "DNMT3A"
+    ],
+    "top_drugs": [
+      "cytarabine",
+      "daunorubicin",
+      "vincristine",
+      "methotrexate"
+    ],
+    "selection_step": 2
   },
-  "MOLT4": {
+  "LE:K-562": {
     "cancer_type": "Leukemia",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Fills the largest remaining gap in the fused omics landscape at step 5; adds distinct Leukemia biology not captured by earlier picks",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "RHAG",
+      "GYPB",
+      "HBBP1",
+      "HBZ"
+    ],
+    "top_proteins": [
+      "BCR-ABL",
+      "FLT3",
+      "NPM1",
+      "DNMT3A"
+    ],
+    "top_drugs": [
+      "cytarabine",
+      "daunorubicin",
+      "vincristine",
+      "methotrexate"
+    ],
+    "selection_step": 5
   },
-  "RPMI8226": {
+  "LE:MOLT-4": {
     "cancer_type": "Leukemia",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Fills the largest remaining gap in the fused omics landscape at step 6; adds distinct Leukemia biology not captured by earlier picks",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "CCR9",
+      "CELA3A",
+      "SIX6",
+      "CD2"
+    ],
+    "top_proteins": [
+      "BCR-ABL",
+      "FLT3",
+      "NPM1",
+      "DNMT3A"
+    ],
+    "top_drugs": [
+      "cytarabine",
+      "daunorubicin",
+      "vincristine",
+      "methotrexate"
+    ],
+    "selection_step": 6
   },
-  "SR": {
+  "LE:RPMI-8226": {
     "cancer_type": "Leukemia",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Farthest unselected line at step 4; expands coverage into underrepresented Leukemia transcriptomic and drug-sensitivity territory",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "IGLL5",
+      "LEFTY2",
+      "PVALB",
+      "IGLC1"
+    ],
+    "top_proteins": [
+      "BCR-ABL",
+      "FLT3",
+      "NPM1",
+      "DNMT3A"
+    ],
+    "top_drugs": [
+      "cytarabine",
+      "daunorubicin",
+      "vincristine",
+      "methotrexate"
+    ],
+    "selection_step": 4
   },
-  "CCRFCEM": {
+  "LE:SR": {
     "cancer_type": "Leukemia",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Farthest unselected line at step 3; expands coverage into underrepresented Leukemia transcriptomic and drug-sensitivity territory",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "KIR2DS5",
+      "KIR2DL2",
+      "KIR3DS1",
+      "TEX29"
+    ],
+    "top_proteins": [
+      "BCR-ABL",
+      "FLT3",
+      "NPM1",
+      "DNMT3A"
+    ],
+    "top_drugs": [
+      "cytarabine",
+      "daunorubicin",
+      "vincristine",
+      "methotrexate"
+    ],
+    "selection_step": 3
   },
-  "A549": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "NCIH460": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "NCIH522": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "NCIH23": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "NCIH226": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "NCIH322M": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "NCIH647": {
-    "cancer_type": "Lung",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "LOXIMVI": {
+  "ME:LOX IMVI": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "CSF3",
+      "KRT33A",
+      "ESM1",
+      "CCL3"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
     ]
   },
-  "MALME3M": {
+  "ME:MALME-3M": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Selected at step 9 to improve per-layer coverage balance; captures Melanoma metabolic and proteomic diversity",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "FXYD1",
+      "FCER1G",
+      "LGI4",
+      "PPP1R1A"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
+    ],
+    "selection_step": 9
   },
-  "M14": {
+  "ME:M14": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "TFAP2B",
+      "WNT1",
+      "VSTM2B",
+      "TCERG1L"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
     ]
   },
-  "SKMEL2": {
+  "ME:SK-MEL-2": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Late-stage pick at step 17; closes a residual blind spot in Melanoma drug-sensitivity space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "GBA3",
+      "BMX",
+      "DYDC2",
+      "MYOZ2"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
+    ],
+    "selection_step": 17
   },
-  "SKMEL28": {
+  "ME:SK-MEL-28": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "CLDN20",
+      "RPH3A",
+      "RAB43",
+      "DAZ4"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
     ]
   },
-  "SKMEL5": {
+  "ME:SK-MEL-5": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "SIAH3",
+      "HTN1",
+      "HTN3",
+      "SLC38A8"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
     ]
   },
-  "UACC257": {
+  "ME:UACC-257": {
     "cancer_type": "Melanoma",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "IL17D",
+      "CCL18",
+      "WFDC1",
+      "NOX5"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
     ]
   },
-  "IGROV1": {
+  "ME:UACC-62": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "FOLH1B",
+      "FRG2EP",
+      "FMOD",
+      "BANCR"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
+    ]
+  },
+  "ME:MDA-MB-435": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "ABCA9",
+      "PPP4R3CP",
+      "MBD3L2",
+      "PAGE2"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
+    ]
+  },
+  "ME:MDA-N": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "PAGE2",
+      "EEF2KMT",
+      "RPS6P8",
+      "COL9A1"
+    ],
+    "top_proteins": [
+      "BRAF",
+      "CDKN2A",
+      "MITF",
+      "MC1R"
+    ],
+    "top_drugs": [
+      "dacarbazine",
+      "vemurafenib",
+      "ipilimumab",
+      "trametinib"
+    ]
+  },
+  "LC:A549/ATCC": {
+    "cancer_type": "Lung",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "CEACAM7",
+      "OR51E1",
+      "INSL4",
+      "TM4SF20"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ]
+  },
+  "LC:EKVX": {
+    "cancer_type": "Lung",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "PPBP",
+      "PF4",
+      "OR5AP1P",
+      "CALCA"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ]
+  },
+  "LC:HOP-62": {
+    "cancer_type": "Lung",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "CSN3",
+      "SLC1A7",
+      "HSD11B1",
+      "ADGRE4P"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ]
+  },
+  "LC:HOP-92": {
+    "cancer_type": "Lung",
+    "why_selected": "Selected at step 11 to improve per-layer coverage balance; captures Lung metabolic and proteomic diversity",
+    "top_genes": [
+      "CSRP3",
+      "GAP43",
+      "HHATL",
+      "TP63"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ],
+    "selection_step": 11
+  },
+  "LC:NCI-H226": {
+    "cancer_type": "Lung",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "CEACAMP9",
+      "ZSCAN4",
+      "SLC18A3",
+      "CEACAMP8"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ]
+  },
+  "LC:NCI-H23": {
+    "cancer_type": "Lung",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "PRND",
+      "WNT2",
+      "CRH",
+      "GPR50"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ]
+  },
+  "LC:NCI-H322M": {
+    "cancer_type": "Lung",
+    "why_selected": "Late-stage pick at step 14; closes a residual blind spot in Lung drug-sensitivity space",
+    "top_genes": [
+      "CLDN9",
+      "GSDMC",
+      "RPL13P14",
+      "GJB5"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ],
+    "selection_step": 14
+  },
+  "LC:NCI-H460": {
+    "cancer_type": "Lung",
+    "why_selected": "Late-stage pick at step 20; closes a residual blind spot in Lung drug-sensitivity space",
+    "top_genes": [
+      "T",
+      "GJA5",
+      "SERPINB11",
+      "HPGDS"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ],
+    "selection_step": 20
+  },
+  "LC:NCI-H522": {
+    "cancer_type": "Lung",
+    "why_selected": "Selected at step 12 to improve per-layer coverage balance; captures Lung metabolic and proteomic diversity",
+    "top_genes": [
+      "GCG",
+      "TMEM35",
+      "CYP26A1",
+      "FBLL1"
+    ],
+    "top_proteins": [
+      "EGFR",
+      "ALK",
+      "KRAS",
+      "ROS1"
+    ],
+    "top_drugs": [
+      "cisplatin",
+      "paclitaxel",
+      "erlotinib",
+      "docetaxel"
+    ],
+    "selection_step": 12
+  },
+  "OV:IGROV1": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Late-stage pick at step 18; closes a residual blind spot in Ovarian drug-sensitivity space",
     "top_genes": [
-      "TP53",
+      "CSHL1",
+      "CYP2C9",
+      "GH1",
+      "LEFTY1"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
+    ],
+    "selection_step": 18
   },
-  "OVCAR3": {
+  "OV:OVCAR-3": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
+      "LGALS14",
+      "FAM90A28P",
+      "SPZ1",
+      "CRHR1"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
     ]
   },
-  "OVCAR4": {
+  "OV:OVCAR-4": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Late-stage pick at step 15; closes a residual blind spot in Ovarian drug-sensitivity space",
     "top_genes": [
-      "TP53",
+      "IGFL1",
+      "HEPHL1",
+      "C10orf99",
+      "CLDN22"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
+    ],
+    "selection_step": 15
   },
-  "OVCAR5": {
+  "OV:OVCAR-5": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
+      "CST4",
+      "FABP4",
+      "SLC9A3P2",
+      "CST2"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
     ]
   },
-  "OVCAR8": {
+  "OV:OVCAR-8": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
+      "OR7H1P",
+      "SOX1",
+      "OR7E19P",
+      "OR7E115P"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
     ]
   },
-  "SKOV3": {
+  "OV:SK-OV-3": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
+      "FLJ26245",
+      "NMUR2",
+      "TM6SF2",
+      "HAPLN4"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
     ]
   },
-  "OVCAR10": {
+  "OV:NCI/ADR-RES": {
     "cancer_type": "Ovarian",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Late-stage pick at step 19; closes a residual blind spot in Ovarian drug-sensitivity space",
     "top_genes": [
-      "TP53",
+      "RUNDC3B",
+      "AHSG",
+      "PNMA3",
+      "PTGER1"
+    ],
+    "top_proteins": [
       "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
+      "BRCA2",
+      "TP53",
+      "PIK3CA"
+    ],
+    "top_drugs": [
+      "carboplatin",
+      "paclitaxel",
+      "gemcitabine",
+      "topotecan"
+    ],
+    "selection_step": 19
   },
-  "DU145": {
+  "PR:PC-3": {
     "cancer_type": "Prostate",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "PRAC1",
+      "PLPPR5",
+      "IQCJ",
+      "KRT37"
+    ],
+    "top_proteins": [
+      "AR",
+      "PTEN",
+      "ERG",
+      "SPOP"
+    ],
+    "top_drugs": [
+      "docetaxel",
+      "enzalutamide",
+      "abiraterone",
+      "cabazitaxel"
     ]
   },
-  "PC3": {
+  "PR:DU-145": {
     "cancer_type": "Prostate",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "POM121L9P",
+      "SFTPB",
+      "RPL31P11",
+      "BRDT"
+    ],
+    "top_proteins": [
+      "AR",
+      "PTEN",
+      "ERG",
+      "SPOP"
+    ],
+    "top_drugs": [
+      "docetaxel",
+      "enzalutamide",
+      "abiraterone",
+      "cabazitaxel"
     ]
   },
-  "LNCAP": {
-    "cancer_type": "Prostate",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "786O": {
+  "RE:786-0": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "SPATA4",
+      "GPR15",
+      "TNFRSF9",
+      "PRYP3"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   },
-  "A498": {
+  "RE:A498": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Late-stage pick at step 13; closes a residual blind spot in Renal drug-sensitivity space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "PDE6C",
+      "NEFM",
+      "ZFP42",
+      "RGS22"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
+    ],
+    "selection_step": 13
+  },
+  "RE:ACHN": {
+    "cancer_type": "Renal",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
+    "top_genes": [
+      "SLC17A1",
+      "FLJ16734",
+      "SLC35F4",
+      "FABP3"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   },
-  "ACHN": {
+  "RE:CAKI-1": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "PF4V1",
+      "CA3",
+      "FGB",
+      "UGT1A9"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   },
-  "CAKI1": {
+  "RE:RXF 393": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "NDUFA4L2",
+      "GREM1",
+      "ZNF33AP1",
+      "NUTM2E"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   },
-  "RXF393": {
+  "RE:SN12C": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "MYCT1",
+      "TIE1",
+      "ASB5",
+      "NOTCH4"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   },
-  "SN12C": {
+  "RE:TK-10": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "MIOX",
+      "ARL2BPP4",
+      "PDE6A",
+      "LTB"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   },
-  "TK10": {
+  "RE:UO-31": {
     "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
+    "why_selected": "Not in the greedy 20-line panel; most similar to nearby selected lines in multi-omics space",
     "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "UO31": {
-    "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
-    ]
-  },
-  "CAKI2": {
-    "cancer_type": "Renal",
-    "why_selected": "Maximizes minimum distance in fused omics space",
-    "top_genes": [
-      "TP53",
-      "BRCA1",
-      "EGFR",
-      "MYC"
+      "C6orf99",
+      "CLEC4E",
+      "ZPLD1",
+      "ATP8A2"
+    ],
+    "top_proteins": [
+      "VHL",
+      "PBRM1",
+      "SETD2",
+      "BAP1"
+    ],
+    "top_drugs": [
+      "sunitinib",
+      "sorafenib",
+      "everolimus",
+      "temsirolimus"
     ]
   }
 }

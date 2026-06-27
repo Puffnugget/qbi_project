@@ -21,7 +21,7 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
 
   if (!hasData) {
     return (
-      <EmptyState className="h-40 text-xs">
+      <EmptyState className="h-full min-h-0 text-xs">
         Per-layer coverage — awaiting JSON
       </EmptyState>
     );
@@ -49,9 +49,10 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
   });
 
   return (
-    <div className="card p-3">
-      <p className="label-caps mb-2">Layer coverage (k={panelSize})</p>
-      <svg width={SIZE} height={SIZE} className="mx-auto block">
+    <div className="card flex h-full min-h-0 flex-col p-2">
+      <p className="label-caps mb-1 shrink-0">Layer coverage (k={panelSize})</p>
+      <div className="flex min-h-0 flex-1 items-center justify-center">
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="h-full max-h-full w-auto">
         {[0.25, 0.5, 0.75, 1].map((ring) => (
           <circle
             key={ring}
@@ -92,6 +93,7 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
           strokeWidth={2}
         />
       </svg>
+      </div>
     </div>
   );
 }

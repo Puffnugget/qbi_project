@@ -35,12 +35,12 @@ export default function Sidebar({
 }: SidebarProps) {
   return (
     <aside
-      className="reveal flex h-full w-full flex-col gap-6 overflow-y-auto border-r border-border bg-surface p-6 shadow-[2px_0_12px_var(--shadow)]"
+      className="reveal flex h-full w-full flex-col gap-3 overflow-hidden border-r border-border bg-surface p-4 shadow-[2px_0_12px_var(--shadow)]"
     >
-      <header className="reveal reveal-delay-1 border-b border-border pb-4">
+      <header className="reveal reveal-delay-1 shrink-0 border-b border-border pb-3">
         <p className="label-caps text-accent">NCI-60 Panel Builder</p>
         <h1
-          className="mt-1 text-2xl font-semibold tracking-tight text-fg"
+          className="mt-0.5 text-xl font-semibold tracking-tight text-fg"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Greedy Selection
@@ -50,7 +50,7 @@ export default function Sidebar({
         </p>
       </header>
 
-      <section className="reveal reveal-delay-2 space-y-3">
+      <section className="reveal reveal-delay-2 shrink-0 space-y-2">
         <label className="block text-sm text-fg-muted">
           Panel size:{" "}
           <span className="font-mono font-medium text-fg">{panelSize}</span>
@@ -89,11 +89,11 @@ export default function Sidebar({
         )}
       </section>
 
-      <div className="reveal reveal-delay-3">
+      <div className="reveal reveal-delay-3 min-h-0 shrink-0 overflow-hidden">
         <BlindSpotPanel blindspot={blindspot} panelSize={panelSize} />
       </div>
 
-      <section className="reveal reveal-delay-3 space-y-2">
+      <section className="reveal reveal-delay-3 shrink-0 space-y-1.5">
         <label htmlFor="cancer-type" className="block text-sm text-fg-muted">
           Cancer type
         </label>
@@ -111,7 +111,7 @@ export default function Sidebar({
         </select>
       </section>
 
-      <section className="reveal reveal-delay-4 space-y-2">
+      <section className="reveal reveal-delay-4 min-h-0 shrink-0 overflow-hidden space-y-1.5">
         <p className="text-sm text-fg-muted">Omics layers</p>
         <div className="space-y-2">
           {OMICS_LAYERS.map((layer) => (
