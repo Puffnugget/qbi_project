@@ -1,0 +1,329 @@
+{
+  "panels": {
+    "1": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      }
+    ],
+    "2": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      }
+    ],
+    "3": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "4": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "5": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "6": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "7": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "8": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "9": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "10": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "11": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "12": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "13": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "14": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "15": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "16": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "17": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "18": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "19": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ],
+    "20": [
+      {
+        "cell_line": "PC3",
+        "cancer_type": "Prostate",
+        "step": 1
+      },
+      {
+        "cell_line": "LNCAP",
+        "cancer_type": "Prostate",
+        "step": 2
+      },
+      {
+        "cell_line": "DU145",
+        "cancer_type": "Prostate",
+        "step": 3
+      }
+    ]
+  }
+}

@@ -1,0 +1,592 @@
+{
+  "MCF7": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "MDA-MB-231": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "T47D": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "BT549": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "HS578T": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "MDA-MB-468": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "MDA-MB-435": {
+    "cancer_type": "Breast",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SF268": {
+    "cancer_type": "CNS",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SF295": {
+    "cancer_type": "CNS",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SF539": {
+    "cancer_type": "CNS",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SNB19": {
+    "cancer_type": "CNS",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SNB75": {
+    "cancer_type": "CNS",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "U251": {
+    "cancer_type": "CNS",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "HCT116": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "HT29": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "KM12": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SW620": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "COLO205": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "HCC2998": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "LOVO": {
+    "cancer_type": "Colon",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "HL60": {
+    "cancer_type": "Leukemia",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "K562": {
+    "cancer_type": "Leukemia",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "MOLT4": {
+    "cancer_type": "Leukemia",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "RPMI8226": {
+    "cancer_type": "Leukemia",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SR": {
+    "cancer_type": "Leukemia",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "CCRFCEM": {
+    "cancer_type": "Leukemia",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "A549": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "NCIH460": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "NCIH522": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "NCIH23": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "NCIH226": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "NCIH322M": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "NCIH647": {
+    "cancer_type": "Lung",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "LOXIMVI": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "MALME3M": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "M14": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SKMEL2": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SKMEL28": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SKMEL5": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "UACC257": {
+    "cancer_type": "Melanoma",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "IGROV1": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "OVCAR3": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "OVCAR4": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "OVCAR5": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "OVCAR8": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SKOV3": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "OVCAR10": {
+    "cancer_type": "Ovarian",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "DU145": {
+    "cancer_type": "Prostate",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "PC3": {
+    "cancer_type": "Prostate",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "LNCAP": {
+    "cancer_type": "Prostate",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "786O": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "A498": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "ACHN": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "CAKI1": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "RXF393": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "SN12C": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "TK10": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "UO31": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  },
+  "CAKI2": {
+    "cancer_type": "Renal",
+    "why_selected": "Maximizes minimum distance in fused omics space",
+    "top_genes": [
+      "TP53",
+      "BRCA1",
+      "EGFR",
+      "MYC"
+    ]
+  }
+}

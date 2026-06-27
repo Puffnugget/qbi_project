@@ -1,0 +1,16 @@
+{
+  "PC1": {
+    "pathway": "Cell cycle",
+    "genes": [
+      "CDK1",
+      "CCNB1"
+    ]
+  },
+  "PC2": {
+    "pathway": "Immune response",
+    "genes": [
+      "HLA-A",
+      "STAT1"
+    ]
+  }
+}

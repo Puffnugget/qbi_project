@@ -1,0 +1,86 @@
+{
+  "2": {
+    "RNA": 0.44,
+    "Proteomics": 0.47,
+    "Metabolomics": 0.5,
+    "Drug": 0.53
+  },
+  "3": {
+    "RNA": 0.5329,
+    "Proteomics": 0.5629,
+    "Metabolomics": 0.5929,
+    "Drug": 0.6229
+  },
+  "4": {
+    "RNA": 0.6465,
+    "Proteomics": 0.6765,
+    "Metabolomics": 0.7065,
+    "Drug": 0.7365
+  },
+  "5": {
+    "RNA": 0.7325,
+    "Proteomics": 0.7625,
+    "Metabolomics": 0.7925,
+    "Drug": 0.8225
+  },
+  "6": {
+    "RNA": 0.739,
+    "Proteomics": 0.769,
+    "Metabolomics": 0.799,
+    "Drug": 0.829
+  },
+  "7": {
+    "RNA": 0.7918,
+    "Proteomics": 0.8218,
+    "Metabolomics": 0.8518,
+    "Drug": 0.8818
+  },
+  "8": {
+    "RNA": 0.8349,
+    "Proteomics": 0.8649,
+    "Metabolomics": 0.8949,
+    "Drug": 0.9249
+  },
+  "9": {
+    "RNA": 0.8112,
+    "Proteomics": 0.8412,
+    "Metabolomics": 0.8712,
+    "Drug": 0.9012
+  },
+  "10": {
+    "RNA": 0.8426,
+    "Proteomics": 0.8726,
+    "Metabolomics": 0.9026,
+    "Drug": 0.9326
+  },
+  "11": {
+    "RNA": 0.8707,
+    "Proteomics": 0.9007,
+    "Metabolomics": 0.9307,
+    "Drug": 0.9607
+  },
+  "12": {
+    "RNA": 0.8364,
+    "Proteomics": 0.8664,
+    "Metabolomics": 0.8964,
+    "Drug": 0.9264
+  },
+  "13": {
+    "RNA": 0.8604,
+    "Proteomics": 0.8904,
+    "Metabolomics": 0.9204,
+    "Drug": 0.9504
+  },
+  "14": {
+    "RNA": 0.8833,
+    "Proteomics": 0.9133,
+    "Metabolomics": 0.9433,
+    "Drug": 0.9733
+  },
+  "15": {
+    "RNA": 0.8452,
+    "Proteomics": 0.8752,
+    "Metabolomics": 0.9052,
+    "Drug": 0.9352
+  }
+}

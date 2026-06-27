@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+umap-learn
+scikit-learn
+kneed
+pandas
+numpy
+scipy

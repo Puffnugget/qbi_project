@@ -1,0 +1,639 @@
+{
+  "panels": {
+    "1": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      }
+    ],
+    "2": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      }
+    ],
+    "3": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      }
+    ],
+    "4": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      }
+    ],
+    "5": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      }
+    ],
+    "6": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      }
+    ],
+    "7": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "8": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "9": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "10": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "11": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "12": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "13": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "14": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "15": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "16": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "17": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "18": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "19": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ],
+    "20": [
+      {
+        "cell_line": "OVCAR8",
+        "cancer_type": "Ovarian",
+        "step": 1
+      },
+      {
+        "cell_line": "SKOV3",
+        "cancer_type": "Ovarian",
+        "step": 2
+      },
+      {
+        "cell_line": "OVCAR4",
+        "cancer_type": "Ovarian",
+        "step": 3
+      },
+      {
+        "cell_line": "OVCAR5",
+        "cancer_type": "Ovarian",
+        "step": 4
+      },
+      {
+        "cell_line": "OVCAR3",
+        "cancer_type": "Ovarian",
+        "step": 5
+      },
+      {
+        "cell_line": "OVCAR10",
+        "cancer_type": "Ovarian",
+        "step": 6
+      },
+      {
+        "cell_line": "IGROV1",
+        "cancer_type": "Ovarian",
+        "step": 7
+      }
+    ]
+  }
+}

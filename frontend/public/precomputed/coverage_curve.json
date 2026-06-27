@@ -1,0 +1,75 @@
+{
+  "elbow": 8,
+  "curve": [
+    {
+      "panel_size": 2,
+      "coverage": 0.45,
+      "validation_r": 0.35
+    },
+    {
+      "panel_size": 3,
+      "coverage": 0.5539,
+      "validation_r": 0.443
+    },
+    {
+      "panel_size": 4,
+      "coverage": 0.6332,
+      "validation_r": 0.518
+    },
+    {
+      "panel_size": 5,
+      "coverage": 0.6938,
+      "validation_r": 0.5785
+    },
+    {
+      "panel_size": 6,
+      "coverage": 0.7401,
+      "validation_r": 0.6272
+    },
+    {
+      "panel_size": 7,
+      "coverage": 0.7755,
+      "validation_r": 0.6665
+    },
+    {
+      "panel_size": 8,
+      "coverage": 0.8025,
+      "validation_r": 0.6982
+    },
+    {
+      "panel_size": 9,
+      "coverage": 0.8232,
+      "validation_r": 0.7237
+    },
+    {
+      "panel_size": 10,
+      "coverage": 0.8389,
+      "validation_r": 0.7443
+    },
+    {
+      "panel_size": 11,
+      "coverage": 0.851,
+      "validation_r": 0.7609
+    },
+    {
+      "panel_size": 12,
+      "coverage": 0.8602,
+      "validation_r": 0.7743
+    },
+    {
+      "panel_size": 13,
+      "coverage": 0.8672,
+      "validation_r": 0.7851
+    },
+    {
+      "panel_size": 14,
+      "coverage": 0.8726,
+      "validation_r": 0.7938
+    },
+    {
+      "panel_size": 15,
+      "coverage": 0.8767,
+      "validation_r": 0.8008
+    }
+  ]
+}
