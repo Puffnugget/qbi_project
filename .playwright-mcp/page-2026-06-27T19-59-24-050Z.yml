@@ -1,0 +1,52 @@
+- generic [ref=e2]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - paragraph [ref=e6]: NCI-60 Panel Builder
+      - heading "Greedy Selection" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Farthest-point panel design on fused omics
+    - generic [ref=e9]:
+      - generic [ref=e10]: "Panel size: 8"
+      - slider [ref=e11]: "8"
+      - paragraph [ref=e12]: Computing elbow…
+    - generic [ref=e14]: Blind spot analysis loading…
+    - generic [ref=e15]:
+      - generic [ref=e16]: Cancer type
+      - combobox "Cancer type" [ref=e17]:
+        - option "All cancer types" [selected]
+        - option "Breast"
+        - option "CNS"
+        - option "Colon"
+        - option "Leukemia"
+        - option "Lung"
+        - option "Melanoma"
+        - option "Ovarian"
+        - option "Prostate"
+        - option "Renal"
+    - generic [ref=e18]:
+      - paragraph [ref=e19]: Omics layers
+      - generic [ref=e20]:
+        - generic [ref=e21] [cursor=pointer]:
+          - checkbox "RNA" [checked] [ref=e22]
+          - text: RNA
+        - generic [ref=e23] [cursor=pointer]:
+          - checkbox "Proteomics" [checked] [ref=e24]
+          - text: Proteomics
+        - generic [ref=e25] [cursor=pointer]:
+          - checkbox "Metabolomics" [checked] [ref=e26]
+          - text: Metabolomics
+        - generic [ref=e27] [cursor=pointer]:
+          - checkbox "Drug" [checked] [ref=e28]
+          - text: Drug
+  - main [ref=e29]:
+    - tablist [ref=e30]:
+      - tab "Explore" [selected] [ref=e31]
+      - tab "Compare" [ref=e32]
+      - tab "Adaptive design" [ref=e33]
+      - generic [ref=e34]: Loading data…
+    - generic [ref=e36]: Loading UMAP embedding…
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - paragraph [ref=e39]: Coverage vs panel size
+        - generic [ref=e40]: Coverage curve — awaiting precomputed JSON
+      - generic [ref=e41]: Per-layer coverage — awaiting JSON
+    - generic [ref=e43]: No panel selected yet

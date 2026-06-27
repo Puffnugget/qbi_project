@@ -1,0 +1,14 @@
+[    4224ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[    5561ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   15669ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   26381ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   53655ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   54979ms] [LOG] [Fast Refresh] done in 716ms @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   76553ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   77055ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  131018ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  133871ms] [LOG] [Fast Refresh] done in 189ms @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  154520ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  157706ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  659587ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  663109ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477

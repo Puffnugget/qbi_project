@@ -1,0 +1,36 @@
+[    1610ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[    3677ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   18442ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   60531ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   62127ms] [LOG] [Fast Refresh] done in 51ms @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   64291ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   71439ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   72281ms] [LOG] [Fast Refresh] done in 96ms @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[   72717ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  121590ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  122632ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  134315ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  136126ms] [ERROR] Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `SceneContent`.  @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:3318
+[  160548ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  162182ms] [LOG] [Fast Refresh] done in 53ms @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  164850ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  185155ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  185772ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  194783ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  244452ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  244505ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  249021ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  250172ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  250384ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  255363ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  255414ms] [LOG] THREE.WebGLRenderer: Context Lost. @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  289557ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  293225ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
+[  323369ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=KXRC4X8PjUTyHXALOzBXe' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_client_1t179f7._.js:13422
+[  324389ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=KXRC4X8PjUTyHXALOzBXe' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_client_1t179f7._.js:13422
+[  325392ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=KXRC4X8PjUTyHXALOzBXe' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_client_1t179f7._.js:13422
+[  326394ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=KXRC4X8PjUTyHXALOzBXe' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_client_1t179f7._.js:13422
+[  327404ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=KXRC4X8PjUTyHXALOzBXe' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_client_1t179f7._.js:13422
+[  332479ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/1u-r_next_dist_1vdoc41._.js:2477
