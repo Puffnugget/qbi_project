@@ -9,17 +9,12 @@
 
 | Area | Status |
 |------|--------|
-| Raw data download | Mostly done — `raw_data/` (metabolomics missing; methylation + histone extras) |
-| Python deps | Done — `requirements.txt`, fastapi installed |
-| Repo structure | Done — `frontend/`, `src/`, `api/`, `data/`, `raw_data/`, `r/` |
-| Python pipeline | Scripts written; **blocked on sister's CSVs** for real run |
-| Dummy data dev | `src/generate_dummy_data.py` → all JSON in `frontend/public/precomputed/` |
-| FastAPI backend | Done — `api/main.py` + `/blindspot`, `/embeddings` |
-| Frontend UI | Done on dummy data — full app wired, backend optional |
-| Stretch goals | Blind Spot Detector ✅, Manual Override ✅, Adaptive Design ⬜ |
-| Sister R pipeline | Started — `r/loading.R` loads Excel; no CSV export yet |
+| Fusion layers (agreed) | **rna_seq + proteomics + metabolomics + drug_activity** |
+| Sister R outputs | rna, proteomics, drug ready in `processed_data/log_zscored/` — **metabolomics missing** |
+| Python pipeline | Scripts written; blocked on metabolomics + `sample_info.csv` |
+| Frontend / API / stretch | Done on dummy JSON |
 
-**Next up:** Sister exports `data/processed/*.csv` → run `fusion.py` through pipeline → swap dummy JSON → fly-in animation polish → demo rehearsal.
+**Next up:** Sister downloads metabolomics → `sample_info.csv` → run full pipeline → swap JSON.
 
 **Dev commands:**
 ```bash
@@ -27,6 +22,19 @@ python src/generate_dummy_data.py
 uvicorn api.main:app --reload --port 8000
 cd frontend && npm run dev
 ```
+
+---
+
+## Agreed Fusion Layers
+
+| Layer | File (`processed_data/log_zscored/`) | Status |
+|-------|--------------------------------------|--------|
+| RNA | `rna_seq_log_zscored.csv` | ✅ |
+| Proteomics | `proteomics_log_zscored.csv` | ✅ |
+| Metabolomics | `metabolomics_log_zscored.csv` | ⬜ download + R pipeline |
+| Drug | `drug_activity_log_zscored.csv` | ✅ |
+
+Not fused: methylation, histone.
 
 ---
 
@@ -188,12 +196,20 @@ Frontend reads static JSON directly — API optional for demo.
 
 ---
 
-## Stretch Goal — Adaptive Design Tab — NOT STARTED
+## Stretch Goal — Adaptive Design Tab — DONE (dummy/fallback data)
 
 `components/AdaptiveDesignTab.tsx` + `src/adaptive_design.py`
-- Keep the main project unchanged; fixed-panel selection stays the real deliverable
-- Sequential policy replay vs held-out drug prediction
-- Output: `adaptive_design.json`
+- [x] Keep main fixed-panel selector unchanged
+- [x] Four policies: coverage_greedy, uncertainty, thompson, random
+- [x] Score: median held-out drug prediction r after each sequential pick
+- [x] Output: `frontend/public/precomputed/adaptive_design.json`
+- [x] UI: policy toggle, Play/Reset, 3D replay, multi-policy efficiency chart
+- [~] Current JSON is dummy/fallback; rerun after real `data/processed/fused_matrix.csv` exists
+- [ ] Next AI upgrade: `ridge_uncertainty` active learning with bootstrapped Ridge surrogate models
+  - Train on selected cell lines each step: fused embedding → drug response
+  - Pick next line by model uncertainty + diversity bonus
+  - Use this before full RL; it gives the Dwarkesh/sample-efficiency story without overselling
+- Run: `python src/adaptive_design.py`
 
 ---
 
@@ -211,7 +227,7 @@ All in `frontend/public/precomputed/`:
 - [x] `pathway_scores.json` (dummy)
 - [~] `characterization.json` (dummy → sister)
 - [~] `factor_annotations.json` (dummy → sister fgsea)
-- [ ] `adaptive_design.json` (stretch)
+- [~] `adaptive_design.json` (stretch; dummy/fallback → real after fusion)
 
 ---
 

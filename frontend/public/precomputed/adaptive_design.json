@@ -1,0 +1,328 @@
+{
+  "target_size": 12,
+  "metric": "median held-out drug-profile Pearson r",
+  "n_cell_lines": 59,
+  "source": "dummy",
+  "policies": {
+    "coverage_greedy": {
+      "policy": "coverage_greedy",
+      "selections": [
+        "SF295",
+        "A498",
+        "COLO205",
+        "CCRFCEM",
+        "PC3",
+        "NCIH226",
+        "MDA-MB-468",
+        "UACC257",
+        "IGROV1",
+        "UO31",
+        "NCIH23",
+        "U251"
+      ],
+      "curve": [
+        {
+          "step": 1,
+          "cell_line": "SF295",
+          "median_r": 0.0
+        },
+        {
+          "step": 2,
+          "cell_line": "A498",
+          "median_r": 0.5116
+        },
+        {
+          "step": 3,
+          "cell_line": "COLO205",
+          "median_r": 0.5573
+        },
+        {
+          "step": 4,
+          "cell_line": "CCRFCEM",
+          "median_r": 0.7303
+        },
+        {
+          "step": 5,
+          "cell_line": "PC3",
+          "median_r": 0.8155
+        },
+        {
+          "step": 6,
+          "cell_line": "NCIH226",
+          "median_r": 0.9206
+        },
+        {
+          "step": 7,
+          "cell_line": "MDA-MB-468",
+          "median_r": 0.9269
+        },
+        {
+          "step": 8,
+          "cell_line": "UACC257",
+          "median_r": 0.9359
+        },
+        {
+          "step": 9,
+          "cell_line": "IGROV1",
+          "median_r": 0.9371
+        },
+        {
+          "step": 10,
+          "cell_line": "UO31",
+          "median_r": 0.943
+        },
+        {
+          "step": 11,
+          "cell_line": "NCIH23",
+          "median_r": 0.9428
+        },
+        {
+          "step": 12,
+          "cell_line": "U251",
+          "median_r": 0.9385
+        }
+      ],
+      "final_median_r": 0.9385
+    },
+    "uncertainty": {
+      "policy": "uncertainty",
+      "selections": [
+        "LOVO",
+        "SF295",
+        "UO31",
+        "PC3",
+        "K562",
+        "MDA-MB-468",
+        "A549",
+        "SKMEL2",
+        "SKOV3",
+        "COLO205",
+        "NCIH23",
+        "LNCAP"
+      ],
+      "curve": [
+        {
+          "step": 1,
+          "cell_line": "LOVO",
+          "median_r": 0.0
+        },
+        {
+          "step": 2,
+          "cell_line": "SF295",
+          "median_r": 0.1044
+        },
+        {
+          "step": 3,
+          "cell_line": "UO31",
+          "median_r": 0.5361
+        },
+        {
+          "step": 4,
+          "cell_line": "PC3",
+          "median_r": 0.6445
+        },
+        {
+          "step": 5,
+          "cell_line": "K562",
+          "median_r": 0.8007
+        },
+        {
+          "step": 6,
+          "cell_line": "MDA-MB-468",
+          "median_r": 0.9108
+        },
+        {
+          "step": 7,
+          "cell_line": "A549",
+          "median_r": 0.9473
+        },
+        {
+          "step": 8,
+          "cell_line": "SKMEL2",
+          "median_r": 0.961
+        },
+        {
+          "step": 9,
+          "cell_line": "SKOV3",
+          "median_r": 0.9604
+        },
+        {
+          "step": 10,
+          "cell_line": "COLO205",
+          "median_r": 0.9627
+        },
+        {
+          "step": 11,
+          "cell_line": "NCIH23",
+          "median_r": 0.962
+        },
+        {
+          "step": 12,
+          "cell_line": "LNCAP",
+          "median_r": 0.9541
+        }
+      ],
+      "final_median_r": 0.9541
+    },
+    "thompson": {
+      "policy": "thompson",
+      "selections": [
+        "SF295",
+        "A498",
+        "COLO205",
+        "CCRFCEM",
+        "PC3",
+        "NCIH226",
+        "MDA-MB-468",
+        "UACC257",
+        "SKOV3",
+        "UO31",
+        "NCIH23",
+        "U251"
+      ],
+      "curve": [
+        {
+          "step": 1,
+          "cell_line": "SF295",
+          "median_r": 0.0
+        },
+        {
+          "step": 2,
+          "cell_line": "A498",
+          "median_r": 0.5116
+        },
+        {
+          "step": 3,
+          "cell_line": "COLO205",
+          "median_r": 0.5573
+        },
+        {
+          "step": 4,
+          "cell_line": "CCRFCEM",
+          "median_r": 0.7303
+        },
+        {
+          "step": 5,
+          "cell_line": "PC3",
+          "median_r": 0.8155
+        },
+        {
+          "step": 6,
+          "cell_line": "NCIH226",
+          "median_r": 0.9206
+        },
+        {
+          "step": 7,
+          "cell_line": "MDA-MB-468",
+          "median_r": 0.9269
+        },
+        {
+          "step": 8,
+          "cell_line": "UACC257",
+          "median_r": 0.9359
+        },
+        {
+          "step": 9,
+          "cell_line": "SKOV3",
+          "median_r": 0.9381
+        },
+        {
+          "step": 10,
+          "cell_line": "UO31",
+          "median_r": 0.9423
+        },
+        {
+          "step": 11,
+          "cell_line": "NCIH23",
+          "median_r": 0.9435
+        },
+        {
+          "step": 12,
+          "cell_line": "U251",
+          "median_r": 0.9392
+        }
+      ],
+      "final_median_r": 0.9392
+    },
+    "random": {
+      "policy": "random",
+      "selections": [
+        "OVCAR10",
+        "MDA-MB-231",
+        "LOXIMVI",
+        "T47D",
+        "M14",
+        "HT29",
+        "SNB75",
+        "ACHN",
+        "MOLT4",
+        "KM12",
+        "A498",
+        "SF295"
+      ],
+      "curve": [
+        {
+          "step": 1,
+          "cell_line": "OVCAR10",
+          "median_r": 0.0
+        },
+        {
+          "step": 2,
+          "cell_line": "MDA-MB-231",
+          "median_r": 0.5495
+        },
+        {
+          "step": 3,
+          "cell_line": "LOXIMVI",
+          "median_r": 0.5827
+        },
+        {
+          "step": 4,
+          "cell_line": "T47D",
+          "median_r": 0.5045
+        },
+        {
+          "step": 5,
+          "cell_line": "M14",
+          "median_r": 0.5049
+        },
+        {
+          "step": 6,
+          "cell_line": "HT29",
+          "median_r": 0.5204
+        },
+        {
+          "step": 7,
+          "cell_line": "SNB75",
+          "median_r": 0.7333
+        },
+        {
+          "step": 8,
+          "cell_line": "ACHN",
+          "median_r": 0.8762
+        },
+        {
+          "step": 9,
+          "cell_line": "MOLT4",
+          "median_r": 0.9002
+        },
+        {
+          "step": 10,
+          "cell_line": "KM12",
+          "median_r": 0.9163
+        },
+        {
+          "step": 11,
+          "cell_line": "A498",
+          "median_r": 0.9136
+        },
+        {
+          "step": 12,
+          "cell_line": "SF295",
+          "median_r": 0.894
+        }
+      ],
+      "final_median_r": 0.894
+    }
+  }
+}

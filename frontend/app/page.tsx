@@ -24,7 +24,12 @@ const CompareView = dynamic(() => import("@/components/CompareView"), {
   ssr: false,
 });
 
-type Tab = "explore" | "compare";
+type Tab = "explore" | "compare" | "adaptive";
+
+const AdaptiveDesignTab = dynamic(
+  () => import("@/components/AdaptiveDesignTab"),
+  { ssr: false },
+);
 
 export default function Home() {
   const [tab, setTab] = useState<Tab>("explore");
@@ -125,7 +130,7 @@ export default function Home() {
 
       <main className="flex min-w-0 flex-1 flex-col">
         <div className="flex shrink-0 gap-1 border-b border-white/10 px-4 pt-3">
-          {(["explore", "compare"] as Tab[]).map((t) => (
+          {(["explore", "compare", "adaptive"] as Tab[]).map((t) => (
             <button
               key={t}
               type="button"
@@ -136,7 +141,7 @@ export default function Home() {
                   : "text-zinc-500 hover:text-zinc-300"
               }`}
             >
-              {t}
+              {t === "adaptive" ? "Adaptive design" : t}
             </button>
           ))}
           {loading && (
@@ -199,9 +204,13 @@ export default function Home() {
               />
             </div>
           </>
-        ) : (
+        ) : tab === "compare" ? (
           <div className="min-h-0 flex-1">
             <CompareView panelSize={panelSize} />
+          </div>
+        ) : (
+          <div className="min-h-0 flex-1">
+            <AdaptiveDesignTab umapPoints={data?.umap} />
           </div>
         )}
       </main>
