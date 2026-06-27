@@ -2,635 +2,635 @@
   "panels": {
     "1": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       }
     ],
     "2": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       }
     ],
     "3": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       }
     ],
     "4": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       }
     ],
     "5": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       }
     ],
     "6": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       }
     ],
     "7": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "8": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "9": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "10": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "11": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "12": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "13": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "14": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "15": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "16": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "17": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "18": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "19": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }
     ],
     "20": [
       {
-        "cell_line": "SW620",
+        "cell_line": "CO:COLO 205",
         "cancer_type": "Colon",
         "step": 1
       },
       {
-        "cell_line": "LOVO",
+        "cell_line": "CO:HCT-15",
         "cancer_type": "Colon",
         "step": 2
       },
       {
-        "cell_line": "HT29",
+        "cell_line": "CO:SW-620",
         "cancer_type": "Colon",
         "step": 3
       },
       {
-        "cell_line": "HCT116",
+        "cell_line": "CO:HCC-2998",
         "cancer_type": "Colon",
         "step": 4
       },
       {
-        "cell_line": "HCC2998",
+        "cell_line": "CO:KM12",
         "cancer_type": "Colon",
         "step": 5
       },
       {
-        "cell_line": "KM12",
+        "cell_line": "CO:HT29",
         "cancer_type": "Colon",
         "step": 6
       },
       {
-        "cell_line": "COLO205",
+        "cell_line": "CO:HCT-116",
         "cancer_type": "Colon",
         "step": 7
       }

@@ -2,1091 +2,1091 @@
   "panels": {
     "1": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       }
     ],
     "2": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       }
     ],
     "3": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       }
     ],
     "4": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       }
     ],
     "5": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       }
     ],
     "6": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       }
     ],
     "7": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       }
     ],
     "8": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       }
     ],
     "9": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       }
     ],
     "10": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       }
     ],
     "11": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       }
     ],
     "12": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       }
     ],
     "13": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       }
     ],
     "14": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       }
     ],
     "15": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       },
       {
-        "cell_line": "MOLT4",
-        "cancer_type": "Leukemia",
+        "cell_line": "OV:OVCAR-4",
+        "cancer_type": "Ovarian",
         "step": 15
       }
     ],
     "16": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       },
       {
-        "cell_line": "MOLT4",
-        "cancer_type": "Leukemia",
+        "cell_line": "OV:OVCAR-4",
+        "cancer_type": "Ovarian",
         "step": 15
       },
       {
-        "cell_line": "OVCAR4",
-        "cancer_type": "Ovarian",
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
         "step": 16
       }
     ],
     "17": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       },
       {
-        "cell_line": "MOLT4",
-        "cancer_type": "Leukemia",
+        "cell_line": "OV:OVCAR-4",
+        "cancer_type": "Ovarian",
         "step": 15
       },
       {
-        "cell_line": "OVCAR4",
-        "cancer_type": "Ovarian",
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
         "step": 16
       },
       {
-        "cell_line": "LOXIMVI",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 17
       }
     ],
     "18": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       },
       {
-        "cell_line": "MOLT4",
-        "cancer_type": "Leukemia",
+        "cell_line": "OV:OVCAR-4",
+        "cancer_type": "Ovarian",
         "step": 15
       },
       {
-        "cell_line": "OVCAR4",
-        "cancer_type": "Ovarian",
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
         "step": 16
       },
       {
-        "cell_line": "LOXIMVI",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 17
       },
       {
-        "cell_line": "SNB75",
-        "cancer_type": "CNS",
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
         "step": 18
       }
     ],
     "19": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       },
       {
-        "cell_line": "MOLT4",
-        "cancer_type": "Leukemia",
+        "cell_line": "OV:OVCAR-4",
+        "cancer_type": "Ovarian",
         "step": 15
       },
       {
-        "cell_line": "OVCAR4",
-        "cancer_type": "Ovarian",
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
         "step": 16
       },
       {
-        "cell_line": "LOXIMVI",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 17
       },
       {
-        "cell_line": "SNB75",
-        "cancer_type": "CNS",
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
         "step": 18
       },
       {
-        "cell_line": "RXF393",
-        "cancer_type": "Renal",
+        "cell_line": "OV:NCI/ADR-RES",
+        "cancer_type": NaN,
         "step": 19
       }
     ],
     "20": [
       {
-        "cell_line": "UO31",
-        "cancer_type": "Renal",
+        "cell_line": "CNS:SF-268",
+        "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SF295",
-        "cancer_type": "CNS",
+        "cell_line": "LE:HL-60(TB)",
+        "cancer_type": NaN,
         "step": 2
       },
       {
-        "cell_line": "MALME3M",
-        "cancer_type": "Melanoma",
+        "cell_line": "LE:SR",
+        "cancer_type": "Leukemia",
         "step": 3
       },
       {
-        "cell_line": "NCIH226",
-        "cancer_type": "Lung",
+        "cell_line": "LE:RPMI-8226",
+        "cancer_type": "Leukemia",
         "step": 4
       },
       {
-        "cell_line": "SKOV3",
-        "cancer_type": "Ovarian",
+        "cell_line": "LE:K-562",
+        "cancer_type": "Leukemia",
         "step": 5
       },
       {
-        "cell_line": "SR",
+        "cell_line": "LE:MOLT-4",
         "cancer_type": "Leukemia",
         "step": 6
       },
       {
-        "cell_line": "MDA-MB-231",
-        "cancer_type": "Breast",
+        "cell_line": "CO:COLO 205",
+        "cancer_type": "Colon",
         "step": 7
       },
       {
-        "cell_line": "PC3",
-        "cancer_type": "Prostate",
+        "cell_line": "BR:T-47D",
+        "cancer_type": NaN,
         "step": 8
       },
       {
-        "cell_line": "HT29",
-        "cancer_type": "Colon",
+        "cell_line": "ME:MALME-3M",
+        "cancer_type": "Melanoma",
         "step": 9
       },
       {
-        "cell_line": "OVCAR8",
-        "cancer_type": "Ovarian",
+        "cell_line": "BR:MCF7",
+        "cancer_type": "Breast",
         "step": 10
       },
       {
-        "cell_line": "T47D",
-        "cancer_type": "Breast",
+        "cell_line": "LC:HOP-92",
+        "cancer_type": "Lung",
         "step": 11
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 12
       },
       {
-        "cell_line": "SKMEL28",
-        "cancer_type": "Melanoma",
+        "cell_line": "RE:A498",
+        "cancer_type": "Renal",
         "step": 13
       },
       {
-        "cell_line": "LNCAP",
-        "cancer_type": "Prostate",
+        "cell_line": "LC:NCI-H322M",
+        "cancer_type": "Lung",
         "step": 14
       },
       {
-        "cell_line": "MOLT4",
-        "cancer_type": "Leukemia",
+        "cell_line": "OV:OVCAR-4",
+        "cancer_type": "Ovarian",
         "step": 15
       },
       {
-        "cell_line": "OVCAR4",
-        "cancer_type": "Ovarian",
+        "cell_line": "CNS:SNB-75",
+        "cancer_type": "CNS",
         "step": 16
       },
       {
-        "cell_line": "LOXIMVI",
+        "cell_line": "ME:SK-MEL-2",
         "cancer_type": "Melanoma",
         "step": 17
       },
       {
-        "cell_line": "SNB75",
-        "cancer_type": "CNS",
+        "cell_line": "OV:IGROV1",
+        "cancer_type": "Ovarian",
         "step": 18
       },
       {
-        "cell_line": "RXF393",
-        "cancer_type": "Renal",
+        "cell_line": "OV:NCI/ADR-RES",
+        "cancer_type": NaN,
         "step": 19
       },
       {
-        "cell_line": "CCRFCEM",
-        "cancer_type": "Leukemia",
+        "cell_line": "LC:NCI-H460",
+        "cancer_type": "Lung",
         "step": 20
       }
     ]

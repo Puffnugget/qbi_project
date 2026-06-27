@@ -2,762 +2,637 @@
   "panels": {
     "1": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       }
     ],
     "2": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       }
     ],
     "3": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       }
     ],
     "4": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       }
     ],
     "5": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       }
     ],
     "6": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       }
     ],
     "7": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
       }
     ],
     "8": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
       }
     ],
     "9": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "10": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "11": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "12": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "13": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "14": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "15": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "16": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "17": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "18": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "19": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ],
     "20": [
       {
-        "cell_line": "A498",
+        "cell_line": "RE:786-0",
         "cancer_type": "Renal",
         "step": 1
       },
       {
-        "cell_line": "TK10",
+        "cell_line": "RE:A498",
         "cancer_type": "Renal",
         "step": 2
       },
       {
-        "cell_line": "CAKI1",
+        "cell_line": "RE:TK-10",
         "cancer_type": "Renal",
         "step": 3
       },
       {
-        "cell_line": "ACHN",
+        "cell_line": "RE:UO-31",
         "cancer_type": "Renal",
         "step": 4
       },
       {
-        "cell_line": "RXF393",
+        "cell_line": "RE:CAKI-1",
         "cancer_type": "Renal",
         "step": 5
       },
       {
-        "cell_line": "UO31",
+        "cell_line": "RE:ACHN",
         "cancer_type": "Renal",
         "step": 6
       },
       {
-        "cell_line": "SN12C",
+        "cell_line": "RE:SN12C",
         "cancer_type": "Renal",
         "step": 7
-      },
-      {
-        "cell_line": "CAKI2",
-        "cancer_type": "Renal",
-        "step": 8
-      },
-      {
-        "cell_line": "786O",
-        "cancer_type": "Renal",
-        "step": 9
       }
     ]
   }

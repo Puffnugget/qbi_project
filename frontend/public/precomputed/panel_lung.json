@@ -2,637 +2,702 @@
   "panels": {
     "1": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       }
     ],
     "2": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       }
     ],
     "3": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       }
     ],
     "4": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       }
     ],
     "5": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       }
     ],
     "6": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       }
     ],
     "7": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
       }
     ],
     "8": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "9": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "10": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "11": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "12": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "13": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "14": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "15": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "16": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "17": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "18": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "19": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ],
     "20": [
       {
-        "cell_line": "NCIH226",
+        "cell_line": "LC:EKVX",
         "cancer_type": "Lung",
         "step": 1
       },
       {
-        "cell_line": "NCIH460",
+        "cell_line": "LC:NCI-H522",
         "cancer_type": "Lung",
         "step": 2
       },
       {
-        "cell_line": "NCIH522",
+        "cell_line": "LC:HOP-92",
         "cancer_type": "Lung",
         "step": 3
       },
       {
-        "cell_line": "NCIH322M",
+        "cell_line": "LC:NCI-H226",
         "cancer_type": "Lung",
         "step": 4
       },
       {
-        "cell_line": "NCIH647",
+        "cell_line": "LC:NCI-H460",
         "cancer_type": "Lung",
         "step": 5
       },
       {
-        "cell_line": "NCIH23",
+        "cell_line": "LC:NCI-H322M",
         "cancer_type": "Lung",
         "step": 6
       },
       {
-        "cell_line": "A549",
+        "cell_line": "LC:NCI-H23",
         "cancer_type": "Lung",
         "step": 7
+      },
+      {
+        "cell_line": "LC:HOP-62",
+        "cancer_type": "Lung",
+        "step": 8
       }
     ]
   }

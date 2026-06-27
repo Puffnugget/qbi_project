@@ -36,7 +36,7 @@ def run_selection(
     OUT.mkdir(parents=True, exist_ok=True)
     coords = fused.values.astype(float)
     names = fused.index.tolist()
-    cancer_map = sample_info["cancer_type"].to_dict()
+    cancer_map = dict(zip(sample_info["cell_line"], sample_info["cancer_type"]))
 
     def build_panel(indices: list[int]) -> dict[str, list[dict]]:
         panels: dict[str, list[dict]] = {}
@@ -69,6 +69,6 @@ def run_selection(
 
 
 if __name__ == "__main__":
-    fused = pd.read_csv(ROOT / "data" / "processed" / "fused_matrix.csv", index_col=0)
-    info = pd.read_csv(ROOT / "data" / "processed" / "sample_info.csv")
+    fused = pd.read_csv(ROOT / "processed_data" / "pca" / "fused_matrix.csv", index_col=0)
+    info = pd.read_csv(ROOT / "processed_data" / "sample_info.csv")
     run_selection(fused, info)

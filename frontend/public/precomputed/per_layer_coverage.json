@@ -1,86 +1,292 @@
 {
-  "2": {
-    "RNA": 0.44,
-    "Proteomics": 0.47,
-    "Metabolomics": 0.5,
-    "Drug": 0.53
-  },
-  "3": {
-    "RNA": 0.5329,
-    "Proteomics": 0.5629,
-    "Metabolomics": 0.5929,
-    "Drug": 0.6229
-  },
-  "4": {
-    "RNA": 0.6465,
-    "Proteomics": 0.6765,
-    "Metabolomics": 0.7065,
-    "Drug": 0.7365
-  },
-  "5": {
-    "RNA": 0.7325,
-    "Proteomics": 0.7625,
-    "Metabolomics": 0.7925,
-    "Drug": 0.8225
-  },
-  "6": {
-    "RNA": 0.739,
-    "Proteomics": 0.769,
-    "Metabolomics": 0.799,
-    "Drug": 0.829
-  },
-  "7": {
-    "RNA": 0.7918,
-    "Proteomics": 0.8218,
-    "Metabolomics": 0.8518,
-    "Drug": 0.8818
-  },
-  "8": {
-    "RNA": 0.8349,
-    "Proteomics": 0.8649,
-    "Metabolomics": 0.8949,
-    "Drug": 0.9249
-  },
-  "9": {
-    "RNA": 0.8112,
-    "Proteomics": 0.8412,
-    "Metabolomics": 0.8712,
-    "Drug": 0.9012
-  },
-  "10": {
-    "RNA": 0.8426,
-    "Proteomics": 0.8726,
-    "Metabolomics": 0.9026,
-    "Drug": 0.9326
-  },
-  "11": {
-    "RNA": 0.8707,
-    "Proteomics": 0.9007,
-    "Metabolomics": 0.9307,
-    "Drug": 0.9607
-  },
-  "12": {
-    "RNA": 0.8364,
-    "Proteomics": 0.8664,
-    "Metabolomics": 0.8964,
-    "Drug": 0.9264
-  },
-  "13": {
-    "RNA": 0.8604,
-    "Proteomics": 0.8904,
-    "Metabolomics": 0.9204,
-    "Drug": 0.9504
-  },
-  "14": {
-    "RNA": 0.8833,
-    "Proteomics": 0.9133,
-    "Metabolomics": 0.9433,
-    "Drug": 0.9733
-  },
-  "15": {
-    "RNA": 0.8452,
-    "Proteomics": 0.8752,
-    "Metabolomics": 0.9052,
-    "Drug": 0.9352
-  }
+  "rna": [
+    {
+      "panel_size": 2,
+      "coverage": 0.2701
+    },
+    {
+      "panel_size": 3,
+      "coverage": 0.29
+    },
+    {
+      "panel_size": 4,
+      "coverage": 0.3336
+    },
+    {
+      "panel_size": 5,
+      "coverage": 0.358
+    },
+    {
+      "panel_size": 6,
+      "coverage": 0.3808
+    },
+    {
+      "panel_size": 7,
+      "coverage": 0.4148
+    },
+    {
+      "panel_size": 8,
+      "coverage": 0.4503
+    },
+    {
+      "panel_size": 9,
+      "coverage": 0.4825
+    },
+    {
+      "panel_size": 10,
+      "coverage": 0.4967
+    },
+    {
+      "panel_size": 11,
+      "coverage": 0.5618
+    },
+    {
+      "panel_size": 12,
+      "coverage": 0.5726
+    },
+    {
+      "panel_size": 13,
+      "coverage": 0.5906
+    },
+    {
+      "panel_size": 14,
+      "coverage": 0.6015
+    },
+    {
+      "panel_size": 15,
+      "coverage": 0.616
+    }
+  ],
+  "prot": [
+    {
+      "panel_size": 2,
+      "coverage": 0.3067
+    },
+    {
+      "panel_size": 3,
+      "coverage": 0.3665
+    },
+    {
+      "panel_size": 4,
+      "coverage": 0.3784
+    },
+    {
+      "panel_size": 5,
+      "coverage": 0.4073
+    },
+    {
+      "panel_size": 6,
+      "coverage": 0.4723
+    },
+    {
+      "panel_size": 7,
+      "coverage": 0.4852
+    },
+    {
+      "panel_size": 8,
+      "coverage": 0.497
+    },
+    {
+      "panel_size": 9,
+      "coverage": 0.5195
+    },
+    {
+      "panel_size": 10,
+      "coverage": 0.5344
+    },
+    {
+      "panel_size": 11,
+      "coverage": 0.5471
+    },
+    {
+      "panel_size": 12,
+      "coverage": 0.5623
+    },
+    {
+      "panel_size": 13,
+      "coverage": 0.5846
+    },
+    {
+      "panel_size": 14,
+      "coverage": 0.5987
+    },
+    {
+      "panel_size": 15,
+      "coverage": 0.6238
+    }
+  ],
+  "methyl": [
+    {
+      "panel_size": 2,
+      "coverage": 0.1984
+    },
+    {
+      "panel_size": 3,
+      "coverage": 0.3048
+    },
+    {
+      "panel_size": 4,
+      "coverage": 0.3783
+    },
+    {
+      "panel_size": 5,
+      "coverage": 0.4551
+    },
+    {
+      "panel_size": 6,
+      "coverage": 0.468
+    },
+    {
+      "panel_size": 7,
+      "coverage": 0.4931
+    },
+    {
+      "panel_size": 8,
+      "coverage": 0.5267
+    },
+    {
+      "panel_size": 9,
+      "coverage": 0.5863
+    },
+    {
+      "panel_size": 10,
+      "coverage": 0.6328
+    },
+    {
+      "panel_size": 11,
+      "coverage": 0.6725
+    },
+    {
+      "panel_size": 12,
+      "coverage": 0.6816
+    },
+    {
+      "panel_size": 13,
+      "coverage": 0.6981
+    },
+    {
+      "panel_size": 14,
+      "coverage": 0.7077
+    },
+    {
+      "panel_size": 15,
+      "coverage": 0.7166
+    }
+  ],
+  "histone": [
+    {
+      "panel_size": 2,
+      "coverage": 0.4672
+    },
+    {
+      "panel_size": 3,
+      "coverage": 0.5082
+    },
+    {
+      "panel_size": 4,
+      "coverage": 0.5236
+    },
+    {
+      "panel_size": 5,
+      "coverage": 0.5364
+    },
+    {
+      "panel_size": 6,
+      "coverage": 0.5507
+    },
+    {
+      "panel_size": 7,
+      "coverage": 0.5693
+    },
+    {
+      "panel_size": 8,
+      "coverage": 0.6074
+    },
+    {
+      "panel_size": 9,
+      "coverage": 0.6166
+    },
+    {
+      "panel_size": 10,
+      "coverage": 0.6269
+    },
+    {
+      "panel_size": 11,
+      "coverage": 0.6687
+    },
+    {
+      "panel_size": 12,
+      "coverage": 0.679
+    },
+    {
+      "panel_size": 13,
+      "coverage": 0.7047
+    },
+    {
+      "panel_size": 14,
+      "coverage": 0.7141
+    },
+    {
+      "panel_size": 15,
+      "coverage": 0.7219
+    }
+  ],
+  "drug": [
+    {
+      "panel_size": 2,
+      "coverage": 0.1558
+    },
+    {
+      "panel_size": 3,
+      "coverage": 0.3529
+    },
+    {
+      "panel_size": 4,
+      "coverage": 0.4235
+    },
+    {
+      "panel_size": 5,
+      "coverage": 0.4663
+    },
+    {
+      "panel_size": 6,
+      "coverage": 0.479
+    },
+    {
+      "panel_size": 7,
+      "coverage": 0.4935
+    },
+    {
+      "panel_size": 8,
+      "coverage": 0.5808
+    },
+    {
+      "panel_size": 9,
+      "coverage": 0.5939
+    },
+    {
+      "panel_size": 10,
+      "coverage": 0.6055
+    },
+    {
+      "panel_size": 11,
+      "coverage": 0.6275
+    },
+    {
+      "panel_size": 12,
+      "coverage": 0.6353
+    },
+    {
+      "panel_size": 13,
+      "coverage": 0.6489
+    },
+    {
+      "panel_size": 14,
+      "coverage": 0.661
+    },
+    {
+      "panel_size": 15,
+      "coverage": 0.6706
+    }
+  ]
 }

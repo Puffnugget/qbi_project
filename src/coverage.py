@@ -26,7 +26,7 @@ def coverage_score(coords: np.ndarray, selected_idx: list[int]) -> float:
 
 
 def run_coverage(fused: pd.DataFrame, max_k: int = 15) -> None:
-    from src.selection import greedy_select
+    from selection import greedy_select
 
     coords = fused.values.astype(float)
     order = greedy_select(coords, len(coords))
@@ -47,6 +47,43 @@ def run_coverage(fused: pd.DataFrame, max_k: int = 15) -> None:
     )
 
 
+def run_per_layer_coverage(max_k: int = 15) -> None:
+    """Calculate coverage for each omics layer separately."""
+    from selection import greedy_select
+
+    OUT.mkdir(parents=True, exist_ok=True)
+
+    # Load individual PCA results
+    pca_files = {
+        "rna": "processed_data/pca/rna_seq_pca.csv",
+        "prot": "processed_data/pca/proteomics_pca.csv",
+        "methyl": "processed_data/pca/methylation_pca.csv",
+        "histone": "processed_data/pca/histone_pca.csv",
+        "drug": "processed_data/pca/drug_activity_pca.csv",
+    }
+
+    # Load fused matrix to get greedy order
+    fused = pd.read_csv(ROOT / "processed_data" / "pca" / "fused_matrix.csv", index_col=0)
+    coords = fused.values.astype(float)
+    order = greedy_select(coords, len(coords))
+
+    # For each layer, compute coverage using that layer's PCA
+    per_layer = {}
+    for layer_name, path in pca_files.items():
+        layer_df = pd.read_csv(ROOT / path, index_col=0)
+        layer_coords = layer_df.values.astype(float)
+
+        layer_scores = []
+        for k in range(2, max_k + 1):
+            score = coverage_score(layer_coords, order[:k])
+            layer_scores.append({"panel_size": k, "coverage": round(score, 4)})
+
+        per_layer[layer_name] = layer_scores
+
+    (OUT / "per_layer_coverage.json").write_text(json.dumps(per_layer, indent=2))
+
+
 if __name__ == "__main__":
-    fused = pd.read_csv(ROOT / "data" / "processed" / "fused_matrix.csv", index_col=0)
+    fused = pd.read_csv(ROOT / "processed_data" / "pca" / "fused_matrix.csv", index_col=0)
     run_coverage(fused)
+    run_per_layer_coverage()

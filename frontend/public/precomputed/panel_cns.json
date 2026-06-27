@@ -2,565 +2,565 @@
   "panels": {
     "1": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       }
     ],
     "2": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       }
     ],
     "3": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       }
     ],
     "4": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       }
     ],
     "5": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       }
     ],
     "6": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "7": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "8": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "9": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "10": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "11": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "12": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "13": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "14": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "15": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "16": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "17": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "18": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "19": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
     ],
     "20": [
       {
-        "cell_line": "SF295",
+        "cell_line": "CNS:SF-268",
         "cancer_type": "CNS",
         "step": 1
       },
       {
-        "cell_line": "SNB75",
+        "cell_line": "CNS:SNB-75",
         "cancer_type": "CNS",
         "step": 2
       },
       {
-        "cell_line": "U251",
+        "cell_line": "CNS:SF-295",
         "cancer_type": "CNS",
         "step": 3
       },
       {
-        "cell_line": "SNB19",
+        "cell_line": "CNS:SNB-19",
         "cancer_type": "CNS",
         "step": 4
       },
       {
-        "cell_line": "SF539",
+        "cell_line": "CNS:SF-539",
         "cancer_type": "CNS",
         "step": 5
       },
       {
-        "cell_line": "SF268",
+        "cell_line": "CNS:U251",
         "cancer_type": "CNS",
         "step": 6
       }
