@@ -4,67 +4,80 @@
     {
       "panel_size": 3,
       "coverage": 0.3452,
-      "validation_r": 0.1177
+      "validation_r": 0.1177,
+      "validation_r_ridge": 0.2688
     },
     {
       "panel_size": 4,
       "coverage": 0.3756,
-      "validation_r": 0.126
+      "validation_r": 0.126,
+      "validation_r_ridge": 0.2804
     },
     {
       "panel_size": 5,
       "coverage": 0.4109,
-      "validation_r": 0.1289
+      "validation_r": 0.1289,
+      "validation_r_ridge": 0.2548
     },
     {
       "panel_size": 6,
       "coverage": 0.4281,
-      "validation_r": 0.1363
+      "validation_r": 0.1363,
+      "validation_r_ridge": 0.2598
     },
     {
       "panel_size": 7,
       "coverage": 0.4469,
-      "validation_r": 0.1381
+      "validation_r": 0.1381,
+      "validation_r_ridge": 0.2644
     },
     {
       "panel_size": 8,
       "coverage": 0.4604,
-      "validation_r": 0.1901
+      "validation_r": 0.1901,
+      "validation_r_ridge": 0.3052
     },
     {
       "panel_size": 9,
       "coverage": 0.5098,
-      "validation_r": 0.2086
+      "validation_r": 0.2086,
+      "validation_r_ridge": 0.3214
     },
     {
       "panel_size": 10,
       "coverage": 0.5221,
-      "validation_r": 0.2074
+      "validation_r": 0.2074,
+      "validation_r_ridge": 0.3231
     },
     {
       "panel_size": 11,
       "coverage": 0.5343,
-      "validation_r": 0.2241
+      "validation_r": 0.2241,
+      "validation_r_ridge": 0.3289
     },
     {
       "panel_size": 12,
       "coverage": 0.546,
-      "validation_r": 0.2245
+      "validation_r": 0.2245,
+      "validation_r_ridge": 0.3374
     },
     {
       "panel_size": 13,
       "coverage": 0.5588,
-      "validation_r": 0.2461
+      "validation_r": 0.2461,
+      "validation_r_ridge": 0.3436
     },
     {
       "panel_size": 14,
       "coverage": 0.5765,
-      "validation_r": 0.2671
+      "validation_r": 0.2671,
+      "validation_r_ridge": 0.3331
     },
     {
       "panel_size": 15,
       "coverage": 0.5883,
-      "validation_r": 0.2953
+      "validation_r": 0.2953,
+      "validation_r_ridge": 0.3585
     }
   ]
 }

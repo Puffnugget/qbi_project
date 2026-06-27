@@ -1,0 +1,57 @@
+{
+  "method": "ridge_regression",
+  "results": [
+    {
+      "panel_size": 3,
+      "validation_r": 0.2688
+    },
+    {
+      "panel_size": 4,
+      "validation_r": 0.2804
+    },
+    {
+      "panel_size": 5,
+      "validation_r": 0.2548
+    },
+    {
+      "panel_size": 6,
+      "validation_r": 0.2598
+    },
+    {
+      "panel_size": 7,
+      "validation_r": 0.2644
+    },
+    {
+      "panel_size": 8,
+      "validation_r": 0.3052
+    },
+    {
+      "panel_size": 9,
+      "validation_r": 0.3214
+    },
+    {
+      "panel_size": 10,
+      "validation_r": 0.3231
+    },
+    {
+      "panel_size": 11,
+      "validation_r": 0.3289
+    },
+    {
+      "panel_size": 12,
+      "validation_r": 0.3374
+    },
+    {
+      "panel_size": 13,
+      "validation_r": 0.3436
+    },
+    {
+      "panel_size": 14,
+      "validation_r": 0.3331
+    },
+    {
+      "panel_size": 15,
+      "validation_r": 0.3585
+    }
+  ]
+}
