@@ -34,20 +34,26 @@ export default function Sidebar({
   onResetToOptimal,
 }: SidebarProps) {
   return (
-    <aside className="flex h-full w-full flex-col gap-6 overflow-y-auto border-r border-white/10 bg-[#0a0a18] p-6">
-      <header>
-        <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
-          NCI-60 Panel Builder
-        </p>
-        <h1 className="mt-1 text-xl font-semibold text-zinc-100">
+    <aside
+      className="reveal flex h-full w-full flex-col gap-6 overflow-y-auto border-r border-border bg-surface p-6 shadow-[2px_0_12px_var(--shadow)]"
+    >
+      <header className="reveal reveal-delay-1">
+        <p className="label-caps">NCI-60 Panel Builder</p>
+        <h1
+          className="mt-1 text-2xl font-semibold tracking-tight text-fg"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
           Greedy Selection
         </h1>
+        <p className="mt-1 text-sm text-fg-muted">
+          Farthest-point panel design on fused omics
+        </p>
       </header>
 
-      <section className="space-y-3">
-        <label className="block text-sm text-zinc-400">
+      <section className="reveal reveal-delay-2 space-y-3">
+        <label className="block text-sm text-fg-muted">
           Panel size:{" "}
-          <span className="font-mono text-zinc-100">{panelSize}</span>
+          <span className="font-mono font-medium text-fg">{panelSize}</span>
         </label>
         <input
           type="range"
@@ -55,9 +61,9 @@ export default function Sidebar({
           max={15}
           value={panelSize}
           onChange={(e) => onPanelSizeChange(Number(e.target.value))}
-          className="w-full accent-[#4361EE]"
+          className="w-full"
         />
-        <p className="text-xs text-zinc-500">
+        <p className="text-xs text-fg-subtle">
           {loading
             ? "Computing elbow…"
             : elbowSize != null
@@ -65,35 +71,37 @@ export default function Sidebar({
               : "Suggested optimal: 8 lines (elbow TBD)"}
         </p>
         {isManualMode && (
-          <div className="space-y-2">
-            <p className="text-xs text-cyan-400">
+          <div className="space-y-2 rounded-lg border border-accent-teal/30 bg-accent-teal/8 p-3">
+            <p className="text-xs text-accent">
               Manual mode — coverage:{" "}
-              <span className="font-mono">
+              <span className="font-mono font-medium">
                 {manualCoverage != null ? manualCoverage.toFixed(3) : "—"}
               </span>
             </p>
             <button
               type="button"
               onClick={onResetToOptimal}
-              className="w-full rounded border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs text-cyan-300 hover:bg-cyan-500/20"
+              className="btn-ghost w-full px-3 py-1.5 text-xs"
             >
-              Reset to Optimal
+              Reset to optimal
             </button>
           </div>
         )}
       </section>
 
-      <BlindSpotPanel blindspot={blindspot} panelSize={panelSize} />
+      <div className="reveal reveal-delay-3">
+        <BlindSpotPanel blindspot={blindspot} panelSize={panelSize} />
+      </div>
 
-      <section className="space-y-2">
-        <label htmlFor="cancer-type" className="block text-sm text-zinc-400">
+      <section className="reveal reveal-delay-3 space-y-2">
+        <label htmlFor="cancer-type" className="block text-sm text-fg-muted">
           Cancer type
         </label>
         <select
           id="cancer-type"
           value={cancerType}
           onChange={(e) => onCancerTypeChange(e.target.value)}
-          className="w-full rounded-md border border-white/10 bg-[#050510] px-3 py-2 text-sm text-zinc-100"
+          className="input-base w-full px-3 py-2 text-sm"
         >
           {CANCER_TYPES.map((type) => (
             <option key={type} value={type}>
@@ -103,19 +111,19 @@ export default function Sidebar({
         </select>
       </section>
 
-      <section className="space-y-2">
-        <p className="text-sm text-zinc-400">Omics layers</p>
+      <section className="reveal reveal-delay-4 space-y-2">
+        <p className="text-sm text-fg-muted">Omics layers</p>
         <div className="space-y-2">
           {OMICS_LAYERS.map((layer) => (
             <label
               key={layer}
-              className="flex cursor-pointer items-center gap-2 text-sm text-zinc-300"
+              className="flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1 text-sm text-fg-muted transition-colors hover:bg-canvas-deep hover:text-fg"
             >
               <input
                 type="checkbox"
                 checked={activeLayers.includes(layer)}
                 onChange={() => onLayerToggle(layer)}
-                className="rounded border-white/20 accent-[#4361EE]"
+                className="rounded border-border"
               />
               {layer}
             </label>

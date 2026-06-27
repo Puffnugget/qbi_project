@@ -1,7 +1,9 @@
 "use client";
 
-import type { PerLayerCoverage } from "@/lib/types";
+import { EmptyState } from "@/components/ui/Card";
 import { OMICS_LAYERS } from "@/lib/constants";
+import { theme } from "@/lib/theme";
+import type { PerLayerCoverage } from "@/lib/types";
 
 interface RadarChartProps {
   perLayer?: PerLayerCoverage;
@@ -19,9 +21,9 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
 
   if (!hasData) {
     return (
-      <div className="flex h-40 items-center justify-center rounded-lg border border-white/10 bg-[#0a0a18] text-xs text-zinc-500">
+      <EmptyState className="h-40 text-xs">
         Per-layer coverage — awaiting JSON
-      </div>
+      </EmptyState>
     );
   }
 
@@ -47,10 +49,8 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
   });
 
   return (
-    <div className="rounded-lg border border-white/10 bg-[#0a0a18] p-3">
-      <p className="mb-2 text-xs uppercase tracking-wider text-zinc-500">
-        Layer coverage (k={panelSize})
-      </p>
+    <div className="card p-3">
+      <p className="label-caps mb-2">Layer coverage (k={panelSize})</p>
       <svg width={SIZE} height={SIZE} className="mx-auto block">
         {[0.25, 0.5, 0.75, 1].map((ring) => (
           <circle
@@ -59,7 +59,7 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
             cy={CENTER}
             r={RADIUS * ring}
             fill="none"
-            stroke="#1a1a2e"
+            stroke={theme.border}
             strokeWidth={1}
           />
         ))}
@@ -70,7 +70,7 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
               y1={CENTER}
               x2={x2}
               y2={y2}
-              stroke="#2a2a3e"
+              stroke={theme.borderStrong}
               strokeWidth={1}
             />
             <text
@@ -78,7 +78,7 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
               y={ly}
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#71717a"
+              fill={theme.fgMuted}
               fontSize={8}
             >
               {layer.slice(0, 4)}
@@ -87,8 +87,8 @@ export default function RadarChart({ perLayer, panelSize = 8 }: RadarChartProps)
         ))}
         <polygon
           points={points}
-          fill="rgba(67,97,238,0.25)"
-          stroke="#4361EE"
+          fill={`${theme.accent}30`}
+          stroke={theme.accent}
           strokeWidth={2}
         />
       </svg>

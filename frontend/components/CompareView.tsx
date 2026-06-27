@@ -8,7 +8,7 @@ import { getSelectedPanel, usePanelData } from "@/hooks/usePanelData";
 const Scene3D = dynamic(() => import("@/components/Scene3D"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full items-center justify-center text-sm text-zinc-500">
+    <div className="flex h-full items-center justify-center text-sm text-fg-muted">
       Loading scene…
     </div>
   ),
@@ -40,34 +40,36 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
 
   return (
     <div className="flex h-full flex-col gap-3 p-4">
-      <div className="flex items-center justify-between gap-4">
+      <div className="reveal flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-sm">
           <select
             value={typeA}
             onChange={(e) => setTypeA(e.target.value)}
-            className="rounded border border-white/10 bg-[#050510] px-2 py-1 text-zinc-200"
+            className="input-base px-2 py-1.5 text-sm"
           >
             {cancerOptions.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
           </select>
-          <span className="text-zinc-500">vs</span>
+          <span className="text-fg-subtle">vs</span>
           <select
             value={typeB}
             onChange={(e) => setTypeB(e.target.value)}
-            className="rounded border border-white/10 bg-[#050510] px-2 py-1 text-zinc-200"
+            className="input-base px-2 py-1.5 text-sm"
           >
             {cancerOptions.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
           </select>
         </div>
-        <p className="text-sm text-zinc-400">
+        <p className="text-sm text-fg-muted">
           Overlap:{" "}
-          <span className="font-mono text-[#FFD700]">{overlap.length}</span>{" "}
+          <span className="font-mono font-medium text-accent-gold">
+            {overlap.length}
+          </span>{" "}
           lines
           {overlap.length > 0 && (
-            <span className="ml-2 text-xs text-zinc-500">
+            <span className="ml-2 text-xs text-fg-subtle">
               ({overlap.join(", ")})
             </span>
           )}
@@ -75,8 +77,14 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
       </div>
 
       <div className="grid min-h-0 flex-1 grid-cols-2 gap-3">
-        <div className="relative min-h-[300px] overflow-hidden rounded-lg border border-white/10">
-          <p className="absolute left-3 top-3 z-10 text-xs text-zinc-500">{typeA}</p>
+        <div
+          className="reveal reveal-delay-1 relative min-h-[300px] overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
+        >
+          <p
+            className="absolute left-3 top-3 z-10 rounded-md bg-surface/90 px-2 py-0.5 text-xs font-medium text-fg-muted backdrop-blur-sm"
+          >
+            {typeA}
+          </p>
           {!loadA && dataA && (
             <Scene3D
               points={dataA.umap}
@@ -86,8 +94,14 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
             />
           )}
         </div>
-        <div className="relative min-h-[300px] overflow-hidden rounded-lg border border-white/10">
-          <p className="absolute left-3 top-3 z-10 text-xs text-zinc-500">{typeB}</p>
+        <div
+          className="reveal reveal-delay-2 relative min-h-[300px] overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
+        >
+          <p
+            className="absolute left-3 top-3 z-10 rounded-md bg-surface/90 px-2 py-0.5 text-xs font-medium text-fg-muted backdrop-blur-sm"
+          >
+            {typeB}
+          </p>
           {!loadB && dataB && (
             <Scene3D
               points={dataB.umap}

@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Group, Mesh, MeshStandardMaterial } from "three";
 import { CANCER_COLORS } from "@/lib/constants";
+import { sceneTheme } from "@/lib/theme";
 import type { UmapPoint } from "@/lib/types";
 
 function easeOutBack(t: number): number {
@@ -62,7 +63,7 @@ function ConnectionLines({
         <Line
           key={i}
           points={seg}
-          color="#FFD700"
+          color={sceneTheme.connectionLine}
           lineWidth={1}
           transparent
           opacity={0.35}
@@ -85,8 +86,8 @@ function RedRimPulse({ position }: { position: [number, number, number] }) {
     <mesh ref={ref} position={position}>
       <sphereGeometry args={[0.15, 24, 24]} />
       <meshStandardMaterial
-        color="#EF233C"
-        emissive="#EF233C"
+        color={sceneTheme.blindspot}
+        emissive={sceneTheme.blindspot}
         transparent
         opacity={0.35}
       />
@@ -141,29 +142,29 @@ function CellSphere({
 
   switch (state) {
     case "greedy":
-      color = "#FFD700";
-      emissive = "#FFD700";
+      color = sceneTheme.greedy;
+      emissive = sceneTheme.greedy;
       emissiveIntensity = 0.7;
       radius = 0.12;
       scale = 1.5;
       break;
     case "manual-added":
-      color = "#00F5FF";
-      emissive = "#00F5FF";
+      color = sceneTheme.manualAdded;
+      emissive = sceneTheme.manualAdded;
       emissiveIntensity = 0.65;
       radius = 0.11;
       scale = 1.35;
       break;
     case "manual-removed":
-      color = "#555555";
-      emissive = "#333333";
+      color = sceneTheme.manualRemoved;
+      emissive = sceneTheme.manualRemoved;
       emissiveIntensity = 0.1;
       opacity = 0.3;
       break;
     default:
       if (isOverlap) {
-        color = "#ffffff";
-        emissive = "#ffffff";
+        color = sceneTheme.overlap;
+        emissive = sceneTheme.overlap;
         emissiveIntensity = 0.5;
       }
       break;
@@ -286,10 +287,13 @@ function SceneContent({
 
   return (
     <>
-      <color attach="background" args={["#050510"]} />
-      <ambientLight intensity={0.4} />
+      <color attach="background" args={[sceneTheme.background]} />
+      <ambientLight intensity={0.45} />
       <pointLight position={[10, 10, 10]} intensity={1} />
-      <gridHelper args={[10, 10, "#1a1a2e", "#12121f"]} position={[0, -2, 0]} />
+      <gridHelper
+        args={[10, 10, "#2a4a3a", "#1f3a2e"]}
+        position={[0, -2, 0]}
+      />
 
       {selectedLines.length > 1 && (
         <ConnectionLines points={points} selectedLines={selectedLines} />
@@ -331,9 +335,9 @@ function SceneContent({
           center
           style={{ pointerEvents: "none" }}
         >
-          <div className="whitespace-nowrap rounded border border-white/10 bg-black/80 px-2 py-1 text-xs text-zinc-100 backdrop-blur-sm">
+          <div className="whitespace-nowrap rounded-md border border-border bg-surface-elevated/95 px-2 py-1 text-xs text-fg shadow-md backdrop-blur-sm">
             <span className="font-mono">{hovered.cell_line}</span>
-            <span className="ml-2 text-zinc-400">{hovered.cancer_type}</span>
+            <span className="ml-2 text-fg-muted">{hovered.cancer_type}</span>
           </div>
         </Html>
       )}
@@ -380,8 +384,11 @@ export default function Scene3D({
           />
         ) : (
           <>
-            <color attach="background" args={["#050510"]} />
-            <gridHelper args={[10, 10, "#1a1a2e", "#12121f"]} position={[0, -2, 0]} />
+            <color attach="background" args={[sceneTheme.background]} />
+            <gridHelper
+              args={[10, 10, "#2a4a3a", "#1f3a2e"]}
+              position={[0, -2, 0]}
+            />
             <OrbitControls enableDamping dampingFactor={0.05} />
           </>
         )}
@@ -389,14 +396,14 @@ export default function Scene3D({
 
       {!hasData && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <p className="rounded-lg border border-white/10 bg-black/40 px-4 py-2 text-sm text-zinc-400 backdrop-blur-sm">
+          <p className="rounded-lg border border-border bg-surface/90 px-4 py-2 text-sm text-fg-muted backdrop-blur-sm">
             Loading cell line embedding…
           </p>
         </div>
       )}
 
       {hasData && (
-        <p className="pointer-events-none absolute bottom-3 right-3 text-[10px] text-zinc-600">
+        <p className="pointer-events-none absolute bottom-3 right-3 text-[10px] text-fg-subtle">
           Click spheres to manually edit panel
         </p>
       )}
