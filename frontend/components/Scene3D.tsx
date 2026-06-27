@@ -29,6 +29,7 @@ interface Scene3DProps {
   highlightOverlap?: string[];
   missingTypes?: string[];
   onSphereClick?: (cellLine: string) => void;
+  compact?: boolean;
 }
 
 function ConnectionLines({
@@ -299,6 +300,7 @@ function SceneContent({
   onSphereClick,
   hovered,
   setHovered,
+  compact = false,
 }: {
   points: UmapPoint[];
   selectedLines: string[];
@@ -310,6 +312,7 @@ function SceneContent({
   onSphereClick?: (cellLine: string) => void;
   hovered: UmapPoint | null;
   setHovered: (p: UmapPoint | null) => void;
+  compact?: boolean;
 }) {
   const selectedSet = useMemo(() => new Set(selectedLines), [selectedLines]);
   const greedySet = useMemo(() => new Set(greedyLines), [greedyLines]);
@@ -403,7 +406,7 @@ function SceneContent({
       <OrbitControls
         enableDamping
         dampingFactor={0.05}
-        autoRotate
+        autoRotate={!compact}
         autoRotateSpeed={0.5}
       />
     </>
@@ -419,15 +422,17 @@ export default function Scene3D({
   highlightOverlap = [],
   missingTypes = [],
   onSphereClick,
+  compact = false,
 }: Scene3DProps) {
   const [hovered, setHovered] = useState<UmapPoint | null>(null);
   const hasData = points.length > 0;
   const effectiveGreedy = greedyLines.length > 0 ? greedyLines : selectedLines;
+  const cameraZ = compact ? 7.5 : 6;
 
   return (
     <div className="relative h-full w-full">
       <Canvas
-        camera={{ position: [0, 0, 6], fov: 50 }}
+        camera={{ position: [0, 0, cameraZ], fov: compact ? 55 : 50 }}
         className="h-full w-full"
         gl={{ antialias: true, alpha: false }}
       >
@@ -443,6 +448,7 @@ export default function Scene3D({
             onSphereClick={onSphereClick}
             hovered={hovered}
             setHovered={setHovered}
+            compact={compact}
           />
         ) : (
           <>
@@ -464,7 +470,7 @@ export default function Scene3D({
         </div>
       )}
 
-      {hasData && (
+      {hasData && !compact && onSphereClick && (
         <p className="pointer-events-none absolute bottom-3 right-3 text-[10px] text-fg-subtle">
           Click spheres to manually edit panel
         </p>

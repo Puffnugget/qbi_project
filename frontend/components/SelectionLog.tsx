@@ -36,15 +36,15 @@ export default function SelectionLog({
 }: SelectionLogProps) {
   if (entries.length === 0) {
     return (
-      <div className="card flex h-48 items-center justify-center text-sm text-fg-muted">
+      <div className="card flex h-full min-h-0 items-center justify-center text-sm text-fg-muted">
         No panel selected yet
       </div>
     );
   }
 
   return (
-    <Card padding="none" className="overflow-hidden">
-      <CardHeader>
+    <Card padding="none" className="flex h-full min-h-0 flex-col overflow-hidden">
+      <CardHeader className="shrink-0 px-3 py-1.5">
         <p className="label-caps">Selection log</p>
         <button
           type="button"
@@ -54,9 +54,9 @@ export default function SelectionLog({
           Download CSV
         </button>
       </CardHeader>
-      <div className="max-h-48 overflow-y-auto">
+      <div className="min-h-0 flex-1 overflow-hidden">
         <table className="w-full text-left text-sm">
-          <thead className="sticky top-0 bg-surface text-xs text-fg-subtle">
+          <thead className="bg-surface text-xs text-fg-subtle">
             <tr>
               <th className="px-4 py-2 font-medium">Cell line</th>
               <th className="px-4 py-2 font-medium">Type</th>

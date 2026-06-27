@@ -39,8 +39,8 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
   const cancerOptions = CANCER_TYPES.filter((t) => t !== "all");
 
   return (
-    <div className="flex h-full flex-col gap-3 p-4">
-      <div className="reveal flex items-center justify-between gap-4">
+    <div className="flex h-full min-h-0 flex-col gap-2 overflow-hidden p-3">
+      <div className="reveal flex shrink-0 items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-sm">
           <select
             value={typeA}
@@ -76,9 +76,9 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
         </p>
       </div>
 
-      <div className="grid min-h-0 flex-1 grid-cols-2 gap-3">
+      <div className="grid min-h-0 flex-1 grid-cols-2 gap-2">
         <div
-          className="reveal reveal-delay-1 relative min-h-[300px] overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
+          className="reveal reveal-delay-1 relative min-h-0 overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
         >
           <p
             className="absolute left-3 top-3 z-10 rounded-md border border-border bg-surface-elevated px-2 py-0.5 text-xs font-medium text-fg-muted"
@@ -95,7 +95,7 @@ export default function CompareView({ panelSize = 8 }: CompareViewProps) {
           )}
         </div>
         <div
-          className="reveal reveal-delay-2 relative min-h-[300px] overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
+          className="reveal reveal-delay-2 relative min-h-0 overflow-hidden rounded-xl border border-border shadow-[0_2px_12px_var(--shadow)]"
         >
           <p
             className="absolute left-3 top-3 z-10 rounded-md border border-border bg-surface-elevated px-2 py-0.5 text-xs font-medium text-fg-muted"

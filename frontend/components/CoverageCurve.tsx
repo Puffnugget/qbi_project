@@ -30,14 +30,14 @@ export default function CoverageCurve({
 }: CoverageCurveProps) {
   if (data.length === 0) {
     return (
-      <EmptyState className="h-48 text-sm">
+      <EmptyState className="h-full min-h-0 text-sm">
         Coverage curve — awaiting precomputed JSON
       </EmptyState>
     );
   }
 
   return (
-    <div className="card h-48 p-3">
+    <div className="card h-full min-h-0 p-2">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <CartesianGrid

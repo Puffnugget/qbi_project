@@ -117,8 +117,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-[100dvh] bg-canvas text-fg">
-      <div className="w-[25%] min-w-[280px] max-w-sm shrink-0">
+    <div className="flex h-[100dvh] overflow-hidden bg-canvas text-fg">
+      <div className="flex h-full w-[25%] min-w-[280px] max-w-sm shrink-0">
         <Sidebar
           panelSize={panelSize}
           cancerType={cancerType}
@@ -135,9 +135,9 @@ export default function Home() {
         />
       </div>
 
-      <main className="flex min-w-0 flex-1 flex-col bg-canvas-deep/30">
+      <main className="flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-canvas-deep/30">
         <Tabs value={tab} onChange={setTab}>
-          <TabList>
+          <TabList className="shrink-0">
             {(Object.keys(TAB_LABELS) as TabId[]).map((id) => (
               <Tab key={id} id={id} label={TAB_LABELS[id]} />
             ))}
@@ -155,8 +155,8 @@ export default function Home() {
         </Tabs>
 
         {tab === "explore" ? (
-          <>
-            <div className="reveal min-h-0 flex-1 p-3">
+          <div className="grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_10rem_8.5rem] overflow-hidden">
+            <div className="reveal min-h-0 p-3 pb-2">
               {!loading && data && (
                 <div className="h-full overflow-hidden rounded-xl border border-border shadow-[0_4px_24px_var(--shadow-strong)]">
                   <Scene3D
@@ -176,11 +176,9 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <div
-              className="reveal reveal-delay-1 grid shrink-0 grid-cols-2 gap-4 border-t border-border bg-surface/60 p-4"
-            >
-              <div>
-                <p className="label-caps mb-2">Coverage vs panel size</p>
+            <div className="reveal reveal-delay-1 grid min-h-0 shrink-0 grid-cols-2 gap-3 border-t border-border bg-surface/60 px-3 py-2">
+              <div className="flex min-h-0 flex-col">
+                <p className="label-caps mb-1 shrink-0">Coverage vs panel size</p>
                 <CoverageCurve
                   data={data?.coverage.curve}
                   currentPanelSize={panelSize}
@@ -197,21 +195,21 @@ export default function Home() {
               </div>
               <RadarChart perLayer={data?.perLayer} panelSize={panelSize} />
             </div>
-            <div className="reveal reveal-delay-2 shrink-0 px-4 pb-4">
+            <div className="reveal reveal-delay-2 min-h-0 overflow-hidden px-3 pb-3">
               <SelectionLog
                 entries={displayEntries}
                 characterization={data?.characterization}
               />
             </div>
-          </>
+          </div>
         ) : tab === "compare" ? (
-          <div className="min-h-0 flex-1">
+          <div className="min-h-0 flex-1 overflow-hidden">
             <CompareView panelSize={panelSize} />
           </div>
         ) : (
-            <div className="min-h-0 flex-1">
+          <div className="min-h-0 flex-1 overflow-hidden">
             <AdaptiveDesignTab umapPoints={data?.umap} adaptiveData={data?.adaptiveDesign} />
-            </div>
+          </div>
         )}
       </main>
     </div>

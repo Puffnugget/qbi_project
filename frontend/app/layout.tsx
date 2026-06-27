@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${ibmSans.variable} ${ibmMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-canvas text-fg">
+      <body className="flex h-full flex-col overflow-hidden bg-canvas text-fg">
         {children}
       </body>
     </html>
