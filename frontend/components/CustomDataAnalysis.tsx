@@ -274,7 +274,7 @@ export function CustomDataAnalysis() {
                 value={proteinQuery}
                 onChange={(e) => setProteinQuery(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleProteinSearch()}
-                placeholder="e.g., TP53, EGFR, BRCA1"
+                placeholder="e.g., EGFR, TP53, BRCA1, MYC, KRAS"
                 className="flex-1 px-3 py-2 rounded border border-border bg-surface text-fg placeholder:text-fg-muted"
               />
               <button
