@@ -1,0 +1,27 @@
+{
+  "name": "qbi_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "verify:phase1": "python scripts/verify_phase1_folklore.py && node scripts/verify_phase1_ui.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Puffnugget/qbi_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Puffnugget/qbi_project/issues"
+  },
+  "homepage": "https://github.com/Puffnugget/qbi_project#readme",
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}

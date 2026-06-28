@@ -280,6 +280,40 @@ def folklore_run(body: FolkloreRunRequest) -> dict:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
+@app.get("/folklore/model-status")
+def folklore_model_status() -> dict:
+    """Report which prediction source is powering the active_learner policy."""
+    from src.folklore.predictions import predictions_source, load_predictions
+    from src.folklore.ensemble import WEIGHTS_PATH, COLS_PATH
+    import os
+
+    source = predictions_source()
+    store = load_predictions()
+
+    info: dict = {"source": source}
+
+    if source == "live_ensemble":
+        ens = store._ensemble  # type: ignore[attr-defined]
+        info["n_models"] = len(ens.models)
+        info["n_feature_cols"] = len(ens.feature_cols)
+        info["n_cell_lines"] = len(ens._omics)
+        info["n_drugs"] = len(ens._drug_feats)
+        info["weights_file"] = str(WEIGHTS_PATH.name)
+        info["weights_size_kb"] = round(os.path.getsize(WEIGHTS_PATH) / 1024)
+    elif source == "precomputed_parquet":
+        from src.folklore.predictions import DEFAULT_PATH
+        info["parquet_file"] = str(DEFAULT_PATH.name)
+        info["parquet_size_kb"] = round(os.path.getsize(DEFAULT_PATH) / 1024)
+    else:
+        info["message"] = (
+            "No model weights found. Run: "
+            "python scripts/export_ensemble_numpy.py (requires torch) or "
+            "python scripts/train_folklore_ensemble.py to generate them."
+        )
+
+    return info
+
+
 @app.post("/folklore/regenerate")
 def folklore_regenerate() -> dict:
     """Regenerate frontend/public/precomputed/folklore.json from real simulator output.

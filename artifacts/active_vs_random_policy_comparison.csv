@@ -1,0 +1,16 @@
+preset,tumor_name,policy,label,final_best_response_score
+melanoma-mixed,Melanoma mixed tumor,active_learner,Active learner,-1.15
+melanoma-mixed,Melanoma mixed tumor,random,Random,-0.434
+melanoma-mixed,Melanoma mixed tumor,uncertainty,Hardcoded uncertainty,-1.142
+breast-heterogeneous,Breast heterogeneous tumor,active_learner,Active learner,-1.2075
+breast-heterogeneous,Breast heterogeneous tumor,random,Random,-0.2175
+breast-heterogeneous,Breast heterogeneous tumor,uncertainty,Hardcoded uncertainty,-1.2075
+colon-robust,Colon robust-drug search,active_learner,Active learner,-1.012
+colon-robust,Colon robust-drug search,random,Random,-0.6505
+colon-robust,Colon robust-drug search,uncertainty,Hardcoded uncertainty,0.705
+lung-dual-clone,Lung dual-clone resistance,active_learner,Active learner,-1.334
+lung-dual-clone,Lung dual-clone resistance,random,Random,-0.5755
+lung-dual-clone,Lung dual-clone resistance,uncertainty,Hardcoded uncertainty,0.557
+renal-backup-simple,Renal two-clone backup,active_learner,Active learner,-1.25
+renal-backup-simple,Renal two-clone backup,random,Random,-0.99
+renal-backup-simple,Renal two-clone backup,uncertainty,Hardcoded uncertainty,-0.902

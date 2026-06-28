@@ -1,4 +1,4 @@
-"""Load RunPod ensemble predictions (optional — heuristic fallback if missing)."""
+"""Ensemble predictions: live inference from model weights (preferred) or precomputed parquet fallback."""
 
 from __future__ import annotations
 
@@ -19,6 +19,8 @@ class Prediction:
 
 
 class PredictionsStore:
+    """Precomputed lookup table from predictions.parquet."""
+
     def __init__(self, frame: pd.DataFrame) -> None:
         required = {"cell_line", "drug", "mean", "std"}
         missing = required - set(frame.columns)
@@ -40,7 +42,6 @@ class PredictionsStore:
         components: list[tuple[str, float]],
         drug: str,
     ) -> tuple[float | None, float | None]:
-        """Weighted mean prediction and uncertainty aggregate for a tumor mixture."""
         mean_total = 0.0
         std_total = 0.0
         weight = 0.0
@@ -56,8 +57,45 @@ class PredictionsStore:
         return mean_total / weight, std_total / weight
 
 
+class _LiveStore:
+    """Thin wrapper around LiveEnsemble that matches the PredictionsStore interface."""
+
+    def __init__(self, ensemble: object) -> None:
+        self._ensemble = ensemble
+
+    def lookup(self, cell_line: str, drug: str) -> Prediction | None:
+        result = self._ensemble.lookup(cell_line, drug)
+        if result is None:
+            return None
+        m, s = result
+        return Prediction(mean=m, std=s)
+
+    def mixed_tumor_stats(
+        self,
+        components: list[tuple[str, float]],
+        drug: str,
+    ) -> tuple[float | None, float | None]:
+        return self._ensemble.mixed_tumor_stats(components, drug)
+
+
 @lru_cache(maxsize=1)
-def load_predictions(path: str | None = None) -> PredictionsStore | None:
+def load_predictions(path: str | None = None) -> PredictionsStore | _LiveStore | None:
+    """
+    Return the best available prediction source.
+
+    Priority:
+    1. Live ensemble (numpy weights exported from folklore_ensemble.pt) — runs inference
+       on demand for any (cell_line, drug) pair, including unseen cell lines.
+    2. Precomputed parquet (folklore/predictions.parquet) — fast lookup but only for
+       the NCI-60 cell lines and drugs seen during training.
+    3. None — active_learner falls back to greedy+uncertainty heuristic.
+    """
+    from .ensemble import load_live_ensemble
+
+    live = load_live_ensemble()
+    if live is not None:
+        return _LiveStore(live)
+
     target = Path(path) if path else DEFAULT_PATH
     if not target.exists():
         return None
@@ -66,4 +104,16 @@ def load_predictions(path: str | None = None) -> PredictionsStore | None:
 
 
 def clear_cache() -> None:
+    from .ensemble import load_live_ensemble
     load_predictions.cache_clear()
+    load_live_ensemble.cache_clear()
+
+
+def predictions_source() -> str:
+    """Human-readable string describing which prediction source is active."""
+    from .ensemble import WEIGHTS_PATH
+    if WEIGHTS_PATH.exists():
+        return "live_ensemble"
+    if DEFAULT_PATH.exists():
+        return "precomputed_parquet"
+    return "none"
