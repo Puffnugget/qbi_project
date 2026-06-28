@@ -21,16 +21,12 @@ const Scene3D = dynamic(() => import("@/components/Scene3D"), {
   ),
 });
 
-const CompareView = dynamic(() => import("@/components/CompareView"), {
-  ssr: false,
-});
-
 const CustomDataAnalysis = dynamic(
   () => import("@/components/CustomDataAnalysis").then(mod => ({ default: mod.CustomDataAnalysis })),
   { ssr: false },
 );
 
-type TabId = "explore" | "compare" | "adaptive" | "analyze";
+type TabId = "explore" | "adaptive" | "analyze";
 
 const AdaptiveDesignTab = dynamic(
   () => import("@/components/AdaptiveDesignTab"),
@@ -39,7 +35,6 @@ const AdaptiveDesignTab = dynamic(
 
 const TAB_LABELS: Record<TabId, string> = {
   explore: "Explore",
-  compare: "Compare",
   adaptive: "Adaptive design",
   analyze: "Analyze Your Data",
 };
@@ -207,10 +202,6 @@ export default function Home() {
                 characterization={data?.characterization}
               />
             </div>
-          </div>
-        ) : tab === "compare" ? (
-          <div className="min-h-0 flex-1 overflow-hidden">
-            <CompareView panelSize={panelSize} />
           </div>
         ) : tab === "analyze" ? (
           <div className="min-h-0 flex-1 overflow-auto p-6">

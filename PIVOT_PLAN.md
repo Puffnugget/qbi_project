@@ -1,4 +1,4 @@
-# Folklore Plan: Multi-Cell Tumor Screening Agent
+# Tinalore Plan: Multi-Cell Tumor Screening Agent
 
 ## Summary
 
