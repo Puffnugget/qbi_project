@@ -320,18 +320,14 @@ function SceneContent({
   const missingSet = useMemo(() => new Set(missingTypes), [missingTypes]);
 
   // Detect which line was just added so CellSphere can play the fly-in animation
-  const [prevSelected, setPrevSelected] = useState<string[]>([]);
+  const [prevSelectedLines, setPrevSelectedLines] = useState<string[]>(selectedLines);
   const [newestLine, setNewestLine] = useState<string | null>(null);
 
-  const isDifferent =
-    selectedLines.length !== prevSelected.length ||
-    selectedLines.some((val, idx) => val !== prevSelected[idx]);
-
-  if (isDifferent) {
-    const prevSet = new Set(prevSelected);
+  if (selectedLines !== prevSelectedLines) {
+    const prevSet = new Set(prevSelectedLines);
     const added = selectedLines.filter((l) => !prevSet.has(l));
     setNewestLine(added.length === 1 ? added[0] : null);
-    setPrevSelected(selectedLines);
+    setPrevSelectedLines(selectedLines);
   }
 
   return (

@@ -6,6 +6,8 @@ import CoverageCurve from "@/components/CoverageCurve";
 import RadarChart from "@/components/RadarChart";
 import SelectionLog from "@/components/SelectionLog";
 import Sidebar from "@/components/Sidebar";
+import { Alert } from "@/components/ui/Alert";
+import { ExploreViewSkeleton } from "@/components/ui/Skeleton";
 import { Tab, TabList, Tabs } from "@/components/ui/TabBar";
 import { getSelectedPanel, usePanelData } from "@/hooks/usePanelData";
 import { computeCoverage, indicesFromLines } from "@/lib/coverage";
@@ -58,7 +60,7 @@ export default function Home() {
   const [isManualMode, setIsManualMode] = useState(false);
   const [manualPanel, setManualPanel] = useState<string[]>([]);
 
-  const { data, loading, error } = usePanelData(cancerType);
+  const { data, loading, error, retry } = usePanelData(cancerType);
 
   const greedyEntries = useMemo(
     () => getSelectedPanel(data?.panels, panelSize),
@@ -157,12 +159,7 @@ export default function Home() {
             ))}
             {showPanelStatus && loading && (
               <span className="ml-auto self-center text-xs text-fg-subtle">
-                Loading data…
-              </span>
-            )}
-            {showPanelStatus && error && (
-              <span className="ml-auto self-center text-xs text-danger">
-                {error}
+                Loading…
               </span>
             )}
           </TabList>
@@ -173,9 +170,25 @@ export default function Home() {
             <AdaptiveDesignTab adaptiveData={data?.folklore} />
           </div>
         ) : tab === "explore" ? (
+          loading ? (
+            <ExploreViewSkeleton />
+          ) : error ? (
+            <div className="flex min-h-0 flex-1 items-center justify-center p-6">
+              <Alert
+                variant="error"
+                title="Could not load panel data"
+                onRetry={retry}
+                className="max-w-md"
+              >
+                {error}. Check that precomputed JSON is in{" "}
+                <span className="font-mono">public/precomputed/</span> and try
+                again.
+              </Alert>
+            </div>
+          ) : (
           <div className="grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_10rem_8.5rem] overflow-hidden">
             <div className="reveal min-h-0 p-3 pb-2">
-              {!loading && data && (
+              {data && (
                 <div className="h-full overflow-hidden rounded-xl border border-border shadow-[0_4px_24px_var(--shadow-strong)]">
                   <Scene3D
                     points={data.umap}
@@ -186,11 +199,6 @@ export default function Home() {
                     missingTypes={missingTypes}
                     onSphereClick={handleSphereClick}
                   />
-                </div>
-              )}
-              {loading && (
-                <div className="flex h-full items-center justify-center text-sm text-fg-muted">
-                  Loading UMAP embedding…
                 </div>
               )}
             </div>
@@ -220,6 +228,7 @@ export default function Home() {
               />
             </div>
           </div>
+          )
         ) : tab === "compare" ? (
           <div className="min-h-0 flex-1 overflow-hidden">
             <CompareView panelSize={panelSize} />

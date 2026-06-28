@@ -10,3 +10,6 @@ env/
 
 # OS
 .DS_Store
+
+# Node (root verify scripts)
+node_modules/

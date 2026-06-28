@@ -6,7 +6,10 @@ import random
 import statistics
 from dataclasses import dataclass
 
+from .predictions import load_predictions
 from .simulator import FolkloreSimulator, TumorComponent
+
+UNCERTAINTY_BONUS = 0.35
 
 
 @dataclass(frozen=True)
@@ -23,6 +26,7 @@ class FolkloreEnvironment:
     def __init__(self, simulator: FolkloreSimulator | None = None, seed: int = 7) -> None:
         self.simulator = simulator or FolkloreSimulator()
         self.rng = random.Random(seed)
+        self.predictions = load_predictions()
 
     def run_episode(self, request: EpisodeRequest) -> dict:
         allowed = {"random", "active_learner", "greedy", "uncertainty"}
@@ -111,7 +115,7 @@ class FolkloreEnvironment:
         why = {
             "greedy": "Lowest predicted mixed-tumor response among untested drugs.",
             "uncertainty": "Largest response spread across subclones among untested drugs.",
-            "active_learner": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+            "active_learner": "Best model signal: low ensemble mean response plus uncertainty bonus.",
         }[request.policy]
         return drug, why
 
@@ -133,8 +137,12 @@ class FolkloreEnvironment:
             return greedy
         if policy == "uncertainty":
             return uncertainty
-        # ponytail: model uncertainty plugs in here once RunPod predictions exist.
-        return greedy + (0.35 * uncertainty)
+        if policy == "active_learner" and self.predictions is not None:
+            mixture = [(c.cell_line, c.proportion) for c in components]
+            mean_pred, std_pred = self.predictions.mixed_tumor_stats(mixture, drug)
+            if mean_pred is not None and std_pred is not None:
+                return (-mean_pred) + (UNCERTAINTY_BONUS * std_pred)
+        return greedy + (UNCERTAINTY_BONUS * uncertainty)
 
     def _final_recommendation(self, best_step: dict, goal: str) -> dict[str, str]:
         resistant = best_step["resistant_subclones"]

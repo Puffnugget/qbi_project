@@ -92,7 +92,11 @@ export default function Sidebar({
           </section>
 
           <div className="reveal reveal-delay-3 min-h-0 shrink-0 overflow-hidden">
-            <BlindSpotPanel blindspot={blindspot} panelSize={panelSize} />
+            <BlindSpotPanel
+              blindspot={blindspot}
+              panelSize={panelSize}
+              loading={loading}
+            />
           </div>
 
           <section className="reveal reveal-delay-3 shrink-0 space-y-1.5">

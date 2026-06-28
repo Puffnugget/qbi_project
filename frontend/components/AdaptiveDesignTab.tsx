@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   CartesianGrid,
   Line,
@@ -12,6 +12,12 @@ import {
   YAxis,
 } from "recharts";
 import { Card } from "@/components/ui/Card";
+import { Alert } from "@/components/ui/Alert";
+import {
+  FolkloreTabSkeleton,
+  LiveEditorSkeleton,
+} from "@/components/ui/Skeleton";
+import { Toast, type ToastTone } from "@/components/ui/Toast";
 import {
   fetchFolklore,
   fetchFolkloreCatalog,
@@ -84,14 +90,17 @@ export default function AdaptiveDesignTab({
   const [drugPool, setDrugPool] = useState<string[]>([]);
   const [running, setRunning] = useState(false);
   const [liveCase, setLiveCase] = useState<FolkloreCase | null>(null);
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ message: string; tone: ToastTone } | null>(
+    null,
+  );
   const [regenerating, setRegenerating] = useState(false);
+  const [presetsLoading, setPresetsLoading] = useState(!isFolkloreReady(adaptiveData));
+  const [catalogLoading, setCatalogLoading] = useState(false);
+  const catalogRequested = useRef(false);
 
-  useEffect(() => {
-    if (toast == null) return;
-    const id = window.setTimeout(() => setToast(null), 4200);
-    return () => window.clearTimeout(id);
-  }, [toast]);
+  function showToast(message: string, tone: ToastTone = "info") {
+    setToast({ message, tone });
+  }
 
   // Rebuild folklore.json from real simulator output, then reload the presets.
   async function handleRegenerate() {
@@ -103,41 +112,47 @@ export default function AdaptiveDesignTab({
       setLoadError(null);
       setPlaying(false);
       setStep(1);
-      setToast(
+      showToast(
         `Regenerated ${result.preset_count} presets from simulator output.`,
+        "success",
       );
     } catch (err) {
-      setToast((err as Error).message);
+      showToast((err as Error).message, "error");
     } finally {
       setRegenerating(false);
     }
   }
 
+  const loadCatalog = useCallback(async () => {
+    setCatalogLoading(true);
+    setCatalogError(null);
+    try {
+      const payload = await fetchFolkloreCatalog();
+      setCatalog(payload);
+    } catch (err) {
+      setCatalogError(err instanceof Error ? err.message : "Catalog unavailable.");
+    } finally {
+      setCatalogLoading(false);
+    }
+  }, []);
+
   // Load the live catalog the first time the user opens live mode.
   useEffect(() => {
-    if (mode !== "live" || catalog != null) return;
-    let cancelled = false;
-    fetchFolkloreCatalog()
-      .then((payload) => {
-        if (!cancelled) {
-          setCatalog(payload);
-          setCatalogError(null);
-        }
-      })
-      .catch((err: Error) => {
-        if (!cancelled) setCatalogError(err.message);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [mode, catalog]);
+    if (mode !== "live" || catalog != null || catalogRequested.current) return;
+    catalogRequested.current = true;
+    void loadCatalog();
+  }, [mode, catalog, loadCatalog]);
 
   useEffect(() => {
     if (isFolkloreReady(adaptiveData)) {
+      setData(adaptiveData);
+      setLoadError(null);
+      setPresetsLoading(false);
       return;
     }
 
     let cancelled = false;
+    setPresetsLoading(true);
     fetchFolklore()
       .then((payload) => {
         if (!cancelled) {
@@ -150,12 +165,29 @@ export default function AdaptiveDesignTab({
           setData(null);
           setLoadError(err.message);
         }
+      })
+      .finally(() => {
+        if (!cancelled) setPresetsLoading(false);
       });
 
     return () => {
       cancelled = true;
     };
   }, [adaptiveData]);
+
+  async function retryLoadPresets() {
+    setPresetsLoading(true);
+    setLoadError(null);
+    try {
+      const payload = await fetchFolklore();
+      setData(payload);
+    } catch (err) {
+      setData(null);
+      setLoadError(err instanceof Error ? err.message : "Failed to load presets.");
+    } finally {
+      setPresetsLoading(false);
+    }
+  }
 
   const resolvedData = adaptiveData ?? data;
   const cases = useMemo(() => resolvedData?.preset_cases ?? [], [resolvedData]);
@@ -166,6 +198,61 @@ export default function AdaptiveDesignTab({
   );
   const currentCase =
     mode === "live" && liveCase != null ? liveCase : presetCase;
+
+  const fallbackCatalog = useMemo<FolkloreCatalog | null>(() => {
+    if (cases.length === 0) return null;
+    
+    // Extract unique cell lines
+    const cellLinesMap = new Map<string, string>();
+    for (const c of cases) {
+      for (const comp of c.components) {
+        cellLinesMap.set(comp.cell_line, comp.cancer_type ?? "NCI-60 clone");
+      }
+    }
+    const cell_lines = Array.from(cellLinesMap.entries()).map(([cell_line, cancer_type]) => ({
+      cell_line,
+      cancer_type,
+    }));
+    
+    // Extract unique drugs/compounds
+    const drugsMap = new Map<string, string>();
+    for (const c of cases) {
+      for (const policy of Object.values(c.policies)) {
+        for (const step of policy.steps) {
+          drugsMap.set(step.compound, step.mechanism);
+        }
+      }
+    }
+    const drugs = Array.from(drugsMap.entries()).map(([name, mechanism], index) => ({
+      id: `fallback-drug-${index}`,
+      name,
+      mechanism,
+    }));
+    
+    // Extract unique mechanisms
+    const mechanisms = Array.from(new Set(drugs.map((d) => d.mechanism)));
+    
+    // Extract available policies
+    const policiesSet = new Set<string>();
+    for (const c of cases) {
+      for (const p of Object.keys(c.policies)) {
+        policiesSet.add(p);
+      }
+    }
+    const available_policies = Array.from(policiesSet);
+    
+    const goals: FolkloreCase["goal"][] = ["find responder", "find resistance", "find robust drug"];
+    
+    return {
+      cell_lines,
+      drugs,
+      mechanisms,
+      available_policies,
+      goals,
+    };
+  }, [cases]);
+
+  const activeCatalog = catalog ?? fallbackCatalog;
 
   // --- Live form validation ---
   const proportionSum = liveComponents.reduce(
@@ -187,14 +274,14 @@ export default function AdaptiveDesignTab({
   const canRunLive = liveErrors.length === 0 && !running;
 
   const filteredDrugs = useMemo(() => {
-    const drugs = catalog?.drugs ?? [];
+    const drugs = activeCatalog?.drugs ?? [];
     const q = drugSearch.trim().toLowerCase();
     return drugs.filter((d) => {
       if (mechFilter !== "all" && d.mechanism !== mechFilter) return false;
       if (q && !d.name.toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [catalog, drugSearch, mechFilter]);
+  }, [activeCatalog, drugSearch, mechFilter]);
 
   function updateComponent(index: number, patch: Partial<LiveComponentDraft>) {
     setLiveComponents((prev) =>
@@ -277,9 +364,12 @@ export default function AdaptiveDesignTab({
         setLiveCase(null);
         setStep(1);
         setPlaying(false);
-        setToast(`${msg} Showing nearest canned demo: ${fallback.tumor_name}.`);
+        showToast(
+          `${msg} Showing nearest canned demo: ${fallback.tumor_name}.`,
+          "info",
+        );
       } else {
-        setToast(msg);
+        showToast(msg, "error");
       }
     } finally {
       setRunning(false);
@@ -316,11 +406,29 @@ export default function AdaptiveDesignTab({
     });
   }, [currentCase]);
 
+  if (presetsLoading) {
+    return <FolkloreTabSkeleton />;
+  }
+
   if (!isFolkloreReady(resolvedData) || !currentCase || !rollout || !currentStep) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center text-sm text-fg-muted">
-        <p>TINA is loading preset demos…</p>
-        {loadError && <p className="max-w-md text-xs text-danger">{loadError}</p>}
+      <div className="flex h-full flex-col items-center justify-center gap-4 px-6">
+        {loadError ? (
+          <Alert
+            variant="error"
+            title="Could not load TINA presets"
+            onRetry={retryLoadPresets}
+            className="max-w-md text-center"
+          >
+            {loadError}. Ensure{" "}
+            <span className="font-mono">public/precomputed/folklore.json</span>{" "}
+            exists or start the API to regenerate presets.
+          </Alert>
+        ) : (
+          <p className="text-center text-sm text-fg-muted">
+            No preset demos available yet.
+          </p>
+        )}
       </div>
     );
   }
@@ -328,8 +436,24 @@ export default function AdaptiveDesignTab({
   return (
     <div className="relative grid h-full min-h-0 grid-rows-[minmax(0,1fr)_14rem] gap-3 overflow-hidden p-3">
       {toast && (
-        <div className="absolute left-1/2 top-3 z-50 -translate-x-1/2 rounded-xl border border-border-strong bg-surface-elevated px-4 py-2.5 text-sm text-fg shadow-[0_8px_24px_var(--shadow)]">
-          {toast}
+        <Toast
+          message={toast.message}
+          tone={toast.tone}
+          onDismiss={() => setToast(null)}
+        />
+      )}
+      {running && (
+        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-canvas/60 backdrop-blur-md">
+          <div className="flex flex-col items-center justify-center p-8 bg-surface-elevated border border-border rounded-2xl shadow-xl max-w-sm text-center">
+            <span
+              aria-hidden
+              className="inline-block size-8 animate-spin rounded-full border-3 border-accent border-t-transparent mb-4"
+            />
+            <h3 className="text-base font-bold text-fg">Running Live Screening</h3>
+            <p className="mt-2 text-xs text-fg-muted leading-relaxed">
+              Evaluating subclone proportions, selecting optimal compounds, and computing counterfactual trajectories using TINA backend...
+            </p>
+          </div>
         </div>
       )}
       <div className="grid min-h-0 gap-3 xl:grid-cols-[19rem_minmax(0,1fr)_22rem]">
@@ -455,8 +579,10 @@ export default function AdaptiveDesignTab({
             </>
           ) : (
             <LiveEditor
-              catalog={catalog}
+              catalog={activeCatalog}
               catalogError={catalogError}
+              catalogLoading={catalogLoading}
+              onRetryCatalog={loadCatalog}
               components={liveComponents}
               goal={liveGoal}
               budget={liveBudget}
@@ -622,31 +748,57 @@ export default function AdaptiveDesignTab({
           </div>
         </Card>
 
-        <Card className="reveal reveal-delay-2 flex min-h-0 flex-col gap-3 overflow-auto bg-[linear-gradient(180deg,rgba(47,94,69,0.08),rgba(47,94,69,0))] p-4">
-          <div>
-            <p className="label-caps">Final recommendation</p>
-            <h2 className="mt-1 text-2xl font-display text-fg">
-              {rollout.final.recommended_compound}
-            </h2>
+        <Card className="reveal reveal-delay-2 flex min-h-0 flex-col gap-4 overflow-auto bg-surface/50 border border-border/40 backdrop-blur-md shadow-lg p-5 rounded-2xl">
+          <div className="flex flex-col gap-1 pb-3 border-b border-border/30">
+            <p className="label-caps text-fg-subtle">Final recommendation</p>
+            <div className="flex items-center gap-2">
+              <span className="flex size-7 items-center justify-center rounded-full bg-accent/15 text-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4.5">
+                  <path fillRule="evenodd" d="M12.516 2.185a.75.75 0 0 0-1.032 0 11.233 11.233 0 0 1-7.383 3.2c-.3 0-.588.05-.858.14a.75.75 0 0 0-.492.704c0 4.885 2.457 9.53 6.643 11.666a.75.75 0 0 0 .706 0c4.186-2.135 6.643-6.78 6.643-11.666a.75.75 0 0 0-.492-.704 11.233 11.233 0 0 1-7.383-3.2ZM12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clipRule="evenodd" />
+                </svg>
+              </span>
+              <h2 className="text-xl font-bold tracking-tight text-fg">
+                {rollout.final.recommended_compound}
+              </h2>
+            </div>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface-elevated p-4">
-            <p className="label-caps">Main realization</p>
-            <p className="mt-2 text-sm leading-6 text-fg-muted">
+          <div className="rounded-xl border border-border/40 bg-surface-elevated/70 p-4 transition-all hover:shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="size-4.5 text-accent">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a3 3 0 1 0-3-3M12 12.75a3 3 0 1 1 3-3m-3 11.25h.008v.008H12v-.008Zm0-3h.008v.008H12v-.008ZM9.75 15h4.5M9 20.25h6" />
+              </svg>
+              <p className="label-caps text-fg font-semibold">Main realization</p>
+            </div>
+            <p className="text-sm leading-relaxed text-fg-muted">
               {rollout.final.main_realization}
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface-elevated p-4">
-            <p className="label-caps">Next experiment</p>
-            <p className="mt-2 text-sm leading-6 text-fg-muted">
+          <div className="rounded-xl border border-border/40 bg-surface-elevated/70 p-4 transition-all hover:shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="size-4.5 text-accent">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v1.242c0 .289-.139.56-.378.725L4.855 8.358a2.25 2.25 0 0 0-.98 1.872v9.014c0 1.242 1.008 2.25 2.25 2.25h11.75c1.242 0 2.25-1.008 2.25-2.25v-9.014c0-.756-.38-1.455-.98-1.872l-4.517-3.287a.75.75 0 0 1-.378-.725V3.104m-5.25 0h5.25m-5.25 0A2.25 2.25 0 0 1 12 1.5c1.242 0 2.25 1.008 2.25 2.25M9 10.5h6m-7.5 4h9" />
+              </svg>
+              <p className="label-caps text-fg font-semibold">Next experiment</p>
+            </div>
+            <p className="text-sm leading-relaxed text-fg-muted">
               {rollout.final.next_experiment}
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-accent text-surface-elevated p-4">
-            <p className="label-caps !text-[#dce9e2]">Active vs random</p>
-            <p className="mt-2 text-sm leading-6">{rollout.final.active_vs_random}</p>
+          <div className="rounded-xl border border-accent/25 bg-accent/6 p-4 shadow-[0_4px_16px_rgba(47,94,69,0.03)] relative overflow-hidden transition-all hover:bg-accent/8">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="flex size-5.5 items-center justify-center rounded-full bg-accent/15 text-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-3.5">
+                  <path fillRule="evenodd" d="M9.69 18.933a.75.75 0 0 1-1.38 0l-.822-1.78a2.25 2.25 0 0 0-1.228-1.228l-1.78-.822a.75.75 0 0 1 0-1.38l1.78-.822c.49-.226.88-.617 1.106-1.106l.822-1.78a.75.75 0 0 1 1.38 0l.822 1.78c.226.49.617.88 1.106 1.106l1.78.822a.75.75 0 0 1 0 1.38l-1.78.822a2.25 2.25 0 0 0-1.228 1.228l-.822 1.78ZM16.5 7.625a.625.625 0 1 0 0-1.25.625.625 0 0 0 0 1.25Zm0 3.75a.625.625 0 1 0 0-1.25.625.625 0 0 0 0 1.25Zm-3.75-3.75a.625.625 0 1 0 0-1.25.625.625 0 0 0 0 1.25Z" clipRule="evenodd" />
+                </svg>
+              </span>
+              <p className="label-caps font-bold text-accent">Active vs Random</p>
+            </div>
+            <p className="text-sm leading-relaxed text-accent font-medium font-sans">
+              {rollout.final.active_vs_random}
+            </p>
           </div>
         </Card>
       </div>
@@ -667,14 +819,17 @@ export default function AdaptiveDesignTab({
               <XAxis
                 dataKey="step"
                 stroke={chartTheme.axis}
-                tick={{ fill: chartTheme.axis, fontSize: 11 }}
+                tick={{ fill: chartTheme.axis, fontSize: 10 }}
+                dy={4}
               />
               <YAxis
                 stroke={chartTheme.axis}
-                tick={{ fill: chartTheme.axis, fontSize: 11 }}
+                tick={{ fill: chartTheme.axis, fontSize: 10 }}
                 tickFormatter={score}
+                dx={-4}
               />
               <Tooltip
+                labelFormatter={(label) => `Step ${label}`}
                 formatter={(value, name) => {
                   const numeric = typeof value === "number" ? value : Number(value ?? 0);
                   const label = typeof name === "string" ? name : String(name);
@@ -683,10 +838,35 @@ export default function AdaptiveDesignTab({
                 contentStyle={{
                   background: chartTheme.tooltipBg,
                   border: `1px solid ${chartTheme.tooltipBorder}`,
-                  borderRadius: "8px",
+                  borderRadius: "12px",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+                  padding: "8px 12px",
+                }}
+                labelStyle={{
+                  fontWeight: "semibold",
+                  color: theme.fg,
+                  fontSize: "11px",
+                  marginBottom: "4px",
+                }}
+                itemStyle={{
+                  fontSize: "11px",
+                  color: theme.fgMuted,
+                  padding: "2px 0",
                 }}
               />
-              <ReferenceLine x={clampedStep} stroke={theme.accentGold} strokeDasharray="4 4" />
+              <ReferenceLine
+                x={clampedStep}
+                stroke={theme.accentGold}
+                strokeWidth={2}
+                strokeDasharray="4 4"
+                label={{
+                  value: `Step ${clampedStep}`,
+                  position: "top",
+                  fill: theme.accentGold,
+                  fontSize: 10,
+                  fontWeight: "bold",
+                }}
+              />
               {Object.keys(currentCase.policies).map((key) => (
                 <Line
                   key={key}
@@ -708,6 +888,8 @@ export default function AdaptiveDesignTab({
 interface LiveEditorProps {
   catalog: FolkloreCatalog | null;
   catalogError: string | null;
+  catalogLoading: boolean;
+  onRetryCatalog: () => void;
   components: LiveComponentDraft[];
   goal: Goal;
   budget: number;
@@ -735,6 +917,8 @@ interface LiveEditorProps {
 function LiveEditor({
   catalog,
   catalogError,
+  catalogLoading,
+  onRetryCatalog,
   components,
   goal,
   budget,
@@ -764,12 +948,21 @@ function LiveEditor({
 
   return (
     <div className="flex flex-col gap-4">
+      {catalogLoading ? (
+        <LiveEditorSkeleton />
+      ) : (
+        <>
       {catalogError && (
-        <div className="rounded-xl border border-dashed border-border-strong bg-canvas-deep/60 p-3 text-xs text-fg-muted">
-          Catalog unavailable: {catalogError} The picker fills once
-          <span className="font-mono"> GET /folklore/catalog</span> is live. You
-          can still run — invalid runs fall back to the nearest canned demo.
-        </div>
+        <Alert
+          variant="warning"
+          title="Drug catalog unavailable"
+          onRetry={onRetryCatalog}
+        >
+          {catalogError}. Start the API so{" "}
+          <span className="font-mono">GET /folklore/catalog</span> can populate
+          the picker. You can still run — failed live runs fall back to the
+          nearest canned demo.
+        </Alert>
       )}
 
       <div>
@@ -939,11 +1132,13 @@ function LiveEditor({
       </div>
 
       {errors.length > 0 && (
-        <ul className="space-y-1 text-xs text-danger">
-          {errors.map((err) => (
-            <li key={err}>• {err}</li>
-          ))}
-        </ul>
+        <Alert variant="error" title="Fix these before running">
+          <ul className="space-y-1">
+            {errors.map((err) => (
+              <li key={err}>• {err}</li>
+            ))}
+          </ul>
+        </Alert>
       )}
 
       <button
@@ -954,6 +1149,8 @@ function LiveEditor({
       >
         {running ? "Running episode…" : "Run live screening"}
       </button>
+        </>
+      )}
     </div>
   );
 }

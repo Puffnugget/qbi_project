@@ -68,14 +68,98 @@ Final pitch:
 - Data layer (`lib/data.ts`): `fetchFolkloreCatalog()`, `runFolklore()`, `regenerateFolklore()`, `isFolkloreCatalogReady()`
 - Types (`lib/types.ts`): `FolkloreCatalog`, `FolkloreCatalogDrug`, `FolkloreCatalogCellLine`, `FolkloreRunRequest`, `FolkloreRunResponse`, `FolkloreRegenerateResponse`
 - Frontend typecheck (`tsc --noEmit`) passes clean
+- **Error states + loading skeletons** (Phase 4 polish): shared `Alert`, `Skeleton`, `Toast`; retry on failed fetches in Explore / Compare / TINA; production build passes
 
 ### Next Todo
 
-- **Resolve final frontend validation after merge conflict cleanup** (Phase 3 open item)
-- Replace heuristic active-learner with model-backed uncertainty once RunPod predictions exist (Phase 4)
-- Sister/bioinformatics: verify response direction, audit catalog correctness, curate demo drug subset, write biology blurbs per preset
-- Wire RunPod ensemble predictions into `active_learner` policy (Phase 4)
-- Full judge rehearsal: canned pitch + 2 live "what if" scenarios
+See **Remaining work** below — single owner (you): biology, RunPod training, wire-up. See `REMAINING.md` for the active checklist (presentation/script deferred).
+
+---
+
+## Remaining work (you — full ownership)
+
+Sister tasks are **reassigned to you**. Do in order where dependencies apply.
+
+### A. Biology + catalog (do first)
+
+| # | Task | Output | Done when |
+|---|------|--------|-----------|
+| A1 | Verify drug-response **sign/direction** in landmark matrix (negative = sensitive?) | `docs/folklore_response_sign.md` or note in repo | Preset stories match matrix math |
+| A2 | Audit bad/missing cell line × drug pairs | `docs/folklore_catalog_audit.md` or drop list | No demo drug has &lt;55/60 lines without explicit flag |
+| A3 | Curate **demo drug subset** (~30–40 high-signal compounds) | `processed_data/clean/drug_landmarks/demo_drugs.json` | Kinase-filter uses believable options |
+| A4 | Clean **mechanism labels** on step cards | Metadata fixes or override map in repo | Timeline mechanisms aren’t nonsense |
+
+### B. RunPod model (blocks real active learner)
+
+| # | Task | Output | Done when |
+|---|------|--------|-----------|
+| B1 | Export **per-cell-line feature slice** for training | `processed_data/folklore/train_features.parquet` + column README | `(cell_line, drug) → features` loadable |
+| B2 | Document **train/val split** | `docs/folklore_train_split.md` | No cell-line leakage in val set |
+| B3 | **Train PyTorch ensemble on RunPod** (5 small MLPs) | `scripts/train_folklore_ensemble.py` + checkpoint | Val loss stable |
+| B4 | Export **predictions + uncertainty** | `processed_data/folklore/predictions.parquet` — columns: `cell_line`, `drug`, `mean`, `std` | Full landmark grid covered |
+
+### C. Software wire-up (after B4, or stub now)
+
+| # | Task | Files | Done when |
+|---|------|-------|-----------|
+| C1 | Define **predictions schema** + loader | `src/folklore/predictions.py` | Unit test: known cell/drug returns mean/std |
+| C2 | Wire loader into **`active_learner`** | `src/folklore/environment.py` → `_policy_score()` (~line 136) | Score uses ensemble std, not matrix-variance placeholder |
+| C3 | **Fallback** when predictions file missing | Same env — heuristic if parquet absent | Demo works offline before B4 lands |
+| C4 | **Review live outputs**; tune sensitive/resistant thresholds | `src/folklore/simulator.py` if needed | No preset tells an impossible story |
+| C5 | **Regenerate canned rollouts** | `python scripts/generate_folklore.py` | `folklore.json` reflects model-backed policy |
+| C6 | Verify **active learner ≥ random on 3/5** presets | Script output | Success criteria still met |
+| C7 | **Review live outputs**; tune sensitive/resistant thresholds | `src/folklore/simulator.py` if needed | No preset tells an impossible story |
+| C8 | Confirm **offline fallback** | Canned JSON with API stopped | Demo survives without backend |
+
+**Phase 4 gate:** A1–A4 + B4 + C2 + C5 + C6 + C8.
+
+#### `_policy_score` target (C2)
+
+```python
+# today (placeholder):
+return greedy + (0.35 * uncertainty)  # pstdev across subclone matrix responses
+
+# after B4:
+# mixed mean = weighted sum of per-subclone model means
+# uncertainty = weighted sum (or max) of per-subclone ensemble std
+return -predicted_mixed_mean + (lambda_unc * predicted_uncertainty)
+```
+
+Tune `lambda_unc` while rehearsing kinase-filter and proportion-change demos.
+
+---
+
+### Suggested order (solo)
+
+```text
+1. A1–A4     biology + catalog (1–2 days)
+2. C1 + C3   loader stub + fallback (can parallel A)
+3. B1–B4     features → RunPod train → predictions.parquet (2–3 days)
+4. C2, C5–C8 wire policy, regenerate, verify win rate, offline check
+```
+
+Presentation/script (hooks, copy pass, rehearsal) → deferred; see `REMAINING.md`.
+
+---
+
+### Dependencies
+
+| Blocked | Unblock with |
+|---------|----------------|
+| Real model uncertainty (C2) | B4 predictions file |
+| Optional `drug_catalog.json` | A2 catalog audit |
+
+---
+
+### Done (removed from active todo)
+
+- ~~Resolve final frontend validation after merge conflict cleanup~~ — `npm run build` passes
+- ~~Error states, loading skeletons~~ — shipped in `Alert`, `Skeleton`, `Toast` + tab wiring
+
+### Former sister scope (now yours)
+
+All items previously labeled S1–S11 are folded into **A1–A4**, **B1–B4**, and **C7** above. Presentation/script tasks deferred to `REMAINING.md`.
+
 
 ## What The Input And Output Mean
 
@@ -266,7 +350,7 @@ All live and canned runs use the same compound list:
 - Matrix: `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv` (~150 drugs × 60 cell lines)
 - Metadata: `processed_data/clean/drug_landmarks/drug_activity_landmark_metadata.csv` (name, mechanism class)
 
-Sister owns catalog correctness. You own exposing it to the API and UI.
+You own catalog correctness and exposing it via API/UI.
 
 ### Live API contract
 
@@ -323,17 +407,16 @@ POST /folklore/run              → run one live episode from user input
 
 Build in order. Each phase has a **gate** — do not start the next phase until the gate passes.
 
-### Phase 0 — Shared foundation (both, ~2 days)
+### Phase 0 — Foundation (~2 days)
 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
-| **Sister** | Verify drug-response sign/direction in landmark matrix; flag bad or missing cell line × drug pairs; export `drug_catalog.json` (id, name, mechanism, n_cell_lines) | Catalog loads; every demo drug has ≥55/60 line responses |
-| **You** | Define `folklore.json` schema; stub `GET /folklore/catalog` and `GET /folklore` returning empty/minimal JSON; document in this file | Frontend can fetch catalog without 404 |
-| **Both** | Agree on 5 preset demo tumors (names, mixtures, goals, one-line biology hook) | List written in Phase 0 section below |
+| **You** | Define `folklore.json` schema; stub catalog/folklore endpoints; agree 5 preset tumors | Frontend fetches without 404 |
+| **You** | Verify drug-response sign/direction; audit catalog; optional `drug_catalog.json` | Every demo drug has ≥55/60 line responses |
 
-**Gate:** catalog source loads + schema agreed + 5 preset tumors defined on paper.
+**Gate:** catalog source loads + schema agreed + 5 preset tumors defined.
 
-**Status:** software foundation complete; biology/catalog audit still needs review
+**Status:** software foundation complete; biology/catalog audit still open (**A1–A2**)
 
 - [x] `folklore.json` schema defined in frontend types and canned data
 - [x] Frontend loads `frontend/public/precomputed/folklore.json`
@@ -342,23 +425,22 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 - [x] `POST /folklore/run` explicit not-yet-implemented stub
 - [x] 5 preset tumors agreed and filled in
 - [x] Catalog API derives cell lines and drugs from local landmark data
-- [ ] Sister verifies drug-response sign/direction
-- [ ] Sister audits bad or missing cell line x drug pairs
+- [ ] Verify drug-response sign/direction (**A1**)
+- [ ] Audit bad or missing cell line × drug pairs (**A2**)
 - [ ] Optional: export static `frontend/public/precomputed/drug_catalog.json`
 
 ---
 
-### Phase 1 — Ground-truth simulator (parallel, ~3 days)
+### Phase 1 — Ground-truth simulator (~3 days)
 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
-| **Sister** | Curate landmark subset for demos (~30–40 high-signal drugs); clean mechanism labels; write 2-sentence biology blurb per preset tumor | `demo_drugs.json` + tumor narratives checked in |
-| **You** | ~~`src/folklore/simulator.py` — mixed tumor response = weighted sum of subclone responses from matrix; resistance flag when one subclone stays above threshold; unit test on 3 drugs × 3 lines~~ | **Done:** simulator self-check matches manual 3-line weighted sum |
-| **You** | ~~`src/folklore/environment.py` — state, action (pick drug), no duplicate drugs per episode, episode length = budget~~ | **Done:** random policy runs end-to-end with no duplicate compounds |
+| **You** | Curate demo drug subset; clean mechanism labels (**A3–A4**) | `demo_drugs.json` |
+| **You** | ~~`simulator.py` + `environment.py`~~ | **Done** |
 
 **Gate:** one full random rollout JSON for one preset tumor, generated from real drug matrix.
 
-**Status:** software complete; needs biology review
+**Status:** simulator done; biology curation open (**A3–A4**)
 
 - [x] Create `src/folklore/simulator.py`
 - [x] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv`
@@ -373,13 +455,12 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 ---
 
-### Phase 2 — Policies + canned rollouts (parallel, ~3 days)
+### Phase 2 — Policies + canned rollouts (~3 days)
 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
-| **Sister** | Export per-cell-line features slice for model training; document train/val split; start RunPod ensemble spec (5 MLPs) | Training script runs on sample batch |
-| **You** | ~~Policies: `random`, `greedy`, `uncertainty`, `active_learner` (uncertainty bonus even before GPU model — use matrix variance or placeholder)~~ | **Done:** heuristic policies select different drugs from real matrix scores |
-| **You** | `scripts/generate_folklore.py` → `frontend/public/precomputed/folklore.json` (5 tumors × 2 policies × steps + finals) | File committed; frontend loads it |
+| **You** | Export training features; train/val split; RunPod ensemble start (**B1–B3**) | Training script runs on sample batch |
+| **You** | ~~Policies + `generate_folklore.py`~~ | **Done** |
 
 **Gate:** `folklore.json` complete; active learner wins on majority of canned tumors.
 
@@ -396,17 +477,16 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 ---
 
-### Phase 3 — Live run path (you lead, sister supports, ~3 days)
+### Phase 3 — Live run path (~3 days)
 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
-| **You** | `POST /folklore/run` — validate input, filter drug pool to catalog, run episode, return rollout + comparison policy | curl POST returns valid rollout in <3 s locally |
-| **You** | Upgrade Adaptive Design tab → **Adaptive Tumor Screening**: catalog drug picker, mixture editor, canned vs live toggle, replay controls | Can run live with custom drug pool from UI |
-| **Sister** | Review live run outputs for biological nonsense; adjust thresholds (sensitive/resistant labels) | No demo tumor produces impossible mechanism story |
+| **You** | `POST /folklore/run`, live UI, catalog picker | Live demo with custom drug pool |
+| **You** | Review live outputs; tune thresholds if needed (**C4**) | No impossible mechanism stories |
 
-**Gate:** live demo works end-to-end with custom drug pool; canned fallback works with API stopped.
+**Gate:** live demo end-to-end; canned fallback with API stopped.
 
-**Status:** live baseline works; real policy behavior pending
+**Status:** live baseline done; threshold review open (**C4**)
 
 - [x] Canned vs live mode toggle exists in UI shell
 - [x] Replay controls exist
@@ -418,71 +498,65 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 - [x] `POST /folklore/run` **backend** endpoint (live shape works; policies still baseline)
 - [x] `GET /folklore/catalog` **backend** endpoint
 - [x] `GET /folklore` **backend** endpoint
-- [ ] Resolve final frontend validation after merge conflict cleanup
+- [x] Resolve final frontend validation (`npm run build` clean)
+- [ ] Review live run outputs + tune thresholds (**C4**)
 
 ---
 
-### Phase 4 — GPU model + polish (parallel, ~4 days)
+### Phase 4 — GPU model + polish (~4 days)
 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
-| **Sister** | Train PyTorch ensemble on RunPod; export `predictions.parquet` or JSON (cell_line × drug → mean, std); plug into active learner score | Agent uses model uncertainty, not placeholder |
-| **Sister** | Final biology pass on all 5 presets + mechanism text on step cards | Every step has believable `why_chosen` / mechanism |
-| **You** | Wire model predictions into `active_learner` policy; active vs random chart; final conclusion card; error states + loading | Judge path ≤30 s; demo survives offline |
-| **Both** | Rehearsal: canned pitch + 2 live “what if” scenarios (drug filter, proportion change) | Run-through without crashes |
+| **You** | RunPod train + export predictions (**B3–B4**) | `predictions.parquet` in repo |
+| **You** | Wire predictions into `active_learner` (**C1–C3**) | Model uncertainty, not placeholder |
+| **You** | Biology pass on presets + step copy (**C7**) | Believable `why_chosen` / mechanisms |
+| **You** | ~~Error states + loading~~ | **Done** |
+| **You** | Demo rehearsal (**C8**) | Canned + 2 live scenarios without crashes |
 
 **Gate:** success criteria below all green.
 
-**Status:** not started
+**Status:** polish done; see **Remaining work** A–C
+
+- [x] Error states + loading skeletons (Explore, Compare, TINA, Analyze)
+- [ ] Biology + catalog (**A1–A5**)
+- [ ] RunPod train + predictions export (**B1–B4**)
+- [ ] Predictions loader + active_learner wire-up (**C1–C3**)
+- [ ] Regenerate `folklore.json`; active learner ≥3/5 vs random (**C5–C6**)
+- [ ] Final biology pass on rollouts (**C7**)
+- [ ] Demo rehearsal (**C8**)
 
 ---
 
-### Phase 0 preset tumors (draft — edit together)
+### Phase 0 preset tumors (canonical — matches `scripts/generate_folklore.py`)
 
-| # | Name | Mixture | Goal | Hook |
+| # | Name | Mixture | Goal | Hook (refine in **A5**) |
 |---|------|---------|------|------|
-| 1 | Melanoma mixed | 50% A375 / 30% SK-MEL-5 / 20% MDA-MB-435S | find resistance | Average looks good; one clone survives BRAF path |
+| 1 | Melanoma mixed | 50% SK-MEL-28 / 30% SK-MEL-5 / 20% MDA-MB-435 | find resistance | BRAF-heavy picks; SK-MEL-5 survives |
 | 2 | Breast heterogeneous | 45% MCF7 / 35% T-47D / 20% MDA-MB-231 | find responder | Hidden sensitive subpopulation |
 | 3 | Colon mixture | 40% HCT-116 / 35% HT29 / 25% KM12 | find robust drug | No single clone drives average |
-| 4 | Lung dual clone | TBD | find resistance | Mechanism mismatch across clones |
-| 5 | Backup simple | 2 clones only | find robust drug | Fast live demo if time is short |
+| 4 | Lung dual clone | 55% A549 / 45% NCI-H460 | find resistance | EGFR-heavy average hides flat second clone |
+| 5 | Renal backup | 60% 786-0 / 40% A498 | find robust drug | Fast 2-clone live demo |
+
+Update hooks in `scripts/generate_folklore.py` (**A5**), then regenerate JSON.
 
 ---
 
 ## Work Split (summary)
 
-### You — software + RL + demo
-
-Phases: **0** (schema/API stub) → **1** (simulator, env) → **2** (policies, JSON) → **3** (live POST, UI) → **4** (model wire-up, polish)
+**Single owner: you.** Phases 0 → 4 — software, biology, RunPod, demo.
 
 Build:
 
-- RL-style environment + policies
-- rollout / live run generation
-- `GET /folklore`, `GET /folklore/catalog`, `POST /folklore/run`
-- frontend demo tab + drug picker + replay
-- canned vs live demo toggle
+- RL environment + policies + live/canned API
+- frontend TINA tab + drug picker + replay
+- verify drug-response direction + catalog audit + demo drug curation
+- mechanism labels + tumor narratives
+- PyTorch ensemble on RunPod + predictions export
+- wire model into `active_learner`; regenerate rollouts; rehearsal
 
-Your main goal:
+Main goal:
 
-> Make the demo feel like an adaptive experiment happening live — including “what if we only test these drugs?”
-
-### Sister — bioinformatics + model + biology
-
-Phases: **0** (catalog audit) → **1** (demo drugs, narratives) → **2** (training data, RunPod start) → **3** (threshold review) → **4** (ensemble export, biology pass)
-
-Build:
-
-- verify drug-response direction
-- drug catalog + landmark curation
-- compound mechanism labels
-- train PyTorch ensemble on RunPod
-- export predictions and uncertainty
-- biological explanations for demo tumors
-
-Her main goal:
-
-> Make tumor mixtures, drug choices, and conclusions biologically believable — and ensure live runs only use real compounds we have.
+> Demo feels like a live adaptive experiment, with biologically believable tumors and conclusions — including “what if we only test kinase inhibitors?”
 
 ## Data And Interfaces
 
@@ -498,7 +572,7 @@ Add generated files:
 
 ```text
 frontend/public/precomputed/folklore.json     # canned rollouts (offline-safe)
-frontend/public/precomputed/drug_catalog.json # sister: catalog for live drug picker
+frontend/public/precomputed/drug_catalog.json # optional; after A2 catalog audit
 ```
 
 Add endpoints:
