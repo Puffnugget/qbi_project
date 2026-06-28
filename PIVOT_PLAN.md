@@ -38,16 +38,32 @@ Final pitch:
 - `frontend/public/precomputed/folklore.json` added as offline-safe canned source
 - Frontend data contract added for Folklore JSON shape
 - UI now loads canned Folklore data without requiring live backend endpoints
+- Canned demo now has 5 preset tumors:
+  - melanoma mixed tumor
+  - breast heterogeneous tumor
+  - colon robust-drug search
+  - lung dual-clone resistance
+  - renal two-clone backup
+- Every canned preset has `active_learner` and `random` rollouts with 6 unique drug tests
+- Backend stubs added:
+  - `GET /folklore`
+  - `GET /folklore/catalog`
+  - `POST /folklore/run` returns explicit `501 Not Implemented`
+- `/folklore/catalog` exposes 60 cell lines, 150 landmark drugs, mechanism labels, response counts, and demo tumors from local data
+- Frontend helper added for fetching the Folklore catalog
 
 ### Next Todo
 
-- Add 2 more preset tumors so canned demo reaches 5 total
+- Resolve the existing `frontend/app/page.tsx` merge conflict before relying on frontend build/test results
+- Build the ground-truth simulator from the landmark drug matrix
+- Build the episode environment with no duplicate drug tests and 6-10 step budgets
 - Replace hand-written canned JSON with generated rollouts from real data
-- Stub backend endpoints: `GET /folklore`, `GET /folklore/catalog`, `POST /folklore/run`
-- Build simulator and episode environment in Python
+- Implement policies: `random`, `greedy`, `uncertainty`, `active_learner`
+- Implement live `POST /folklore/run`
 - Wire live mode inputs: editable mixture, goal, budget, drug pool
 - Add catalog-driven drug picker and invalid-input handling
 - Add fallback from failed live run to nearest canned case
+- Sister/bioinformatics TODO: verify response direction, audit catalog correctness, curate demo drug subset, and review biological narratives
 
 ## What The Input And Output Mean
 
@@ -303,9 +319,9 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | **You** | Define `folklore.json` schema; stub `GET /folklore/catalog` and `GET /folklore` returning empty/minimal JSON; document in this file | Frontend can fetch catalog without 404 |
 | **Both** | Agree on 5 preset demo tumors (names, mixtures, goals, one-line biology hook) | List written in Phase 0 section below |
 
-**Gate:** catalog JSON exists + schema agreed + one preset tumor defined on paper.
+**Gate:** catalog source loads + schema agreed + 5 preset tumors defined on paper.
 
-**Status:** in progress
+**Status:** software foundation complete; biology/catalog audit still needs review
 
 - [x] `folklore.json` schema defined in frontend types and canned data
 - [x] Frontend loads `frontend/public/precomputed/folklore.json`
@@ -313,6 +329,10 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 - [x] `GET /folklore` stub
 - [x] `POST /folklore/run` explicit not-yet-implemented stub
 - [x] 5 preset tumors agreed and filled in
+- [x] Catalog API derives cell lines and drugs from local landmark data
+- [ ] Sister verifies drug-response sign/direction
+- [ ] Sister audits bad or missing cell line x drug pairs
+- [ ] Optional: export static `frontend/public/precomputed/drug_catalog.json`
 
 ---
 
@@ -326,7 +346,18 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** one full random rollout JSON for one preset tumor, generated from real drug matrix.
 
-**Status:** not started
+**Status:** next software phase; not started
+
+- [ ] Create `src/folklore/simulator.py`
+- [ ] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv`
+- [ ] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_metadata.csv`
+- [ ] Compute mixed response as weighted sum across subclones
+- [ ] Label subclone responses as sensitive / intermediate / resistant
+- [ ] Flag resistant-survivor cases
+- [ ] Add a small manual-check test fixture
+- [ ] Create `src/folklore/environment.py`
+- [ ] Enforce no duplicate drug tests per episode
+- [ ] Run one random rollout end-to-end from real data
 
 ---
 
@@ -340,12 +371,14 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** `folklore.json` complete; active learner wins on majority of canned tumors.
 
-**Status:** blocked on simulator / policy code
+**Status:** canned frontend data complete; generated real-data rollouts blocked on simulator / policy code
 
 - [x] Canned `folklore.json` exists for frontend development
+- [x] Hand-written canned data has 5 tumors x 2 policies
 - [ ] Generated from real data
-- [ ] 5 tumors x 2 policies complete
+- [ ] Generated 5 tumors x 2 policies complete
 - [ ] Active learner beats random on >= 3/5 presets from actual rollout script
+- [ ] Add `scripts/generate_folklore.py`
 
 ---
 
@@ -363,10 +396,12 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 - [x] Canned vs live mode toggle exists in UI shell
 - [x] Replay controls exist
+- [x] Catalog fetch helper exists
 - [ ] Catalog drug picker
 - [ ] Mixture editor
 - [ ] `POST /folklore/run`
 - [ ] Live error toast + canned fallback
+- [ ] Resolve `frontend/app/page.tsx` merge conflict before final UI validation
 
 ---
 
