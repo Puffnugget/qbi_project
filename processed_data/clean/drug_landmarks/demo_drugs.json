@@ -1,0 +1,489 @@
+{
+  "version": 1,
+  "description": "Curated landmark subset for live demo filtering (~30-40 high-signal drugs).",
+  "min_cell_lines": 55,
+  "drugs": [
+    "NSC_109229_Asparaginase",
+    "NSC_165563_Bruceantin",
+    "NSC_19893_Fluorouracil",
+    "NSC_226080_Rapamycin",
+    "NSC_238159_Nocodazole",
+    "NSC_26980_Mitomycin",
+    "NSC_320846_Batracylin",
+    "NSC_354258_8_Chloro_adenosine",
+    "NSC_368390_Brequinar",
+    "NSC_49842_Vinblastine",
+    "NSC_614826_bisacodyl_active_ingredient_of_viraplex",
+    "NSC_638850_7_Hydroxystaurosporine",
+    "NSC_639966_Perifosine",
+    "NSC_669364_AC1L8IIJ",
+    "NSC_681239_Bortezomib",
+    "NSC_697726_RH1",
+    "NSC_706363_Arsenic_trioxide",
+    "NSC_707545_Alvespimycin",
+    "NSC_718781_Erlotinib",
+    "NSC_719627_Celecoxib",
+    "NSC_721517_Zoledronate",
+    "NSC_722134_Sonolisib",
+    "NSC_737754_Pazopanib",
+    "NSC_743414_Imatinib",
+    "NSC_749226_Abiraterone",
+    "NSC_755984_Pralatrexate",
+    "NSC_755_6_Mercaptopurine",
+    "NSC_758257_LY_2606368",
+    "NSC_758706_Simvastatin",
+    "NSC_760183_JQ1",
+    "NSC_761931_KHK_Indazole",
+    "NSC_762419_CT_32228",
+    "NSC_763832_LOR_253",
+    "NSC_764091_Apitolisib",
+    "NSC_767896_LY_2940680",
+    "NSC_768068_Cobimetinib_isomer_1",
+    "NSC_771644_ARQ_621",
+    "NSC_779218_CEP_28122",
+    "NSC_780290_SAR_260301_enantiomer_1",
+    "NSC_781008_maritoclax",
+    "NSC_781343_GDC_0994",
+    "NSC_781470_PF_03758309",
+    "NSC_782007_AZ_628",
+    "NSC_784815_AZD_3147",
+    "NSC_785306_TAS_115",
+    "NSC_788186_Bafetinib",
+    "NSC_788794_A_911",
+    "NSC_79037_Lomustine",
+    "NSC_791648_PF_2771",
+    "NSC_794646_AMG_51",
+    "NSC_798303_BPTES",
+    "NSC_811429_BLU_667"
+  ],
+  "details": [
+    {
+      "id": "NSC_226080_Rapamycin",
+      "name": "Rapamycin",
+      "mechanism": "PK:STK,MTOR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 60,
+      "score": 8
+    },
+    {
+      "id": "NSC_755_6_Mercaptopurine",
+      "name": "6-Mercaptopurine",
+      "mechanism": "Ds|PPAT",
+      "category": "dna_damaging",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_638850_7_Hydroxystaurosporine",
+      "name": "7-Hydroxystaurosporine",
+      "mechanism": "PK:STK,CDK1,CDK2,CDK4,CDK6",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 55,
+      "score": 6
+    },
+    {
+      "id": "NSC_354258_8_Chloro_adenosine",
+      "name": "8-Chloro-adenosine",
+      "mechanism": "AM",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_788794_A_911",
+      "name": "A-911",
+      "mechanism": "PK:CDK,CDK9",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_794646_AMG_51",
+      "name": "AMG-51",
+      "mechanism": "PK:MET",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_782007_AZ_628",
+      "name": "AZ-628",
+      "mechanism": "PK:BRAF",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_784815_AZD_3147",
+      "name": "AZD-3147",
+      "mechanism": "PK:MTOR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_707545_Alvespimycin",
+      "name": "Alvespimycin",
+      "mechanism": "HSP90",
+      "category": "targeted_agent",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_764091_Apitolisib",
+      "name": "Apitolisib",
+      "mechanism": "PK:PIK3,MTOR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_706363_Arsenic_trioxide",
+      "name": "Arsenic trioxide",
+      "mechanism": "Apo",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_109229_Asparaginase",
+      "name": "Asparaginase",
+      "mechanism": "AM|Pi",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_811429_BLU_667",
+      "name": "BLU-667",
+      "mechanism": "PK:RET",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 58,
+      "score": 6
+    },
+    {
+      "id": "NSC_788186_Bafetinib",
+      "name": "Bafetinib",
+      "mechanism": "BCR-ABL|PK:YK,FYN,LYN",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_320846_Batracylin",
+      "name": "Batracylin",
+      "mechanism": "TOP2|TOP1",
+      "category": "dna_damaging",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_368390_Brequinar",
+      "name": "Brequinar",
+      "mechanism": "Ds|Rs",
+      "category": "dna_damaging",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_165563_Bruceantin",
+      "name": "Bruceantin",
+      "mechanism": "MYC",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_779218_CEP_28122",
+      "name": "CEP-28122",
+      "mechanism": "PK:ALK",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_762419_CT_32228",
+      "name": "CT-32228",
+      "mechanism": "AGPAT2|PK:YK,VEGFR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 57,
+      "score": 6
+    },
+    {
+      "id": "NSC_768068_Cobimetinib_isomer_1",
+      "name": "Cobimetinib (isomer 1)",
+      "mechanism": "PK:MAP2K,MAP2K1",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 58,
+      "score": 6
+    },
+    {
+      "id": "NSC_718781_Erlotinib",
+      "name": "Erlotinib",
+      "mechanism": "PK:YK,EGFR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_19893_Fluorouracil",
+      "name": "Fluorouracil",
+      "mechanism": "Ds|Rs|TYMS",
+      "category": "dna_damaging",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_781343_GDC_0994",
+      "name": "GDC-0994",
+      "mechanism": "PK:ERK,MAP3K,MAPK1",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_743414_Imatinib",
+      "name": "Imatinib",
+      "mechanism": "BCR-ABL|PK:YK",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_761931_KHK_Indazole",
+      "name": "KHK-Indazole",
+      "mechanism": "PK:YK,IGF1R",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_758257_LY_2606368",
+      "name": "LY-2606368",
+      "mechanism": "PK:STK,CHEK,CHEK1",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_26980_Mitomycin",
+      "name": "Mitomycin",
+      "mechanism": "A2|AlkAg",
+      "category": "dna_damaging",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_238159_Nocodazole",
+      "name": "Nocodazole",
+      "mechanism": "Tu-stab",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_781470_PF_03758309",
+      "name": "PF-03758309",
+      "mechanism": "PK:PAK4",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_737754_Pazopanib",
+      "name": "Pazopanib",
+      "mechanism": "PK:YK,PDGFR,FGFR,KIT,VEGFR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_785306_TAS_115",
+      "name": "TAS-115",
+      "mechanism": "PK:MET,VEGFR",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 59,
+      "score": 6
+    },
+    {
+      "id": "NSC_49842_Vinblastine",
+      "name": "Vinblastine",
+      "mechanism": "TUBB|Tu-frag",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_614826_bisacodyl_active_ingredient_of_viraplex",
+      "name": "bisacodyl, active ingredient of viraplex",
+      "mechanism": "NonCan:Cath",
+      "category": "other_annotated",
+      "n_cell_lines": 60,
+      "score": 6
+    },
+    {
+      "id": "NSC_669364_AC1L8IIJ",
+      "name": "AC1L8IIJ",
+      "mechanism": "PK:YK",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 60,
+      "score": 5
+    },
+    {
+      "id": "NSC_639966_Perifosine",
+      "name": "Perifosine",
+      "mechanism": "PK:STK,AKT,AKT1,AKT2,AKT3",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 60,
+      "score": 5
+    },
+    {
+      "id": "NSC_697726_RH1",
+      "name": "RH1",
+      "mechanism": "PK:ROS1",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 60,
+      "score": 5
+    },
+    {
+      "id": "NSC_722134_Sonolisib",
+      "name": "Sonolisib",
+      "mechanism": "PK:PIK3",
+      "category": "kinase_inhibitor",
+      "n_cell_lines": 60,
+      "score": 5
+    },
+    {
+      "id": "NSC_760183_JQ1",
+      "name": "(+)-JQ1",
+      "mechanism": "BRD",
+      "category": "targeted_agent",
+      "n_cell_lines": 59,
+      "score": 4
+    },
+    {
+      "id": "NSC_771644_ARQ_621",
+      "name": "ARQ-621",
+      "mechanism": "CDH16|KIF11",
+      "category": "other_annotated",
+      "n_cell_lines": 58,
+      "score": 4
+    },
+    {
+      "id": "NSC_749226_Abiraterone",
+      "name": "Abiraterone",
+      "mechanism": "Ho|CYP17A1",
+      "category": "other_annotated",
+      "n_cell_lines": 59,
+      "score": 4
+    },
+    {
+      "id": "NSC_79037_Lomustine",
+      "name": "Lomustine",
+      "mechanism": "A6|AlkAg",
+      "category": "dna_damaging",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_767896_LY_2940680",
+      "name": "LY-2940680",
+      "mechanism": "SMO",
+      "category": "other_annotated",
+      "n_cell_lines": 57,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_719627_Celecoxib",
+      "name": "Celecoxib",
+      "mechanism": "AM|PTGS2|COX2|NonCan:NSAID",
+      "category": "other_annotated",
+      "n_cell_lines": 57,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_755984_Pralatrexate",
+      "name": "Pralatrexate",
+      "mechanism": "Df|CTNNB1|DHFR",
+      "category": "dna_damaging",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_780290_SAR_260301_enantiomer_1",
+      "name": "SAR-260301 (enantiomer 1)",
+      "mechanism": "PI3KB",
+      "category": "other_annotated",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_791648_PF_2771",
+      "name": "PF-2771",
+      "mechanism": "CENP",
+      "category": "other_annotated",
+      "n_cell_lines": 58,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_798303_BPTES",
+      "name": "BPTES",
+      "mechanism": "GLS",
+      "category": "other_annotated",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_721517_Zoledronate",
+      "name": "Zoledronate",
+      "mechanism": "AM|NonCan:Anti-bone resorp",
+      "category": "other_annotated",
+      "n_cell_lines": 58,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_763832_LOR_253",
+      "name": "LOR-253",
+      "mechanism": "KLF4|MYC|MTF1",
+      "category": "other_annotated",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_758706_Simvastatin",
+      "name": "Simvastatin",
+      "mechanism": "AM|NonCan:Chol",
+      "category": "other_annotated",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_781008_maritoclax",
+      "name": "maritoclax",
+      "mechanism": "MCL1",
+      "category": "targeted_agent",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    },
+    {
+      "id": "NSC_681239_Bortezomib",
+      "name": "Bortezomib",
+      "mechanism": "PSM",
+      "category": "targeted_agent",
+      "n_cell_lines": 59,
+      "score": 99,
+      "from_preset": true
+    }
+  ]
+}

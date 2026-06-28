@@ -7,6 +7,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from .mechanisms import display_mechanism
+
 ROOT = Path(__file__).resolve().parents[2]
 LANDMARK_DIR = ROOT / "processed_data" / "clean" / "drug_landmarks"
 MATRIX_PATH = LANDMARK_DIR / "drug_activity_landmark_matrix.csv"
@@ -50,12 +52,18 @@ class FolkloreSimulator:
         feature = self.resolve_drug(drug)
         row = self.metadata[self.metadata["clean_feature_name"] == feature]
         if row.empty:
-            return {"id": feature, "name": feature, "mechanism": "unknown"}
+            return {
+                "id": feature,
+                "name": feature,
+                "mechanism": display_mechanism(feature, "unknown"),
+            }
         first = row.iloc[0]
+        feature = str(first.get("clean_feature_name") or feature)
+        raw = str(first.get("mechanism") or first.get("category") or "unknown")
         return {
             "id": feature,
             "name": str(first.get("drug_name") or feature),
-            "mechanism": str(first.get("mechanism") or first.get("category") or "unknown"),
+            "mechanism": display_mechanism(feature, raw),
         }
 
     def resolve_drug(self, drug: str) -> str:

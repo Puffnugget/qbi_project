@@ -95,11 +95,6 @@ export default function AdaptiveDesignTab({
   );
   const [regenerating, setRegenerating] = useState(false);
   const [presetsLoading, setPresetsLoading] = useState(!isFolkloreReady(adaptiveData));
-  const [prevAdaptiveData, setPrevAdaptiveData] = useState(adaptiveData);
-  if (adaptiveData !== prevAdaptiveData) {
-    setPrevAdaptiveData(adaptiveData);
-    setPresetsLoading(!isFolkloreReady(adaptiveData));
-  }
   const [catalogLoading, setCatalogLoading] = useState(false);
   const catalogRequested = useRef(false);
 
@@ -150,10 +145,14 @@ export default function AdaptiveDesignTab({
 
   useEffect(() => {
     if (isFolkloreReady(adaptiveData)) {
+      setData(adaptiveData);
+      setLoadError(null);
+      setPresetsLoading(false);
       return;
     }
 
     let cancelled = false;
+    setPresetsLoading(true);
     fetchFolklore()
       .then((payload) => {
         if (!cancelled) {

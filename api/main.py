@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from custom_analysis import router as analysis_router
 from src.folklore.environment import EpisodeRequest, FolkloreEnvironment
+from src.folklore.mechanisms import display_mechanism
 from src.folklore.simulator import TumorComponent
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -130,8 +131,9 @@ def _load_folklore_catalog() -> dict:
     mechanisms: set[str] = set()
     for feature_name in drug_columns:
         meta = metadata_by_feature.get(feature_name, {})
-        mechanism = meta.get("mechanism") or meta.get("category") or "unknown"
-        if mechanism != "unknown":
+        raw_mech = meta.get("mechanism") or meta.get("category") or "unknown"
+        mechanism = display_mechanism(feature_name, raw_mech)
+        if mechanism != "Unknown mechanism":
             mechanisms.add(mechanism)
         drugs.append(
             {
