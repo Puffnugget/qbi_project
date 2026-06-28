@@ -1,5 +1,6 @@
 import type {
   AppData,
+  FolkloreData,
   BlindspotData,
   CharacterizationEntry,
   AdaptiveDesignData,
@@ -36,6 +37,12 @@ export function isAdaptiveDesignReady(
   return !!data && Object.keys(data.policies ?? {}).length > 0;
 }
 
+export function isFolkloreReady(
+  data: FolkloreData | null | undefined,
+): data is FolkloreData {
+  return !!data && (data.preset_cases?.length ?? 0) > 0;
+}
+
 /** Adaptive design rollouts — proxied to FastAPI via Next.js /api rewrite. */
 export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
   let res: Response;
@@ -54,13 +61,17 @@ export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
   return res.json() as Promise<AdaptiveDesignData>;
 }
 
+export async function fetchFolklore(): Promise<FolkloreData> {
+  return fetchJson<FolkloreData>("folklore.json");
+}
+
 function panelFile(cancerType: string): string {
   if (cancerType === "all") return "panel_all.json";
   return `panel_${cancerType.toLowerCase()}.json`;
 }
 
 export async function loadAppData(cancerType: string): Promise<AppData> {
-  const [umapRaw, coverage, perLayer, panels, characterization, blindspot, embeddings, adaptiveDesign] =
+  const [umapRaw, coverage, perLayer, panels, characterization, blindspot, embeddings, adaptiveDesign, folklore] =
     await Promise.all([
       fetchJson<{ points: UmapPoint[] } | UmapPoint[]>("umap_3d.json"),
       fetchJson<CoverageData>("coverage_curve.json"),
@@ -83,6 +94,11 @@ export async function loadAppData(cancerType: string): Promise<AppData> {
         source: "dummy",
         policies: {},
       } as AdaptiveDesignData)),
+      fetchFolklore().catch(() => ({
+        source: "canned",
+        preset_cases: [],
+        available_policies: [],
+      } as FolkloreData)),
     ]);
 
   const rawPoints = Array.isArray(umapRaw) ? umapRaw : umapRaw.points;
@@ -108,6 +124,7 @@ export async function loadAppData(cancerType: string): Promise<AppData> {
     blindspot,
     embeddings,
     adaptiveDesign,
+    folklore,
   };
 }
 

@@ -88,6 +88,64 @@ export interface AdaptiveDesignData {
   policies: Record<string, AdaptivePolicyRollout>;
 }
 
+export interface FolkloreTumorComponent {
+  cell_line: string;
+  proportion: number;
+  cancer_type?: CancerType;
+}
+
+export interface FolkloreSubcloneResponse {
+  cell_line: string;
+  response: number;
+  label: "sensitive" | "intermediate" | "resistant";
+}
+
+export interface FolkloreStep {
+  step: number;
+  compound: string;
+  mechanism: string;
+  chosen_by: string;
+  mixed_response: number;
+  subclone_responses: FolkloreSubcloneResponse[];
+  why_chosen: string;
+  best_response_so_far: number;
+}
+
+export interface FolkloreFinalRecommendation {
+  recommended_compound: string;
+  main_realization: string;
+  next_experiment: string;
+  active_vs_random: string;
+}
+
+export interface FolklorePolicySummaryPoint {
+  step: number;
+  score: number;
+}
+
+export interface FolklorePolicyRun {
+  policy: string;
+  steps: FolkloreStep[];
+  final: FolkloreFinalRecommendation;
+  summary_curve: FolklorePolicySummaryPoint[];
+}
+
+export interface FolkloreCase {
+  id: string;
+  tumor_name: string;
+  hook: string;
+  goal: "find responder" | "find resistance" | "find robust drug";
+  budget: number;
+  components: FolkloreTumorComponent[];
+  policies: Record<string, FolklorePolicyRun>;
+}
+
+export interface FolkloreData {
+  source: "canned" | "live";
+  preset_cases: FolkloreCase[];
+  available_policies: string[];
+}
+
 export interface AppData {
   umap: UmapPoint[];
   coverage: CoverageData;
@@ -97,4 +155,5 @@ export interface AppData {
   blindspot: BlindspotData;
   embeddings: EmbeddingsData;
   adaptiveDesign: AdaptiveDesignData;
+  folklore?: FolkloreData;
 }

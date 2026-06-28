@@ -9,7 +9,6 @@ import Sidebar from "@/components/Sidebar";
 import { Tab, TabList, Tabs } from "@/components/ui/TabBar";
 import { getSelectedPanel, usePanelData } from "@/hooks/usePanelData";
 import { computeCoverage, indicesFromLines } from "@/lib/coverage";
-import { OMICS_LAYERS } from "@/lib/constants";
 import type { PanelEntry } from "@/lib/types";
 
 const Scene3D = dynamic(() => import("@/components/Scene3D"), {
@@ -30,25 +29,32 @@ const CustomDataAnalysis = dynamic(
   { ssr: false },
 );
 
-type TabId = "explore" | "compare" | "adaptive" | "analyze";
+type TabId = "adaptive" | "explore" | "compare" | "analyze";
 
 const AdaptiveDesignTab = dynamic(
   () => import("@/components/AdaptiveDesignTab"),
   { ssr: false },
 );
 
+const TAB_ORDER: TabId[] = ["adaptive", "explore", "compare", "analyze"];
+
 const TAB_LABELS: Record<TabId, string> = {
+  adaptive: "Folklore",
   explore: "Explore",
   compare: "Compare",
-  adaptive: "Folklore",
   analyze: "Analyze Your Data",
 };
 
+function sidebarMode(tab: TabId): "slim" | "explore" | "compare" {
+  if (tab === "explore") return "explore";
+  if (tab === "compare") return "compare";
+  return "slim";
+}
+
 export default function Home() {
-  const [tab, setTab] = useState<TabId>("explore");
+  const [tab, setTab] = useState<TabId>("adaptive");
   const [panelSize, setPanelSize] = useState(8);
   const [cancerType, setCancerType] = useState("all");
-  const [activeLayers, setActiveLayers] = useState<string[]>([...OMICS_LAYERS]);
   const [isManualMode, setIsManualMode] = useState(false);
   const [manualPanel, setManualPanel] = useState<string[]>([]);
 
@@ -116,19 +122,22 @@ export default function Home() {
     setManualPanel([]);
   };
 
-  const toggleLayer = (layer: string) => {
-    setActiveLayers((prev) =>
-      prev.includes(layer) ? prev.filter((l) => l !== layer) : [...prev, layer],
-    );
-  };
+  const mode = sidebarMode(tab);
+  const showPanelStatus = tab === "explore" || tab === "compare";
 
   return (
     <div className="flex h-[100dvh] overflow-hidden bg-canvas text-fg">
-      <div className="flex h-full w-[25%] min-w-[280px] max-w-sm shrink-0">
+      <div
+        className={`flex h-full shrink-0 ${
+          mode === "slim"
+            ? "w-28 min-w-[7rem]"
+            : "w-[25%] min-w-[280px] max-w-sm"
+        }`}
+      >
         <Sidebar
+          mode={mode}
           panelSize={panelSize}
           cancerType={cancerType}
-          activeLayers={activeLayers}
           elbowSize={data?.coverage.elbow}
           loading={loading}
           isManualMode={isManualMode}
@@ -136,7 +145,6 @@ export default function Home() {
           blindspot={data?.blindspot}
           onPanelSizeChange={handlePanelSizeChange}
           onCancerTypeChange={setCancerType}
-          onLayerToggle={toggleLayer}
           onResetToOptimal={resetToOptimal}
         />
       </div>
@@ -144,15 +152,15 @@ export default function Home() {
       <main className="flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-canvas-deep/30">
         <Tabs value={tab} onChange={setTab}>
           <TabList className="shrink-0">
-            {(Object.keys(TAB_LABELS) as TabId[]).map((id) => (
+            {TAB_ORDER.map((id) => (
               <Tab key={id} id={id} label={TAB_LABELS[id]} />
             ))}
-            {loading && (
+            {showPanelStatus && loading && (
               <span className="ml-auto self-center text-xs text-fg-subtle">
                 Loading data…
               </span>
             )}
-            {error && (
+            {showPanelStatus && error && (
               <span className="ml-auto self-center text-xs text-danger">
                 {error}
               </span>
@@ -160,7 +168,11 @@ export default function Home() {
           </TabList>
         </Tabs>
 
-        {tab === "explore" ? (
+        {tab === "adaptive" ? (
+          <div className="min-h-0 flex-1 overflow-hidden">
+            <AdaptiveDesignTab adaptiveData={data?.folklore} />
+          </div>
+        ) : tab === "explore" ? (
           <div className="grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_10rem_8.5rem] overflow-hidden">
             <div className="reveal min-h-0 p-3 pb-2">
               {!loading && data && (
@@ -212,13 +224,9 @@ export default function Home() {
           <div className="min-h-0 flex-1 overflow-hidden">
             <CompareView panelSize={panelSize} />
           </div>
-        ) : tab === "analyze" ? (
+        ) : (
           <div className="min-h-0 flex-1 overflow-auto p-6">
             <CustomDataAnalysis />
-          </div>
-        ) : (
-          <div className="min-h-0 flex-1 overflow-hidden">
-            <AdaptiveDesignTab umapPoints={data?.umap} adaptiveData={data?.adaptiveDesign} />
           </div>
         )}
       </main>

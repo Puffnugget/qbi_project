@@ -25,6 +25,30 @@ Final pitch:
 
 > Folklore simulates mixed tumors and trains an active-learning agent to choose the next drug test, so researchers can find responder and resistant subpopulations with fewer experiments.
 
+## Current Status
+
+### Done
+
+- Frontend tab renamed in practice to **Adaptive Tumor Screening** / Folklore experience
+- Canned frontend screen built with:
+  - left tumor summary / mode panel
+  - middle screening timeline with replay controls
+  - right final recommendation card
+  - bottom active learner vs random chart
+- `frontend/public/precomputed/folklore.json` added as offline-safe canned source
+- Frontend data contract added for Folklore JSON shape
+- UI now loads canned Folklore data without requiring live backend endpoints
+
+### Next Todo
+
+- Add 2 more preset tumors so canned demo reaches 5 total
+- Replace hand-written canned JSON with generated rollouts from real data
+- Stub backend endpoints: `GET /folklore`, `GET /folklore/catalog`, `POST /folklore/run`
+- Build simulator and episode environment in Python
+- Wire live mode inputs: editable mixture, goal, budget, drug pool
+- Add catalog-driven drug picker and invalid-input handling
+- Add fallback from failed live run to nearest canned case
+
 ## What The Input And Output Mean
 
 ### Input
@@ -281,6 +305,14 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** catalog JSON exists + schema agreed + one preset tumor defined on paper.
 
+**Status:** in progress
+
+- [x] `folklore.json` schema defined in frontend types and canned data
+- [x] Frontend loads `frontend/public/precomputed/folklore.json`
+- [ ] `GET /folklore/catalog` stub
+- [ ] `GET /folklore` stub
+- [ ] 5 preset tumors agreed and filled in
+
 ---
 
 ### Phase 1 — Ground-truth simulator (parallel, ~3 days)
@@ -292,6 +324,8 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | **You** | `src/folklore/environment.py` — state, action (pick drug), no duplicate drugs per episode, episode length = budget | Can run random policy end-to-end in Python |
 
 **Gate:** one full random rollout JSON for one preset tumor, generated from real drug matrix.
+
+**Status:** not started
 
 ---
 
@@ -305,6 +339,13 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** `folklore.json` complete; active learner wins on majority of canned tumors.
 
+**Status:** blocked on simulator / policy code
+
+- [x] Canned `folklore.json` exists for frontend development
+- [ ] Generated from real data
+- [ ] 5 tumors x 2 policies complete
+- [ ] Active learner beats random on >= 3/5 presets from actual rollout script
+
 ---
 
 ### Phase 3 — Live run path (you lead, sister supports, ~3 days)
@@ -316,6 +357,15 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | **Sister** | Review live run outputs for biological nonsense; adjust thresholds (sensitive/resistant labels) | No demo tumor produces impossible mechanism story |
 
 **Gate:** live demo works end-to-end with custom drug pool; canned fallback works with API stopped.
+
+**Status:** frontend shell started
+
+- [x] Canned vs live mode toggle exists in UI shell
+- [x] Replay controls exist
+- [ ] Catalog drug picker
+- [ ] Mixture editor
+- [ ] `POST /folklore/run`
+- [ ] Live error toast + canned fallback
 
 ---
 
@@ -330,6 +380,8 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** success criteria below all green.
 
+**Status:** not started
+
 ---
 
 ### Phase 0 preset tumors (draft — edit together)
@@ -337,8 +389,8 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | # | Name | Mixture | Goal | Hook |
 |---|------|---------|------|------|
 | 1 | Melanoma mixed | 50% A375 / 30% SK-MEL-5 / 20% MDA-MB-435S | find resistance | Average looks good; one clone survives BRAF path |
-| 2 | Breast heterogeneous | TBD | find responder | Hidden sensitive subpopulation |
-| 3 | Colon mixture | TBD | find robust drug | No single clone drives average |
+| 2 | Breast heterogeneous | 45% MCF7 / 35% T-47D / 20% MDA-MB-231 | find responder | Hidden sensitive subpopulation |
+| 3 | Colon mixture | 40% HCT-116 / 35% HT29 / 25% KM12 | find robust drug | No single clone drives average |
 | 4 | Lung dual clone | TBD | find resistance | Mechanism mismatch across clones |
 | 5 | Backup simple | 2 clones only | find robust drug | Fast live demo if time is short |
 
