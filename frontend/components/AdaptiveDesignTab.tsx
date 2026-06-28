@@ -98,7 +98,7 @@ export default function AdaptiveDesignTab({
         </p>
         <ol className="max-w-md space-y-2 text-left font-mono text-xs text-accent">
           <li>1. python src/adaptive_design.py</li>
-          <li>2. uvicorn api.main:app --reload --port 8000</li>
+          <li>2. ./scripts/run_api.sh</li>
           <li>3. cd frontend && npm run dev</li>
         </ol>
         {loadError && (
@@ -109,7 +109,7 @@ export default function AdaptiveDesignTab({
   }
 
   return (
-    <div className="grid h-full min-h-0 grid-rows-[3fr_7fr] overflow-hidden">
+    <div className="grid h-full min-h-0 grid-rows-[6fr_4fr] overflow-hidden">
       <div className="min-h-0 px-3 pt-2">
         <div className="h-full overflow-hidden rounded-lg border border-border shadow-[0_2px_12px_var(--shadow)]">
           <Scene3D

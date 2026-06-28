@@ -43,12 +43,12 @@ export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
     res = await fetch(`${API_BASE}/adaptive-design`);
   } catch {
     throw new Error(
-      "Cannot reach the API. Run: uvicorn api.main:app --reload --port 8000",
+      "Cannot reach the API. Run: ./scripts/run_api.sh",
     );
   }
   if (!res.ok) {
     throw new Error(
-      `Adaptive design API unavailable (${res.status}). Run: uvicorn api.main:app --reload --port 8000`,
+      `Adaptive design API unavailable (${res.status}). Run: ./scripts/run_api.sh`,
     );
   }
   return res.json() as Promise<AdaptiveDesignData>;

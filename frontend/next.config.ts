@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
+  // Home-dir package-lock.json otherwise wins; breaks @/ imports in dev.
+  turbopack: {
+    root: path.join(__dirname),
+  },
   async rewrites() {
     return [
       {
