@@ -1,6 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/Card";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { CANCER_COLORS } from "@/lib/constants";
 import { blindspotStatusColor } from "@/lib/theme";
 import type { BlindspotData, PanelBlindspot } from "@/lib/types";
@@ -8,21 +9,28 @@ import type { BlindspotData, PanelBlindspot } from "@/lib/types";
 interface BlindSpotPanelProps {
   blindspot?: BlindspotData;
   panelSize?: number;
+  loading?: boolean;
 }
 
 export default function BlindSpotPanel({
   blindspot,
   panelSize = 8,
+  loading = false,
 }: BlindSpotPanelProps) {
   const report: PanelBlindspot | undefined =
     blindspot?.by_panel_size[String(panelSize)];
   const pathwayGaps =
     blindspot?.pathway_gaps_by_size?.[String(panelSize)] ?? [];
 
-  if (!report) {
+  if (loading || !report) {
     return (
-      <Card padding="sm" className="text-xs text-fg-muted">
-        Blind spot analysis loading…
+      <Card padding="sm" className="space-y-2">
+        <Skeleton className="h-3 w-36" />
+        <div className="grid grid-cols-3 gap-1.5">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <Skeleton key={i} className="h-10 rounded-md" />
+          ))}
+        </div>
       </Card>
     );
   }

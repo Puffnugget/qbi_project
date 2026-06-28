@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { Alert } from '@/components/ui/Alert'
 import { Card, CardHeader } from '@/components/ui/Card'
 
 interface AnalysisResult {
@@ -39,7 +40,7 @@ export function CustomDataAnalysis() {
   const [proteinLoading, setProteinLoading] = useState(false)
   const [proteinResult, setProteinResult] = useState<ProteinExpressionResult | null>(null)
   const [proteinError, setProteinError] = useState<string | null>(null)
-  const [sortBy, setSortBy] = useState<'high' | 'low'>('high')
+
 
   const handleFileChange = (file: File | null, setter: (f: File | null) => void) => {
     if (file && !['text/csv', 'application/json'].includes(file.type)) {
@@ -239,9 +240,9 @@ export function CustomDataAnalysis() {
 
       {/* Error */}
       {error && (
-        <div className="card border border-danger/30 bg-danger/5 px-4 py-3 text-sm text-danger">
+        <Alert variant="error" title="Analysis failed">
           {error}
-        </div>
+        </Alert>
       )}
 
       {/* Analyze Button */}
@@ -291,9 +292,9 @@ export function CustomDataAnalysis() {
 
       {/* Error */}
       {proteinError && (
-        <div className="card border border-danger/30 bg-danger/5 px-4 py-3 text-sm text-danger">
+        <Alert variant="error" title="Protein search failed">
           {proteinError}
-        </div>
+        </Alert>
       )}
         </>
       )}

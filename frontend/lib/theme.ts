@@ -34,6 +34,8 @@ export const chartTheme = {
   currentLine: theme.accentGold,
   manualDot: theme.accentTeal,
   policies: {
+    active_learner: theme.accent,
+    greedy: theme.accentGold,
     coverage_greedy: theme.accentGold,
     uncertainty: theme.accentBright,
     thompson: theme.accentTeal,

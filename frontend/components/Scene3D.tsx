@@ -2,7 +2,7 @@
 
 import { Environment, Html, Line, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import type { Group, Mesh, MeshStandardMaterial } from "three";
 import { CANCER_COLORS } from "@/lib/constants";
 import { sceneTheme, theme } from "@/lib/theme";
@@ -143,7 +143,7 @@ function CellSphere({
   let opacity = 1;
   let scale = 1;
   let roughness = 0.42;
-  let metalness = 0.12;
+  const metalness = 0.12;
   let clearcoat = 0.55;
   let envMapIntensity = 0.85;
 
@@ -320,15 +320,15 @@ function SceneContent({
   const missingSet = useMemo(() => new Set(missingTypes), [missingTypes]);
 
   // Detect which line was just added so CellSphere can play the fly-in animation
-  const prevSelectedRef = useRef<Set<string>>(new Set());
-  const newestLine = useMemo(() => {
-    const prev = prevSelectedRef.current;
-    const added = selectedLines.filter((l) => !prev.has(l));
-    return added.length === 1 ? added[0] : null;
-  }, [selectedLines]);
-  useEffect(() => {
-    prevSelectedRef.current = new Set(selectedLines);
-  }, [selectedLines]);
+  const [prevSelectedLines, setPrevSelectedLines] = useState<string[]>(selectedLines);
+  const [newestLine, setNewestLine] = useState<string | null>(null);
+
+  if (selectedLines !== prevSelectedLines) {
+    const prevSet = new Set(prevSelectedLines);
+    const added = selectedLines.filter((l) => !prevSet.has(l));
+    setNewestLine(added.length === 1 ? added[0] : null);
+    setPrevSelectedLines(selectedLines);
+  }
 
   return (
     <>

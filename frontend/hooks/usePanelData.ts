@@ -8,11 +8,19 @@ export function usePanelData(cancerType: string) {
   const [data, setData] = useState<AppData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [reloadKey, setReloadKey] = useState(0);
+
+  const [prevCancerType, setPrevCancerType] = useState(cancerType);
+  const [prevReloadKey, setPrevReloadKey] = useState(reloadKey);
+  if (cancerType !== prevCancerType || reloadKey !== prevReloadKey) {
+    setPrevCancerType(cancerType);
+    setPrevReloadKey(reloadKey);
+    setLoading(true);
+    setError(null);
+  }
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setError(null);
 
     loadAppData(cancerType)
       .then((d) => {
@@ -28,14 +36,18 @@ export function usePanelData(cancerType: string) {
     return () => {
       cancelled = true;
     };
-  }, [cancerType]);
+  }, [cancerType, reloadKey]);
 
   const refreshPanel = useCallback(async (type: string) => {
     const panels = await loadPanelForType(type);
     setData((prev) => (prev ? { ...prev, panels } : prev));
   }, []);
 
-  return { data, loading, error, refreshPanel };
+  const retry = useCallback(() => {
+    setReloadKey((key) => key + 1);
+  }, []);
+
+  return { data, loading, error, refreshPanel, retry };
 }
 
 export function getSelectedPanel(
