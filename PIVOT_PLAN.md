@@ -1,4 +1,4 @@
-# Tinalore Plan: Multi-Cell Tumor Screening Agent
+# Folklore Plan: Multi-Cell Tumor Screening Agent
 
 ## Summary
 
@@ -35,7 +35,7 @@ Final pitch:
   - middle screening timeline with replay controls
   - right final recommendation card
   - bottom active learner vs random chart
-- `frontend/public/precomputed/folklore.json` added as offline-safe canned source
+- `frontend/public/precomputed/folklore.json` added as offline-safe canned source (5 preset tumors)
 - Frontend data contract added for Folklore JSON shape
 - UI now loads canned Folklore data without requiring live backend endpoints
 - Canned demo now has 5 preset tumors:
@@ -51,19 +51,29 @@ Final pitch:
   - `POST /folklore/run` returns explicit `501 Not Implemented`
 - `/folklore/catalog` exposes 60 cell lines, 150 landmark drugs, mechanism labels, response counts, and demo tumors from local data
 - Frontend helper added for fetching the Folklore catalog
+- **Frontend live mode fully built** (`components/AdaptiveDesignTab.tsx`):
+  - mixture editor — 2–4 subclones, cell-line dropdowns from catalog, proportion inputs, add/remove, sum-to-1.0 validation + Normalize button
+  - goal select + budget slider (6–10)
+  - drug-pool picker — searchable, mechanism-filtered multi-select; empty = full catalog; never offers an off-catalog drug
+  - input validation with inline errors; Run blocked until valid
+  - `POST /folklore/run` wired; live result reuses the canned `FolkloreCase` shape so timeline/recommendation/chart render unchanged
+  - failed live run → toast + fall back to nearest canned case (matched by cell-line overlap)
+  - catalog loads lazily on first live-mode open via `GET /folklore/catalog`, with graceful empty/error states
+- Data layer added (`lib/data.ts`): `fetchFolkloreCatalog()`, `runFolklore()`, `isFolkloreCatalogReady()`
+- Types added (`lib/types.ts`): `FolkloreCatalog`, `FolkloreCatalogDrug`, `FolkloreCatalogCellLine`, `FolkloreRunRequest`, `FolkloreRunResponse`
+- Frontend typecheck (`tsc --noEmit`) passes clean
 
 ### Next Todo
 
-- Resolve the existing `frontend/app/page.tsx` merge conflict before relying on frontend build/test results
 - Build the ground-truth simulator from the landmark drug matrix
 - Build the episode environment with no duplicate drug tests and 6-10 step budgets
 - Replace hand-written canned JSON with generated rollouts from real data
 - Implement policies: `random`, `greedy`, `uncertainty`, `active_learner`
 - Implement live `POST /folklore/run`
-- Wire live mode inputs: editable mixture, goal, budget, drug pool
-- Add catalog-driven drug picker and invalid-input handling
-- Add fallback from failed live run to nearest canned case
 - Sister/bioinformatics TODO: verify response direction, audit catalog correctness, curate demo drug subset, and review biological narratives
+- ~~Wire live mode inputs: editable mixture, goal, budget, drug pool~~ — **done (frontend)**
+- ~~Add catalog-driven drug picker and invalid-input handling~~ — **done (frontend); needs catalog endpoint to populate**
+- ~~Add fallback from failed live run to nearest canned case~~ — **done (frontend)**
 
 ## What The Input And Output Mean
 
@@ -392,16 +402,19 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** live demo works end-to-end with custom drug pool; canned fallback works with API stopped.
 
-**Status:** frontend shell started
+**Status:** frontend complete; backend endpoint pending
 
 - [x] Canned vs live mode toggle exists in UI shell
 - [x] Replay controls exist
 - [x] Catalog fetch helper exists
-- [ ] Catalog drug picker
-- [ ] Mixture editor
-- [ ] `POST /folklore/run`
-- [ ] Live error toast + canned fallback
-- [ ] Resolve `frontend/app/page.tsx` merge conflict before final UI validation
+- [x] Catalog drug picker (searchable + mechanism filter; needs catalog endpoint to populate)
+- [x] Mixture editor (2–4 subclones, proportion validation + normalize)
+- [x] Live error toast + canned fallback (nearest case by cell-line overlap)
+- [x] Frontend wired to `POST /folklore/run` + `GET /folklore/catalog`
+- [ ] `POST /folklore/run` **backend** endpoint (frontend ready, server not built)
+- [x] `GET /folklore/catalog` **backend** endpoint
+- [x] `GET /folklore` **backend** endpoint
+- [ ] Resolve final frontend validation after merge conflict cleanup
 
 ---
 
@@ -427,8 +440,8 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | 1 | Melanoma mixed | 50% A375 / 30% SK-MEL-5 / 20% MDA-MB-435S | find resistance | Average looks good; one clone survives BRAF path |
 | 2 | Breast heterogeneous | 45% MCF7 / 35% T-47D / 20% MDA-MB-231 | find responder | Hidden sensitive subpopulation |
 | 3 | Colon mixture | 40% HCT-116 / 35% HT29 / 25% KM12 | find robust drug | No single clone drives average |
-| 4 | Lung dual clone | 55% A549/ATCC / 45% NCI-H460 | find resistance | EGFR average signal hides a resistant lung clone |
-| 5 | Renal backup simple | 60% 786-0 / 40% A498 | find robust drug | Fast two-clone live demo if time is short |
+| 4 | Lung dual clone | TBD | find resistance | Mechanism mismatch across clones |
+| 5 | Backup simple | 2 clones only | find robust drug | Fast live demo if time is short |
 
 ---
 

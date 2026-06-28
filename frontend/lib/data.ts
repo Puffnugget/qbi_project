@@ -1,7 +1,9 @@
 import type {
   AppData,
-  FolkloreCatalog,
   FolkloreData,
+  FolkloreCatalog,
+  FolkloreRunRequest,
+  FolkloreRunResponse,
   BlindspotData,
   CharacterizationEntry,
   AdaptiveDesignData,
@@ -66,21 +68,44 @@ export async function fetchFolklore(): Promise<FolkloreData> {
   return fetchJson<FolkloreData>("folklore.json");
 }
 
+export function isFolkloreCatalogReady(
+  catalog: FolkloreCatalog | null | undefined,
+): catalog is FolkloreCatalog {
+  return !!catalog && (catalog.drugs?.length ?? 0) > 0;
+}
+
+/** Live drug/cell-line catalog — backend GET /folklore/catalog. */
 export async function fetchFolkloreCatalog(): Promise<FolkloreCatalog> {
   let res: Response;
   try {
     res = await fetch(`${API_BASE}/folklore/catalog`);
   } catch {
-    throw new Error(
-      "Cannot reach the API. Run: ./scripts/run_api.sh",
-    );
+    throw new Error("Cannot reach the catalog API. Run: ./scripts/run_api.sh");
   }
   if (!res.ok) {
-    throw new Error(
-      `Folklore catalog API unavailable (${res.status}). Run: ./scripts/run_api.sh`,
-    );
+    throw new Error(`Catalog unavailable (${res.status}).`);
   }
   return res.json() as Promise<FolkloreCatalog>;
+}
+
+/** Run one live screening episode — backend POST /folklore/run. */
+export async function runFolklore(
+  body: FolkloreRunRequest,
+): Promise<FolkloreRunResponse> {
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}/folklore/run`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    throw new Error("Cannot reach the run API. Run: ./scripts/run_api.sh");
+  }
+  if (!res.ok) {
+    throw new Error(`Live run failed (${res.status}).`);
+  }
+  return res.json() as Promise<FolkloreRunResponse>;
 }
 
 function panelFile(cancerType: string): string {

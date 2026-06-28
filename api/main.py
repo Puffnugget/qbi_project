@@ -11,17 +11,15 @@ from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import sys
-from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from custom_analysis import router as analysis_router
 
 ROOT = Path(__file__).resolve().parents[1]
 PRECOMPUTED = ROOT / "frontend" / "public" / "precomputed"
-PROCESSED = ROOT / "processed_data"
-LANDMARK_DIR = PROCESSED / "clean" / "drug_landmarks"
+LANDMARK_DIR = ROOT / "processed_data" / "clean" / "drug_landmarks"
 LANDMARK_MATRIX = LANDMARK_DIR / "drug_activity_landmark_matrix.csv"
 LANDMARK_METADATA = LANDMARK_DIR / "drug_activity_landmark_metadata.csv"
-SAMPLE_INFO = PROCESSED / "sample_info.csv"
+SAMPLE_INFO = ROOT / "processed_data" / "sample_info.csv"
 
 app = FastAPI(title="NCI-60 Panel Builder API", version="0.1.0")
 
@@ -54,55 +52,97 @@ def _load(name: str) -> dict | list:
 
 def _read_csv_rows(path: Path) -> list[dict[str, str]]:
     if not path.exists():
-        raise HTTPException(status_code=404, detail=f"Missing {path.relative_to(ROOT)}")
+        raise HTTPException(status_code=404, detail=f"Missing required data file: {path.name}")
     with path.open(newline="") as f:
         return list(csv.DictReader(f))
 
 
-def _folklore_catalog() -> dict:
-    sample_rows = _read_csv_rows(SAMPLE_INFO)
-    matrix_rows = _read_csv_rows(LANDMARK_MATRIX)
-    metadata_rows = _read_csv_rows(LANDMARK_METADATA)
+def _folklore_demo_tumors() -> list[dict]:
+    return [
+        {
+            "id": "melanoma_mixed",
+            "tumor_name": "Melanoma mixed",
+            "goal": "find resistance",
+            "hook": "Average response can hide a resistant melanoma clone.",
+            "components": [
+                {"cell_line": "ME:SK-MEL-28", "proportion": 0.5},
+                {"cell_line": "ME:SK-MEL-5", "proportion": 0.3},
+                {"cell_line": "ME:MDA-MB-435", "proportion": 0.2},
+            ],
+        },
+        {
+            "id": "breast_heterogeneous",
+            "tumor_name": "Breast heterogeneous",
+            "goal": "find responder",
+            "hook": "A minority subclone may carry the strongest response.",
+            "components": [
+                {"cell_line": "BR:MCF7", "proportion": 0.45},
+                {"cell_line": "BR:T-47D", "proportion": 0.35},
+                {"cell_line": "BR:MDA-MB-231", "proportion": 0.2},
+            ],
+        },
+        {
+            "id": "colon_mixture",
+            "tumor_name": "Colon mixture",
+            "goal": "find robust drug",
+            "hook": "A useful drug should work across the mixture, not just the average.",
+            "components": [
+                {"cell_line": "CO:HCT-116", "proportion": 0.4},
+                {"cell_line": "CO:HT29", "proportion": 0.35},
+                {"cell_line": "CO:KM12", "proportion": 0.25},
+            ],
+        },
+    ]
 
-    response_counts: dict[str, int] = {}
-    if matrix_rows:
-        for feature in matrix_rows[0]:
-            if feature == "cell_line":
-                continue
-            response_counts[feature] = sum(
-                1 for row in matrix_rows if row.get(feature, "").strip() not in {"", "NA", "NaN", "nan"}
-            )
+
+def _load_folklore_catalog() -> dict:
+    matrix_rows = _read_csv_rows(LANDMARK_MATRIX)
+    if not matrix_rows:
+        raise HTTPException(status_code=404, detail="Empty landmark drug matrix")
+
+    matrix_fields = list(matrix_rows[0].keys())
+    drug_columns = [field for field in matrix_fields if field != "cell_line"]
+    matrix_cell_lines = {row["cell_line"] for row in matrix_rows if row.get("cell_line")}
+
+    sample_rows = _read_csv_rows(SAMPLE_INFO)
+    cell_lines = [
+        {"cell_line": row["cell_line"], "cancer_type": row.get("cancer_type", "")}
+        for row in sample_rows
+        if row.get("cell_line") in matrix_cell_lines
+    ]
+
+    response_counts = {
+        drug: sum(1 for row in matrix_rows if row.get(drug) not in ("", None))
+        for drug in drug_columns
+    }
+    metadata_by_feature = {
+        row.get("clean_feature_name", ""): row
+        for row in _read_csv_rows(LANDMARK_METADATA)
+    }
 
     drugs = []
     mechanisms: set[str] = set()
-    for row in metadata_rows:
-        mechanism = (row.get("mechanism") or "Unknown").strip() or "Unknown"
-        mechanisms.add(mechanism)
-        clean_feature_name = row.get("clean_feature_name", "")
+    for feature_name in drug_columns:
+        meta = metadata_by_feature.get(feature_name, {})
+        mechanism = meta.get("mechanism") or meta.get("category") or "unknown"
+        if mechanism != "unknown":
+            mechanisms.add(mechanism)
         drugs.append(
             {
-                "id": clean_feature_name,
-                "name": row.get("drug_name", clean_feature_name),
+                "id": feature_name,
+                "name": meta.get("drug_name") or feature_name,
                 "mechanism": mechanism,
-                "category": row.get("category", ""),
-                "fda_status": row.get("fda_status", ""),
-                "nsc": row.get("nsc", ""),
-                "n_cell_lines": response_counts.get(clean_feature_name, 0),
+                "n_cell_lines": response_counts[feature_name],
             }
         )
 
-    folklore = _load("folklore.json")
     return {
-        "cell_lines": [
-            {
-                "cell_line": row["cell_line"],
-                "cancer_type": row.get("cancer_type", "Unknown"),
-            }
-            for row in sample_rows
-        ],
+        "cell_lines": cell_lines,
         "drugs": drugs,
         "mechanisms": sorted(mechanisms),
-        "demo_tumors": folklore.get("preset_cases", []) if isinstance(folklore, dict) else [],
+        "available_policies": ["active_learner", "random", "greedy", "uncertainty"],
+        "goals": ["find responder", "find resistance", "find robust drug"],
+        "demo_tumors": _load("folklore.json").get("preset_cases", _folklore_demo_tumors()),
     }
 
 
@@ -117,8 +157,8 @@ class FolkloreRunRequest(BaseModel):
     budget: int = Field(ge=6, le=10)
     goal: str
     policy: str = "active_learner"
-    drug_pool: list[str] | None = None
     compare_policy: str = "random"
+    drug_pool: list[str] | None = None
 
 
 @app.get("/health")
@@ -185,14 +225,12 @@ def adaptive_design() -> dict:
 
 @app.get("/folklore")
 def folklore() -> dict:
-    """Offline-safe canned mixed-tumor screening rollouts."""
     return _load("folklore.json")
 
 
 @app.get("/folklore/catalog")
 def folklore_catalog() -> dict:
-    """Available cell lines, landmark drugs, mechanisms, and canned demo tumors."""
-    return _folklore_catalog()
+    return _load_folklore_catalog()
 
 
 @app.post("/folklore/run", status_code=status.HTTP_501_NOT_IMPLEMENTED)

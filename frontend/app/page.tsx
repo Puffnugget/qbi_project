@@ -20,14 +20,14 @@ const Scene3D = dynamic(() => import("@/components/Scene3D"), {
   ),
 });
 
+const CompareView = dynamic(() => import("@/components/CompareView"), {
+  ssr: false,
+});
+
 const CustomDataAnalysis = dynamic(
   () => import("@/components/CustomDataAnalysis").then(mod => ({ default: mod.CustomDataAnalysis })),
   { ssr: false },
 );
-
-const CompareView = dynamic(() => import("@/components/CompareView"), {
-  ssr: false,
-});
 
 type TabId = "adaptive" | "explore" | "compare" | "analyze";
 
@@ -39,7 +39,7 @@ const AdaptiveDesignTab = dynamic(
 const TAB_ORDER: TabId[] = ["adaptive", "explore", "compare", "analyze"];
 
 const TAB_LABELS: Record<TabId, string> = {
-  adaptive: "Adaptive design",
+  adaptive: "Folklore",
   explore: "Explore",
   compare: "Compare",
   analyze: "Analyze Your Data",
