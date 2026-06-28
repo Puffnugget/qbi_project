@@ -35,45 +35,47 @@ Final pitch:
   - middle screening timeline with replay controls
   - right final recommendation card
   - bottom active learner vs random chart
-- `frontend/public/precomputed/folklore.json` added as offline-safe canned source (5 preset tumors)
+- `frontend/public/precomputed/folklore.json` — now generated from real NCI-60 drug matrix (`source: simulator`); no longer hand-written
 - Frontend data contract added for Folklore JSON shape
-- UI now loads canned Folklore data without requiring live backend endpoints
-- Canned demo now has 5 preset tumors:
-  - melanoma mixed tumor
-  - breast heterogeneous tumor
-  - colon robust-drug search
-  - lung dual-clone resistance
-  - renal two-clone backup
-- Every canned preset has `active_learner` and `random` rollouts with 6 unique drug tests
-- Backend stubs added:
-  - `GET /folklore`
-  - `GET /folklore/catalog`
-  - `POST /folklore/run` returns explicit `501 Not Implemented`
-- `/folklore/catalog` exposes 60 cell lines, 150 landmark drugs, mechanism labels, response counts, and demo tumors from local data
-- Frontend helper added for fetching the Folklore catalog
+- UI loads Folklore data without requiring live backend endpoints (offline-safe)
+- 5 preset tumors: melanoma mixed, breast heterogeneous, colon robust-drug search, lung dual-clone resistance, renal two-clone backup
+- Every preset has `active_learner` and `random` rollouts with 6 unique drug tests; **active learner wins 5/5 presets**
+- **Ground-truth simulator** (`src/folklore/simulator.py`):
+  - loads `drug_activity_landmark_matrix.csv` + metadata + `sample_info.csv`
+  - mixed-tumor response = proportionally weighted sum across subclones
+  - labels each subclone sensitive / intermediate / resistant
+  - flags resistant-survivor cases; self-check passes
+- **Episode environment** (`src/folklore/environment.py`):
+  - no duplicate drug tests per episode, budget 1–10
+  - 4 heuristic policies: `random`, `greedy`, `uncertainty`, `active_learner`
+  - active learner = greedy score + 0.35 × subclone-disagreement bonus (placeholder until RunPod model)
+  - self-check passes end-to-end
+- **`scripts/generate_folklore.py`** — regenerates `folklore.json` from real simulator (5 presets × 2 policies)
+- **`POST /folklore/regenerate`** backend endpoint — rebuilds `folklore.json` on demand; frontend calls it via "Regenerate presets from simulator" button in the canned-demo panel
+- Backend endpoints all live:
+  - `GET /folklore` — serves precomputed rollouts
+  - `GET /folklore/catalog` — 60 cell lines, 150 landmark drugs, mechanisms, demo tumors
+  - `POST /folklore/run` — live episode from user input (replaced 501 stub)
+  - `POST /folklore/regenerate` — rebuilds `folklore.json` from simulator
 - **Frontend live mode fully built** (`components/AdaptiveDesignTab.tsx`):
-  - mixture editor — 2–4 subclones, cell-line dropdowns from catalog, proportion inputs, add/remove, sum-to-1.0 validation + Normalize button
+  - mixture editor — 2–4 subclones, cell-line dropdowns, proportion inputs, Normalize button
   - goal select + budget slider (6–10)
-  - drug-pool picker — searchable, mechanism-filtered multi-select; empty = full catalog; never offers an off-catalog drug
+  - drug-pool picker — searchable, mechanism-filtered multi-select; never offers off-catalog drug
   - input validation with inline errors; Run blocked until valid
-  - `POST /folklore/run` wired; live result reuses the canned `FolkloreCase` shape so timeline/recommendation/chart render unchanged
+  - `POST /folklore/run` wired; live result renders in same timeline/recommendation/chart
   - failed live run → toast + fall back to nearest canned case (matched by cell-line overlap)
-  - catalog loads lazily on first live-mode open via `GET /folklore/catalog`, with graceful empty/error states
-- Data layer added (`lib/data.ts`): `fetchFolkloreCatalog()`, `runFolklore()`, `isFolkloreCatalogReady()`
-- Types added (`lib/types.ts`): `FolkloreCatalog`, `FolkloreCatalogDrug`, `FolkloreCatalogCellLine`, `FolkloreRunRequest`, `FolkloreRunResponse`
+  - catalog loads lazily on first live-mode open
+- Data layer (`lib/data.ts`): `fetchFolkloreCatalog()`, `runFolklore()`, `regenerateFolklore()`, `isFolkloreCatalogReady()`
+- Types (`lib/types.ts`): `FolkloreCatalog`, `FolkloreCatalogDrug`, `FolkloreCatalogCellLine`, `FolkloreRunRequest`, `FolkloreRunResponse`, `FolkloreRegenerateResponse`
 - Frontend typecheck (`tsc --noEmit`) passes clean
 
 ### Next Todo
 
-- Build the ground-truth simulator from the landmark drug matrix
-- Build the episode environment with no duplicate drug tests and 6-10 step budgets
-- Replace hand-written canned JSON with generated rollouts from real data
-- Implement policies: `random`, `greedy`, `uncertainty`, `active_learner`
-- Implement live `POST /folklore/run`
-- Sister/bioinformatics TODO: verify response direction, audit catalog correctness, curate demo drug subset, and review biological narratives
-- ~~Wire live mode inputs: editable mixture, goal, budget, drug pool~~ — **done (frontend)**
-- ~~Add catalog-driven drug picker and invalid-input handling~~ — **done (frontend); needs catalog endpoint to populate**
-- ~~Add fallback from failed live run to nearest canned case~~ — **done (frontend)**
+- **Resolve final frontend validation after merge conflict cleanup** (Phase 3 open item)
+- Replace heuristic active-learner with model-backed uncertainty once RunPod predictions exist (Phase 4)
+- Sister/bioinformatics: verify response direction, audit catalog correctness, curate demo drug subset, write biology blurbs per preset
+- Wire RunPod ensemble predictions into `active_learner` policy (Phase 4)
+- Full judge rehearsal: canned pitch + 2 live "what if" scenarios
 
 ## What The Input And Output Mean
 
@@ -351,23 +353,23 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
 | **Sister** | Curate landmark subset for demos (~30–40 high-signal drugs); clean mechanism labels; write 2-sentence biology blurb per preset tumor | `demo_drugs.json` + tumor narratives checked in |
-| **You** | `src/folklore/simulator.py` — mixed tumor response = weighted sum of subclone responses from matrix; resistance flag when one subclone stays above threshold; unit test on 3 drugs × 3 lines | Simulator matches manual spreadsheet checks |
-| **You** | `src/folklore/environment.py` — state, action (pick drug), no duplicate drugs per episode, episode length = budget | Can run random policy end-to-end in Python |
+| **You** | ~~`src/folklore/simulator.py` — mixed tumor response = weighted sum of subclone responses from matrix; resistance flag when one subclone stays above threshold; unit test on 3 drugs × 3 lines~~ | **Done:** simulator self-check matches manual 3-line weighted sum |
+| **You** | ~~`src/folklore/environment.py` — state, action (pick drug), no duplicate drugs per episode, episode length = budget~~ | **Done:** random policy runs end-to-end with no duplicate compounds |
 
 **Gate:** one full random rollout JSON for one preset tumor, generated from real drug matrix.
 
-**Status:** next software phase; not started
+**Status:** software complete; needs biology review
 
-- [ ] Create `src/folklore/simulator.py`
-- [ ] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv`
-- [ ] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_metadata.csv`
-- [ ] Compute mixed response as weighted sum across subclones
-- [ ] Label subclone responses as sensitive / intermediate / resistant
-- [ ] Flag resistant-survivor cases
-- [ ] Add a small manual-check test fixture
-- [ ] Create `src/folklore/environment.py`
-- [ ] Enforce no duplicate drug tests per episode
-- [ ] Run one random rollout end-to-end from real data
+- [x] Create `src/folklore/simulator.py`
+- [x] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv`
+- [x] Load `processed_data/clean/drug_landmarks/drug_activity_landmark_metadata.csv`
+- [x] Compute mixed response as weighted sum across subclones
+- [x] Label subclone responses as sensitive / intermediate / resistant
+- [x] Flag resistant-survivor cases
+- [x] Add a small manual-check test fixture
+- [x] Create `src/folklore/environment.py`
+- [x] Enforce no duplicate drug tests per episode
+- [x] Run one random rollout end-to-end from real data
 
 ---
 
@@ -376,7 +378,7 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 | Owner | Tasks | Done when |
 |-------|-------|-----------|
 | **Sister** | Export per-cell-line features slice for model training; document train/val split; start RunPod ensemble spec (5 MLPs) | Training script runs on sample batch |
-| **You** | Policies: `random`, `greedy`, `uncertainty`, `active_learner` (uncertainty bonus even before GPU model — use matrix variance or placeholder) | Active learner beats random on ≥3/5 presets in offline script |
+| **You** | ~~Policies: `random`, `greedy`, `uncertainty`, `active_learner` (uncertainty bonus even before GPU model — use matrix variance or placeholder)~~ | **Done:** heuristic policies select different drugs from real matrix scores |
 | **You** | `scripts/generate_folklore.py` → `frontend/public/precomputed/folklore.json` (5 tumors × 2 policies × steps + finals) | File committed; frontend loads it |
 
 **Gate:** `folklore.json` complete; active learner wins on majority of canned tumors.
@@ -385,10 +387,12 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 - [x] Canned `folklore.json` exists for frontend development
 - [x] Hand-written canned data has 5 tumors x 2 policies
-- [ ] Generated from real data
-- [ ] Generated 5 tumors x 2 policies complete
-- [ ] Active learner beats random on >= 3/5 presets from actual rollout script
-- [ ] Add `scripts/generate_folklore.py`
+- [x] Heuristic `random`, `greedy`, `uncertainty`, and `active_learner` policies implemented
+- [x] Generated from real data (`folklore.json` now has `source: simulator`)
+- [x] Generated 5 tumors x 2 policies complete
+- [x] Active learner beats random on >= 3/5 presets from actual rollout script (5/5)
+- [x] Add `scripts/generate_folklore.py`
+- [x] `POST /folklore/regenerate` rebuilds `folklore.json` on demand from the frontend
 
 ---
 
@@ -402,7 +406,7 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** live demo works end-to-end with custom drug pool; canned fallback works with API stopped.
 
-**Status:** frontend complete; backend endpoint pending
+**Status:** live baseline works; real policy behavior pending
 
 - [x] Canned vs live mode toggle exists in UI shell
 - [x] Replay controls exist
@@ -411,7 +415,7 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 - [x] Mixture editor (2–4 subclones, proportion validation + normalize)
 - [x] Live error toast + canned fallback (nearest case by cell-line overlap)
 - [x] Frontend wired to `POST /folklore/run` + `GET /folklore/catalog`
-- [ ] `POST /folklore/run` **backend** endpoint (frontend ready, server not built)
+- [x] `POST /folklore/run` **backend** endpoint (live shape works; policies still baseline)
 - [x] `GET /folklore/catalog` **backend** endpoint
 - [x] `GET /folklore` **backend** endpoint
 - [ ] Resolve final frontend validation after merge conflict cleanup

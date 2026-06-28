@@ -1,6 +1,9 @@
 {
-  "source": "canned",
-  "available_policies": ["active_learner", "random"],
+  "source": "simulator",
+  "available_policies": [
+    "active_learner",
+    "random"
+  ],
   "preset_cases": [
     {
       "id": "melanoma-mixed",
@@ -9,9 +12,21 @@
       "goal": "find resistance",
       "budget": 6,
       "components": [
-        { "cell_line": "ME:A375", "proportion": 0.5, "cancer_type": "Melanoma" },
-        { "cell_line": "ME:SK-MEL-5", "proportion": 0.3, "cancer_type": "Melanoma" },
-        { "cell_line": "ME:MDA-MB-435S", "proportion": 0.2, "cancer_type": "Melanoma" }
+        {
+          "cell_line": "ME:SK-MEL-28",
+          "proportion": 0.5,
+          "cancer_type": "Melanoma"
+        },
+        {
+          "cell_line": "ME:SK-MEL-5",
+          "proportion": 0.3,
+          "cancer_type": "Melanoma"
+        },
+        {
+          "cell_line": "ME:MDA-MB-435",
+          "proportion": 0.2,
+          "cancer_type": "Melanoma"
+        }
       ],
       "policies": {
         "active_learner": {
@@ -19,206 +34,386 @@
           "steps": [
             {
               "step": 1,
-              "compound": "Vemurafenib",
-              "mechanism": "BRAF inhibitor",
+              "compound": "8-Chloro-adenosine",
+              "mechanism": "AM",
               "chosen_by": "active learner",
-              "mixed_response": -1.2,
+              "mixed_response": -1.343,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -2.1, "label": "sensitive" },
-                { "cell_line": "ME:SK-MEL-5", "response": 0.3, "label": "resistant" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -0.7, "label": "intermediate" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -2.33,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -0.48,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -0.17,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Strong expected mean response plus early chance to expose a BRAF-resistant pocket.",
-              "best_response_so_far": -1.2
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.343
             },
             {
               "step": 2,
-              "compound": "Trametinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "PF-2771",
+              "mechanism": "CENP",
               "chosen_by": "active learner",
-              "mixed_response": -1.35,
+              "mixed_response": -1.098,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -1.9, "label": "sensitive" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.4, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.3, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -2.61,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": 0.21,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.72,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Follow-up MEK signal tests whether the resistant clone is pathway-limited or still exposed downstream.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.343
             },
             {
               "step": 3,
-              "compound": "Sorafenib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "6-Mercaptopurine",
+              "mechanism": "Ds|PPAT",
               "chosen_by": "active learner",
-              "mixed_response": -1.1,
+              "mixed_response": -1.142,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -1.0, "label": "intermediate" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.4, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -2.35,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -0.37,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.72,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Broader kinase coverage checks whether robustness matters more than peak average effect.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.343
             },
             {
               "step": 4,
-              "compound": "Dasatinib",
-              "mechanism": "SRC / ABL inhibitor",
+              "compound": "LY-2606368",
+              "mechanism": "PK:STK,CHEK,CHEK1",
               "chosen_by": "active learner",
-              "mixed_response": -0.95,
+              "mixed_response": -0.853,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -0.6, "label": "intermediate" },
-                { "cell_line": "ME:SK-MEL-5", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.1, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -2.21,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": 0.24,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.9,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "The model still sees uncertainty around the resistant clone, so it probes outside the MAPK path.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.343
             },
             {
               "step": 5,
-              "compound": "Selumetinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "7-Hydroxystaurosporine",
+              "mechanism": "PK:STK,CDK1,CDK2,CDK4,CDK6",
               "chosen_by": "active learner",
-              "mixed_response": -1.28,
+              "mixed_response": -1.15,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -1.7, "label": "sensitive" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.5, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.2, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -0.77,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -1.75,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -1.2,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Confirms the broader read: downstream pathway inhibition is more robust than the original BRAF hit.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.343
             },
             {
               "step": 6,
-              "compound": "Lapatinib",
-              "mechanism": "EGFR / HER2 inhibitor",
+              "compound": "BLU-667",
+              "mechanism": "PK:RET",
               "chosen_by": "active learner",
-              "mixed_response": -0.4,
+              "mixed_response": -1.136,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -0.1, "label": "resistant" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.6, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -0.5, "label": "intermediate" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -1.45,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -0.51,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -1.29,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Low-confidence off-pathway probe to close the loop before final recommendation.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.343
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -1.2 },
-            { "step": 2, "score": -1.35 },
-            { "step": 3, "score": -1.35 },
-            { "step": 4, "score": -1.35 },
-            { "step": 5, "score": -1.35 },
-            { "step": 6, "score": -1.35 }
-          ],
           "final": {
-            "recommended_compound": "Trametinib",
-            "main_realization": "Vemurafenib looked strongest at first glance, but SK-MEL-5 persisted. MEK inhibition held up better across all three subclones.",
-            "next_experiment": "Test Trametinib next as the more robust heterogeneity-resistant option.",
-            "active_vs_random": "Active learner exposed the resistant subclone by test 1 and reached a robust recommendation by test 2. Random never separated average effect from resistance risk within 6 tests."
-          }
+            "recommended_compound": "8-Chloro-adenosine",
+            "main_realization": "8-Chloro-adenosine had the strongest mixed response without a resistant subclone flag.",
+            "next_experiment": "Use this find resistance run to prioritize a follow-up around 8-Chloro-adenosine.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -1.343
+            },
+            {
+              "step": 2,
+              "score": -1.343
+            },
+            {
+              "step": 3,
+              "score": -1.343
+            },
+            {
+              "step": 4,
+              "score": -1.343
+            },
+            {
+              "step": 5,
+              "score": -1.343
+            },
+            {
+              "step": 6,
+              "score": -1.343
+            }
+          ]
         },
         "random": {
           "policy": "random",
           "steps": [
             {
               "step": 1,
-              "compound": "Gefitinib",
-              "mechanism": "EGFR inhibitor",
+              "compound": "Bafetinib",
+              "mechanism": "BCR-ABL|PK:YK,FYN,LYN",
               "chosen_by": "random",
-              "mixed_response": -0.25,
+              "mixed_response": 0.793,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -0.1, "label": "resistant" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.3, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -0.4, "label": "intermediate" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": 1.26,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": 0.09,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.68,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.25
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": 0.793
             },
             {
               "step": 2,
-              "compound": "Vemurafenib",
-              "mechanism": "BRAF inhibitor",
+              "compound": "Batracylin",
+              "mechanism": "TOP2|TOP1",
               "chosen_by": "random",
-              "mixed_response": -1.2,
+              "mixed_response": -0.434,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -2.1, "label": "sensitive" },
-                { "cell_line": "ME:SK-MEL-5", "response": 0.3, "label": "resistant" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -0.7, "label": "intermediate" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -1.46,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": 1.12,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -0.2,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline eventually hits the obvious average winner.",
-              "best_response_so_far": -1.2
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.434
             },
             {
               "step": 3,
-              "compound": "Lapatinib",
-              "mechanism": "EGFR / HER2 inhibitor",
+              "compound": "Bruceantin",
+              "mechanism": "MYC",
               "chosen_by": "random",
-              "mixed_response": -0.4,
+              "mixed_response": 0.21,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -0.1, "label": "resistant" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.6, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -0.5, "label": "intermediate" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": 0.22,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": 0.22,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.17,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -1.2
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.434
             },
             {
               "step": 4,
-              "compound": "Docetaxel",
-              "mechanism": "Microtubule stabilizer",
+              "compound": "Apitolisib",
+              "mechanism": "PK:PIK3,MTOR",
               "chosen_by": "random",
-              "mixed_response": -0.9,
+              "mixed_response": -0.011,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.7, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.2, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": 0.2,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -0.19,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -0.27,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -1.2
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.434
             },
             {
               "step": 5,
-              "compound": "Trametinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "CEP-28122",
+              "mechanism": "PK:ALK",
               "chosen_by": "random",
-              "mixed_response": -1.35,
+              "mixed_response": -0.275,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -1.9, "label": "sensitive" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.4, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.3, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -0.05,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -1.0,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.25,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline finally finds the more robust option late.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.434
             },
             {
               "step": 6,
-              "compound": "Paclitaxel",
-              "mechanism": "Microtubule stabilizer",
+              "compound": "CT-32228",
+              "mechanism": "AGPAT2|PK:YK,VEGFR",
               "chosen_by": "random",
-              "mixed_response": -0.82,
+              "mixed_response": 0.186,
               "subclone_responses": [
-                { "cell_line": "ME:A375", "response": -0.7, "label": "intermediate" },
-                { "cell_line": "ME:SK-MEL-5", "response": -0.5, "label": "intermediate" },
-                { "cell_line": "ME:MDA-MB-435S", "response": -1.1, "label": "sensitive" }
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -0.27,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": 0.47,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": 0.9,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -1.35
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.434
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.25 },
-            { "step": 2, "score": -1.2 },
-            { "step": 3, "score": -1.2 },
-            { "step": 4, "score": -1.2 },
-            { "step": 5, "score": -1.35 },
-            { "step": 6, "score": -1.35 }
-          ],
           "final": {
-            "recommended_compound": "Trametinib",
-            "main_realization": "Random found the same robust drug eventually, but only after spending most of the budget on weaker probes.",
-            "next_experiment": "Use Trametinib if you only get one validation test, but the discovery path was inefficient.",
-            "active_vs_random": "Random required 5 tests to reach the same recommendation the active learner had by test 2."
-          }
+            "recommended_compound": "Batracylin",
+            "main_realization": "Batracylin had the best mixed response, but ME:SK-MEL-5 stayed resistant.",
+            "next_experiment": "Use this find resistance run to prioritize a follow-up around Batracylin.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": 0.793
+            },
+            {
+              "step": 2,
+              "score": -0.434
+            },
+            {
+              "step": 3,
+              "score": -0.434
+            },
+            {
+              "step": 4,
+              "score": -0.434
+            },
+            {
+              "step": 5,
+              "score": -0.434
+            },
+            {
+              "step": 6,
+              "score": -0.434
+            }
+          ]
         }
       }
     },
@@ -229,9 +424,21 @@
       "goal": "find responder",
       "budget": 6,
       "components": [
-        { "cell_line": "BR:MCF7", "proportion": 0.45, "cancer_type": "Breast" },
-        { "cell_line": "BR:T-47D", "proportion": 0.35, "cancer_type": "Breast" },
-        { "cell_line": "BR:MDA-MB-231", "proportion": 0.2, "cancer_type": "Breast" }
+        {
+          "cell_line": "BR:MCF7",
+          "proportion": 0.45,
+          "cancer_type": "Breast"
+        },
+        {
+          "cell_line": "BR:T-47D",
+          "proportion": 0.35,
+          "cancer_type": "Breast"
+        },
+        {
+          "cell_line": "BR:MDA-MB-231",
+          "proportion": 0.2,
+          "cancer_type": "Breast"
+        }
       ],
       "policies": {
         "active_learner": {
@@ -239,206 +446,386 @@
           "steps": [
             {
               "step": 1,
-              "compound": "Alpelisib",
-              "mechanism": "PI3K inhibitor",
+              "compound": "Nocodazole",
+              "mechanism": "Tu-stab",
               "chosen_by": "active learner",
-              "mixed_response": -0.88,
+              "mixed_response": -1.2075,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.4, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.1, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.19,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -3.46,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -0.41,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Tests whether the hidden responder signal sits in a PI3K-dependent luminal subclone.",
-              "best_response_so_far": -0.88
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.2075
             },
             {
               "step": 2,
-              "compound": "Fulvestrant",
-              "mechanism": "ER degrader",
+              "compound": "CT-32228",
+              "mechanism": "AGPAT2|PK:YK,VEGFR",
               "chosen_by": "active learner",
-              "mixed_response": -0.96,
+              "mixed_response": -1.0555,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.6, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -1.3, "label": "sensitive" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.2, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.4,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -3.41,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -0.21,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Narrows the responder hypothesis and separates hormone-driven sensitivity from the triple-negative tail.",
-              "best_response_so_far": -0.96
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.2075
             },
             {
               "step": 3,
-              "compound": "Paclitaxel",
-              "mechanism": "Microtubule stabilizer",
+              "compound": "LY-2606368",
+              "mechanism": "PK:STK,CHEK,CHEK1",
               "chosen_by": "active learner",
-              "mixed_response": -1.08,
+              "mixed_response": -0.8195,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "BR:T-47D", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": -1.6, "label": "sensitive" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.96,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -2.57,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -1.76,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "After two endocrine-heavy hits, the model checks whether the small aggressive clone is the stronger actionable responder.",
-              "best_response_so_far": -1.08
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.2075
             },
             {
               "step": 4,
-              "compound": "Everolimus",
-              "mechanism": "mTOR inhibitor",
+              "compound": "Vinblastine",
+              "mechanism": "TUBB|Tu-frag",
               "chosen_by": "active learner",
-              "mixed_response": -0.7,
+              "mixed_response": -0.6975,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.3, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.59,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -2.66,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -0.16,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Low-cost uncertainty reduction around the luminal branch.",
-              "best_response_so_far": -1.08
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.2075
             },
             {
               "step": 5,
-              "compound": "Olaparib",
-              "mechanism": "PARP inhibitor",
+              "compound": "Simvastatin",
+              "mechanism": "AM|NonCan:Chol",
               "chosen_by": "active learner",
-              "mixed_response": -0.52,
+              "mixed_response": -0.5995,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -0.3, "label": "intermediate" },
-                { "cell_line": "BR:T-47D", "response": -0.2, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": -0.9, "label": "intermediate" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": -1.21,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -1.18,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": 1.79,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Rules out a stronger DNA-repair-specific opportunity.",
-              "best_response_so_far": -1.08
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.2075
             },
             {
               "step": 6,
-              "compound": "Capivasertib",
-              "mechanism": "AKT inhibitor",
+              "compound": "Cobimetinib (isomer 1)",
+              "mechanism": "PK:MAP2K,MAP2K1",
               "chosen_by": "active learner",
-              "mixed_response": -0.74,
+              "mixed_response": -0.743,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.1, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": -1.1,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -1.24,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": 0.93,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Final check on pathway-adjacent luminal sensitivity.",
-              "best_response_so_far": -1.08
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.2075
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.88 },
-            { "step": 2, "score": -0.96 },
-            { "step": 3, "score": -1.08 },
-            { "step": 4, "score": -1.08 },
-            { "step": 5, "score": -1.08 },
-            { "step": 6, "score": -1.08 }
-          ],
           "final": {
-            "recommended_compound": "Paclitaxel",
-            "main_realization": "The luminal clones responded to endocrine-pathway drugs, but the strongest hidden responder was the smaller MDA-MB-231-like subclone under Paclitaxel.",
-            "next_experiment": "Validate Paclitaxel if the goal is to expose the hidden responder rather than optimize the average luminal signal.",
-            "active_vs_random": "Active learner discovered the minority responder by test 3. Random never isolated that story cleanly."
-          }
+            "recommended_compound": "Nocodazole",
+            "main_realization": "Nocodazole had the best mixed response, but BR:MCF7 stayed resistant.",
+            "next_experiment": "Use this find responder run to prioritize a follow-up around Nocodazole.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -1.2075
+            },
+            {
+              "step": 2,
+              "score": -1.2075
+            },
+            {
+              "step": 3,
+              "score": -1.2075
+            },
+            {
+              "step": 4,
+              "score": -1.2075
+            },
+            {
+              "step": 5,
+              "score": -1.2075
+            },
+            {
+              "step": 6,
+              "score": -1.2075
+            }
+          ]
         },
         "random": {
           "policy": "random",
           "steps": [
             {
               "step": 1,
-              "compound": "Olaparib",
-              "mechanism": "PARP inhibitor",
+              "compound": "Brequinar",
+              "mechanism": "Ds|Rs",
               "chosen_by": "random",
-              "mixed_response": -0.52,
+              "mixed_response": -0.2175,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -0.3, "label": "intermediate" },
-                { "cell_line": "BR:T-47D", "response": -0.2, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": -0.9, "label": "intermediate" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.72,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -1.21,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -0.59,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.52
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2175
             },
             {
               "step": 2,
-              "compound": "Capivasertib",
-              "mechanism": "AKT inhibitor",
+              "compound": "Fluorouracil",
+              "mechanism": "Ds|Rs|TYMS",
               "chosen_by": "random",
-              "mixed_response": -0.74,
+              "mixed_response": 0.088,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.1, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 1.34,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -0.42,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -1.84,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.74
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2175
             },
             {
               "step": 3,
-              "compound": "Fulvestrant",
-              "mechanism": "ER degrader",
+              "compound": "Bortezomib",
+              "mechanism": "PSM",
               "chosen_by": "random",
-              "mixed_response": -0.96,
+              "mixed_response": 0.7395,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.6, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -1.3, "label": "sensitive" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.2, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.72,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": 0.97,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": 0.38,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline hits a luminal responder but still misses the hidden aggressive clone story.",
-              "best_response_so_far": -0.96
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2175
             },
             {
               "step": 4,
-              "compound": "Everolimus",
-              "mechanism": "mTOR inhibitor",
+              "compound": "Pazopanib",
+              "mechanism": "PK:YK,PDGFR,FGFR,KIT,VEGFR",
               "chosen_by": "random",
-              "mixed_response": -0.7,
+              "mixed_response": 0.346,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.3, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 0.08,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": 0.76,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": 0.22,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.96
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2175
             },
             {
               "step": 5,
-              "compound": "Alpelisib",
-              "mechanism": "PI3K inhibitor",
+              "compound": "Mitomycin",
+              "mechanism": "A2|AlkAg",
               "chosen_by": "random",
-              "mixed_response": -0.88,
+              "mixed_response": 0.013,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -1.4, "label": "sensitive" },
-                { "cell_line": "BR:T-47D", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "BR:MDA-MB-231", "response": 0.1, "label": "resistant" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 1.18,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": -0.6,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": -1.54,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.96
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2175
             },
             {
               "step": 6,
-              "compound": "Paclitaxel",
-              "mechanism": "Microtubule stabilizer",
+              "compound": "(+)-JQ1",
+              "mechanism": "BRD",
               "chosen_by": "random",
-              "mixed_response": -1.08,
+              "mixed_response": 0.558,
               "subclone_responses": [
-                { "cell_line": "BR:MCF7", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "BR:T-47D", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "BR:MDA-MB-231", "response": -1.6, "label": "sensitive" }
+                {
+                  "cell_line": "BR:MCF7",
+                  "response": 1.02,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:T-47D",
+                  "response": 0.26,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "BR:MDA-MB-231",
+                  "response": 0.04,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline reaches the hidden responder at the end of the budget.",
-              "best_response_so_far": -1.08
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2175
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.52 },
-            { "step": 2, "score": -0.74 },
-            { "step": 3, "score": -0.96 },
-            { "step": 4, "score": -0.96 },
-            { "step": 5, "score": -0.96 },
-            { "step": 6, "score": -1.08 }
-          ],
           "final": {
-            "recommended_compound": "Paclitaxel",
-            "main_realization": "Random still found the responder, but only after using the full budget on mixed signals.",
-            "next_experiment": "Paclitaxel remains the right validation if the objective is to expose the small aggressive responder clone.",
-            "active_vs_random": "Active learner found the hidden responder three tests earlier than random."
-          }
+            "recommended_compound": "Brequinar",
+            "main_realization": "Brequinar had the best mixed response, but BR:MCF7 stayed resistant.",
+            "next_experiment": "Use this find responder run to prioritize a follow-up around Brequinar.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -0.2175
+            },
+            {
+              "step": 2,
+              "score": -0.2175
+            },
+            {
+              "step": 3,
+              "score": -0.2175
+            },
+            {
+              "step": 4,
+              "score": -0.2175
+            },
+            {
+              "step": 5,
+              "score": -0.2175
+            },
+            {
+              "step": 6,
+              "score": -0.2175
+            }
+          ]
         }
       }
     },
@@ -449,9 +836,21 @@
       "goal": "find robust drug",
       "budget": 6,
       "components": [
-        { "cell_line": "CO:HCT-116", "proportion": 0.4, "cancer_type": "Colon" },
-        { "cell_line": "CO:HT29", "proportion": 0.35, "cancer_type": "Colon" },
-        { "cell_line": "CO:KM12", "proportion": 0.25, "cancer_type": "Colon" }
+        {
+          "cell_line": "CO:HCT-116",
+          "proportion": 0.4,
+          "cancer_type": "Colon"
+        },
+        {
+          "cell_line": "CO:HT29",
+          "proportion": 0.35,
+          "cancer_type": "Colon"
+        },
+        {
+          "cell_line": "CO:KM12",
+          "proportion": 0.25,
+          "cancer_type": "Colon"
+        }
       ],
       "policies": {
         "active_learner": {
@@ -459,206 +858,386 @@
           "steps": [
             {
               "step": 1,
-              "compound": "Irinotecan",
-              "mechanism": "Topoisomerase I inhibitor",
+              "compound": "Celecoxib",
+              "mechanism": "AM|PTGS2|COX2|NonCan:NSAID",
               "chosen_by": "active learner",
-              "mixed_response": -1.02,
+              "mixed_response": -1.012,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.2, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -1.0, "label": "sensitive" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -2.89,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": 0.14,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": 0.38,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Good first-pass average and low risk of one clone escaping completely.",
-              "best_response_so_far": -1.02
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.012
             },
             {
               "step": 2,
-              "compound": "Selumetinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "BPTES",
+              "mechanism": "GLS",
               "chosen_by": "active learner",
-              "mixed_response": -0.74,
+              "mixed_response": -0.7045,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -0.1, "label": "resistant" },
-                { "cell_line": "CO:KM12", "response": -0.8, "label": "intermediate" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -1.04,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -1.41,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": 0.82,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Checks if the robust choice can be improved by a stronger but less uniform pathway hit.",
-              "best_response_so_far": -1.02
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.012
             },
             {
               "step": 3,
-              "compound": "Oxaliplatin",
-              "mechanism": "Platinum chemotherapy",
+              "compound": "Rapamycin",
+              "mechanism": "PK:STK,MTOR",
               "chosen_by": "active learner",
-              "mixed_response": -1.18,
+              "mixed_response": -0.826,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.3, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "CO:KM12", "response": -1.2, "label": "sensitive" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -1.22,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -0.13,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -1.17,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Once MEK proved uneven, the learner shifted to the most consistent cross-clone option.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.012
             },
             {
               "step": 4,
-              "compound": "Cetuximab",
-              "mechanism": "EGFR antibody surrogate",
+              "compound": "Erlotinib",
+              "mechanism": "PK:YK,EGFR",
               "chosen_by": "active learner",
-              "mixed_response": -0.62,
+              "mixed_response": -0.7325,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -0.2, "label": "intermediate" },
-                { "cell_line": "CO:HT29", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -0.7, "label": "intermediate" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": 0.11,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -1.24,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -1.37,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Sanity check on an EGFR-biased alternative before recommending chemotherapy robustness.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.012
             },
             {
               "step": 5,
-              "compound": "5-Fluorouracil",
-              "mechanism": "Antimetabolite",
+              "compound": "AZD-3147",
+              "mechanism": "PK:MTOR",
               "chosen_by": "active learner",
-              "mixed_response": -0.95,
+              "mixed_response": -0.815,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -1.0, "label": "sensitive" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -1.12,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -0.72,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -0.46,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Confirms the platform’s robust-drug ranking among standard colon options.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.012
             },
             {
               "step": 6,
-              "compound": "Regorafenib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "7-Hydroxystaurosporine",
+              "mechanism": "PK:STK,CDK1,CDK2,CDK4,CDK6",
               "chosen_by": "active learner",
-              "mixed_response": -0.71,
+              "mixed_response": -0.6265,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -0.6, "label": "intermediate" },
-                { "cell_line": "CO:HT29", "response": -0.7, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -0.8, "label": "intermediate" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -1.06,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -0.9,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": 0.45,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Final broad-spectrum check.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.012
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -1.02 },
-            { "step": 2, "score": -1.02 },
-            { "step": 3, "score": -1.18 },
-            { "step": 4, "score": -1.18 },
-            { "step": 5, "score": -1.18 },
-            { "step": 6, "score": -1.18 }
-          ],
           "final": {
-            "recommended_compound": "Oxaliplatin",
-            "main_realization": "The flashier pathway-specific picks left one clone behind. Oxaliplatin was the first compound that suppressed all three consistently.",
-            "next_experiment": "Validate Oxaliplatin if robustness across heterogeneity matters more than chasing a single standout subclone hit.",
-            "active_vs_random": "Active learner found the robust drug by test 3. Random drifted across uneven mechanisms longer."
-          }
+            "recommended_compound": "Celecoxib",
+            "main_realization": "Celecoxib had the best mixed response, but CO:HT29, CO:KM12 stayed resistant.",
+            "next_experiment": "Use this find robust drug run to prioritize a follow-up around Celecoxib.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -1.012
+            },
+            {
+              "step": 2,
+              "score": -1.012
+            },
+            {
+              "step": 3,
+              "score": -1.012
+            },
+            {
+              "step": 4,
+              "score": -1.012
+            },
+            {
+              "step": 5,
+              "score": -1.012
+            },
+            {
+              "step": 6,
+              "score": -1.012
+            }
+          ]
         },
         "random": {
           "policy": "random",
           "steps": [
             {
               "step": 1,
-              "compound": "Cetuximab",
-              "mechanism": "EGFR antibody surrogate",
+              "compound": "Arsenic trioxide",
+              "mechanism": "Apo",
               "chosen_by": "random",
-              "mixed_response": -0.62,
+              "mixed_response": -0.6505,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -0.2, "label": "intermediate" },
-                { "cell_line": "CO:HT29", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -0.7, "label": "intermediate" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -0.63,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -0.21,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -1.3,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.62
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.6505
             },
             {
               "step": 2,
-              "compound": "Selumetinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "GDC-0994",
+              "mechanism": "PK:ERK,MAP3K,MAPK1",
               "chosen_by": "random",
-              "mixed_response": -0.74,
+              "mixed_response": 0.6905,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -0.1, "label": "resistant" },
-                { "cell_line": "CO:KM12", "response": -0.8, "label": "intermediate" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": 0.45,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": 1.78,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -0.45,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.74
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.6505
             },
             {
               "step": 3,
-              "compound": "Regorafenib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "SAR-260301 (enantiomer 1)",
+              "mechanism": "PI3KB",
               "chosen_by": "random",
-              "mixed_response": -0.71,
+              "mixed_response": -0.5385,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -0.6, "label": "intermediate" },
-                { "cell_line": "CO:HT29", "response": -0.7, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -0.8, "label": "intermediate" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -0.32,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -0.58,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -0.83,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.74
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.6505
             },
             {
               "step": 4,
-              "compound": "5-Fluorouracil",
-              "mechanism": "Antimetabolite",
+              "compound": "AZ-628",
+              "mechanism": "PK:BRAF",
               "chosen_by": "random",
-              "mixed_response": -0.95,
+              "mixed_response": 0.95,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -1.0, "label": "sensitive" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": 1.09,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": 1.59,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -0.17,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline improves, but still not the most uniform option.",
-              "best_response_so_far": -0.95
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.6505
             },
             {
               "step": 5,
-              "compound": "Irinotecan",
-              "mechanism": "Topoisomerase I inhibitor",
+              "compound": "bisacodyl, active ingredient of viraplex",
+              "mechanism": "NonCan:Cath",
               "chosen_by": "random",
-              "mixed_response": -1.02,
+              "mixed_response": -0.5025,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.2, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "CO:KM12", "response": -1.0, "label": "sensitive" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -0.45,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": -0.6,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": -0.45,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline reaches a strong average late.",
-              "best_response_so_far": -1.02
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.6505
             },
             {
               "step": 6,
-              "compound": "Oxaliplatin",
-              "mechanism": "Platinum chemotherapy",
+              "compound": "AMG-51",
+              "mechanism": "PK:MET",
               "chosen_by": "random",
-              "mixed_response": -1.18,
+              "mixed_response": 1.4775,
               "subclone_responses": [
-                { "cell_line": "CO:HCT-116", "response": -1.3, "label": "sensitive" },
-                { "cell_line": "CO:HT29", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "CO:KM12", "response": -1.2, "label": "sensitive" }
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -0.26,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": 1.14,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": 4.73,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline finally lands on the robust option at the end.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.6505
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.62 },
-            { "step": 2, "score": -0.74 },
-            { "step": 3, "score": -0.74 },
-            { "step": 4, "score": -0.95 },
-            { "step": 5, "score": -1.02 },
-            { "step": 6, "score": -1.18 }
-          ],
           "final": {
-            "recommended_compound": "Oxaliplatin",
-            "main_realization": "Random needed the full budget to discover the same robust choice.",
-            "next_experiment": "Oxaliplatin is still the right follow-up, but the search path wasted comparison capacity.",
-            "active_vs_random": "Active learner reached the robust choice three tests sooner."
-          }
+            "recommended_compound": "Arsenic trioxide",
+            "main_realization": "Arsenic trioxide had the strongest mixed response without a resistant subclone flag.",
+            "next_experiment": "Use this find robust drug run to prioritize a follow-up around Arsenic trioxide.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -0.6505
+            },
+            {
+              "step": 2,
+              "score": -0.6505
+            },
+            {
+              "step": 3,
+              "score": -0.6505
+            },
+            {
+              "step": 4,
+              "score": -0.6505
+            },
+            {
+              "step": 5,
+              "score": -0.6505
+            },
+            {
+              "step": 6,
+              "score": -0.6505
+            }
+          ]
         }
       }
     },
@@ -669,8 +1248,16 @@
       "goal": "find resistance",
       "budget": 6,
       "components": [
-        { "cell_line": "LC:A549/ATCC", "proportion": 0.55, "cancer_type": "Lung" },
-        { "cell_line": "LC:NCI-H460", "proportion": 0.45, "cancer_type": "Lung" }
+        {
+          "cell_line": "LC:A549/ATCC",
+          "proportion": 0.55,
+          "cancer_type": "Lung"
+        },
+        {
+          "cell_line": "LC:NCI-H460",
+          "proportion": 0.45,
+          "cancer_type": "Lung"
+        }
       ],
       "policies": {
         "active_learner": {
@@ -678,194 +1265,326 @@
           "steps": [
             {
               "step": 1,
-              "compound": "Erlotinib",
-              "mechanism": "EGFR inhibitor",
+              "compound": "Arsenic trioxide",
+              "mechanism": "Apo",
               "chosen_by": "active learner",
-              "mixed_response": -0.78,
+              "mixed_response": -1.334,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -1.3, "label": "sensitive" },
-                { "cell_line": "LC:NCI-H460", "response": -0.15, "label": "resistant" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -1.37,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -1.29,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "High expected lung-pathway signal, but the two-clone split makes resistance easy to expose early.",
-              "best_response_so_far": -0.78
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.334
             },
             {
               "step": 2,
-              "compound": "Cobimetinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "TAS-115",
+              "mechanism": "PK:MET,VEGFR",
               "chosen_by": "active learner",
-              "mixed_response": -1.06,
+              "mixed_response": -1.216,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "LC:NCI-H460", "response": -1.0, "label": "sensitive" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -1.0,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -1.48,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "After the EGFR escape signal, the agent probes a downstream route predicted to hit both clones.",
-              "best_response_so_far": -1.06
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.334
             },
             {
               "step": 3,
-              "compound": "Dasatinib",
-              "mechanism": "SRC / ABL inhibitor",
+              "compound": "A-911",
+              "mechanism": "PK:CDK,CDK9",
               "chosen_by": "active learner",
-              "mixed_response": -0.88,
+              "mixed_response": -0.7865,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.65, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -1.15, "label": "sensitive" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -1.16,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -0.33,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Checks whether the resistant clone is better explained by an alternate kinase dependency.",
-              "best_response_so_far": -1.06
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.334
             },
             {
               "step": 4,
-              "compound": "Paclitaxel",
-              "mechanism": "Microtubule stabilizer",
+              "compound": "Abiraterone",
+              "mechanism": "Ho|CYP17A1",
               "chosen_by": "active learner",
               "mixed_response": -0.92,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -0.95, "label": "intermediate" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -0.92,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -0.92,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Broad cytotoxic benchmark to see if robustness beats pathway specificity.",
-              "best_response_so_far": -1.06
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.334
             },
             {
               "step": 5,
-              "compound": "Lapatinib",
-              "mechanism": "EGFR / HER2 inhibitor",
+              "compound": "Zoledronate",
+              "mechanism": "AM|NonCan:Anti-bone resorp",
               "chosen_by": "active learner",
-              "mixed_response": -0.52,
+              "mixed_response": -0.8705,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.85, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -0.12, "label": "resistant" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -0.83,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -0.92,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Confirms that receptor-level targeting remains vulnerable to the same resistant clone.",
-              "best_response_so_far": -1.06
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.334
             },
             {
               "step": 6,
-              "compound": "Bortezomib",
-              "mechanism": "Proteasome inhibitor",
+              "compound": "6-Mercaptopurine",
+              "mechanism": "Ds|PPAT",
               "chosen_by": "active learner",
-              "mixed_response": -0.74,
+              "mixed_response": -0.6435,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.7, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -0.8, "label": "intermediate" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -1.08,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -0.11,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Final off-pathway probe before recommending the more uniform MEK result.",
-              "best_response_so_far": -1.06
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.334
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.78 },
-            { "step": 2, "score": -1.06 },
-            { "step": 3, "score": -1.06 },
-            { "step": 4, "score": -1.06 },
-            { "step": 5, "score": -1.06 },
-            { "step": 6, "score": -1.06 }
-          ],
           "final": {
-            "recommended_compound": "Cobimetinib",
-            "main_realization": "EGFR inhibition created a clean average signal but left NCI-H460 resistant. MEK inhibition was less flashy and more uniform.",
-            "next_experiment": "Test Cobimetinib next because it suppressed both lung subclones instead of only the EGFR-sensitive one.",
-            "active_vs_random": "Active learner exposed receptor-level resistance by test 1 and found the robust downstream option by test 2."
-          }
+            "recommended_compound": "Arsenic trioxide",
+            "main_realization": "Arsenic trioxide had the strongest mixed response without a resistant subclone flag.",
+            "next_experiment": "Use this find resistance run to prioritize a follow-up around Arsenic trioxide.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -1.334
+            },
+            {
+              "step": 2,
+              "score": -1.334
+            },
+            {
+              "step": 3,
+              "score": -1.334
+            },
+            {
+              "step": 4,
+              "score": -1.334
+            },
+            {
+              "step": 5,
+              "score": -1.334
+            },
+            {
+              "step": 6,
+              "score": -1.334
+            }
+          ]
         },
         "random": {
           "policy": "random",
           "steps": [
             {
               "step": 1,
-              "compound": "Bortezomib",
-              "mechanism": "Proteasome inhibitor",
+              "compound": "Lomustine",
+              "mechanism": "A6|AlkAg",
               "chosen_by": "random",
-              "mixed_response": -0.74,
+              "mixed_response": -0.2405,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.7, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -0.8, "label": "intermediate" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -0.56,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": 0.15,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.74
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.2405
             },
             {
               "step": 2,
-              "compound": "Lapatinib",
-              "mechanism": "EGFR / HER2 inhibitor",
+              "compound": "SAR-260301 (enantiomer 1)",
+              "mechanism": "PI3KB",
               "chosen_by": "random",
-              "mixed_response": -0.52,
+              "mixed_response": -0.4045,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.85, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -0.12, "label": "resistant" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -0.31,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -0.52,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline sees resistance but cannot prioritize the follow-up.",
-              "best_response_so_far": -0.74
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.4045
             },
             {
               "step": 3,
-              "compound": "Paclitaxel",
-              "mechanism": "Microtubule stabilizer",
+              "compound": "Vinblastine",
+              "mechanism": "TUBB|Tu-frag",
               "chosen_by": "random",
-              "mixed_response": -0.92,
+              "mixed_response": 0.129,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.9, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -0.95, "label": "intermediate" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -0.06,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": 0.36,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline improves through a broad cytotoxic.",
-              "best_response_so_far": -0.92
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.4045
             },
             {
               "step": 4,
-              "compound": "Erlotinib",
-              "mechanism": "EGFR inhibitor",
+              "compound": "Simvastatin",
+              "mechanism": "AM|NonCan:Chol",
               "chosen_by": "random",
-              "mixed_response": -0.78,
+              "mixed_response": -0.5755,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -1.3, "label": "sensitive" },
-                { "cell_line": "LC:NCI-H460", "response": -0.15, "label": "resistant" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -0.76,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": -0.35,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline confirms the same receptor-level escape late.",
-              "best_response_so_far": -0.92
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.5755
             },
             {
               "step": 5,
-              "compound": "Dasatinib",
-              "mechanism": "SRC / ABL inhibitor",
+              "compound": "maritoclax",
+              "mechanism": "MCL1",
               "chosen_by": "random",
-              "mixed_response": -0.88,
+              "mixed_response": -0.338,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -0.65, "label": "intermediate" },
-                { "cell_line": "LC:NCI-H460", "response": -1.15, "label": "sensitive" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": -1.22,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": 0.74,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.92
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.5755
             },
             {
               "step": 6,
-              "compound": "Cobimetinib",
-              "mechanism": "MEK inhibitor",
+              "compound": "ARQ-621",
+              "mechanism": "CDH16|KIF11",
               "chosen_by": "random",
-              "mixed_response": -1.06,
+              "mixed_response": 0.383,
               "subclone_responses": [
-                { "cell_line": "LC:A549/ATCC", "response": -1.1, "label": "sensitive" },
-                { "cell_line": "LC:NCI-H460", "response": -1.0, "label": "sensitive" }
+                {
+                  "cell_line": "LC:A549/ATCC",
+                  "response": 0.23,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "LC:NCI-H460",
+                  "response": 0.57,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline finds the robust option only at the end.",
-              "best_response_so_far": -1.06
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.5755
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.74 },
-            { "step": 2, "score": -0.74 },
-            { "step": 3, "score": -0.92 },
-            { "step": 4, "score": -0.92 },
-            { "step": 5, "score": -0.92 },
-            { "step": 6, "score": -1.06 }
-          ],
           "final": {
-            "recommended_compound": "Cobimetinib",
-            "main_realization": "Random eventually found the same robust drug, but only after spending most of the budget on uneven probes.",
-            "next_experiment": "Cobimetinib remains the validation choice, but the path was inefficient.",
-            "active_vs_random": "Random reached the robust option four tests later than the active learner."
-          }
+            "recommended_compound": "Simvastatin",
+            "main_realization": "Simvastatin had the strongest mixed response without a resistant subclone flag.",
+            "next_experiment": "Use this find resistance run to prioritize a follow-up around Simvastatin.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -0.2405
+            },
+            {
+              "step": 2,
+              "score": -0.4045
+            },
+            {
+              "step": 3,
+              "score": -0.4045
+            },
+            {
+              "step": 4,
+              "score": -0.5755
+            },
+            {
+              "step": 5,
+              "score": -0.5755
+            },
+            {
+              "step": 6,
+              "score": -0.5755
+            }
+          ]
         }
       }
     },
@@ -876,8 +1595,16 @@
       "goal": "find robust drug",
       "budget": 6,
       "components": [
-        { "cell_line": "RE:786-0", "proportion": 0.6, "cancer_type": "Renal" },
-        { "cell_line": "RE:A498", "proportion": 0.4, "cancer_type": "Renal" }
+        {
+          "cell_line": "RE:786-0",
+          "proportion": 0.6,
+          "cancer_type": "Renal"
+        },
+        {
+          "cell_line": "RE:A498",
+          "proportion": 0.4,
+          "cancer_type": "Renal"
+        }
       ],
       "policies": {
         "active_learner": {
@@ -885,194 +1612,326 @@
           "steps": [
             {
               "step": 1,
-              "compound": "Pazopanib",
-              "mechanism": "VEGFR inhibitor",
+              "compound": "Pralatrexate",
+              "mechanism": "Df|CTNNB1|DHFR",
               "chosen_by": "active learner",
-              "mixed_response": -1.18,
+              "mixed_response": -1.63,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -1.25, "label": "sensitive" },
-                { "cell_line": "RE:A498", "response": -1.08, "label": "sensitive" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.63,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -1.63,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "High expected renal relevance and low predicted spread across the two clones.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.63
             },
             {
               "step": 2,
-              "compound": "Cabozantinib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "LY-2940680",
+              "mechanism": "SMO",
               "chosen_by": "active learner",
-              "mixed_response": -1.12,
+              "mixed_response": -1.342,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "RE:A498", "response": -1.3, "label": "sensitive" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.63,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -0.91,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Tests whether a broader kinase profile improves the smaller A498 clone without losing the dominant clone.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.63
             },
             {
               "step": 3,
-              "compound": "Axitinib",
-              "mechanism": "VEGFR inhibitor",
+              "compound": "Alvespimycin",
+              "mechanism": "HSP90",
               "chosen_by": "active learner",
-              "mixed_response": -0.98,
+              "mixed_response": -0.902,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -1.2, "label": "sensitive" },
-                { "cell_line": "RE:A498", "response": -0.65, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": 0.29,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -2.69,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Compares a narrower VEGFR-like profile against the first robust hit.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.63
             },
             {
               "step": 4,
-              "compound": "Olaparib",
-              "mechanism": "PARP inhibitor",
+              "compound": "Celecoxib",
+              "mechanism": "AM|PTGS2|COX2|NonCan:NSAID",
               "chosen_by": "active learner",
-              "mixed_response": -0.46,
+              "mixed_response": -0.99,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -0.35, "label": "intermediate" },
-                { "cell_line": "RE:A498", "response": -0.62, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.89,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": 0.36,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Off-pathway check with low confidence, useful as a negative comparator.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.63
             },
             {
               "step": 5,
-              "compound": "Bortezomib",
-              "mechanism": "Proteasome inhibitor",
+              "compound": "PF-03758309",
+              "mechanism": "PK:PAK4",
               "chosen_by": "active learner",
-              "mixed_response": -0.72,
+              "mixed_response": -1.25,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "RE:A498", "response": -0.6, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.15,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -1.4,
+                  "label": "sensitive"
+                }
               ],
-              "why_chosen": "Broad stress response probe before committing to the VEGF-pathway recommendation.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.63
             },
             {
               "step": 6,
-              "compound": "Sorafenib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "KHK-Indazole",
+              "mechanism": "PK:YK,IGF1R",
               "chosen_by": "active learner",
-              "mixed_response": -0.91,
+              "mixed_response": -0.676,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -0.95, "label": "intermediate" },
-                { "cell_line": "RE:A498", "response": -0.85, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.62,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": 0.74,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Final related kinase benchmark; useful, but not as strong as the first two hits.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Best combined signal: strong mixed response plus subclone-disagreement bonus.",
+              "best_response_so_far": -1.63
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -1.18 },
-            { "step": 2, "score": -1.18 },
-            { "step": 3, "score": -1.18 },
-            { "step": 4, "score": -1.18 },
-            { "step": 5, "score": -1.18 },
-            { "step": 6, "score": -1.18 }
-          ],
           "final": {
-            "recommended_compound": "Pazopanib",
-            "main_realization": "The simplest renal-focused pick was also the most balanced across both clones. Broader kinase probes were close but did not improve the mixed response.",
-            "next_experiment": "Validate Pazopanib first as the robust two-clone option, with Cabozantinib as the immediate backup.",
-            "active_vs_random": "Active learner reached the robust answer on test 1; random needed most of the episode to get there."
-          }
+            "recommended_compound": "Pralatrexate",
+            "main_realization": "Pralatrexate had the strongest mixed response without a resistant subclone flag.",
+            "next_experiment": "Use this find robust drug run to prioritize a follow-up around Pralatrexate.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -1.63
+            },
+            {
+              "step": 2,
+              "score": -1.63
+            },
+            {
+              "step": 3,
+              "score": -1.63
+            },
+            {
+              "step": 4,
+              "score": -1.63
+            },
+            {
+              "step": 5,
+              "score": -1.63
+            },
+            {
+              "step": 6,
+              "score": -1.63
+            }
+          ]
         },
         "random": {
           "policy": "random",
           "steps": [
             {
               "step": 1,
-              "compound": "Olaparib",
-              "mechanism": "PARP inhibitor",
+              "compound": "Celecoxib",
+              "mechanism": "AM|PTGS2|COX2|NonCan:NSAID",
               "chosen_by": "random",
-              "mixed_response": -0.46,
+              "mixed_response": -0.99,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -0.35, "label": "intermediate" },
-                { "cell_line": "RE:A498", "response": -0.62, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.89,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": 0.36,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline pick.",
-              "best_response_so_far": -0.46
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.99
             },
             {
               "step": 2,
-              "compound": "Bortezomib",
-              "mechanism": "Proteasome inhibitor",
+              "compound": "Vinblastine",
+              "mechanism": "TUBB|Tu-frag",
               "chosen_by": "random",
-              "mixed_response": -0.72,
+              "mixed_response": -0.02,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -0.8, "label": "intermediate" },
-                { "cell_line": "RE:A498", "response": -0.6, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": 0.14,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -0.26,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline improves but stays nonspecific.",
-              "best_response_so_far": -0.72
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.99
             },
             {
               "step": 3,
-              "compound": "Sorafenib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "Asparaginase",
+              "mechanism": "AM|Pi",
               "chosen_by": "random",
-              "mixed_response": -0.91,
+              "mixed_response": 0.664,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -0.95, "label": "intermediate" },
-                { "cell_line": "RE:A498", "response": -0.85, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": 0.5,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": 0.91,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline reaches a useful but not best kinase option.",
-              "best_response_so_far": -0.91
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.99
             },
             {
               "step": 4,
-              "compound": "Axitinib",
-              "mechanism": "VEGFR inhibitor",
+              "compound": "LOR-253",
+              "mechanism": "KLF4|MYC|MTF1",
               "chosen_by": "random",
-              "mixed_response": -0.98,
+              "mixed_response": -0.112,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -1.2, "label": "sensitive" },
-                { "cell_line": "RE:A498", "response": -0.65, "label": "intermediate" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -0.08,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -0.16,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline finds a stronger renal signal late.",
-              "best_response_so_far": -0.98
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.99
             },
             {
               "step": 5,
-              "compound": "Pazopanib",
-              "mechanism": "VEGFR inhibitor",
+              "compound": "Apitolisib",
+              "mechanism": "PK:PIK3,MTOR",
               "chosen_by": "random",
-              "mixed_response": -1.18,
+              "mixed_response": 0.756,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -1.25, "label": "sensitive" },
-                { "cell_line": "RE:A498", "response": -1.08, "label": "sensitive" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -0.08,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": 2.01,
+                  "label": "resistant"
+                }
               ],
-              "why_chosen": "Random baseline finally reaches the most balanced hit.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.99
             },
             {
               "step": 6,
-              "compound": "Cabozantinib",
-              "mechanism": "Multi-kinase inhibitor",
+              "compound": "Imatinib",
+              "mechanism": "BCR-ABL|PK:YK",
               "chosen_by": "random",
-              "mixed_response": -1.12,
+              "mixed_response": -0.132,
               "subclone_responses": [
-                { "cell_line": "RE:786-0", "response": -1.0, "label": "sensitive" },
-                { "cell_line": "RE:A498", "response": -1.3, "label": "sensitive" }
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -0.04,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -0.27,
+                  "label": "intermediate"
+                }
               ],
-              "why_chosen": "Random baseline confirms the backup after already spending the budget.",
-              "best_response_so_far": -1.18
+              "why_chosen": "Random baseline pick from the available drug pool.",
+              "best_response_so_far": -0.99
             }
           ],
-          "summary_curve": [
-            { "step": 1, "score": -0.46 },
-            { "step": 2, "score": -0.72 },
-            { "step": 3, "score": -0.91 },
-            { "step": 4, "score": -0.98 },
-            { "step": 5, "score": -1.18 },
-            { "step": 6, "score": -1.18 }
-          ],
           "final": {
-            "recommended_compound": "Pazopanib",
-            "main_realization": "Random reached the same answer, but only after several off-target or weaker probes.",
-            "next_experiment": "Pazopanib is still the next validation, with Cabozantinib as a backup.",
-            "active_vs_random": "Active learner found the robust drug four tests sooner than random."
-          }
+            "recommended_compound": "Celecoxib",
+            "main_realization": "Celecoxib had the best mixed response, but RE:A498 stayed resistant.",
+            "next_experiment": "Use this find robust drug run to prioritize a follow-up around Celecoxib.",
+            "active_vs_random": "Random baseline completed without retesting a compound."
+          },
+          "summary_curve": [
+            {
+              "step": 1,
+              "score": -0.99
+            },
+            {
+              "step": 2,
+              "score": -0.99
+            },
+            {
+              "step": 3,
+              "score": -0.99
+            },
+            {
+              "step": 4,
+              "score": -0.99
+            },
+            {
+              "step": 5,
+              "score": -0.99
+            },
+            {
+              "step": 6,
+              "score": -0.99
+            }
+          ]
         }
       }
     }

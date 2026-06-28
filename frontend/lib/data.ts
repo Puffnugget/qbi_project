@@ -4,6 +4,7 @@ import type {
   FolkloreCatalog,
   FolkloreRunRequest,
   FolkloreRunResponse,
+  FolkloreRegenerateResponse,
   BlindspotData,
   CharacterizationEntry,
   AdaptiveDesignData,
@@ -46,7 +47,6 @@ export function isFolkloreReady(
   return !!data && (data.preset_cases?.length ?? 0) > 0;
 }
 
-/** Adaptive design rollouts — proxied to FastAPI via Next.js /api rewrite. */
 export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
   let res: Response;
   try {
@@ -58,7 +58,7 @@ export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
   }
   if (!res.ok) {
     throw new Error(
-      `Folklore API unavailable (${res.status}). Run: ./scripts/run_api.sh`,
+      `TINA screening API unavailable (${res.status}). Run: ./scripts/run_api.sh`,
     );
   }
   return res.json() as Promise<AdaptiveDesignData>;
@@ -106,6 +106,20 @@ export async function runFolklore(
     throw new Error(`Live run failed (${res.status}).`);
   }
   return res.json() as Promise<FolkloreRunResponse>;
+}
+
+/** Regenerate the canned folklore.json from real simulator output — backend POST /folklore/regenerate. */
+export async function regenerateFolklore(): Promise<FolkloreRegenerateResponse> {
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}/folklore/regenerate`, { method: "POST" });
+  } catch {
+    throw new Error("Cannot reach the regenerate API. Run: ./scripts/run_api.sh");
+  }
+  if (!res.ok) {
+    throw new Error(`Regeneration failed (${res.status}).`);
+  }
+  return res.json() as Promise<FolkloreRegenerateResponse>;
 }
 
 function panelFile(cancerType: string): string {

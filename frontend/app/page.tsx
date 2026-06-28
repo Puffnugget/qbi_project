@@ -39,7 +39,7 @@ const AdaptiveDesignTab = dynamic(
 const TAB_ORDER: TabId[] = ["adaptive", "explore", "compare", "analyze"];
 
 const TAB_LABELS: Record<TabId, string> = {
-  adaptive: "Folklore",
+  adaptive: "TINA",
   explore: "Explore",
   compare: "Compare",
   analyze: "Analyze Your Data",

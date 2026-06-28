@@ -7,12 +7,18 @@ import json
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query, status
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from custom_analysis import router as analysis_router
+from src.folklore.environment import EpisodeRequest, FolkloreEnvironment
+from src.folklore.simulator import TumorComponent
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from generate_folklore import PRESETS as FOLKLORE_PRESETS, write_folklore
 
 ROOT = Path(__file__).resolve().parents[1]
 PRECOMPUTED = ROOT / "frontend" / "public" / "precomputed"
@@ -233,12 +239,68 @@ def folklore_catalog() -> dict:
     return _load_folklore_catalog()
 
 
-@app.post("/folklore/run", status_code=status.HTTP_501_NOT_IMPLEMENTED)
-def folklore_run(_: FolkloreRunRequest) -> dict:
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Live Folklore episodes are not implemented yet. Use GET /folklore for canned rollouts.",
-    )
+@app.post("/folklore/run")
+def folklore_run(body: FolkloreRunRequest) -> dict:
+    try:
+        components = [
+            TumorComponent(item.cell_line, item.proportion)
+            for item in body.components
+        ]
+        env = FolkloreEnvironment()
+        policies = [body.policy]
+        if body.compare_policy and body.compare_policy not in policies:
+            policies.append(body.compare_policy)
+        return {
+            "id": "live-tumor",
+            "tumor_name": body.tumor_name,
+            "hook": "Live mixed-tumor screening run from the selected subclones.",
+            "goal": body.goal,
+            "budget": body.budget,
+            "components": [
+                {"cell_line": item.cell_line, "proportion": item.proportion}
+                for item in body.components
+            ],
+            "policies": {
+                policy: env.run_episode(
+                    EpisodeRequest(
+                        tumor_name=body.tumor_name,
+                        components=components,
+                        budget=body.budget,
+                        goal=body.goal,
+                        policy=policy,
+                        drug_pool=body.drug_pool,
+                    )
+                )
+                for policy in policies
+            },
+        }
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@app.post("/folklore/regenerate")
+def folklore_regenerate() -> dict:
+    """Regenerate frontend/public/precomputed/folklore.json from real simulator output.
+
+    Triggerable from the frontend so the canned preset rollouts can be rebuilt on
+    demand without a shell. Returns a summary of what was written.
+    """
+    try:
+        out_path = write_folklore(PRECOMPUTED / "folklore.json")
+        payload = json.loads(out_path.read_text())
+    except (ValueError, FileNotFoundError) as exc:
+        raise HTTPException(status_code=500, detail=f"Regeneration failed: {exc}") from exc
+
+    cases = payload.get("preset_cases", [])
+    return {
+        "status": "ok",
+        "source": payload.get("source"),
+        "path": f"frontend/public/precomputed/{out_path.name}",
+        "preset_count": len(cases),
+        "presets": [
+            {"id": case["id"], "tumor_name": case["tumor_name"]} for case in cases
+        ],
+    }
 
 
 # --- Customization Endpoints ---

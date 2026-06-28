@@ -179,6 +179,15 @@ export interface FolkloreRunRequest {
 /** A live run returns a single case with the chosen + comparison policies. */
 export type FolkloreRunResponse = FolkloreCase;
 
+/** Summary returned by POST /folklore/regenerate after rebuilding folklore.json. */
+export interface FolkloreRegenerateResponse {
+  status: string;
+  source: string;
+  path: string;
+  preset_count: number;
+  presets: { id: string; tumor_name: string }[];
+}
+
 export interface AppData {
   umap: UmapPoint[];
   coverage: CoverageData;

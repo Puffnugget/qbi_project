@@ -21,8 +21,9 @@ const ibmMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Folklore",
-  description: "Mixed-tumor adaptive drug screening on NCI-60",
+  title: "TINA",
+  description:
+    "Tumor Intelligence & Neoplastic Analysis — mixed-tumor adaptive drug screening on NCI-60",
 };
 
 export default function RootLayout({

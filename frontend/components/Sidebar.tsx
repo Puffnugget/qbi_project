@@ -46,7 +46,7 @@ export default function Sidebar({
           className="text-xl font-semibold tracking-tight text-fg"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Folklore
+          TINA
         </h1>
       </header>
 
