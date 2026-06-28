@@ -186,41 +186,198 @@ Frontend needs to show:
 
 The final card is the most important part.
 
-## Work Split
+## Live Demo Mode
 
-### You
+The judge demo must support **two modes** without breaking if the API or RunPod is offline.
 
-Own the environment and frontend.
+| Mode | When to use | Behavior |
+|------|-------------|----------|
+| **Canned** | WiFi down, RunPod offline, first 30 seconds of pitch | Load `frontend/public/precomputed/folklore.json` — 5 preset tumors with full rollouts |
+| **Live** | Q&A, “what if we try X?”, rehearsal | User picks tumor mixture + drugs from the **available catalog**, backend runs a new rollout |
+
+### What “live” means
+
+During the demo you can change inputs and re-run screening on the spot:
+
+- **Tumor mixture** — pick 2–4 NCI-60 lines and proportions (must sum to 1.0)
+- **Drug pool** — choose from compounds we actually have in data (default: ~150 landmark drugs; optional filter by mechanism or cancer type)
+- **Budget** — 6–10 tests per episode
+- **Goal** — `find responder`, `find resistance`, or `find robust drug`
+- **Policy** — compare `active learner` vs `random` (and optionally greedy / uncertainty)
+
+The UI must never offer a drug that is not in the catalog. If the user picks an invalid combo, show a clear error — do not silently fail.
+
+### Drug catalog (source of truth)
+
+All live and canned runs use the same compound list:
+
+- Matrix: `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv` (~150 drugs × 60 cell lines)
+- Metadata: `processed_data/clean/drug_landmarks/drug_activity_landmark_metadata.csv` (name, mechanism class)
+
+Sister owns catalog correctness. You own exposing it to the API and UI.
+
+### Live API contract
+
+Add alongside the static file:
+
+```text
+GET  /folklore/catalog          → available cell lines, drugs, mechanisms, demo tumors
+GET  /folklore                  → precomputed canned rollouts (offline-safe)
+POST /folklore/run              → run one live episode from user input
+```
+
+`POST /folklore/run` body:
+
+```json
+{
+  "tumor_name": "Melanoma mixed tumor",
+  "components": [
+    { "cell_line": "ME:A375", "proportion": 0.5 },
+    { "cell_line": "ME:SK-MEL-5", "proportion": 0.3 },
+    { "cell_line": "ME:MDA-MB-435S", "proportion": 0.2 }
+  ],
+  "budget": 6,
+  "goal": "find resistance",
+  "policy": "active_learner",
+  "drug_pool": ["Sorafenib", "Trametinib", "Vemurafenib"],
+  "compare_policy": "random"
+}
+```
+
+- `drug_pool` optional — if omitted, use full landmark catalog
+- Response: same step + final JSON shape as precomputed rollouts
+- Live runs use **ground-truth** responses from the drug matrix; model predictions only drive **which drug to test next**
+
+### Live demo UX (your frontend)
+
+- Left: tumor mixture editor + goal + budget
+- Drug panel: searchable list from `/folklore/catalog` with mechanism tags; multi-select to narrow pool
+- Middle: step-through timeline (play / pause / scrub) — same controls as current Adaptive Design tab
+- Right: final recommendation card
+- Bottom: active learner vs random curve for this run
+- Toggle: **Canned demos** dropdown vs **Run live** button
+- If `POST /folklore/run` fails → toast + fall back to nearest canned tumor
+
+### Demo script (for judges)
+
+1. Show canned melanoma tumor (30 s story)
+2. “What if we only test kinase inhibitors?” → filter drug pool live → re-run
+3. “What if the resistant clone is smaller?” → change proportions → re-run
+4. Point to conclusion: agent found heterogeneity faster than random
+
+---
+
+## Phased Plan
+
+Build in order. Each phase has a **gate** — do not start the next phase until the gate passes.
+
+### Phase 0 — Shared foundation (both, ~2 days)
+
+| Owner | Tasks | Done when |
+|-------|-------|-----------|
+| **Sister** | Verify drug-response sign/direction in landmark matrix; flag bad or missing cell line × drug pairs; export `drug_catalog.json` (id, name, mechanism, n_cell_lines) | Catalog loads; every demo drug has ≥55/60 line responses |
+| **You** | Define `folklore.json` schema; stub `GET /folklore/catalog` and `GET /folklore` returning empty/minimal JSON; document in this file | Frontend can fetch catalog without 404 |
+| **Both** | Agree on 5 preset demo tumors (names, mixtures, goals, one-line biology hook) | List written in Phase 0 section below |
+
+**Gate:** catalog JSON exists + schema agreed + one preset tumor defined on paper.
+
+---
+
+### Phase 1 — Ground-truth simulator (parallel, ~3 days)
+
+| Owner | Tasks | Done when |
+|-------|-------|-----------|
+| **Sister** | Curate landmark subset for demos (~30–40 high-signal drugs); clean mechanism labels; write 2-sentence biology blurb per preset tumor | `demo_drugs.json` + tumor narratives checked in |
+| **You** | `src/folklore/simulator.py` — mixed tumor response = weighted sum of subclone responses from matrix; resistance flag when one subclone stays above threshold; unit test on 3 drugs × 3 lines | Simulator matches manual spreadsheet checks |
+| **You** | `src/folklore/environment.py` — state, action (pick drug), no duplicate drugs per episode, episode length = budget | Can run random policy end-to-end in Python |
+
+**Gate:** one full random rollout JSON for one preset tumor, generated from real drug matrix.
+
+---
+
+### Phase 2 — Policies + canned rollouts (parallel, ~3 days)
+
+| Owner | Tasks | Done when |
+|-------|-------|-----------|
+| **Sister** | Export per-cell-line features slice for model training; document train/val split; start RunPod ensemble spec (5 MLPs) | Training script runs on sample batch |
+| **You** | Policies: `random`, `greedy`, `uncertainty`, `active_learner` (uncertainty bonus even before GPU model — use matrix variance or placeholder) | Active learner beats random on ≥3/5 presets in offline script |
+| **You** | `scripts/generate_folklore.py` → `frontend/public/precomputed/folklore.json` (5 tumors × 2 policies × steps + finals) | File committed; frontend loads it |
+
+**Gate:** `folklore.json` complete; active learner wins on majority of canned tumors.
+
+---
+
+### Phase 3 — Live run path (you lead, sister supports, ~3 days)
+
+| Owner | Tasks | Done when |
+|-------|-------|-----------|
+| **You** | `POST /folklore/run` — validate input, filter drug pool to catalog, run episode, return rollout + comparison policy | curl POST returns valid rollout in <3 s locally |
+| **You** | Upgrade Adaptive Design tab → **Adaptive Tumor Screening**: catalog drug picker, mixture editor, canned vs live toggle, replay controls | Can run live with custom drug pool from UI |
+| **Sister** | Review live run outputs for biological nonsense; adjust thresholds (sensitive/resistant labels) | No demo tumor produces impossible mechanism story |
+
+**Gate:** live demo works end-to-end with custom drug pool; canned fallback works with API stopped.
+
+---
+
+### Phase 4 — GPU model + polish (parallel, ~4 days)
+
+| Owner | Tasks | Done when |
+|-------|-------|-----------|
+| **Sister** | Train PyTorch ensemble on RunPod; export `predictions.parquet` or JSON (cell_line × drug → mean, std); plug into active learner score | Agent uses model uncertainty, not placeholder |
+| **Sister** | Final biology pass on all 5 presets + mechanism text on step cards | Every step has believable `why_chosen` / mechanism |
+| **You** | Wire model predictions into `active_learner` policy; active vs random chart; final conclusion card; error states + loading | Judge path ≤30 s; demo survives offline |
+| **Both** | Rehearsal: canned pitch + 2 live “what if” scenarios (drug filter, proportion change) | Run-through without crashes |
+
+**Gate:** success criteria below all green.
+
+---
+
+### Phase 0 preset tumors (draft — edit together)
+
+| # | Name | Mixture | Goal | Hook |
+|---|------|---------|------|------|
+| 1 | Melanoma mixed | 50% A375 / 30% SK-MEL-5 / 20% MDA-MB-435S | find resistance | Average looks good; one clone survives BRAF path |
+| 2 | Breast heterogeneous | TBD | find responder | Hidden sensitive subpopulation |
+| 3 | Colon mixture | TBD | find robust drug | No single clone drives average |
+| 4 | Lung dual clone | TBD | find resistance | Mechanism mismatch across clones |
+| 5 | Backup simple | 2 clones only | find robust drug | Fast live demo if time is short |
+
+---
+
+## Work Split (summary)
+
+### You — software + RL + demo
+
+Phases: **0** (schema/API stub) → **1** (simulator, env) → **2** (policies, JSON) → **3** (live POST, UI) → **4** (model wire-up, polish)
 
 Build:
 
-- RL-style environment
-- agent policies
-- rollout JSON generation
-- FastAPI endpoint
-- frontend demo tab
-- live replay controls
+- RL-style environment + policies
+- rollout / live run generation
+- `GET /folklore`, `GET /folklore/catalog`, `POST /folklore/run`
+- frontend demo tab + drug picker + replay
+- canned vs live demo toggle
 
 Your main goal:
 
-> Make the demo feel like an adaptive experiment happening live.
+> Make the demo feel like an adaptive experiment happening live — including “what if we only test these drugs?”
 
-### Sister
+### Sister — bioinformatics + model + biology
 
-Own biology, data, and GPU model.
+Phases: **0** (catalog audit) → **1** (demo drugs, narratives) → **2** (training data, RunPod start) → **3** (threshold review) → **4** (ensemble export, biology pass)
 
 Build:
 
 - verify drug-response direction
-- choose good landmark compounds
-- clean compound mechanism labels
-- train the PyTorch ensemble on RunPod
+- drug catalog + landmark curation
+- compound mechanism labels
+- train PyTorch ensemble on RunPod
 - export predictions and uncertainty
-- write biological explanations for demo tumors
+- biological explanations for demo tumors
 
 Her main goal:
 
-> Make the tumor mixtures and drug explanations biologically believable.
+> Make tumor mixtures, drug choices, and conclusions biologically believable — and ensure live runs only use real compounds we have.
 
 ## Data And Interfaces
 
@@ -228,19 +385,23 @@ Use existing data:
 
 - `processed_data/pca/fused_matrix.csv`
 - `processed_data/log_zscored/drug_activity_log_zscored.csv`
-- `processed_data/clean/drug_activity_landmark_metadata.csv`
+- `processed_data/clean/drug_landmarks/drug_activity_landmark_matrix.csv`
+- `processed_data/clean/drug_landmarks/drug_activity_landmark_metadata.csv`
 - `processed_data/sample_info.csv`
 
-Add one generated file:
+Add generated files:
 
 ```text
-frontend/public/precomputed/folklore.json
+frontend/public/precomputed/folklore.json     # canned rollouts (offline-safe)
+frontend/public/precomputed/drug_catalog.json # sister: catalog for live drug picker
 ```
 
-Add one endpoint:
+Add endpoints:
 
 ```text
-GET /folklore
+GET  /folklore/catalog   # cell lines, drugs, mechanisms, preset tumors
+GET  /folklore           # canned rollouts
+POST /folklore/run       # live episode from user tumor + drug pool
 ```
 
 The JSON should include:
@@ -293,6 +454,8 @@ Minimum checks:
 - Each final output includes a recommendation and realization.
 - Frontend loads without API failure.
 - Demo still works from precomputed JSON if RunPod is offline.
+- Live mode accepts custom `drug_pool` filtered to catalog; invalid drugs rejected with error.
+- Canned fallback works when API is stopped mid-demo.
 
 Success criteria:
 
