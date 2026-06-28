@@ -1,260 +1,219 @@
-# Nikhi's Hackathon Execution Plan
+# QBI Hackathon Working Plan
 
-> You own: Python pipeline + FastAPI + Next.js + Three.js
-> Sister owns: R cleaning scripts + fgsea annotation + characterization JSON
+This is the execution plan to work from. `plan.md` stays the long reference doc. This file is the operational version: what we are optimizing for, who owns what, what is already done, and what still matters before demo time.
 
----
+## 1. What We Are Actually Optimizing For
 
-## Current Status (updated Jun 27, 2026)
+From `plan.md`, the project should optimize for these judge-facing outcomes:
 
-| Area | Status |
-|------|--------|
-| Fusion matrix | ✅ real 5-layer R output in `processed_data/pca/fused_matrix.csv`; Python reuses it |
-| Sample info | ✅ 60/60 cell lines aligned in both `processed_data/sample_info.csv` and `data/processed/sample_info.csv` |
-| Python pipeline | ✅ `PYTHONPATH=. python src/run_pipeline.py` completes on real fused matrix |
-| Frontend / API / stretch | ✅ static JSON regenerated from real fused matrix; fgsea/characterization still dummy |
+1. **Impact**
+   - Clear scientific pain point: researchers waste money on redundant cell-line experiments.
+   - Output must feel immediately useful to a biologist, not like a toy viz.
 
-**Next up:** polish fly-in animation, rehearse demo 3x, projector check.
+2. **Execution**
+   - The app must run cleanly end to end.
+   - Demo must survive WiFi failure and backend failure.
+   - Static precomputed JSON is the default demo path.
 
-**Dev commands:**
-```bash
-PYTHONPATH=. python src/run_pipeline.py
-python src/adaptive_design.py
-uvicorn api.main:app --reload --port 8000
-cd frontend && npm run dev
-```
+3. **Novelty**
+   - Multi-omics panel selection is the base novelty.
+   - Strongest differentiators already in scope:
+     - fused multi-omics selection
+     - empirical drug-response validation
+     - blind-spot detection
+     - adaptive design stretch tab
 
----
+4. **Team composition / division of labor**
+   - Show real cross-discipline collaboration.
+   - The split should be obvious: R + biology interpretation, Python + product + frontend, plus shared demo/story work.
 
-## Fusion Input
+## 2. Success Metrics We Should Optimize
 
-Python now treats `processed_data/pca/fused_matrix.csv` as the source of truth when it exists. That matrix has 60 cell lines × 150 features from the R PCA/fusion output. `src/fusion.py` copies it to `data/processed/fused_matrix.csv` for downstream handoff paths and exports `embeddings.json`.
+These are the parameters that matter most in the current plan:
 
----
+- **Coverage quality:** panel coverage curve should plateau cleanly and be easy to explain.
+- **Validation quality:** Ridge-based drug prediction curve should track coverage and justify chosen panel size.
+- **Interpretability:** selected lines need plain-English reasons and biological context.
+- **Demo robustness:** everything critical available from `frontend/public/precomputed/`.
+- **Visual clarity:** 3D scene, compare mode, and charts must read instantly on a projector.
+- **Time discipline:** do not spend time on upgrades that do not improve judging outcome tomorrow.
 
-## Phase 0 — Setup
+## 3. Current State
 
-- [x] Download NCI-60 datasets from CellMiner: https://discover.nci.nih.gov/cellminer/
-  - [x] RNA: `raw_data/rna_seq.xls`
-  - [x] Proteomics: `raw_data/proteomics.xls`
-  - [x] Drug activity: `raw_data/drug_activity.xlsx`
-  - [x] Cell line metadata: `raw_data/Cell Line Metadata.xls`
-  - [x] Gene sets (fgsea): `raw_data/Human Gene Sets v2026.1.gmt`
-  - [ ] Metabolomics — **not downloaded**
-  - Note: `methylation.xls`, `histone.xlsx` also present — decide if substitutes
-  - Files in `raw_data/` (align to `data/raw/` when pipeline runs)
-- [x] Install Python deps (`requirements.txt`):
-  ```bash
-  pip install fastapi uvicorn umap-learn scikit-learn kneed pandas numpy scipy
-  ```
-- [x] Scaffold frontend:
-  ```bash
-  npx create-next-app@latest frontend --typescript --tailwind
-  cd frontend && npm install three @react-three/fiber @react-three/drei recharts axios
-  ```
-- [x] Folder structure:
-  - [x] `frontend/` + `frontend/public/precomputed/`
-  - [x] `src/`, `api/`, `data/raw/`, `data/processed/`
-  - [x] `raw_data/`, `r/`
+### Done
 
----
+- Real R cleaning + PCA fusion pipeline exists.
+- `processed_data/pca/fused_matrix.csv` exists and is feeding the app.
+- Frontend is built and already has:
+  - Explore
+  - Compare
+  - Adaptive Design
+  - Analyze Your Data
+- Core precomputed JSON outputs are already present.
+- Blind spot, manual override, pathway scores, characterization, and protein lookup exist.
+- Static JSON fallback path for demo already exists.
 
-## Phase 1 — Python Pipeline
+### Still worth doing
 
-**Scripts written and run on the real fused matrix.**
+- Wire filter controls into the main Explore flow if it is low-risk.
+- Rehearse the exact demo sequence until it is boring.
+- Verify the UI on the actual presentation machine / projector setup.
+- Tighten the story so every screen directly supports judging criteria.
 
-| Script | Status | Output |
-|--------|--------|--------|
-| `src/fusion.py` | ✅ reuses `processed_data/pca/fused_matrix.csv` when present | `fused_matrix.csv`, `embeddings.json` |
-| `src/selection.py` | ✅ written | `panel_all.json`, `panel_*.json` |
-| `src/coverage.py` | ✅ written | `coverage_curve.json` |
-| `src/validation.py` | ✅ written | `validation.json` |
-| `src/umap_3d.py` | ✅ written | `umap_3d.json` |
-| `src/blindspot.py` | ✅ written | `blindspot.json` |
-| `src/generate_dummy_data.py` | ✅ fallback only | dummy JSON for dev |
+### Not worth doing unless everything above is done
 
-**Run order:**
-```bash
-PYTHONPATH=. python src/run_pipeline.py
-python src/adaptive_design.py
-```
+- MOFA+ swap
+- foundation model embeddings
+- CCLE scale-up
+- full active-learning upgrade beyond existing adaptive design baseline
 
----
+## 4. Owner Split
 
-## Phase 2 — FastAPI Backend — DONE
+## Nikhi
 
-**`api/main.py`**
+Primary owner: product, frontend, backend, Python pipeline, final demo behavior
 
-- [x] `GET /umap?cancer_type=all`
-- [x] `GET /panel/{size}?cancer_type=all`
-- [x] `GET /coverage`
-- [x] `GET /validation`
-- [x] `GET /characterization/{cell_line}`
-- [x] `GET /blindspot`
-- [x] `GET /embeddings`
-- [x] `GET /health`
-- Run: `uvicorn api.main:app --reload --port 8000`
+### Must do
 
-Frontend reads static JSON directly — API optional for demo.
+- [ ] Smoke-test the full app using the real fused matrix path.
+- [ ] Verify all required JSON files still load cleanly from `frontend/public/precomputed/`.
+- [ ] Wire `FilterControls.tsx` into Explore **only if** the diff stays small and does not destabilize the demo.
+- [ ] Verify the main story path:
+  - slider
+  - cancer filter
+  - hover explanation
+  - coverage + validation chart
+  - compare view
+  - optional blind spot / adaptive design / analyze tab
+- [ ] Rehearse the 3.5-minute demo three times.
+- [ ] Do one projector/fullscreen sanity check.
 
----
+### Should do if time remains
 
-## Phase 3 — Frontend
+- [ ] Make sure the displayed default panel size is the one you want to defend verbally.
+- [ ] Trim any distracting UI copy or controls that do not support the demo story.
+- [ ] Confirm reduced-motion / fallback behavior is acceptable on weaker hardware.
 
-### 3a. Layout — DONE
-- [x] `page.tsx`: sidebar (25%) + main canvas + Explore/Compare tabs
-- [x] Dark background `#050510`
-- [x] Sidebar: slider (2–15), cancer dropdown, layer checkboxes
+### Do not do unless there is extra slack
 
-### 3b. Three.js Scene — `Scene3D.tsx` — MOSTLY DONE
-- [x] Canvas, dynamic import, SSR-safe
-- [x] Load `umap_3d.json`, render 60 spheres
-- [x] Cancer type colors (`lib/constants.ts`)
-- [x] OrbitControls + auto-rotate
-- [x] Gold connection lines between selected
-- [x] Red rim pulse on missing cancer types (blind spot)
-- [x] Manual mode sphere states (gold / cyan / gray / default)
-- [x] Click to toggle manual panel
-- [ ] **Fly-in animation** on slider increment
+- [ ] Major UI redesign
+- [ ] new modeling branch
+- [ ] any infrastructure work that is not required for the local static demo
 
-### 3c. Sphere Interactions — MOSTLY DONE
-- [x] Selected: larger gold `#FFD700`
-- [x] Filtered: fade gray opacity 0.15
-- [x] Hover tooltip (cell line + cancer type)
-- [x] Gold connection lines
-- [ ] Fly-in animation (arc + pulse ring)
+## Sister
 
-### 3d. Coverage Curve — DONE
-- [x] Wired to `coverage_curve.json`
-- [x] Blue coverage + green validation lines
-- [x] Dashed elbow line + gold slider reference
-- [x] Cyan manual-coverage dot when in manual mode
+Primary owner: biology-facing validity, annotations, characterization, supporting facts
 
-### 3e. Radar Chart — DONE
-- [x] `RadarChart.tsx` — 4 axes, updates with slider
+### Must do
 
-### 3f. Selection Log — DONE
-- [x] Table + cancer badges + top genes
-- [x] CSV download
-- [x] Shows manual panel when in manual mode
+- [ ] Verify the existing outputs are final and internally consistent:
+  - `factor_annotations.json`
+  - `pathway_scores.json`
+  - `characterization.json`
+  - `sample_info.csv`
+- [ ] Prepare one short biological fact for each of the 9 cancer types used in the demo.
+- [ ] Check 3-5 important selected lines and confirm the plain-English explanations are biologically defensible.
+- [ ] Be ready to answer:
+  - why a line was selected
+  - what pathway diversity means here
+  - why multi-omics beats transcriptomics alone
 
-### 3g. Compare View — DONE
-- [x] Two scenes side by side
-- [x] Overlap count + white pulse on shared lines
+### Should do if time remains
 
----
+- [ ] Tighten wording in characterization outputs if any explanation sounds too generic.
+- [ ] Prepare one ovarian-cancer follow-on idea for post-hackathon discussion.
 
-## Phase 4 — Polish + Demo Prep
+## Both
 
-- [~] Dark theme consistency (base done)
-- [x] Loading states while JSON fetches
-- [x] Elbow indicator from real `coverage_curve.json`
-- [ ] Test full demo sequence 3x
-- [x] Works with backend OFF (static JSON)
-- [ ] Screenshot / projector check
-- [ ] Fly-in animation
+Primary owner: presentation quality and handoff quality
 
----
+### Must do
 
-## Stretch Goal — Blind Spot Detector — DONE
+- [ ] Read the exact demo script out loud once each.
+- [ ] Agree on the one-sentence answer to:
+  - what problem this solves
+  - why the result is credible
+  - why the interface matters
+- [ ] Decide in advance which stretch features get shown only if time is going well.
+- [ ] Decide the fallback order if something glitches during the demo.
 
-### Level 1 — Cancer Type Coverage
-- [x] `src/blindspot.py`
-- [x] `frontend/public/precomputed/blindspot.json`
-- [x] `BlindSpotPanel.tsx` — grid (red/yellow/green)
-- [x] "Blind to: …" red banner
-- [x] Red rim glow in `Scene3D.tsx`
+### Shared fallback order
 
-### Level 2 — Pathway Coverage (stub; real fgsea later)
-- [x] Pathway gap in `blindspot.py`
-- [x] `pathway_gaps_by_size` in `blindspot.json`
-- [x] Pathway list in `BlindSpotPanel.tsx`
-- [~] `pathway_scores.json` — dummy exists; replace after sister fgsea
+1. Explore only
+2. Explore + coverage/validation
+3. Compare tab
+4. Blind spot
+5. Adaptive design
+6. Analyze Your Data
 
----
+## 5. Concrete Deliverables by Owner
 
-## Stretch Goal — Manual Override + Live Coverage — DONE
+### Nikhi deliverables
 
-- [x] `embeddings.json` from `fusion.py`
-- [x] `lib/coverage.ts` — browser-side `computeCoverage()`
-- [x] `manualPanel`, `isManualMode`, `manualCoverage` in `page.tsx`
-- [x] Slider resets to greedy
-- [x] Click spheres to toggle panel
-- [x] Four visual states in `Scene3D.tsx`
-- [x] Cyan dot on `CoverageCurve.tsx`
-- [x] "Reset to Optimal" in sidebar
+- Stable local demo at `localhost:3000`
+- Static precomputed assets verified
+- Clean 3.5-minute click path
+- Optional filter-controls integration if low-risk
 
----
+### Sister deliverables
 
-## Stretch Goal — Adaptive Design Tab — DONE
+- Final biology annotation artifacts
+- Cancer-type fact sheet
+- Selected-line explanation sanity check
 
-`components/AdaptiveDesignTab.tsx` + `src/adaptive_design.py`
-- [x] Keep main fixed-panel selector unchanged
-- [x] Four policies: coverage_greedy, uncertainty, thompson, random
-- [x] Score: median held-out drug prediction r after each sequential pick
-- [x] Output: `frontend/public/precomputed/adaptive_design.json`
-- [x] UI: policy toggle, Play/Reset, 3D replay, multi-policy efficiency chart
-- [x] Current JSON generated from real `data/processed/fused_matrix.csv`
-- [ ] Next AI upgrade: `ridge_uncertainty` active learning with bootstrapped Ridge surrogate models
-  - Train on selected cell lines each step: fused embedding → drug response
-  - Pick next line by model uncertainty + diversity bonus
-  - Use this before full RL; it gives the Dwarkesh/sample-efficiency story without overselling
-- Run: `python src/adaptive_design.py`
+### Shared deliverables
 
----
+- memorized demo script
+- answer bank for judges
+- fallback plan
 
-## Precomputed JSON Checklist
+## 6. Demo-Critical File Checklist
 
-All in `frontend/public/precomputed/`:
+These are the assets that matter most for the working demo:
 
-- [x] `umap_3d.json`
-- [x] `panel_all.json` + 9 per-type `panel_*.json`
-- [x] `coverage_curve.json`
-- [x] `per_layer_coverage.json`
-- [x] `validation.json`
-- [x] `blindspot.json`
-- [x] `embeddings.json`
-- [x] `pathway_scores.json` (dummy)
-- [~] `characterization.json` (dummy → sister)
-- [~] `factor_annotations.json` (dummy → sister fgsea)
-- [x] `adaptive_design.json` (real fused matrix)
+- `frontend/public/precomputed/umap_3d.json`
+- `frontend/public/precomputed/panel_all.json`
+- `frontend/public/precomputed/coverage_curve.json`
+- `frontend/public/precomputed/per_layer_coverage.json`
+- `frontend/public/precomputed/validation.json`
+- `frontend/public/precomputed/blindspot.json`
+- `frontend/public/precomputed/embeddings.json`
+- `frontend/public/precomputed/adaptive_design.json`
+- `frontend/public/precomputed/protein_expression.json`
+- `frontend/public/precomputed/pathway_scores.json`
+- `frontend/public/precomputed/characterization.json`
+- `frontend/public/precomputed/factor_annotations.json`
 
----
+If these are intact, the demo is mostly safe even if the backend is off.
 
-## Sister's R Pipeline
+## 7. Priority Order From Now
 
-- [x] `qbi_hackathon.Rproj`
-- [~] `r/loading.R` — loads Excel; paths still `~/Desktop/qbi_hackathon/`
-- [x] Export aligned `sample_info.csv` to `processed_data/` and `data/processed/`
-- [ ] Export optional clean layer CSVs if Python needs to rebuild fusion instead of reusing R fused matrix
-- [ ] fgsea → real `factor_annotations.json` + `pathway_scores.json`
-- [ ] Characterization → real `characterization.json`
+1. Protect the static demo path.
+2. Confirm scientific story is coherent.
+3. Rehearse the exact demo.
+4. Only then do low-risk product polish.
+5. Skip model upgrades unless the above is already finished.
 
----
+## 8. Suggested Immediate Next Moves
 
-## Demo Sequence (Memorize This)
+### Nikhi
 
-1. **0-3s** — let the scene rotate silently. Say nothing.
-2. **3s** — "Every dot is a cancer cell line…"
-3. **15-45s** — slider 1 → 8, explain greedy selection.
-4. **45-70s** — dropdown Breast Cancer.
-5. **70-90s** — hover MCF7, read tooltip.
-6. **90-110s** — coverage curve: blue = coverage, green = drug prediction.
-7. **110-140s** — Compare tab: breast vs lung.
-8. **Optional** — blind spot banner, click manual override to show coverage drop.
-9. **170-200s** — closing line on redundant experiments.
+1. Run the app and click through the full demo flow.
+2. Decide whether wiring `FilterControls.tsx` is a tiny diff or a trap.
+3. Lock the default panel size and demo sequence.
 
-**Total: ~3.5 minutes. Do not improvise.**
+### Sister
 
----
+1. Review characterization wording for the top demo lines.
+2. Write the 9 cancer-type facts.
+3. Practice concise biology answers for judges.
 
-## If Things Break
+### Both
 
-| Problem | Fix |
-|---------|-----|
-| Sister's R script not done | `python src/generate_dummy_data.py` |
-| Backend crashes | Frontend reads `/precomputed/` directly |
-| Fly-in too slow | Instant highlight + pulse ring |
-| UMAP looks bad | Tune `n_neighbors`, `min_dist` in `umap_3d.py` |
-| Cell line names don't match | Print first 5 names per CSV before intersection |
-| R paths wrong | `raw_data/` relative paths in `loading.R` |
+1. Do one timed rehearsal.
+2. Cut any optional steps that make the talk run long.
+3. Keep the story centered on: fewer lines, same information, validated by drug response.
+
+## 9. One-Line Strategy
+
+Win on reliability and clarity: a working static demo, a defensible quantitative result, and a story every judge understands in under 30 seconds.
