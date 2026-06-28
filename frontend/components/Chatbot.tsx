@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { API_BASE } from "@/lib/constants";
 
 interface Message {
   role: "user" | "assistant";
@@ -121,7 +122,7 @@ export default function Chatbot({ systemPrompt }: ChatbotProps) {
     setMessages([...next, assistantMessage]);
 
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetch(`${API_BASE}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

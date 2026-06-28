@@ -9,6 +9,7 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
@@ -37,8 +38,6 @@ _ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
-    # Cloudflare Pages
-    "https://qbi-project.pages.dev",
 ]
 # Allow additional origins via env var (comma-separated)
 _extra = _os.environ.get("EXTRA_CORS_ORIGINS", "")
@@ -48,6 +47,8 @@ if _extra:
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_ALLOWED_ORIGINS,
+    # Allow all *.pages.dev preview URLs and the production domain
+    allow_origin_regex=r"https://.*\.qbi-project\.pages\.dev|https://qbi-project\.pages\.dev",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -182,6 +183,58 @@ class FolkloreRunRequest(BaseModel):
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+class ChatRequest(BaseModel):
+    messages: list[dict]
+    systemPrompt: str | None = None
+
+
+@app.post("/chat")
+async def chat_proxy(body: ChatRequest):
+    """Stream chat completions from NVIDIA NIM."""
+    import os
+    import httpx
+
+    NVIDIA_API_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
+    NVIDIA_API_KEY = os.environ.get(
+        "NVIDIA_API_KEY",
+        "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",
+    )
+    MODEL = "google/diffusiongemma-26b-a4b-it"
+
+    api_messages = body.messages
+    if body.systemPrompt:
+        api_messages = [{"role": "system", "content": body.systemPrompt}] + body.messages
+
+    async def stream():
+        async with httpx.AsyncClient(timeout=120) as client:
+            async with client.stream(
+                "POST",
+                NVIDIA_API_URL,
+                headers={
+                    "Authorization": f"Bearer {NVIDIA_API_KEY}",
+                    "Content-Type": "application/json",
+                    "Accept": "text/event-stream",
+                },
+                json={
+                    "model": MODEL,
+                    "messages": api_messages,
+                    "max_tokens": 4096,
+                    "temperature": 1.0,
+                    "top_p": 0.95,
+                    "stream": True,
+                    "chat_template_kwargs": {"enable_thinking": True},
+                },
+            ) as resp:
+                async for chunk in resp.aiter_bytes():
+                    yield chunk
+
+    return StreamingResponse(
+        stream(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "Connection": "keep-alive"},
+    )
 
 
 @app.get("/umap")
