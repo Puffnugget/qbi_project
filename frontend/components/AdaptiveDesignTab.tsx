@@ -15,7 +15,6 @@ import { Card } from "@/components/ui/Card";
 import {
   fetchFolklore,
   fetchFolkloreCatalog,
-  isFolkloreCatalogReady,
   isFolkloreReady,
   regenerateFolklore,
   runFolklore,

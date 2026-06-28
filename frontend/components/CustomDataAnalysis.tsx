@@ -39,7 +39,6 @@ export function CustomDataAnalysis() {
   const [proteinLoading, setProteinLoading] = useState(false)
   const [proteinResult, setProteinResult] = useState<ProteinExpressionResult | null>(null)
   const [proteinError, setProteinError] = useState<string | null>(null)
-  const [sortBy, setSortBy] = useState<'high' | 'low'>('high')
 
   const handleFileChange = (file: File | null, setter: (f: File | null) => void) => {
     if (file && !['text/csv', 'application/json'].includes(file.type)) {

@@ -8,11 +8,16 @@ export function usePanelData(cancerType: string) {
   const [data, setData] = useState<AppData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [prevType, setPrevType] = useState(cancerType);
+
+  if (cancerType !== prevType) {
+    setPrevType(cancerType);
+    setLoading(true);
+    setError(null);
+  }
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setError(null);
 
     loadAppData(cancerType)
       .then((d) => {

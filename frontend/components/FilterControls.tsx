@@ -40,7 +40,7 @@ export function FilterControls({ onFilterChange, onReset }: FilterControlsProps)
   })
 
   const handleFilterChange = useCallback(
-    (key: keyof FilterState, value: any) => {
+    (key: keyof FilterState, value: FilterState[keyof FilterState]) => {
       const newFilters = { ...filters, [key]: value }
       setFilters(newFilters)
       onFilterChange(newFilters)
