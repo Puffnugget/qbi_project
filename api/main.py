@@ -30,14 +30,24 @@ SAMPLE_INFO = ROOT / "processed_data" / "sample_info.csv"
 
 app = FastAPI(title="NCI-60 Panel Builder API", version="0.1.0")
 
+import os as _os
+
+_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
+    # Cloudflare Pages
+    "https://qbi-project.pages.dev",
+]
+# Allow additional origins via env var (comma-separated)
+_extra = _os.environ.get("EXTRA_CORS_ORIGINS", "")
+if _extra:
+    _ALLOWED_ORIGINS.extend(o.strip() for o in _extra.split(",") if o.strip())
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:3001",
-        "http://127.0.0.1:3001",
-    ],
+    allow_origins=_ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

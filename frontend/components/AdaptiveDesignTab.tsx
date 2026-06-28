@@ -21,15 +21,18 @@ import { Toast, type ToastTone } from "@/components/ui/Toast";
 import {
   fetchFolklore,
   fetchFolkloreCatalog,
+  fetchFolkloreModelStatus,
   isFolkloreReady,
   regenerateFolklore,
   runFolklore,
 } from "@/lib/data";
+import Chatbot from "@/components/Chatbot";
 import { chartTheme, theme } from "@/lib/theme";
 import type {
   FolkloreCase,
   FolkloreCatalog,
   FolkloreData,
+  FolkloreModelStatus,
   UmapPoint,
 } from "@/lib/types";
 
@@ -96,6 +99,7 @@ export default function AdaptiveDesignTab({
   const [regenerating, setRegenerating] = useState(false);
   const [presetsLoading, setPresetsLoading] = useState(!isFolkloreReady(adaptiveData));
   const [catalogLoading, setCatalogLoading] = useState(false);
+  const [modelStatus, setModelStatus] = useState<FolkloreModelStatus | null>(null);
   const catalogRequested = useRef(false);
 
   function showToast(message: string, tone: ToastTone = "info") {
@@ -142,6 +146,20 @@ export default function AdaptiveDesignTab({
     catalogRequested.current = true;
     void loadCatalog();
   }, [mode, catalog, loadCatalog]);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchFolkloreModelStatus()
+      .then((payload) => {
+        if (!cancelled) setModelStatus(payload);
+      })
+      .catch(() => {
+        if (!cancelled) setModelStatus(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (isFolkloreReady(adaptiveData)) {
@@ -406,6 +424,42 @@ export default function AdaptiveDesignTab({
     });
   }, [currentCase]);
 
+  const systemPrompt = useMemo(() => {
+    if (!currentCase || !rollout) return undefined;
+
+    const mix = currentCase.components
+      .map((c) => `${c.cell_line} ${(c.proportion * 100).toFixed(0)}%`)
+      .join(", ");
+
+    const timeline = rollout.steps
+      .map(
+        (s) =>
+          `${s.step}. ${s.compound} (${s.mechanism}) mixed=${s.mixed_response.toFixed(2)} | ` +
+          s.subclone_responses.map((r) => `${r.cell_line} ${r.response.toFixed(2)} (${r.label})`).join(", "),
+      )
+      .join("\n");
+
+    const policies = Object.entries(currentCase.policies)
+      .map(([key, pol]) => {
+        const scores = pol.summary_curve.map((p) => p.score.toFixed(2)).join("→");
+        return `${POLICY_LABELS[key] ?? key} ${scores}`;
+      })
+      .join("; ");
+
+    return `You are the Tina agent for this TINA experiment. Reply in under 120 words unless the user asks for detail. Use **bold** for compound names, cell lines, and key numbers.
+
+Case: ${currentCase.tumor_name} | ${currentCase.goal} | ${currentCase.budget} steps | ${POLICY_LABELS[activePolicy] ?? activePolicy}
+Mix: ${mix}
+Context: ${currentCase.hook}
+
+Runs:
+${timeline}
+
+Pick: **${rollout.final.recommended_compound}** — ${rollout.final.main_realization}
+Next: ${rollout.final.next_experiment} | ${rollout.final.active_vs_random}
+Policies (lower=better): ${policies}`;
+  }, [currentCase, rollout, activePolicy]);
+
   if (presetsLoading) {
     return <FolkloreTabSkeleton />;
   }
@@ -456,53 +510,61 @@ export default function AdaptiveDesignTab({
           </div>
         </div>
       )}
-      <div className="grid min-h-0 gap-3 xl:grid-cols-[19rem_minmax(0,1fr)_22rem]">
-        <Card className="reveal flex min-h-0 flex-col gap-4 overflow-auto p-4">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="label-caps">Tumor Intelligence &amp; Neoplastic Analysis</p>
-              <h2 className="mt-1 font-display text-xl text-fg">{currentCase.tumor_name}</h2>
+      <div className="grid min-h-0 gap-3 xl:grid-cols-[minmax(0,17rem)_minmax(0,1fr)_minmax(0,18rem)_minmax(0,19rem)]">
+        <Card
+          padding="none"
+          className="reveal flex min-h-0 w-full min-w-0 max-w-full flex-col overflow-hidden p-3"
+        >
+          <div className="flex shrink-0 flex-col gap-4">
+            <div className="flex min-w-0 items-start justify-between gap-2">
+              <div className="min-w-0">
+                <p className="label-caps">Tumor Intelligence &amp; Neoplastic Analysis</p>
+                <h2 className="mt-1 break-words font-display text-lg leading-snug text-fg">
+                  {currentCase.tumor_name}
+                </h2>
+              </div>
+              <div className="shrink-0 rounded-full bg-accent/10 px-2 py-1 text-[10px] font-medium text-accent">
+                {mode === "canned" ? "Canned demo" : liveCase ? "Live result" : "Live run"}
+              </div>
             </div>
-            <div className="rounded-full bg-accent/10 px-2.5 py-1 text-[11px] font-medium text-accent">
-                  {mode === "canned" ? "Canned demo" : liveCase ? "Live result" : "Live run"}
+
+            <div className="grid min-w-0 grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setMode("canned");
+                  setPlaying(false);
+                  setStep(1);
+                }}
+                className={`min-w-0 rounded-md border px-2 py-2 text-xs sm:text-sm ${
+                  mode === "canned"
+                    ? "border-accent bg-accent text-surface-elevated"
+                    : "border-border bg-surface-elevated text-fg-muted"
+                }`}
+              >
+                Canned demos
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setMode("live");
+                  setPlaying(false);
+                  setStep(1);
+                }}
+                className={`min-w-0 rounded-md border px-2 py-2 text-xs sm:text-sm ${
+                  mode === "live"
+                    ? "border-accent bg-accent text-surface-elevated"
+                    : "border-border bg-surface-elevated text-fg-muted"
+                }`}
+              >
+                Run live
+              </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                setMode("canned");
-                setPlaying(false);
-                setStep(1);
-              }}
-              className={`rounded-md border px-3 py-2 text-sm ${
-                mode === "canned"
-                  ? "border-accent bg-accent text-surface-elevated"
-                  : "border-border bg-surface-elevated text-fg-muted"
-              }`}
-            >
-              Canned demos
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setMode("live");
-                setPlaying(false);
-                setStep(1);
-              }}
-              className={`rounded-md border px-3 py-2 text-sm ${
-                mode === "live"
-                  ? "border-accent bg-accent text-surface-elevated"
-                  : "border-border bg-surface-elevated text-fg-muted"
-              }`}
-            >
-              Run live
-            </button>
-          </div>
-
+          <div className="mt-3 min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto">
           {mode === "canned" ? (
-            <>
+            <div className="flex min-w-0 flex-col gap-4">
               <label className="flex flex-col gap-1.5">
                 <span className="label-caps">Preset tumor</span>
                 <select
@@ -532,6 +594,8 @@ export default function AdaptiveDesignTab({
                   ? "Regenerating from simulator…"
                   : "Regenerate presets from simulator"}
               </button>
+
+              <ModelStatusCard status={modelStatus} />
 
               <div className="rounded-xl border border-border bg-canvas/65 p-3">
                 <p className="label-caps">Tumor hook</p>
@@ -576,7 +640,7 @@ export default function AdaptiveDesignTab({
                   ))}
                 </div>
               </div>
-            </>
+            </div>
           ) : (
             <LiveEditor
               catalog={activeCatalog}
@@ -607,6 +671,7 @@ export default function AdaptiveDesignTab({
               onRun={handleRunLive}
             />
           )}
+          </div>
         </Card>
 
         <Card className="reveal reveal-delay-1 flex min-h-0 flex-col overflow-hidden p-0">
@@ -801,6 +866,10 @@ export default function AdaptiveDesignTab({
             </p>
           </div>
         </Card>
+
+        <Card className="reveal reveal-delay-3 flex min-h-0 flex-col overflow-hidden p-0 border border-border/40 bg-surface/50 backdrop-blur-md shadow-lg rounded-2xl">
+          <Chatbot systemPrompt={systemPrompt} />
+        </Card>
       </div>
 
       <Card className="reveal reveal-delay-3 min-h-0 overflow-hidden p-3">
@@ -814,7 +883,7 @@ export default function AdaptiveDesignTab({
         </div>
         <div className="h-[11rem]">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={chartData}>
+            <LineChart data={chartData} margin={{ top: 10, right: 10, left: -25, bottom: 20 }}>
               <CartesianGrid stroke={chartTheme.grid} strokeDasharray="3 3" />
               <XAxis
                 dataKey="step"
@@ -885,6 +954,33 @@ export default function AdaptiveDesignTab({
   );
 }
 
+function ModelStatusCard({ status }: { status: FolkloreModelStatus | null }) {
+  const live = status?.source === "live_ensemble";
+  return (
+    <div className="rounded-xl border border-accent/25 bg-accent/6 p-3">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <p className="label-caps">RunPod-trained model</p>
+          <p className="mt-1 text-sm font-semibold text-fg">
+            {live ? "Live 5-MLP ensemble" : status?.source ?? "Checking model..."}
+          </p>
+        </div>
+        <span className="rounded-full bg-accent/15 px-2.5 py-1 text-[11px] font-semibold text-accent">
+          {live ? "Live weights" : "Fallback"}
+        </span>
+      </div>
+      {status && (
+        <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-fg-muted">
+          <span>{status.n_models ?? 0} models</span>
+          <span>{status.n_feature_cols ?? 0} features</span>
+          <span>{status.n_cell_lines ?? 0} cell lines</span>
+          <span>{status.n_drugs ?? 0} drugs</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface LiveEditorProps {
   catalog: FolkloreCatalog | null;
   catalogError: string | null;
@@ -947,7 +1043,7 @@ function LiveEditor({
   const sumOk = Math.abs(proportionSum - 1) <= 0.01;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex min-w-0 w-full max-w-full flex-col gap-3">
       {catalogLoading ? (
         <LiveEditorSkeleton />
       ) : (
@@ -965,14 +1061,14 @@ function LiveEditor({
         </Alert>
       )}
 
-      <div>
-        <div className="flex items-center justify-between gap-2">
-          <p className="label-caps">Tumor mixture</p>
+      <div className="min-w-0">
+        <div className="flex min-w-0 items-center justify-between gap-2">
+          <p className="label-caps shrink-0">Tumor mixture</p>
           <button
             type="button"
             onClick={onAddComponent}
             disabled={components.length >= 4}
-            className="btn-ghost px-2 py-1 text-xs disabled:opacity-40"
+            className="btn-ghost shrink-0 px-2 py-1 text-xs disabled:opacity-40"
           >
             + Subclone
           </button>
@@ -981,15 +1077,15 @@ function LiveEditor({
           {components.map((component, index) => (
             <div
               key={index}
-              className="rounded-xl border border-border bg-surface-elevated p-3"
+              className="min-w-0 rounded-lg border border-border bg-surface-elevated p-2"
             >
-              <div className="flex items-center gap-2">
+              <div className="grid grid-cols-[minmax(0,1fr)_3rem_1.5rem] items-center gap-1.5">
                 <select
                   value={component.cell_line}
                   onChange={(e) =>
                     onUpdateComponent(index, { cell_line: e.target.value })
                   }
-                  className="input-base flex-1 px-2 py-1.5 text-sm"
+                  className="input-base min-w-0 w-full truncate px-1.5 py-1.5 text-sm"
                 >
                   <option value="">Select cell line…</option>
                   {cellLineOptions.map((line) => (
@@ -1009,13 +1105,13 @@ function LiveEditor({
                       proportion: Number(e.target.value),
                     })
                   }
-                  className="input-base w-20 px-2 py-1.5 text-sm"
+                  className="input-base w-full min-w-0 px-1 py-1.5 text-sm tabular-nums"
                 />
                 <button
                   type="button"
                   onClick={() => onRemoveComponent(index)}
                   disabled={components.length <= 2}
-                  className="btn-ghost px-2 py-1 text-xs disabled:opacity-30"
+                  className="btn-ghost flex size-6 shrink-0 items-center justify-center p-0 text-xs disabled:opacity-30"
                   aria-label="Remove subclone"
                 >
                   ✕
@@ -1024,27 +1120,27 @@ function LiveEditor({
             </div>
           ))}
         </div>
-        <div className="mt-2 flex items-center justify-between text-xs">
-          <span className={sumOk ? "text-fg-muted" : "text-danger"}>
+        <div className="mt-1.5 flex min-w-0 items-center justify-between gap-2 text-xs">
+          <span className={`min-w-0 truncate ${sumOk ? "text-fg-muted" : "text-danger"}`}>
             Sum {proportionSum.toFixed(2)} / 1.00
           </span>
           <button
             type="button"
             onClick={onNormalize}
-            className="btn-ghost px-2 py-1 text-xs"
+            className="btn-ghost shrink-0 px-2 py-1 text-xs"
           >
             Normalize
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
-        <label className="flex flex-col gap-1.5">
+      <div className="grid min-w-0 grid-cols-2 gap-2">
+        <label className="flex min-w-0 flex-col gap-1.5">
           <span className="label-caps">Goal</span>
           <select
             value={goal}
             onChange={(e) => onSetGoal(e.target.value as Goal)}
-            className="input-base px-2 py-1.5 text-sm"
+            className="input-base min-w-0 w-full px-2 py-1.5 text-sm"
           >
             {GOALS.map((g) => (
               <option key={g} value={g}>
@@ -1053,8 +1149,8 @@ function LiveEditor({
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1.5">
-          <span className="label-caps">Budget · {budget}</span>
+        <label className="flex min-w-0 flex-col gap-1.5">
+          <span className="label-caps truncate">Budget · {budget}</span>
           <input
             type="range"
             min={6}
@@ -1067,33 +1163,37 @@ function LiveEditor({
         </label>
       </div>
 
-      <div>
-        <div className="flex items-center justify-between gap-2">
-          <p className="label-caps">
-            Drug pool {drugPool.length > 0 ? `· ${drugPool.length}` : "· full catalog"}
-          </p>
+      <details className="group min-w-0">
+        <summary className="cursor-pointer list-none truncate label-caps [&::-webkit-details-marker]:hidden">
+          Drug pool{" "}
+          <span className="font-normal normal-case text-fg-muted">
+            {drugPool.length > 0 ? `· ${drugPool.length} selected` : "· optional"}
+          </span>
+        </summary>
+        <div className="mt-2 min-w-0">
+        <div className="flex items-center justify-end gap-2">
           {drugPool.length > 0 && (
             <button
               type="button"
               onClick={onClearPool}
-              className="btn-ghost px-2 py-1 text-xs"
+              className="btn-ghost shrink-0 px-2 py-1 text-xs"
             >
               Clear
             </button>
           )}
         </div>
-        <div className="mt-2 flex gap-2">
+        <div className="mt-2 flex min-w-0 flex-col gap-2">
           <input
             type="text"
             value={drugSearch}
             onChange={(e) => onSetSearch(e.target.value)}
             placeholder="Search compounds…"
-            className="input-base flex-1 px-2 py-1.5 text-sm"
+            className="input-base min-w-0 w-full px-2 py-1.5 text-sm"
           />
           <select
             value={mechFilter}
             onChange={(e) => onSetMech(e.target.value)}
-            className="input-base px-2 py-1.5 text-sm"
+            className="input-base min-w-0 w-full px-2 py-1.5 text-sm"
           >
             <option value="all">All mechanisms</option>
             {mechanisms.map((m) => (
@@ -1103,7 +1203,7 @@ function LiveEditor({
             ))}
           </select>
         </div>
-        <div className="mt-2 max-h-40 space-y-1 overflow-auto rounded-xl border border-border bg-canvas/65 p-2">
+        <div className="mt-2 max-h-32 min-w-0 space-y-1 overflow-x-hidden overflow-y-auto rounded-lg border border-border bg-canvas/65 p-2">
           {filteredDrugs.length === 0 ? (
             <p className="px-1 py-2 text-xs text-fg-subtle">
               {catalog ? "No compounds match." : "Catalog not loaded."}
@@ -1116,20 +1216,21 @@ function LiveEditor({
                   key={drug.id}
                   type="button"
                   onClick={() => onToggleDrug(drug.name)}
-                  className={`flex w-full items-center justify-between gap-2 rounded-lg px-2 py-1.5 text-left text-xs ${
+                  className={`flex w-full min-w-0 items-center justify-between gap-2 rounded-lg px-2 py-1.5 text-left text-xs ${
                     selected
                       ? "bg-accent/10 text-accent"
                       : "text-fg-muted hover:bg-surface-elevated"
                   }`}
                 >
-                  <span className="font-medium">{drug.name}</span>
-                  <span className="text-fg-subtle">{drug.mechanism}</span>
+                  <span className="min-w-0 truncate font-medium">{drug.name}</span>
+                  <span className="shrink-0 text-fg-subtle">{drug.mechanism}</span>
                 </button>
               );
             })
           )}
         </div>
-      </div>
+        </div>
+      </details>
 
       {errors.length > 0 && (
         <Alert variant="error" title="Fix these before running">
@@ -1145,7 +1246,7 @@ function LiveEditor({
         type="button"
         onClick={onRun}
         disabled={!canRun}
-        className="btn-primary px-3 py-2.5 text-sm disabled:opacity-40"
+        className="btn-primary w-full min-w-0 px-3 py-2.5 text-sm disabled:opacity-40"
       >
         {running ? "Running episode…" : "Run live screening"}
       </button>

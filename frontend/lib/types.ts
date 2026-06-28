@@ -166,6 +166,19 @@ export interface FolkloreCatalog {
   goals: FolkloreCase["goal"][];
 }
 
+export interface FolkloreModelStatus {
+  source: "live_ensemble" | "precomputed_parquet" | "none";
+  n_models?: number;
+  n_feature_cols?: number;
+  n_cell_lines?: number;
+  n_drugs?: number;
+  weights_file?: string;
+  weights_size_kb?: number;
+  parquet_file?: string;
+  parquet_size_kb?: number;
+  message?: string;
+}
+
 export interface FolkloreRunRequest {
   tumor_name: string;
   components: { cell_line: string; proportion: number }[];

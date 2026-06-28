@@ -13,3 +13,16 @@ env/
 
 # Node (root verify scripts)
 node_modules/
+
+# Visual verification artifacts
+artifacts/demo_capture/
+artifacts/demo_slides/
+artifacts/demo_verify/
+artifacts/tina_site_video_raw/
+artifacts/tina_tab_verify/
+artifacts/*.png
+!artifacts/active_vs_random_policy_comparison.png
+artifacts/*.gif
+artifacts/*.mp4
+artifacts/demo_concat.txt
+

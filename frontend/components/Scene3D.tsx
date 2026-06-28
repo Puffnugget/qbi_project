@@ -413,6 +413,94 @@ function SceneContent({
   );
 }
 
+function Scene2DFallback({
+  points,
+  selectedLines,
+  greedyLines,
+  isManualMode,
+  filterCancerType,
+  missingTypes,
+  onSphereClick,
+}: {
+  points: UmapPoint[];
+  selectedLines: string[];
+  greedyLines: string[];
+  isManualMode: boolean;
+  filterCancerType?: string;
+  missingTypes: string[];
+  onSphereClick?: (cellLine: string) => void;
+}) {
+  const bounds = useMemo(() => {
+    const xs = points.map((p) => p.x);
+    const ys = points.map((p) => p.y);
+    return {
+      minX: Math.min(...xs),
+      maxX: Math.max(...xs),
+      minY: Math.min(...ys),
+      maxY: Math.max(...ys),
+    };
+  }, [points]);
+  const selectedSet = useMemo(() => new Set(selectedLines), [selectedLines]);
+  const greedySet = useMemo(() => new Set(greedyLines), [greedyLines]);
+  const missingSet = useMemo(() => new Set(missingTypes), [missingTypes]);
+
+  function pctX(value: number) {
+    return 5 + ((value - bounds.minX) / (bounds.maxX - bounds.minX || 1)) * 90;
+  }
+  function pctY(value: number) {
+    return 95 - ((value - bounds.minY) / (bounds.maxY - bounds.minY || 1)) * 90;
+  }
+
+  return (
+    <div className="relative h-full w-full overflow-hidden bg-surface-elevated">
+      {points.map((point) => {
+        const state = getSphereState(
+          point.cell_line,
+          isManualMode,
+          greedySet,
+          selectedSet,
+        );
+        const isSelected = selectedSet.has(point.cell_line);
+        const isFilteredOut =
+          filterCancerType != null &&
+          filterCancerType !== "all" &&
+          point.cancer_type !== filterCancerType &&
+          !isSelected;
+        const size = state === "greedy" || state === "manual-added" ? 18 : 10;
+        return (
+          <button
+            key={point.cell_line}
+            type="button"
+            title={`${point.cell_line} ${point.cancer_type}`}
+            onClick={() => onSphereClick?.(point.cell_line)}
+            className="absolute rounded-full border transition"
+            style={{
+              left: `${pctX(point.x)}%`,
+              top: `${pctY(point.y)}%`,
+              width: size,
+              height: size,
+              marginLeft: -size / 2,
+              marginTop: -size / 2,
+              background: CANCER_COLORS[point.cancer_type] ?? theme.fgSubtle,
+              borderColor:
+                state === "greedy" || state === "manual-added"
+                  ? sceneTheme.greedy
+                  : missingSet.has(point.cancer_type)
+                    ? sceneTheme.blindspot
+                    : "rgba(18, 56, 44, 0.28)",
+              borderWidth: state === "greedy" || state === "manual-added" ? 3 : 1,
+              opacity: isFilteredOut ? 0.18 : 0.8,
+            }}
+          />
+        );
+      })}
+      <div className="pointer-events-none absolute left-4 top-4 rounded-lg border border-border bg-surface/90 px-3 py-2 text-xs text-fg-muted">
+        2D embedding fallback
+      </div>
+    </div>
+  );
+}
+
 export default function Scene3D({
   points = [],
   selectedLines = [],
@@ -425,42 +513,60 @@ export default function Scene3D({
   compact = false,
 }: Scene3DProps) {
   const [hovered, setHovered] = useState<UmapPoint | null>(null);
+  const [contextLost, setContextLost] = useState(false);
   const hasData = points.length > 0;
   const effectiveGreedy = greedyLines.length > 0 ? greedyLines : selectedLines;
   const cameraZ = compact ? 7.5 : 6;
 
   return (
     <div className="relative h-full w-full">
-      <Canvas
-        camera={{ position: [0, 0, cameraZ], fov: compact ? 55 : 50 }}
-        className="h-full w-full"
-        gl={{ antialias: true, alpha: false }}
-      >
-        {hasData ? (
-          <SceneContent
-            points={points}
-            selectedLines={selectedLines}
-            greedyLines={effectiveGreedy}
-            isManualMode={isManualMode}
-            filterCancerType={filterCancerType}
-            highlightOverlap={highlightOverlap}
-            missingTypes={missingTypes}
-            onSphereClick={onSphereClick}
-            hovered={hovered}
-            setHovered={setHovered}
-            compact={compact}
-          />
-        ) : (
-          <>
-            <color attach="background" args={[sceneTheme.background]} />
-            <gridHelper
-              args={[10, 10, sceneTheme.gridPrimary, sceneTheme.gridSecondary]}
-              position={[0, -2, 0]}
+      {contextLost && hasData ? (
+        <Scene2DFallback
+          points={points}
+          selectedLines={selectedLines}
+          greedyLines={effectiveGreedy}
+          isManualMode={isManualMode}
+          filterCancerType={filterCancerType}
+          missingTypes={missingTypes}
+          onSphereClick={onSphereClick}
+        />
+      ) : (
+        <Canvas
+          camera={{ position: [0, 0, cameraZ], fov: compact ? 55 : 50 }}
+          className="h-full w-full"
+          gl={{ antialias: true, alpha: false }}
+          onCreated={({ gl }) => {
+            gl.domElement.addEventListener("webglcontextlost", () => {
+              setContextLost(true);
+            });
+          }}
+        >
+          {hasData ? (
+            <SceneContent
+              points={points}
+              selectedLines={selectedLines}
+              greedyLines={effectiveGreedy}
+              isManualMode={isManualMode}
+              filterCancerType={filterCancerType}
+              highlightOverlap={highlightOverlap}
+              missingTypes={missingTypes}
+              onSphereClick={onSphereClick}
+              hovered={hovered}
+              setHovered={setHovered}
+              compact={compact}
             />
-            <OrbitControls enableDamping dampingFactor={0.05} />
-          </>
-        )}
-      </Canvas>
+          ) : (
+            <>
+              <color attach="background" args={[sceneTheme.background]} />
+              <gridHelper
+                args={[10, 10, sceneTheme.gridPrimary, sceneTheme.gridSecondary]}
+                position={[0, -2, 0]}
+              />
+              <OrbitControls enableDamping dampingFactor={0.05} />
+            </>
+          )}
+        </Canvas>
+      )}
 
       {!hasData && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">

@@ -2,6 +2,7 @@ import type {
   AppData,
   FolkloreData,
   FolkloreCatalog,
+  FolkloreModelStatus,
   FolkloreRunRequest,
   FolkloreRunResponse,
   FolkloreRegenerateResponse,
@@ -86,6 +87,19 @@ export async function fetchFolkloreCatalog(): Promise<FolkloreCatalog> {
     throw new Error(`Catalog unavailable (${res.status}).`);
   }
   return res.json() as Promise<FolkloreCatalog>;
+}
+
+export async function fetchFolkloreModelStatus(): Promise<FolkloreModelStatus> {
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}/folklore/model-status`);
+  } catch {
+    throw new Error("Cannot reach the model-status API. Run: ./scripts/run_api.sh");
+  }
+  if (!res.ok) {
+    throw new Error(`Model status unavailable (${res.status}).`);
+  }
+  return res.json() as Promise<FolkloreModelStatus>;
 }
 
 /** Run one live screening episode — backend POST /folklore/run. */
