@@ -94,7 +94,7 @@ export default function AdaptiveDesignTab({
     return (
       <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center text-sm text-fg-muted">
         <p>
-          Adaptive design loads from the FastAPI backend via uvicorn.
+          Folklore loads from the FastAPI backend via uvicorn.
         </p>
         <ol className="max-w-md space-y-2 text-left font-mono text-xs text-accent">
           <li>1. python src/adaptive_design.py</li>
@@ -123,7 +123,7 @@ export default function AdaptiveDesignTab({
 
       <div className="grid min-h-0 grid-cols-[3fr_7fr] items-stretch gap-2 overflow-hidden border-t border-border bg-surface/60 px-3 py-2">
         <Card className="flex h-fit max-h-full w-full flex-col self-start overflow-auto p-2.5">
-          <p className="label-caps shrink-0">Adaptive design replay</p>
+          <p className="label-caps shrink-0">Folklore screening replay</p>
           <p className="mt-1 shrink-0 text-xs text-fg-muted">{data.metric}</p>
           <div className="mt-2 grid shrink-0 grid-cols-2 gap-1.5">
             {POLICIES.map((p) => (

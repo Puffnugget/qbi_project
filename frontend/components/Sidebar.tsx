@@ -38,15 +38,15 @@ export default function Sidebar({
       className="reveal flex h-full w-full flex-col gap-3 overflow-hidden border-r border-border bg-surface p-4 shadow-[2px_0_12px_var(--shadow)]"
     >
       <header className="reveal reveal-delay-1 shrink-0 border-b border-border pb-3">
-        <p className="label-caps text-accent">NCI-60 Panel Builder</p>
+        <p className="label-caps text-accent">Folklore</p>
         <h1
           className="mt-0.5 text-xl font-semibold tracking-tight text-fg"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Greedy Selection
+          Adaptive Tumor Screening
         </h1>
         <p className="mt-1 text-sm text-fg-muted">
-          Farthest-point panel design on fused omics
+          Mixed-tumor drug testing with active learning
         </p>
       </header>
 

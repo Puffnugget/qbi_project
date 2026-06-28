@@ -48,7 +48,7 @@ export async function fetchAdaptiveDesign(): Promise<AdaptiveDesignData> {
   }
   if (!res.ok) {
     throw new Error(
-      `Adaptive design API unavailable (${res.status}). Run: ./scripts/run_api.sh`,
+      `Folklore API unavailable (${res.status}). Run: ./scripts/run_api.sh`,
     );
   }
   return res.json() as Promise<AdaptiveDesignData>;
