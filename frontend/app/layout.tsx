@@ -21,8 +21,8 @@ const ibmMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NCI-60 Panel Builder",
-  description: "Greedy panel selection on fused omics UMAP",
+  title: "Folklore",
+  description: "Mixed-tumor adaptive drug screening on NCI-60",
 };
 
 export default function RootLayout({

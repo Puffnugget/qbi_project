@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -15,6 +17,11 @@ from custom_analysis import router as analysis_router
 
 ROOT = Path(__file__).resolve().parents[1]
 PRECOMPUTED = ROOT / "frontend" / "public" / "precomputed"
+PROCESSED = ROOT / "processed_data"
+LANDMARK_DIR = PROCESSED / "clean" / "drug_landmarks"
+LANDMARK_MATRIX = LANDMARK_DIR / "drug_activity_landmark_matrix.csv"
+LANDMARK_METADATA = LANDMARK_DIR / "drug_activity_landmark_metadata.csv"
+SAMPLE_INFO = PROCESSED / "sample_info.csv"
 
 app = FastAPI(title="NCI-60 Panel Builder API", version="0.1.0")
 
@@ -43,6 +50,75 @@ def _load(name: str) -> dict | list:
             detail=f"Missing {name}. Run: python src/generate_dummy_data.py",
         )
     return json.loads(path.read_text())
+
+
+def _read_csv_rows(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"Missing {path.relative_to(ROOT)}")
+    with path.open(newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def _folklore_catalog() -> dict:
+    sample_rows = _read_csv_rows(SAMPLE_INFO)
+    matrix_rows = _read_csv_rows(LANDMARK_MATRIX)
+    metadata_rows = _read_csv_rows(LANDMARK_METADATA)
+
+    response_counts: dict[str, int] = {}
+    if matrix_rows:
+        for feature in matrix_rows[0]:
+            if feature == "cell_line":
+                continue
+            response_counts[feature] = sum(
+                1 for row in matrix_rows if row.get(feature, "").strip() not in {"", "NA", "NaN", "nan"}
+            )
+
+    drugs = []
+    mechanisms: set[str] = set()
+    for row in metadata_rows:
+        mechanism = (row.get("mechanism") or "Unknown").strip() or "Unknown"
+        mechanisms.add(mechanism)
+        clean_feature_name = row.get("clean_feature_name", "")
+        drugs.append(
+            {
+                "id": clean_feature_name,
+                "name": row.get("drug_name", clean_feature_name),
+                "mechanism": mechanism,
+                "category": row.get("category", ""),
+                "fda_status": row.get("fda_status", ""),
+                "nsc": row.get("nsc", ""),
+                "n_cell_lines": response_counts.get(clean_feature_name, 0),
+            }
+        )
+
+    folklore = _load("folklore.json")
+    return {
+        "cell_lines": [
+            {
+                "cell_line": row["cell_line"],
+                "cancer_type": row.get("cancer_type", "Unknown"),
+            }
+            for row in sample_rows
+        ],
+        "drugs": drugs,
+        "mechanisms": sorted(mechanisms),
+        "demo_tumors": folklore.get("preset_cases", []) if isinstance(folklore, dict) else [],
+    }
+
+
+class FolkloreComponent(BaseModel):
+    cell_line: str
+    proportion: float = Field(ge=0)
+
+
+class FolkloreRunRequest(BaseModel):
+    tumor_name: str
+    components: list[FolkloreComponent]
+    budget: int = Field(ge=6, le=10)
+    goal: str
+    policy: str = "active_learner"
+    drug_pool: list[str] | None = None
+    compare_policy: str = "random"
 
 
 @app.get("/health")
@@ -105,6 +181,26 @@ def embeddings() -> dict:
 @app.get("/adaptive-design")
 def adaptive_design() -> dict:
     return _load("adaptive_design.json")
+
+
+@app.get("/folklore")
+def folklore() -> dict:
+    """Offline-safe canned mixed-tumor screening rollouts."""
+    return _load("folklore.json")
+
+
+@app.get("/folklore/catalog")
+def folklore_catalog() -> dict:
+    """Available cell lines, landmark drugs, mechanisms, and canned demo tumors."""
+    return _folklore_catalog()
+
+
+@app.post("/folklore/run", status_code=status.HTTP_501_NOT_IMPLEMENTED)
+def folklore_run(_: FolkloreRunRequest) -> dict:
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Live Folklore episodes are not implemented yet. Use GET /folklore for canned rollouts.",
+    )
 
 
 # --- Customization Endpoints ---
