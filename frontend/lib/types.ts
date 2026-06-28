@@ -146,6 +146,39 @@ export interface FolkloreData {
   available_policies: string[];
 }
 
+export interface FolkloreCatalogDrug {
+  id: string;
+  name: string;
+  mechanism: string;
+  n_cell_lines?: number;
+}
+
+export interface FolkloreCatalogCellLine {
+  cell_line: string;
+  cancer_type?: CancerType;
+}
+
+export interface FolkloreCatalog {
+  cell_lines: FolkloreCatalogCellLine[];
+  drugs: FolkloreCatalogDrug[];
+  mechanisms: string[];
+  available_policies: string[];
+  goals: FolkloreCase["goal"][];
+}
+
+export interface FolkloreRunRequest {
+  tumor_name: string;
+  components: { cell_line: string; proportion: number }[];
+  budget: number;
+  goal: FolkloreCase["goal"];
+  policy: string;
+  compare_policy?: string;
+  drug_pool?: string[];
+}
+
+/** A live run returns a single case with the chosen + comparison policies. */
+export type FolkloreRunResponse = FolkloreCase;
+
 export interface AppData {
   umap: UmapPoint[];
   coverage: CoverageData;

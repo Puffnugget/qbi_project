@@ -35,19 +35,30 @@ Final pitch:
   - middle screening timeline with replay controls
   - right final recommendation card
   - bottom active learner vs random chart
-- `frontend/public/precomputed/folklore.json` added as offline-safe canned source
+- `frontend/public/precomputed/folklore.json` added as offline-safe canned source (3 preset tumors)
 - Frontend data contract added for Folklore JSON shape
 - UI now loads canned Folklore data without requiring live backend endpoints
+- **Frontend live mode fully built** (`components/AdaptiveDesignTab.tsx`):
+  - mixture editor — 2–4 subclones, cell-line dropdowns from catalog, proportion inputs, add/remove, sum-to-1.0 validation + Normalize button
+  - goal select + budget slider (6–10)
+  - drug-pool picker — searchable, mechanism-filtered multi-select; empty = full catalog; never offers an off-catalog drug
+  - input validation with inline errors; Run blocked until valid
+  - `POST /folklore/run` wired; live result reuses the canned `FolkloreCase` shape so timeline/recommendation/chart render unchanged
+  - failed live run → toast + fall back to nearest canned case (matched by cell-line overlap)
+  - catalog loads lazily on first live-mode open via `GET /folklore/catalog`, with graceful empty/error states
+- Data layer added (`lib/data.ts`): `fetchFolkloreCatalog()`, `runFolklore()`, `isFolkloreCatalogReady()`
+- Types added (`lib/types.ts`): `FolkloreCatalog`, `FolkloreCatalogDrug`, `FolkloreCatalogCellLine`, `FolkloreRunRequest`, `FolkloreRunResponse`
+- Frontend typecheck (`tsc --noEmit`) passes clean
 
 ### Next Todo
 
 - Add 2 more preset tumors so canned demo reaches 5 total
 - Replace hand-written canned JSON with generated rollouts from real data
-- Stub backend endpoints: `GET /folklore`, `GET /folklore/catalog`, `POST /folklore/run`
-- Build simulator and episode environment in Python
-- Wire live mode inputs: editable mixture, goal, budget, drug pool
-- Add catalog-driven drug picker and invalid-input handling
-- Add fallback from failed live run to nearest canned case
+- Build backend endpoints: `GET /folklore`, `GET /folklore/catalog`, `POST /folklore/run` (frontend already consumes them)
+- Build simulator and episode environment in Python (`src/folklore/`)
+- ~~Wire live mode inputs: editable mixture, goal, budget, drug pool~~ — **done (frontend)**
+- ~~Add catalog-driven drug picker and invalid-input handling~~ — **done (frontend); needs catalog endpoint to populate**
+- ~~Add fallback from failed live run to nearest canned case~~ — **done (frontend)**
 
 ## What The Input And Output Mean
 
@@ -309,7 +320,7 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 - [x] `folklore.json` schema defined in frontend types and canned data
 - [x] Frontend loads `frontend/public/precomputed/folklore.json`
-- [ ] `GET /folklore/catalog` stub
+- [x] `GET /folklore/catalog` stub
 - [ ] `GET /folklore` stub
 - [ ] 5 preset tumors agreed and filled in
 
@@ -358,14 +369,16 @@ Build in order. Each phase has a **gate** — do not start the next phase until 
 
 **Gate:** live demo works end-to-end with custom drug pool; canned fallback works with API stopped.
 
-**Status:** frontend shell started
+**Status:** frontend complete; backend endpoint pending
 
 - [x] Canned vs live mode toggle exists in UI shell
 - [x] Replay controls exist
-- [ ] Catalog drug picker
-- [ ] Mixture editor
-- [ ] `POST /folklore/run`
-- [ ] Live error toast + canned fallback
+- [x] Catalog drug picker (searchable + mechanism filter; needs catalog endpoint to populate)
+- [x] Mixture editor (2–4 subclones, proportion validation + normalize)
+- [x] Live error toast + canned fallback (nearest case by cell-line overlap)
+- [x] Frontend wired to `POST /folklore/run` + `GET /folklore/catalog`
+- [ ] `POST /folklore/run` **backend** endpoint (frontend ready, server not built)
+- [x] `GET /folklore/catalog` **backend** endpoint
 
 ---
 
