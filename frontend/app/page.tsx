@@ -25,11 +25,11 @@ const CustomDataAnalysis = dynamic(
   { ssr: false },
 );
 
-<<<<<<< HEAD
-type TabId = "explore" | "adaptive" | "analyze";
-=======
+const CompareView = dynamic(() => import("@/components/CompareView"), {
+  ssr: false,
+});
+
 type TabId = "adaptive" | "explore" | "compare" | "analyze";
->>>>>>> 7ba8a19abcb5e827f9ba14fb44e1d5839d26296e
 
 const AdaptiveDesignTab = dynamic(
   () => import("@/components/AdaptiveDesignTab"),
@@ -39,13 +39,9 @@ const AdaptiveDesignTab = dynamic(
 const TAB_ORDER: TabId[] = ["adaptive", "explore", "compare", "analyze"];
 
 const TAB_LABELS: Record<TabId, string> = {
-  adaptive: "Folklore",
-  explore: "Explore",
-<<<<<<< HEAD
   adaptive: "Adaptive design",
-=======
+  explore: "Explore",
   compare: "Compare",
->>>>>>> 7ba8a19abcb5e827f9ba14fb44e1d5839d26296e
   analyze: "Analyze Your Data",
 };
 
@@ -224,19 +220,15 @@ export default function Home() {
               />
             </div>
           </div>
-<<<<<<< HEAD
-        ) : tab === "analyze" ? (
-=======
         ) : tab === "compare" ? (
           <div className="min-h-0 flex-1 overflow-hidden">
             <CompareView panelSize={panelSize} />
           </div>
-        ) : (
->>>>>>> 7ba8a19abcb5e827f9ba14fb44e1d5839d26296e
+        ) : tab === "analyze" ? (
           <div className="min-h-0 flex-1 overflow-auto p-6">
             <CustomDataAnalysis />
           </div>
-        )}
+        ) : null}
       </main>
     </div>
   );
