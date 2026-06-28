@@ -112,66 +112,14 @@
             },
             {
               "step": 4,
-              "compound": "CC-671",
-              "mechanism": "TTK inhibitor",
+              "compound": "Perifosine",
+              "mechanism": "STK,AKT,AKT1,AKT2,AKT3 inhibitor",
               "chosen_by": "active learner",
-              "mixed_response": -0.801,
+              "mixed_response": -1.002,
               "subclone_responses": [
                 {
                   "cell_line": "ME:SK-MEL-28",
-                  "response": -1.11,
-                  "label": "sensitive"
-                },
-                {
-                  "cell_line": "ME:SK-MEL-5",
-                  "response": 0.18,
-                  "label": "resistant"
-                },
-                {
-                  "cell_line": "ME:MDA-MB-435",
-                  "response": -1.5,
-                  "label": "sensitive"
-                }
-              ],
-              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
-              "best_response_so_far": -1.15
-            },
-            {
-              "step": 5,
-              "compound": "VE-821",
-              "mechanism": "STK,ATR inhibitor",
-              "chosen_by": "active learner",
-              "mixed_response": -1.028,
-              "subclone_responses": [
-                {
-                  "cell_line": "ME:SK-MEL-28",
-                  "response": -1.26,
-                  "label": "sensitive"
-                },
-                {
-                  "cell_line": "ME:SK-MEL-5",
-                  "response": -0.48,
-                  "label": "intermediate"
-                },
-                {
-                  "cell_line": "ME:MDA-MB-435",
-                  "response": -1.27,
-                  "label": "sensitive"
-                }
-              ],
-              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
-              "best_response_so_far": -1.15
-            },
-            {
-              "step": 6,
-              "compound": "Dasatinib",
-              "mechanism": "Tyrosine kinase inhibitor",
-              "chosen_by": "active learner",
-              "mixed_response": -1.042,
-              "subclone_responses": [
-                {
-                  "cell_line": "ME:SK-MEL-28",
-                  "response": -1.11,
+                  "response": -1.05,
                   "label": "sensitive"
                 },
                 {
@@ -181,7 +129,59 @@
                 },
                 {
                   "cell_line": "ME:MDA-MB-435",
-                  "response": -0.95,
+                  "response": -0.9,
+                  "label": "intermediate"
+                }
+              ],
+              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
+              "best_response_so_far": -1.15
+            },
+            {
+              "step": 5,
+              "compound": "Pemetrexed",
+              "mechanism": "Df / AM / GARTF / DHFR / TYMS",
+              "chosen_by": "active learner",
+              "mixed_response": -0.8,
+              "subclone_responses": [
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -0.8,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -0.8,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -0.8,
+                  "label": "intermediate"
+                }
+              ],
+              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
+              "best_response_so_far": -1.15
+            },
+            {
+              "step": 6,
+              "compound": "GSK-1070916",
+              "mechanism": "AURK inhibitor",
+              "chosen_by": "active learner",
+              "mixed_response": -0.772,
+              "subclone_responses": [
+                {
+                  "cell_line": "ME:SK-MEL-28",
+                  "response": -0.6,
+                  "label": "intermediate"
+                },
+                {
+                  "cell_line": "ME:SK-MEL-5",
+                  "response": -1.04,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "ME:MDA-MB-435",
+                  "response": -0.8,
                   "label": "intermediate"
                 }
               ],
@@ -576,25 +576,25 @@
             },
             {
               "step": 6,
-              "compound": "AZD-3463",
-              "mechanism": "IGF1R,ALK inhibitor",
+              "compound": "Aminopterin Derivative",
+              "mechanism": "Df",
               "chosen_by": "active learner",
-              "mixed_response": 0.344,
+              "mixed_response": -0.7615,
               "subclone_responses": [
                 {
                   "cell_line": "BR:MCF7",
-                  "response": 2.17,
+                  "response": 0.19,
                   "label": "resistant"
                 },
                 {
                   "cell_line": "BR:T-47D",
-                  "response": -1.27,
+                  "response": -1.54,
                   "label": "sensitive"
                 },
                 {
                   "cell_line": "BR:MDA-MB-231",
-                  "response": -0.94,
-                  "label": "intermediate"
+                  "response": -1.54,
+                  "label": "sensitive"
                 }
               ],
               "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
@@ -858,6 +858,32 @@
           "steps": [
             {
               "step": 1,
+              "compound": "Celecoxib",
+              "mechanism": "AM / PTGS2 / COX2 / NonCan:NSAID",
+              "chosen_by": "active learner",
+              "mixed_response": -1.012,
+              "subclone_responses": [
+                {
+                  "cell_line": "CO:HCT-116",
+                  "response": -2.89,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "CO:HT29",
+                  "response": 0.14,
+                  "label": "resistant"
+                },
+                {
+                  "cell_line": "CO:KM12",
+                  "response": 0.38,
+                  "label": "resistant"
+                }
+              ],
+              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
+              "best_response_so_far": -1.012
+            },
+            {
+              "step": 2,
               "compound": "BPTES",
               "mechanism": "GLS",
               "chosen_by": "active learner",
@@ -880,10 +906,10 @@
                 }
               ],
               "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
-              "best_response_so_far": -0.7045
+              "best_response_so_far": -1.012
             },
             {
-              "step": 2,
+              "step": 3,
               "compound": "7-Hydroxystaurosporine",
               "mechanism": "STK,CDK1,CDK2,CDK4,CDK6 inhibitor",
               "chosen_by": "active learner",
@@ -902,32 +928,6 @@
                 {
                   "cell_line": "CO:KM12",
                   "response": 0.45,
-                  "label": "resistant"
-                }
-              ],
-              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
-              "best_response_so_far": -0.7045
-            },
-            {
-              "step": 3,
-              "compound": "Celecoxib",
-              "mechanism": "AM / PTGS2 / COX2 / NonCan:NSAID",
-              "chosen_by": "active learner",
-              "mixed_response": -1.012,
-              "subclone_responses": [
-                {
-                  "cell_line": "CO:HCT-116",
-                  "response": -2.89,
-                  "label": "sensitive"
-                },
-                {
-                  "cell_line": "CO:HT29",
-                  "response": 0.14,
-                  "label": "resistant"
-                },
-                {
-                  "cell_line": "CO:KM12",
-                  "response": 0.38,
                   "label": "resistant"
                 }
               ],
@@ -1022,11 +1022,11 @@
           "summary_curve": [
             {
               "step": 1,
-              "score": -0.7045
+              "score": -1.012
             },
             {
               "step": 2,
-              "score": -0.7045
+              "score": -1.012
             },
             {
               "step": 3,
@@ -1307,14 +1307,14 @@
             },
             {
               "step": 3,
-              "compound": "Abiraterone",
-              "mechanism": "Ho / CYP17A1",
+              "compound": "Zoledronate",
+              "mechanism": "AM / NonCan:Anti-bone resorp",
               "chosen_by": "active learner",
-              "mixed_response": -0.92,
+              "mixed_response": -0.8705,
               "subclone_responses": [
                 {
                   "cell_line": "LC:A549/ATCC",
-                  "response": -0.92,
+                  "response": -0.83,
                   "label": "intermediate"
                 },
                 {
@@ -1328,14 +1328,14 @@
             },
             {
               "step": 4,
-              "compound": "Zoledronate",
-              "mechanism": "AM / NonCan:Anti-bone resorp",
+              "compound": "Abiraterone",
+              "mechanism": "Ho / CYP17A1",
               "chosen_by": "active learner",
-              "mixed_response": -0.8705,
+              "mixed_response": -0.92,
               "subclone_responses": [
                 {
                   "cell_line": "LC:A549/ATCC",
-                  "response": -0.83,
+                  "response": -0.92,
                   "label": "intermediate"
                 },
                 {
@@ -1370,19 +1370,19 @@
             },
             {
               "step": 6,
-              "compound": "PF-6459988",
-              "mechanism": "PRMT5 / EGFR inhibitor",
+              "compound": "GDC-0994",
+              "mechanism": "ERK,MAP3K,MAPK1 inhibitor",
               "chosen_by": "active learner",
-              "mixed_response": -0.7425,
+              "mixed_response": -0.7735,
               "subclone_responses": [
                 {
                   "cell_line": "LC:A549/ATCC",
-                  "response": -0.81,
+                  "response": -0.76,
                   "label": "intermediate"
                 },
                 {
                   "cell_line": "LC:NCI-H460",
-                  "response": -0.66,
+                  "response": -0.79,
                   "label": "intermediate"
                 }
               ],
@@ -1654,6 +1654,48 @@
             },
             {
               "step": 3,
+              "compound": "AZD-0364",
+              "mechanism": "ERK inhibitor",
+              "chosen_by": "active learner",
+              "mixed_response": -0.192,
+              "subclone_responses": [
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.28,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": 1.44,
+                  "label": "resistant"
+                }
+              ],
+              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
+              "best_response_so_far": -0.99
+            },
+            {
+              "step": 4,
+              "compound": "Barasertib",
+              "mechanism": "Aurora kinase inhibitor",
+              "chosen_by": "active learner",
+              "mixed_response": -0.982,
+              "subclone_responses": [
+                {
+                  "cell_line": "RE:786-0",
+                  "response": -1.15,
+                  "label": "sensitive"
+                },
+                {
+                  "cell_line": "RE:A498",
+                  "response": -0.73,
+                  "label": "intermediate"
+                }
+              ],
+              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
+              "best_response_so_far": -0.99
+            },
+            {
+              "step": 5,
               "compound": "PF-03758309",
               "mechanism": "PAK4 inhibitor",
               "chosen_by": "active learner",
@@ -1674,63 +1716,21 @@
               "best_response_so_far": -1.25
             },
             {
-              "step": 4,
-              "compound": "AZD-0364",
-              "mechanism": "ERK inhibitor",
-              "chosen_by": "active learner",
-              "mixed_response": -0.192,
-              "subclone_responses": [
-                {
-                  "cell_line": "RE:786-0",
-                  "response": -1.28,
-                  "label": "sensitive"
-                },
-                {
-                  "cell_line": "RE:A498",
-                  "response": 1.44,
-                  "label": "resistant"
-                }
-              ],
-              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
-              "best_response_so_far": -1.25
-            },
-            {
-              "step": 5,
-              "compound": "Barasertib",
-              "mechanism": "Aurora kinase inhibitor",
-              "chosen_by": "active learner",
-              "mixed_response": -0.982,
-              "subclone_responses": [
-                {
-                  "cell_line": "RE:786-0",
-                  "response": -1.15,
-                  "label": "sensitive"
-                },
-                {
-                  "cell_line": "RE:A498",
-                  "response": -0.73,
-                  "label": "intermediate"
-                }
-              ],
-              "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
-              "best_response_so_far": -1.25
-            },
-            {
               "step": 6,
-              "compound": "ARQ-621",
-              "mechanism": "CDH16 / KIF11",
+              "compound": "ARRY-162",
+              "mechanism": "STK,MAP2K,MAP2K1,MAP2K2 inhibitor",
               "chosen_by": "active learner",
-              "mixed_response": -0.848,
+              "mixed_response": -0.112,
               "subclone_responses": [
                 {
                   "cell_line": "RE:786-0",
-                  "response": -1.02,
+                  "response": -1.1,
                   "label": "sensitive"
                 },
                 {
                   "cell_line": "RE:A498",
-                  "response": -0.59,
-                  "label": "intermediate"
+                  "response": 1.37,
+                  "label": "resistant"
                 }
               ],
               "why_chosen": "Best model signal: low ensemble mean response plus uncertainty bonus.",
@@ -1754,11 +1754,11 @@
             },
             {
               "step": 3,
-              "score": -1.25
+              "score": -0.99
             },
             {
               "step": 4,
-              "score": -1.25
+              "score": -0.99
             },
             {
               "step": 5,
