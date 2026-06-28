@@ -22,34 +22,28 @@ const Scene3D = dynamic(() => import("@/components/Scene3D"), {
   ),
 });
 
-const CompareView = dynamic(() => import("@/components/CompareView"), {
-  ssr: false,
-});
-
 const CustomDataAnalysis = dynamic(
   () => import("@/components/CustomDataAnalysis").then(mod => ({ default: mod.CustomDataAnalysis })),
   { ssr: false },
 );
 
-type TabId = "adaptive" | "explore" | "compare" | "analyze";
+type TabId = "adaptive" | "explore" | "analyze";
 
 const AdaptiveDesignTab = dynamic(
   () => import("@/components/AdaptiveDesignTab"),
   { ssr: false },
 );
 
-const TAB_ORDER: TabId[] = ["adaptive", "explore", "compare", "analyze"];
+const TAB_ORDER: TabId[] = ["adaptive", "explore", "analyze"];
 
 const TAB_LABELS: Record<TabId, string> = {
   adaptive: "TINA",
   explore: "Explore",
-  compare: "Compare",
   analyze: "Analyze Your Data",
 };
 
-function sidebarMode(tab: TabId): "slim" | "explore" | "compare" {
+function sidebarMode(tab: TabId): "slim" | "explore" {
   if (tab === "explore") return "explore";
-  if (tab === "compare") return "compare";
   return "slim";
 }
 
@@ -125,7 +119,7 @@ export default function Home() {
   };
 
   const mode = sidebarMode(tab);
-  const showPanelStatus = tab === "explore" || tab === "compare";
+  const showPanelStatus = tab === "explore";
 
   return (
     <div className="flex h-[100dvh] overflow-hidden bg-canvas text-fg">
@@ -229,10 +223,6 @@ export default function Home() {
             </div>
           </div>
           )
-        ) : tab === "compare" ? (
-          <div className="min-h-0 flex-1 overflow-hidden">
-            <CompareView panelSize={panelSize} />
-          </div>
         ) : tab === "analyze" ? (
           <div className="min-h-0 flex-1 overflow-auto p-6">
             <CustomDataAnalysis />

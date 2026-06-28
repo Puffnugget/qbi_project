@@ -4,7 +4,7 @@ import BlindSpotPanel from "@/components/BlindSpotPanel";
 import { CANCER_TYPES } from "@/lib/constants";
 import type { BlindspotData } from "@/lib/types";
 
-type SidebarMode = "slim" | "explore" | "compare";
+type SidebarMode = "slim" | "explore";
 
 interface SidebarProps {
   mode: SidebarMode;
@@ -119,29 +119,6 @@ export default function Sidebar({
         </>
       )}
 
-      {mode === "compare" && (
-        <section className="reveal reveal-delay-2 shrink-0 space-y-2">
-          <label className="block text-sm text-fg-muted">
-            Panel size:{" "}
-            <span className="font-mono font-medium text-fg">{panelSize}</span>
-          </label>
-          <input
-            type="range"
-            min={2}
-            max={15}
-            value={panelSize}
-            onChange={(e) => onPanelSizeChange(Number(e.target.value))}
-            className="w-full"
-          />
-          <p className="text-xs text-fg-subtle">
-            {loading
-              ? "Computing elbow…"
-              : elbowSize != null
-                ? `Suggested optimal: ${elbowSize} lines`
-                : "Suggested optimal: 8 lines (elbow TBD)"}
-          </p>
-        </section>
-      )}
     </aside>
   );
 }
