@@ -1,6 +1,6 @@
-# QBI Project: Folklore Demo
+# TINA - Tumor Intelligence & Neoplastic Analysis
 
-This repository contains the **Folklore** demo: a simulator and active-learning recommendation engine designed to optimize drug screening order against heterogeneous, subclone-mixed tumors.
+This repository contains the TINA demo: a simulator and active-learning recommendation engine designed to optimize drug screening order against heterogeneous, subclone-mixed tumors.
 
 ---
 
